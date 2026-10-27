@@ -1,0 +1,319 @@
+selnet-476815.pagina.gold_ranger
+
+[
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cliente_final",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "es_oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "cod_bejerman": null,
+  "modelo": "RI-16515",
+  "descripcion": "TRAFO 16 5V - 1,5A DE SALIDA, 220V 50 HERZ DE ENTRADA ",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "7.1",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": "4.6",
+  "es_oferta": "oferta"
+}, {
+  "cod_bejerman": null,
+  "modelo": "RG42014501 ",
+  "descripcion": "Conjunto Balun Activo transmisor en la camara y Pasivo en la DVR con chicote. Ver tabla \"Activo-Pasivo\". (Compuesto por KiT RG-4501T + RG-4201R) ",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "8.63",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "DSC-GABPLA",
+  "descripcion": "GABINETE PLASTICO PARA PC585 Y PC1832",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "6.0",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": "5.3",
+  "es_oferta": "oferta"
+}, {
+  "cod_bejerman": null,
+  "modelo": "RG-4101",
+  "descripcion": "Solo Balun transmisor Pasivo Simple, lado cámara (Rojo) (Stackable)",
+  "categoria": "Balunes",
+  "subcategoria": "Balunes",
+  "gremio": "0.81",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "RG-4704",
+  "descripcion": "Balun Pasivo Receptor 4 canales integrados en un solo dispositivo. (hub) Gabinete plástico.",
+  "categoria": "Balunes",
+  "subcategoria": "Balunes",
+  "gremio": "7.38",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "RG-4616",
+  "descripcion": "Balun Pasivo Receptor 16 canales integrados en un solo dispositivo (hub). Gabinete metálico.",
+  "categoria": "Balunes",
+  "subcategoria": "Balunes",
+  "gremio": "77.43",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "RG-4301A",
+  "descripcion": "Par Balunes Pasivos 1 Canal Transmite Audio!! y Alimentación!!! , RJ45. (Ver tabla de Distancias máximas por resolución y Norma)",
+  "categoria": "Balunes",
+  "subcategoria": "Balunes",
+  "gremio": "8.63",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "DCMC",
+  "descripcion": "Conector Jack 2,1 Macho con tornillos  (Plug de alimentacion 2,1)",
+  "categoria": "Conectores",
+  "subcategoria": "Conectores",
+  "gremio": "0.63",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "DC1F4M",
+  "descripcion": "Splitter de Alimentación, 4 conectores macho Plug 2.1mm y un conector hembra Plug 2.1 ",
+  "categoria": "Conectores",
+  "subcategoria": "Conectores",
+  "gremio": "1.24",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "DCFC",
+  "descripcion": "Conector Jack 2,1 Hembra con tornillos (Plug de alimentacion 2,1)",
+  "categoria": "Conectores",
+  "subcategoria": "Conectores",
+  "gremio": "0.24",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "DC1F8M",
+  "descripcion": "Splitter de Alimentación, 8 conectores macho Plug 2.1mm y un conector hembra Plug 2.1",
+  "categoria": "Conectores",
+  "subcategoria": "Conectores",
+  "gremio": "2.49",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "FJ-SW20181202000D",
+  "descripcion": "Fuente switching 12V, 2A, 1.5 metros  conector Jack 2.1",
+  "categoria": "Fuentes",
+  "subcategoria": "Fuentes",
+  "gremio": "13.13",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "FJ-SW1205000D",
+  "descripcion": "Fuente switching 12V, 5A, 1.5 metros  conector Jack 2.1 ",
+  "categoria": "Fuentes",
+  "subcategoria": "Fuentes",
+  "gremio": "23.75",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "FJ-SW4802000F",
+  "descripcion": "Fuente 48V, 2A, conector Jack 2.1 ",
+  "categoria": "Fuentes",
+  "subcategoria": "Fuentes",
+  "gremio": "19.0",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "BEL-26794",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  1A  POE",
+  "categoria": "INYECTOR POE",
+  "subcategoria": "INYECTOR POE",
+  "gremio": "32.4",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": "BEL-26794",
+  "modelo": "BEL-26794",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  1A  POE",
+  "categoria": "INYECTOR POE",
+  "subcategoria": "INYECTOR POE",
+  "gremio": null,
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "BEL-26780",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  0,5A  POE",
+  "categoria": "INYECTOR POE",
+  "subcategoria": "INYECTOR POE",
+  "gremio": "25.8",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": "BEL-26780",
+  "modelo": "BEL-26780",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  0,5A  POE",
+  "categoria": "INYECTOR POE",
+  "subcategoria": "INYECTOR POE",
+  "gremio": null,
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": null,
+  "modelo": "MINIMIC2",
+  "descripcion": "Micrófono activo conector RCA de audio y Plug 2.1mm Alimentación 12V. con chicote.",
+  "categoria": "Micrófono",
+  "subcategoria": "Micrófono",
+  "gremio": "8.07",
+  "cliente_final": null,
+  "iva": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": "BEL-26780",
+  "modelo": "BEL-26780",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  0,5A  POE",
+  "categoria": "ACCESORIOS",
+  "subcategoria": "ACCESORIOS",
+  "gremio": "19.0",
+  "cliente_final": "24.7",
+  "iva": "0.21",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": "BEL-26794",
+  "modelo": "BEL-26794",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  1A  POE",
+  "categoria": "ACCESORIOS",
+  "subcategoria": "ACCESORIOS",
+  "gremio": "23.0",
+  "cliente_final": "29.9",
+  "iva": "0.21",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "cod_bejerman": "SM048-4812",
+  "modelo": "SM048-48125",
+  "descripcion": "FUENTE  ALIMENTACION  SW  48VCC  1,25A  POE",
+  "categoria": "ACCESORIOS",
+  "subcategoria": "ACCESORIOS",
+  "gremio": "97.9",
+  "cliente_final": "127.27",
+  "iva": "0.21",
+  "oferta": null,
+  "es_oferta": ""
+}]
+

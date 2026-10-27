@@ -1,0 +1,308 @@
+selnet-476815.pagina.takex
+
+[
+  {
+    "name": "pagina",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "verde_",
+    "mode": "",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "datasheet",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Takex",
+  "modelo": "COM-50XTH",
+  "descripcion": "Sensor combinado de Microondas 24GHz y fotoeléctrico, reduce drásticamente las falsas alarmas. 50 metros exterior, tensión de alimentación 12 – 30V DC. Entra en alarma con la combinación de la interferencia de la radio frecuencia más la barrera infrarroja. Tamper mas dos salidas de borneras.",
+  "verde_": null,
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kagCNz1l6gj8iXkukbJQ9TvkoIyEsTcZ/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "1390.8"
+}, {
+  "pagina": "Takex",
+  "modelo": "DA-303E",
+  "descripcion": "Control de puerta por reflexión de haz IR, cubre 3m ancho, distancia de detección desde la puerta ajustable hasta 1.5m, cuerpo delgado 28,5mm, excelente inmunidad a luz externa, 4 frecuencias seleccionables. ",
+  "verde_": null,
+  "iva": "0.21",
+  "datasheet": null,
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "252.68"
+}, {
+  "pagina": "Takex",
+  "modelo": "MW-50H",
+  "descripcion": "Las series MW son barreras de microondas  (24.19GHz). No funcionan por efecto Doopler sino por efecto de absorción de energía,  Con 2 frecuencias disponibles “L” y “H”, se pueden utilizar múltiples unidades en perímetros largos sin problemas. No funcionan por efecto Doopler sino por efecto de absorción de energía. Las microondas son especialmente adepto para hacer frente a condiciones de niebla pesada, neblina, lluvia, nieve y escarcha",
+  "verde_": null,
+  "iva": "0.11",
+  "datasheet": "https://drive.google.com/file/d/1l5OHWZ-1kDp2TNotWdVMIODabg53c--K/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "752.05"
+}, {
+  "pagina": "Takex",
+  "modelo": "MW-50L",
+  "descripcion": "Las series MW son barreras de microondas  (24.11GHz). No funcionan por efecto Doopler sino por efecto de absorción de energía,  Con 2 frecuencias disponibles “L” y “H”, se pueden utilizar múltiples unidades en perímetros largos sin problemas. No funcionan por efecto Doopler sino por efecto de absorción de energía. Las microondas son especialmente adepto para hacer frente a condiciones de niebla pesada, neblina, lluvia, nieve y escarcha. ",
+  "verde_": null,
+  "iva": "0.11",
+  "datasheet": "https://drive.google.com/file/d/1l5OHWZ-1kDp2TNotWdVMIODabg53c--K/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "727.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PB-100TK(K)",
+  "descripcion": "Ídem anterior/100 mts.ext, 200 mts. Int.",
+  "verde_": "109.0",
+  "iva": "0.11",
+  "datasheet": "https://drive.google.com/file/d/1kqbMCLZ78gslw9wHXcMBMARHaaxaryJr/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "121.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PB-30TK(K)",
+  "descripcion": "Barrera exterior doble haz para 30 mts., 60 mts. Int.",
+  "verde_": "81.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kqbMCLZ78gslw9wHXcMBMARHaaxaryJr/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "90.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PB-60TK(K)",
+  "descripcion": "Ídem anterior, para 60 mts.ext., 120 mts int.",
+  "verde_": "83.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kqbMCLZ78gslw9wHXcMBMARHaaxaryJr/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "95.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PB-IN-100HFA",
+  "descripcion": "Barrera Infrarroj 4 haces sincronizados, alcance de 100 m, ideal para exteriores. Alta inmunidad a interferencias. 4 canales seleccionables. Protección IP55 contra clima adverso. Detección precisa y confiable.",
+  "verde_": null,
+  "iva": null,
+  "datasheet": null,
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "231.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PB-IN-200HFA",
+  "descripcion": "Barrera Infrarroj 4 haces sincronizados, alcance de 200 m, ideal para exteriores. Alta inmunidad a interferencias. 4 canales seleccionables. Protección IP55 contra clima adverso. Detección precisa y confiable.",
+  "verde_": null,
+  "iva": null,
+  "datasheet": null,
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "236.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "PR-10B",
+  "descripcion": "barrera int.,10mts.,pared-pilar, 1 unid.c/espejo",
+  "verde_": null,
+  "iva": "0.11",
+  "datasheet": "https://drive.google.com/file/d/1l6WKNYkoo9LDQ7ehxtfRCLTiBiS5yPmg/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "284.49"
+}, {
+  "pagina": "Takex",
+  "modelo": "FS-5000E",
+  "descripcion": "DETECTOR DE LLAMA UV EXTERIOR de alta sensibilidad. Cobertura: 10m con una llama de 7cm. Sensibilidad H/L. Tiempo de respuesta ajustable. Memoria de alarma. Salida de relé NA/NC.  Tensión de alimentación: 10VDC a 30VDC. ",
+  "verde_": null,
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1gfQNe6AHIt16hpnjo6nU1a8zExkdMH3h/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "537.34"
+}, {
+  "pagina": "Takex",
+  "modelo": "MS-100E",
+  "descripcion": "Twin, pasivo uso extr/int,(ang.ancho 64ºx10mt.-  cortina vertical 10 mts. – cortina larga 20mts. spot 64ºx 4mts.),cielrr/pared/columna/plato.",
+  "verde_": "62.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1lIm0F5TxI38Q5ERj653A8CNm0picOPX0/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "71.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "MS-12FE",
+  "descripcion": "Pasivo ídem anterior MS-12TE, pero con 2 cabezas rotatorias, (2 zonas, alcance 12 mts. con ángulo ajustable de 15 a 90º por cada  cabeza). Con 2 cabezas con igual orientación, 90ºx12m – invasión 2  zonas p/alarma en OR o 4 zonas a invadir p/alarma en función AND. Con 1 cabeza a +45º y otra a º 45º (180ºx24m – 2 zonas a invadir p/alarmarlo). Con cabezas orientadas en contraposición (Una a +90º y otra a -90º), tres perimetrales a elección 15º/30º/45º x 24 m. 2 zonas a invadir. ",
+  "verde_": "119.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kto8P-uH0fjSTPa1pA8MuRhmCRdip11U/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "135.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "MS-12TE",
+  "descripcion": "Pasivo exterior de 1 cabeza rotativa con 2 zonas de detección, ángulo variable 15 a 90º, alcance 12 mts. SE DEBEN INVADIR SIMULTANEAMENTE DOS ZONAS PARA ESTABLECER LA CONDICION DE ALARMA",
+  "verde_": "92.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kto8P-uH0fjSTPa1pA8MuRhmCRdip11U/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "105.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "OMS-12FE",
+  "descripcion": "IDEM MS-12FE PERO CON 2 CABEZAS FIJAS Y SOLO 2 PATTERNS A INVADIR PARA ALARMARLO.",
+  "verde_": "99.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1l0K2M12NA9gGsZ3qyxQaFDH112pqUUym/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "111.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "TX-114FR",
+  "descripcion": "Ídem al anterior pero inalámbrico, sin transmisor seleccionar localmenteTamper trasero, depósito extra posterior admite 1 TX y 2 baterías ya indicados, posee 2 cabezas cubrimiento Max 180ºx24m.",
+  "verde_": "163.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kXf0H-F3TpBtPsVGQ2xIlIM3o5ZqARm1/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "181.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "TX-114SR",
+  "descripcion": "Ídem MS-12TE pero inalámbrico sin transmisor, Espacio para un tx y 1 batería CR123A de 3 a 9VDC o 006P de 9VDC, usar transmisores Universales; Honeywell         5814 – DSC: WS 4945 o WLS 925 – VISONIC MCT-302 – Cooper 734REUR-00 – INOVONICS FA210 o FA250 o EN1210, Válido además para los mdls. TX-114TR, TX-114FR y TX  TX-103R.",
+  "verde_": "120.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kXf0H-F3TpBtPsVGQ2xIlIM3o5ZqARm1/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "133.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "TX-114TR",
+  "descripcion": "Detector de un cabezal móvil inalámbrico, con ultra-bajo consumo de corriente para una larga vida de la batería, salidas de alarma y tamper de estado sólido (NA/NC), cuenta con un deposito posterior para alojar hasta dos baterías más el transmisor compatible con la central (Ej.: Neo: PG9945, Power WS4945). Además de detección exterior contra intrusos, son ideales para activar; CCTV, luces, sistemas de anunciadores ó de advertencias en aplicaciones domésticas, comerciales e industriales.",
+  "verde_": "127.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kXf0H-F3TpBtPsVGQ2xIlIM3o5ZqARm1/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "141.0"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "FS-1000E",
+  "descripcion": "Detector UV de llama Autosuficiente, incluye 2 pilas AA, buzzer interno. Salida Vdc alarma para sirena extra remota si se lo alimenta con alimentación externa (se debe desconectar las baterías internas en este caso), contactos NA de alarma para conexión a Panel de Control. Cubrimiento 120º x 10 mts., 4 tiempos de respuesta Seleccionables, evitan falsos disparos. Sensibilidad H/L",
+  "verde_": null,
+  "iva": "0.21",
+  "datasheet": null,
+  "marca": "takex",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "117.5"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "FS-2000E",
+  "descripcion": "Detector UV de llama,10 a 30 VDC, salida relay NA/NC, montaje cielorraso, buzzer si/no, memoria si/no, 4 tiempos de respuesta, sensibilidad H/L. Cubrimiento  cono 120ºx10mts. Orientable 30ºvertical-25ºhorizontal",
+  "verde_": null,
+  "iva": "0.21",
+  "datasheet": null,
+  "marca": "takex",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "150.0"
+}, {
+  "pagina": "Takex",
+  "modelo": "FS-2000E",
+  "descripcion": "Detector UV de llama,10 a 30 VDC, salida relay NA/NC, montaje cielorraso, buzzer si/no, memoria si/no, 4 tiempos de respuesta, sensibilidad H/L. Cubrimiento  cono 120ºx10mts. Orientable 30ºvertical-25ºhorizontal",
+  "verde_": "121.0",
+  "iva": "0.21",
+  "datasheet": "https://drive.google.com/file/d/1kanGHOw8xmfZEwAPUn3Foo1BUGCcz1rO/view?usp\u003dsharing",
+  "marca": "takex",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "127.0"
+}]
+

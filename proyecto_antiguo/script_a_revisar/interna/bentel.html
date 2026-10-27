@@ -1,0 +1,314 @@
+<h1>🔥 Bentel - Fireclass</h1>
+
+<style>
+    .card {
+        margin-top: 14px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 12px;
+        transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    .chip {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--card);
+        color: var(--text);
+    }
+
+    .table-wrap {
+        overflow: auto;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 900px;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        background: var(--sidebar);
+        backdrop-filter: blur(8px);
+        text-align: left;
+        padding: 10px 12px;
+        font-size: 12px;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+        vertical-align: top;
+    }
+
+    tbody tr:hover td {
+        background: var(--link-hover);
+    }
+
+    .loading {
+        display: none;
+        gap: 10px;
+        align-items: center;
+        color: var(--muted);
+    }
+
+    .spinner {
+        width: 14px;
+        height: 14px;
+        border: 2px solid var(--border);
+        border-top-color: var(--accent);
+        border-radius: 50%;
+        animation: spin .8s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .error {
+        display: none;
+        margin-top: 10px;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 120, 120, 0.35);
+        background: rgba(255, 120, 120, 0.12);
+        color: rgba(255, 210, 210, 0.95);
+    }
+
+    /* Estilos para el contenedor de búsqueda */
+    .search-container {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin: 8px 0 12px 0;
+    }
+
+    .search-input-wrapper {
+        flex: 1;
+        position: relative;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: .7;
+        font-size: 14px;
+    }
+
+    /* Estilos del buscador unificados por layout.html */
+</style>
+
+<div class="page">
+    <div class="page-top"></div>
+
+    <div class="page-card">
+        <div class="page-card-top">
+            <div class="meta">
+                <div class="chip">📄 Filas: <span id="b_count">0</span></div>
+                <div class="loading" id="b_loading">
+                    <div class="spinner"></div>
+                    <div>Cargando desde BigQuery…</div>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔎</span>
+                    <input id="bt_search" type="text" class="search-input"
+                        placeholder="Buscar por Modelo / Descripción" />
+                </div>
+                <button id="bt_clear" class="btn-clear" title="Limpiar">✖</button>
+                <div class="chip">Coincidencias: <span id="bt_hits">0</span></div>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="sortable" data-key="modelo" style="width:180px;">Modelo</th>
+                        <th class="sortable" data-key="descripcion">Descripción</th>
+                        <th class="sortable" data-key="gremio" style="width:120px;">Gremio</th>
+                        <th class="sortable" data-key="iva" style="width:120px;">IVA</th>
+                    </tr>
+                </thead>
+                <tbody id="b_tbody"></tbody>
+            </table>
+        </div>
+        <div class="error" id="b_error"></div>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        let allRows = [];      // Datos actuales (filtrados/ordenados)
+        let originalRows = []; // Copia inmutable del orden original de BQ
+        let hitsEl = null;
+        let searchEl = null;
+        let clearBtn = null;
+
+        // Estado del ordenamiento: { key: string, dir: 0|1|2 } (0:none, 1:asc, 2:desc)
+        let currentSort = { key: null, dir: 0 };
+
+        function norm(s) {
+            return (s ?? "")
+                .toString()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "")
+                .trim();
+        }
+
+        const tbody = document.getElementById("b_tbody");
+        const countEl = document.getElementById("b_count");
+        const loadingEl = document.getElementById("b_loading");
+        const errorEl = document.getElementById("b_error");
+
+        function setLoading(v) { loadingEl.style.display = v ? "flex" : "none"; }
+        function setError(msg) {
+            if (!msg) { errorEl.style.display = "none"; errorEl.textContent = ""; return; }
+            errorEl.style.display = "block"; errorEl.textContent = msg;
+        }
+
+        function fmtNum(x) {
+            if (x === "" || x === null || typeof x === "undefined") return "";
+            const n = Number(x);
+            if (!isFinite(n)) return String(x);
+            return n.toLocaleString("es-AR", { maximumFractionDigits: 4 });
+        }
+
+        function render(rows) {
+            tbody.innerHTML = "";
+            const frag = document.createDocumentFragment();
+            rows.forEach(r => {
+                const tr = document.createElement("tr");
+                const tdModelo = document.createElement("td");
+                tdModelo.textContent = (r.modelo || "").toUpperCase();
+                const tdDesc = document.createElement("td");
+                tdDesc.textContent = r.descripcion || "";
+                const tdGremio = document.createElement("td");
+                tdGremio.textContent = fmtNum(r.gremio);
+                const tdIva = document.createElement("td");
+                tdIva.textContent = fmtNum(r.iva);
+                tr.append(tdModelo, tdDesc, tdGremio, tdIva);
+                frag.appendChild(tr);
+            });
+            tbody.appendChild(frag);
+            if (hitsEl) hitsEl.textContent = String(rows.length);
+        }
+
+        function applyFilterAndSort() {
+            const q = norm(searchEl?.value);
+
+            // 1. Empezamos con los datos originales o el orden actual
+            let data = [...originalRows];
+
+            // 2. Aplicamos Filtro
+            if (q) {
+                data = data.filter(r =>
+                    norm(r.modelo).includes(q) ||
+                    norm(r.descripcion).includes(q)
+                );
+            }
+
+            // 3. Aplicamos Orden
+            if (currentSort.dir > 0) {
+                const { key, dir } = currentSort;
+                data.sort((a, b) => {
+                    const valA = window.utils.smartConvert(a[key]);
+                    const valB = window.utils.smartConvert(b[key]);
+                    if (valA < valB) return dir === 1 ? -1 : 1;
+                    if (valA > valB) return dir === 1 ? 1 : -1;
+                    return 0;
+                });
+            }
+
+            allRows = data;
+            render(allRows);
+        }
+
+        function handleSort(key, th) {
+            // Ciclo: 0 (none) -> 1 (asc) -> 2 (desc) -> 0
+            if (currentSort.key === key) {
+                currentSort.dir = (currentSort.dir + 1) % 3;
+            } else {
+                currentSort.key = key;
+                currentSort.dir = 1;
+            }
+
+            // Limpiar clases en todos los TH
+            document.querySelectorAll("thead th.sortable").forEach(el => {
+                el.classList.remove("asc", "desc");
+            });
+
+            // Añadir clase al actual
+            if (currentSort.dir === 1) th.classList.add("asc");
+            if (currentSort.dir === 2) th.classList.add("desc");
+            if (currentSort.dir === 0) currentSort.key = null;
+
+            applyFilterAndSort();
+        }
+
+        function load() {
+            setError("");
+            setLoading(true);
+            google.script.run
+                .withSuccessHandler(rows => {
+                    originalRows = rows || [];
+                    countEl.textContent = String(originalRows.length);
+                    applyFilterAndSort();
+                    setLoading(false);
+                })
+                .withFailureHandler(err => {
+                    setLoading(false);
+                    setError("Error consultando BigQuery: " + (err?.message || err));
+                })
+                .getBentelFireclassFromBQ();
+        }
+
+        hitsEl = document.getElementById("bt_hits");
+        searchEl = document.getElementById("bt_search");
+        clearBtn = document.getElementById("bt_clear");
+
+        if (searchEl) searchEl.addEventListener("input", applyFilterAndSort);
+        if (clearBtn && searchEl) {
+            clearBtn.addEventListener("click", () => {
+                searchEl.value = "";
+                applyFilterAndSort();
+                searchEl.focus();
+            });
+        }
+
+        // Delegación de eventos para los TH
+        document.querySelectorAll("thead th.sortable").forEach(th => {
+            th.addEventListener("click", () => handleSort(th.dataset.key, th));
+        });
+
+        load();
+    })();
+</script>

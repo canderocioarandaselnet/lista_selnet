@@ -1,0 +1,963 @@
+selnet-476815.pagina.gold_digifort
+
+[
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "usuario_final",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "unidades",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "modelo": "dgfan1000v7",
+  "descripcion": "sistema digifort analítico - base para administración de 1 servidor",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "1300.0",
+  "usuario_final": "1690.0",
+  "iva": "0.21",
+  "unidades": "Digifort Analytics - Base"
+}, {
+  "modelo": "dgflp1000v7",
+  "descripcion": "sistema digifort lpr - sistema base lpr ",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "910.0",
+  "usuario_final": "1183.0",
+  "iva": "0.21",
+  "unidades": "Digifort LPR - Base"
+}, {
+  "modelo": "dgfupven2001v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de licencia base de alarma  de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "96.25",
+  "usuario_final": "125.13",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Base de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2101v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 1 módulo de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "60.16",
+  "usuario_final": "78.21",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2102v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 2 módulos de alarma adicional de versiones anteriores a versión 7 ",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "108.28",
+  "usuario_final": "140.77",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2104v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 4 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "194.91",
+  "usuario_final": "253.38",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2108v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 8 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "350.84",
+  "usuario_final": "456.09",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2116v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 16 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "631.51",
+  "usuario_final": "820.97",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2132v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 32 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "1136.72",
+  "usuario_final": "1477.74",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupven2164v7",
+  "descripcion": "sistema digifort edición enterprise para windows - upgrade de pack de licencias para la gestión de 64 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 ENTERPRISE PLACAS IO / ALARMA",
+  "gremio": "2046.1",
+  "usuario_final": "2659.93",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupvpr2001v7",
+  "descripcion": "sistema digifort edición professional para windows - upgrade de licencia base de alarma  de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "gremio": "96.25",
+  "usuario_final": "125.13",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Base de módulos de Alarma"
+}, {
+  "modelo": "dgfupvpr2101v7",
+  "descripcion": "sistema digifort edición professional para windows - upgrade de pack de licencias para la gestión de 1 módulo de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "gremio": "60.16",
+  "usuario_final": "78.21",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupvpr2102v7",
+  "descripcion": "sistema digifort edición professional para windows - upgrade de pack de licencias para la gestión de 2 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "gremio": "108.28",
+  "usuario_final": "140.77",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupvpr2104v7",
+  "descripcion": "sistema digifort edición professional para windows - upgrade de pack de licencias para la gestión de 4 módulos de alarma adicional de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 PROFESSIONAL PLACAS IO / ALARMA",
+  "gremio": "194.91",
+  "usuario_final": "253.38",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfupvst2001v7",
+  "descripcion": "sistema digifort edición standard para windows - upgrade de licencia base de alarma   de versiones anteriores a versión 7",
+  "categoria": " UPGRADE V7 STANDARD PLACAS IO / ALARMA",
+  "subcategoria": " UPGRADE V7 STANDARD PLACAS IO / ALARMA",
+  "gremio": "96.25",
+  "usuario_final": "125.13",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Base de módulos de Alarma"
+}, {
+  "modelo": "dgfat1101v7",
+  "descripcion": "third party analytics server integration - pack para integración de 1 cámara",
+  "categoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "subcategoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "gremio": "195.0",
+  "usuario_final": "253.5",
+  "iva": "0.21",
+  "unidades": "Digifort 3rd Party Analytics - Pack de cámaras"
+}, {
+  "modelo": "dgfat1102v7",
+  "descripcion": "third party analytics server integration - pack para integración de 2 cámaras",
+  "categoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "subcategoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "gremio": "370.5",
+  "usuario_final": "481.65",
+  "iva": "0.21",
+  "unidades": "Digifort 3rd Party Analytics - Pack de cámaras"
+}, {
+  "modelo": "dgfat1104v7",
+  "descripcion": "third party analytics server integration - pack para integración de 4 cámaras",
+  "categoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "subcategoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "gremio": "703.95",
+  "usuario_final": "915.14",
+  "iva": "0.21",
+  "unidades": "Digifort 3rd Party Analytics - Pack de cámaras"
+}, {
+  "modelo": "dgfat1108v7",
+  "descripcion": "third party analytics server integration - pack para integración de 8 cámaras",
+  "categoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "subcategoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "gremio": "1337.51",
+  "usuario_final": "1738.76",
+  "iva": "0.21",
+  "unidades": "Digifort 3rd Party Analytics - Pack de cámaras"
+}, {
+  "modelo": "dgfat1116v7",
+  "descripcion": "third party analytics server integration - pack para integración de 16 cámaras",
+  "categoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "subcategoria": "DIGIFORT 3RD PARTY ANALYTICS INTEGRATION",
+  "gremio": "2541.26",
+  "usuario_final": "3303.64",
+  "iva": "0.21",
+  "unidades": "Digifort 3rd Party Analytics - Pack de cámaras"
+}, {
+  "modelo": "dgfal10050v7",
+  "descripcion": "sistema digifort alarm monitor - licencia base servidor para administración de eventos de alarma con 50 cuentas (paneles de alarma).",
+  "categoria": "DIGIFORT ALARM MONITOR",
+  "subcategoria": "DIGIFORT ALARM MONITOR",
+  "gremio": "4710.34",
+  "usuario_final": "5887.93",
+  "iva": "0.21",
+  "unidades": "Digifort Alarm Monitor - Base"
+}, {
+  "modelo": "dgfal11025v7",
+  "descripcion": "sistema digifort alarm - pack para administración de 25 cuentas adicionales",
+  "categoria": "DIGIFORT ALARM MONITOR",
+  "subcategoria": "DIGIFORT ALARM MONITOR",
+  "gremio": "2296.29",
+  "usuario_final": "2870.37",
+  "iva": "0.21",
+  "unidades": "Digifort Alarm Monitor - Pack de cuentas adicionales"
+}, {
+  "modelo": "dgfal11050v7",
+  "descripcion": "sistema digifort alarm - pack para administración de 50 cuentas adicionales",
+  "categoria": "DIGIFORT ALARM MONITOR",
+  "subcategoria": "DIGIFORT ALARM MONITOR",
+  "gremio": "3768.27",
+  "usuario_final": "4710.34",
+  "iva": "0.21",
+  "unidades": "Digifort Alarm Monitor - Pack de cuentas adicionales"
+}, {
+  "modelo": "dgfal11100v7",
+  "descripcion": "sistema digifort alarm - pack para administración de 100 cuentas adicionales",
+  "categoria": "DIGIFORT ALARM MONITOR",
+  "subcategoria": "DIGIFORT ALARM MONITOR",
+  "gremio": "5652.45",
+  "usuario_final": "7065.56",
+  "iva": "0.21",
+  "unidades": "Digifort Alarm Monitor - Pack de cuentas adicionales"
+}, {
+  "modelo": "dgfda0101v1",
+  "descripcion": "z1 analytics dashboard - licencia para 1 fuente de información",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "Z1 ANALYTICS DASHBOARD (AFORO)",
+  "gremio": "187.5",
+  "usuario_final": "243.75",
+  "iva": "0.21",
+  "unidades": "Analytics Dashboard - Licencia por Fuente"
+}, {
+  "modelo": "dgfda0102v1",
+  "descripcion": "z1 analytics dashboard - licencia para 2 fuentes de información",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "Z1 ANALYTICS DASHBOARD (AFORO)",
+  "gremio": "318.75",
+  "usuario_final": "414.38",
+  "iva": "0.21",
+  "unidades": "Analytics Dashboard - Licencia por Fuente"
+}, {
+  "modelo": "dgfda0104v1",
+  "descripcion": "z1 analytics dashboard - licencia para 4 fuentes de información",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "Z1 ANALYTICS DASHBOARD (AFORO)",
+  "gremio": "541.88",
+  "usuario_final": "704.44",
+  "iva": "0.21",
+  "unidades": "Analytics Dashboard - Licencia por Fuente"
+}, {
+  "modelo": "dgfda0108v1",
+  "descripcion": "z1 analytics dashboard - licencia para 8 fuentes de información",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "Z1 ANALYTICS DASHBOARD (AFORO)",
+  "gremio": "921.19",
+  "usuario_final": "1197.54",
+  "iva": "0.21",
+  "unidades": "Analytics Dashboard - Licencia por Fuente"
+}, {
+  "modelo": "dgfda0116v1",
+  "descripcion": "z1 analytics dashboard - licencia para 16 fuentes de información",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "Z1 ANALYTICS DASHBOARD (AFORO)",
+  "gremio": "1566.02",
+  "usuario_final": "2035.82",
+  "iva": "0.21",
+  "unidades": "Analytics Dashboard - Licencia por Fuente"
+}, {
+  "modelo": "dgfdx1002v7",
+  "descripcion": "digifort dashboard tool - licencia base para monitoreo de 2 servidores",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "DIGIFORT DASHBOARD TOOL",
+  "gremio": "1584.38",
+  "usuario_final": "2059.69",
+  "iva": "0.21",
+  "unidades": "Digifort Dashboard Tool - Licencia Base"
+}, {
+  "modelo": "dgfdx1101v7",
+  "descripcion": "digifort dashboard tool - licencia pack para monitoreo de 1 servidor adicional",
+  "categoria": "DIGIFORT DASHBOARDS",
+  "subcategoria": "DIGIFORT DASHBOARD TOOL",
+  "gremio": "712.97",
+  "usuario_final": "926.86",
+  "iva": "0.21",
+  "unidades": "Digifort Dashboard Tool - Pack"
+}, {
+  "modelo": "dgfag1101v1",
+  "descripcion": "digifort license for transmission of video from drones \u0026 gopro",
+  "categoria": "DIGIFORT DRONE LINK (INTEGRACIÓN DRONES DJI Y CÁMARAS GOPRO)",
+  "subcategoria": "DIGIFORT DRONE LINK (INTEGRACIÓN DRONES DJI Y CÁMARAS GOPRO)",
+  "gremio": "565.5",
+  "usuario_final": "735.15",
+  "iva": "0.21",
+  "unidades": "Digifort Drone Link - Licencia por dispositivo"
+}, {
+  "modelo": "dgfst3101v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para gestión de analítico en 1 cámara.",
+  "categoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "gremio": "53.05",
+  "usuario_final": "68.97",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack analitico de cámara"
+}, {
+  "modelo": "dgfst3102v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para gestión de analítico en 2 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "gremio": "106.1",
+  "usuario_final": "137.94",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack analitico de cámara"
+}, {
+  "modelo": "dgfst3104v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para gestión de analítico en 4 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "gremio": "196.29",
+  "usuario_final": "255.18",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack analitico de cámara"
+}, {
+  "modelo": "dgfst3108v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para gestión de analítico en  8 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "gremio": "363.14",
+  "usuario_final": "472.09",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack analitico de cámara"
+}, {
+  "modelo": "dgfst3116v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para gestión de analítico en  16 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS / EMBEBIDO - PRECIOS EN DOLARES",
+  "gremio": "671.82",
+  "usuario_final": "873.36",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3101v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en 1 cámara.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "53.05",
+  "usuario_final": "68.97",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3102v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en 2 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "106.1",
+  "usuario_final": "137.94",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3104v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en 4 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "196.29",
+  "usuario_final": "255.18",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3108v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en  8 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "363.14",
+  "usuario_final": "472.09",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3116v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en  16 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "671.82",
+  "usuario_final": "873.36",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3132v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en  32 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "1242.86",
+  "usuario_final": "1615.72",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfen3164v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack para gestión de analítico en  64 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS ENTERPRISE",
+  "gremio": "2299.29",
+  "usuario_final": "2989.07",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3101v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en 1 cámara.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "53.05",
+  "usuario_final": "68.97",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3102v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en 2 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "106.1",
+  "usuario_final": "137.94",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3104v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en 4 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "196.29",
+  "usuario_final": "255.18",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3108v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en  8 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "363.14",
+  "usuario_final": "472.09",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3116v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en  16 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "671.82",
+  "usuario_final": "873.36",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfpr3132v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para gestión de analítico en  32 cámaras adicionales.",
+  "categoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE ANALYTICS PROFESSIONAL",
+  "gremio": "1242.86",
+  "usuario_final": "1615.72",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack analitico de cámara"
+}, {
+  "modelo": "dgfen4101v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 01 cámara",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "377.87",
+  "usuario_final": "491.23",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4102v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 02 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "680.16",
+  "usuario_final": "884.21",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4104v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 04 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "1224.29",
+  "usuario_final": "1591.58",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4108v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 08 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "2203.73",
+  "usuario_final": "2864.85",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4116v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 16 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "3966.71",
+  "usuario_final": "5156.73",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4132v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 32 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "7140.08",
+  "usuario_final": "9282.11",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen4164v7",
+  "descripcion": "sistema digifort edition enterprise para windows - pack para administración de lpr embebido (edge lpr) para 64 cámaras",
+  "categoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "subcategoria": "DIGIFORT EDGE LPR ENTERPRISE",
+  "gremio": "12852.15",
+  "usuario_final": "16707.79",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4101v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 01 cámara",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "377.87",
+  "usuario_final": "491.23",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4102v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 02 cámaras",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "680.16",
+  "usuario_final": "884.21",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4104v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 04 cámaras",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "1224.29",
+  "usuario_final": "1591.58",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4108v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 08 cámaras",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "2203.73",
+  "usuario_final": "2864.85",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4116v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 16 cámaras",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "3966.71",
+  "usuario_final": "5156.73",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfpr4132v7",
+  "descripcion": "sistema digifort edición professional para windows - pack para administración de lpr embebido (edge lpr) para 32 cámaras",
+  "categoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "subcategoria": "DIGIFORT EDGE LPR PROFESSIONAL",
+  "gremio": "7140.08",
+  "usuario_final": "9282.11",
+  "iva": "0.21",
+  "unidades": "Digifort Professional Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfst4101v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para administración de lpr embebido (edge lpr) para 01 cámara",
+  "categoria": "DIGIFORT EDGE LPR STANDARD",
+  "subcategoria": "DIGIFORT EDGE LPR STANDARD",
+  "gremio": "377.87",
+  "usuario_final": "491.23",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfst4102v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para administración de lpr embebido (edge lpr) para 02 cámaras",
+  "categoria": "DIGIFORT EDGE LPR STANDARD",
+  "subcategoria": "DIGIFORT EDGE LPR STANDARD",
+  "gremio": "680.16",
+  "usuario_final": "884.21",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfst4104v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para administración de lpr embebido (edge lpr) para 04 cámaras",
+  "categoria": "DIGIFORT EDGE LPR STANDARD",
+  "subcategoria": "DIGIFORT EDGE LPR STANDARD",
+  "gremio": "1224.29",
+  "usuario_final": "1591.58",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfst4108v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para administración de lpr embebido (edge lpr) para 08 cámaras",
+  "categoria": "DIGIFORT EDGE LPR STANDARD",
+  "subcategoria": "DIGIFORT EDGE LPR STANDARD",
+  "gremio": "2203.73",
+  "usuario_final": "2864.85",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfst4116v7",
+  "descripcion": "sistema digifort edición standard para windows - pack para administración de lpr embebido (edge lpr) para 16 cámaras",
+  "categoria": "DIGIFORT EDGE LPR STANDARD",
+  "subcategoria": "DIGIFORT EDGE LPR STANDARD",
+  "gremio": "3966.71",
+  "usuario_final": "5156.73",
+  "iva": "0.21",
+  "unidades": "Digifort Standard Pack LPR embebido en cámara"
+}, {
+  "modelo": "dgfen1008v7",
+  "descripcion": "sistema digifort edición enterprise para windows - sistema base para gestión de 8 cámaras.",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "1802.55",
+  "usuario_final": "2343.32",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Licencia Base "
+}, {
+  "modelo": "dgfen1102v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 2 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "333.47",
+  "usuario_final": "433.51",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen1104v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 4 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "616.92",
+  "usuario_final": "802.0",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen1108v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 8 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "1141.31",
+  "usuario_final": "1483.7",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen1116v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 16 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "2111.42",
+  "usuario_final": "2744.85",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen1132v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 32 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "3906.13",
+  "usuario_final": "5077.96",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen1164v7",
+  "descripcion": "sistema digifort edición enterprise para windows - pack for  management of 64 cámaras adicionales",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "7226.33",
+  "usuario_final": "9394.24",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de cámaras adicionales "
+}, {
+  "modelo": "dgfen2001v7",
+  "descripcion": "sistema digifort edición enterprise para windows- base para gestión de 1 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "320.84",
+  "usuario_final": "417.09",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Base de módulos de Alarma "
+}, {
+  "modelo": "dgfen2101v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 1 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "200.53",
+  "usuario_final": "260.68",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2102v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 2 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "360.95",
+  "usuario_final": "469.23",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2104v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 4 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "649.7",
+  "usuario_final": "844.62",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2108v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 8 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "1169.47",
+  "usuario_final": "1520.31",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2116v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 16 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "2105.04",
+  "usuario_final": "2736.56",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2132v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 32 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "3789.08",
+  "usuario_final": "4925.8",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "dgfen2164v7",
+  "descripcion": "sistema digifort edición enterprise para windows- pack para gestión de 64 módulo de alarmas",
+  "categoria": "DIGIFORT ENTERPRISE",
+  "subcategoria": "DIGIFORT ENTERPRISE",
+  "gremio": "6820.34",
+  "usuario_final": "8866.44",
+  "iva": "0.21",
+  "unidades": "Digifort Enterprise Pack de módulos de Alarma"
+}, {
+  "modelo": "evdsv2002v7",
+  "descripcion": "sistema digifort evidence 2.0 - base para gestión de eventos - 2 usuarios incluidos",
+  "categoria": "DIGIFORT EVIDENCE",
+  "subcategoria": "DIGIFORT EVIDENCE",
+  "gremio": "4536.09",
+  "usuario_final": "5896.92",
+  "iva": "0.21",
+  "unidades": "Digifort Evidence Base 2 users"
+}, {
+  "modelo": "evdsv2101v7",
+  "descripcion": "sistema digifort evidence 2.0 - pack para 1 usuario adicional",
+  "categoria": "DIGIFORT EVIDENCE",
+  "subcategoria": "DIGIFORT EVIDENCE",
+  "gremio": "391.76",
+  "usuario_final": "509.28",
+  "iva": "0.21",
+  "unidades": "Digifort Evidence Pack 1 user"
+}, {
+  "modelo": "evdsv2102v7",
+  "descripcion": "sistema digifort evidence 2.0 - pack para 2 usuarios adicionales",
+  "categoria": "DIGIFORT EVIDENCE",
+  "subcategoria": "DIGIFORT EVIDENCE",
+  "gremio": "744.33",
+  "usuario_final": "967.63",
+  "iva": "0.21",
+  "unidades": "Digifort Evidence Pack 2 users"
+}, {
+  "modelo": "evdsv2104v7",
+  "descripcion": "sistema digifort evidence 2.0 - pack para 4 usuarios adicionales",
+  "categoria": "DIGIFORT EVIDENCE",
+  "subcategoria": "DIGIFORT EVIDENCE",
+  "gremio": "1414.24",
+  "usuario_final": "1838.51",
+  "iva": "0.21",
+  "unidades": "Digifort Evidence Pack 4 users"
+}, {
+  "modelo": "evdsv2108v7",
+  "descripcion": "sistema digifort evidence 2.0 - pack para 8 usuarios adicionales",
+  "categoria": "DIGIFORT EVIDENCE",
+  "subcategoria": "DIGIFORT EVIDENCE",
+  "gremio": "2687.05",
+  "usuario_final": "3493.16",
+  "iva": "0.21",
+  "unidades": "Digifort Evidence Pack 8 users"
+}, {
+  "modelo": "dgfex1004v7",
+  "descripcion": "sistema digifort edición explorer para windows - sistema base para gestión de 4 cámaras. (limite de 16 cámaras)",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "DIGIFORT EXPLORER",
+  "gremio": "224.31",
+  "usuario_final": "291.6",
+  "iva": "0.21",
+  "unidades": "Digifort Explorer Camera \nBase"
+}, {
+  "modelo": "dgfex1102v7",
+  "descripcion": "sistema digifort edición explorer para windows - pack para gestión de 2 \ncámaras adicionales",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "DIGIFORT EXPLORER",
+  "gremio": "78.51",
+  "usuario_final": "102.06",
+  "iva": "0.21",
+  "unidades": "Digifort Explorer Camera \nPack"
+}, {
+  "modelo": "dgfex1104v7",
+  "descripcion": "sistema digifort edición explorer para windows - pack para gestión de 4 \ncámaras adicionales",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "DIGIFORT EXPLORER",
+  "gremio": "137.39",
+  "usuario_final": "178.61",
+  "iva": "0.21",
+  "unidades": "Digifort Explorer Camera \nPack"
+}, {
+  "modelo": "dgfex1108v7",
+  "descripcion": "sistema digifort edición explorer para windows - pack para gestión de 8 \ncámaras adicionales",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "DIGIFORT EXPLORER",
+  "gremio": "240.43",
+  "usuario_final": "312.56",
+  "iva": "0.21",
+  "unidades": "Digifort Explorer Camera\nPack"
+}, {
+  "modelo": "dgfupexen1008v7",
+  "descripcion": "upgrade de edición explorer a enterprise base de 8",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A ENTERPRISE",
+  "gremio": "1712.83",
+  "usuario_final": "2226.68",
+  "iva": "0.21",
+  "unidades": "Base Upgrade"
+}, {
+  "modelo": "dgfupexen1102v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 2",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A ENTERPRISE",
+  "gremio": "302.07",
+  "usuario_final": "392.69",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}, {
+  "modelo": "dgfupexen1104v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 4",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A ENTERPRISE",
+  "gremio": "561.97",
+  "usuario_final": "730.56",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}, {
+  "modelo": "dgfupexen1108v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 8",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A ENTERPRISE",
+  "gremio": "1045.14",
+  "usuario_final": "1358.68",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}, {
+  "modelo": "dgfupexpr1008v7",
+  "descripcion": "upgrade de edición explorer a enterprise base de 8",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A PROFESSIONAL",
+  "gremio": "1187.51",
+  "usuario_final": "1543.77",
+  "iva": "0.21",
+  "unidades": "Base Upgrade"
+}, {
+  "modelo": "dgfupexpr1102v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 2",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A PROFESSIONAL",
+  "gremio": "224.3",
+  "usuario_final": "291.59",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}, {
+  "modelo": "dgfupexpr1104v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 4",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A PROFESSIONAL",
+  "gremio": "410.42",
+  "usuario_final": "533.55",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}, {
+  "modelo": "dgfupexpr1108v7",
+  "descripcion": "upgrade de edición explorer a enterprise pack de 8",
+  "categoria": "DIGIFORT EXPLORER",
+  "subcategoria": "UPGRADE EXPLORER A PROFESSIONAL",
+  "gremio": "750.82",
+  "usuario_final": "976.06",
+  "iva": "0.21",
+  "unidades": "Pack Upgrade"
+}]
+

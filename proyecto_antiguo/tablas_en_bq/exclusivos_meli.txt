@@ -1,0 +1,52 @@
+selnet-476815.pagina.exclusivos_meli
+
+[
+  {
+    "name": "sap",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "sap": "310500648",
+  "cod_bejerman": "CS-Y2000-R100-WBCP-BK(5085)(O-STD)",
+  "modelo": "Y2000 (5085, unilock, Black)"
+}, {
+  "sap": "318500229",
+  "cod_bejerman": "CS-CP5-R100-1W2TFC (Grey)",
+  "modelo": "CP5 2MP (Grey)"
+}, {
+  "sap": "303103140",
+  "cod_bejerman": "CS-CP1-R105-1L3WF(AM-STD)(Mul)",
+  "modelo": "CP1 3MP"
+}, {
+  "sap": "303103119",
+  "cod_bejerman": "CS-C8c-R210-1K2WKFL(4mm)(AM-STD)(Mul)",
+  "modelo": "C8c 2MP"
+}, {
+  "sap": "303103816",
+  "cod_bejerman": "CS-C8c-R210-1J5WKFL(4mm)(AM-STD)(Mul)",
+  "modelo": "C8c 5MP"
+}, {
+  "sap": "303103858",
+  "cod_bejerman": "CS-C9c-R105-8H33WFL(AM-STD)(Mul)",
+  "modelo": "C9c 3+3MP"
+}]
+

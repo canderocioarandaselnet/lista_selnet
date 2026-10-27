@@ -1,0 +1,312 @@
+selnet-476815.pagina.productos_nuevos
+
+[
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "codigo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fecha_ingreso",
+    "mode": "",
+    "type": "TIMESTAMP",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "marca": "",
+  "codigo": "311331866",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403158",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "311326207",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "303623309",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000066",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000109",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000008",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "315500364",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000046",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403150",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "307500782",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "327002344",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000164",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000009",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000091",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000166",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "311326277",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403160",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "303623305",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "300229563",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "307500274",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403154",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000110",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "307500781",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "315200425",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000072",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000092",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403152",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "311326649",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "307500780",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000044",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000169",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "190501359",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "311325961",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000163",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305301120",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "300229664",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "329000071",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "",
+  "codigo": "305403156",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "190409539",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "303102701",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "207101712",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "207101510",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "310500558",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "207101715",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "310500709",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "207101714",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "207101713",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311320490",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "301803410",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "302922986",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311325220",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "327800921",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311334721",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "301803375",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311331799",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "309500849",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "302922988",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311331764",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311320482",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "327001854",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "302920535",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "302402028",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "301803786",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "347000267",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "305701131",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "311328236",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "302922979",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "HIKVISION",
+  "codigo": "327001435",
+  "fecha_ingreso": "2026-10-19 15:04:28.747367 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "190237923",
+  "fecha_ingreso": "2026-10-23 20:45:51.070204 UTC"
+}, {
+  "marca": "EZVIZ",
+  "codigo": "190230883",
+  "fecha_ingreso": "2026-10-23 20:45:51.070204 UTC"
+}]
+

@@ -1,0 +1,962 @@
+selnet-476815.pagina.en_transito
+
+[
+  {
+    "name": "sap",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "total_en_transito",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "reservadas",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "total_disponible_en_transito",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fecha_actualizacion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "sap": "303103119",
+  "bejerman": "303103119",
+  "modelo": "CS-C8c-R100-1K2WKFL(AM E-COM)(Mul）",
+  "total_en_transito": "6100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "6100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "307400789",
+  "bejerman": "307400789",
+  "modelo": "DS-1H18-A(O-STD)",
+  "total_en_transito": "5000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "5000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103095",
+  "bejerman": "303103095",
+  "modelo": "CS-H8c-R200-1K3WKFL",
+  "total_en_transito": "4200.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "4200.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103140",
+  "bejerman": "303103140",
+  "modelo": "CS-CP1-R105-1L3WF(AM-STD)(Mul)",
+  "total_en_transito": "4000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "4000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300512639",
+  "bejerman": "10065",
+  "modelo": "DS-2CE16D0T-EXIPF(2.8mm)(O-STD)",
+  "total_en_transito": "3000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "3000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102714",
+  "bejerman": "303102714",
+  "modelo": "CS-H3c-R100-1K3WKFL(2.8mm)(AM-STD) H3c Color 3MP (2.8mm)",
+  "total_en_transito": "2100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "2100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300614207",
+  "bejerman": "10071",
+  "modelo": "DS-2CE76D0T-EXIMF (2.8mm)(O-STD)",
+  "total_en_transito": "509.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "509.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327800628",
+  "bejerman": "327800628",
+  "modelo": "DS-2CE10DF0T-LPFS(2.8mm)(O-STD)",
+  "total_en_transito": "2050.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "2050.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102722",
+  "bejerman": "303102722",
+  "modelo": "CS-H3c-R100-1K2WF H3C 2mp (2.8mm)",
+  "total_en_transito": "2000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "2000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303700155",
+  "bejerman": "810010",
+  "modelo": "FM11RF08-M1",
+  "total_en_transito": "2000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "2000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300229664",
+  "bejerman": "300229664",
+  "modelo": "DS-7216HGHI-M1/T(STD)",
+  "total_en_transito": "1600.0",
+  "reservadas": "79.0",
+  "total_disponible_en_transito": "1521.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103981",
+  "bejerman": "303103981",
+  "modelo": "CS-C6N-R220-1L3WFL(O-STD)",
+  "total_en_transito": "1500.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "1500.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311323765",
+  "bejerman": "311323765",
+  "modelo": "DS-2CD1021G0-I(2.8mm)(O-STD)",
+  "total_en_transito": "1500.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "1500.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102650",
+  "bejerman": "303102650",
+  "modelo": "CS-H1c-R101-1G2WR",
+  "total_en_transito": "1448.0",
+  "reservadas": "448.0",
+  "total_disponible_en_transito": "1000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102837",
+  "bejerman": "303102837",
+  "modelo": "CS-H6c-R105-1L2WF(AM-STD)(Mul)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102693",
+  "bejerman": "303102693",
+  "modelo": "CS-C3TN-R100-1K2WF(2.8mm)(AM-STD)",
+  "total_en_transito": "1000.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "1000.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102412",
+  "bejerman": "303102412",
+  "modelo": "CS-C6N-R101-1G2WF",
+  "total_en_transito": "650.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "650.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302401728",
+  "bejerman": "302401728",
+  "modelo": "DS-PS1-E-WB(O-STD)/Blue",
+  "total_en_transito": "250.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "250.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300512641",
+  "bejerman": "300512641",
+  "modelo": "DS-2CE16D0T-EXIF (2.8mm)(O-STD)",
+  "total_en_transito": "600.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "600.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300513675",
+  "bejerman": "300513675",
+  "modelo": "DS-2CE16D0T-LPFS(2.8mm)(O-STD)",
+  "total_en_transito": "600.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "600.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402274",
+  "bejerman": "302402274",
+  "modelo": "DS-PDP15P-EG2-WB(B)(O-STD)",
+  "total_en_transito": "600.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "600.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500648",
+  "bejerman": "310500648",
+  "modelo": "CS-Y2000   (WBCP,M)",
+  "total_en_transito": "500.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "500.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500519",
+  "bejerman": "310500519",
+  "modelo": "CS-DL-IC-CPU-R200-GR Proximity Card (CPU Tags)",
+  "total_en_transito": "500.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "500.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311335435",
+  "bejerman": "311335435",
+  "modelo": "DS-2CD1023G3-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "500.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "500.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103597",
+  "bejerman": "303103597",
+  "modelo": "CS-HB8c/SP-R100(4MP)(AM-STD)(Kit)",
+  "total_en_transito": "400.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "400.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102701",
+  "bejerman": "303102701",
+  "modelo": "CS-C3TN-R100-1K3WKFL(AM-STD)(Mul)",
+  "total_en_transito": "400.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "400.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103858",
+  "bejerman": "303103858",
+  "modelo": "CS-C9c-R105-8H33WFL(AM-STD)(Mul)",
+  "total_en_transito": "400.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "400.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311330841",
+  "bejerman": "311330841",
+  "modelo": "DS-2CFW04(2.8mm)(O-STD)/EU",
+  "total_en_transito": "400.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "400.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311335560",
+  "bejerman": "311335560",
+  "modelo": "DS-2CD1323G3-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "400.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "400.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311334440",
+  "bejerman": "311334440",
+  "modelo": "DS-2CD1027G3-LIU",
+  "total_en_transito": "300.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "300.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103786",
+  "bejerman": "303103786",
+  "modelo": "CS-H9c-R105-8H33WFL(AM-STD)(Mul)",
+  "total_en_transito": "320.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "320.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "300229563",
+  "bejerman": "300229563",
+  "modelo": "DS-7208HGHI-M1/T(STD)",
+  "total_en_transito": "300.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "300.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311323772",
+  "bejerman": "311323772",
+  "modelo": "DS-2CD1321G0-I(2.8mm)(O-STD)",
+  "total_en_transito": "300.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "300.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402345",
+  "bejerman": "302402345",
+  "modelo": "DS-PD201P10-WB(O-STD)",
+  "total_en_transito": "300.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "300.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303102718",
+  "bejerman": "303102718",
+  "modelo": "CS-H3c-R100-1J4WKFL(2.8mm)(M)(AM-STD) H3c Color 4MP (2.8mm)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402399",
+  "bejerman": "302402399",
+  "modelo": "DS-PDMC-EG2-WB(B)/Black",
+  "total_en_transito": "140.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "140.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "314300611",
+  "bejerman": "314300611",
+  "modelo": "DS-PDP18-EG2(B)(O-STD)",
+  "total_en_transito": "6.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "6.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303000431",
+  "bejerman": "303000431",
+  "modelo": "CS-X5S-R100-8W",
+  "total_en_transito": "200.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "200.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302401936",
+  "bejerman": "820061",
+  "modelo": "DS-PWA48-Kit-WB(ARG)/4G",
+  "total_en_transito": "250.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "250.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402306",
+  "bejerman": "302402306",
+  "modelo": "DS-PKF201-WB",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402278",
+  "bejerman": "302402278",
+  "modelo": "DS-PDMC-EG2-WB(B)(O-STD)",
+  "total_en_transito": "250.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "250.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500644",
+  "bejerman": "310500644",
+  "modelo": "CS-DL05   (WBCP,M)",
+  "total_en_transito": "250.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "250.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "305306557",
+  "bejerman": "305306557",
+  "modelo": "DS-KH6320-WTE1 (B)",
+  "total_en_transito": "250.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "250.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500621",
+  "bejerman": "310500621",
+  "modelo": "CS-DL06-R101-WBCP-GR(O-STD) - Dual Huella",
+  "total_en_transito": "240.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "240.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103714",
+  "bejerman": "303103714",
+  "modelo": "CS-H9c-R105-8H55WFL(AM-STD)(Mul)",
+  "total_en_transito": "220.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "220.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103816",
+  "bejerman": "303103816",
+  "modelo": "CS-C8c-R210-1J5WKFL(4mm)(AM-STD)(Mul)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103995",
+  "bejerman": "303103995",
+  "modelo": "CS-C8C   (5MP)",
+  "total_en_transito": "200.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "200.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311322028",
+  "bejerman": "311322028",
+  "modelo": "DS-2CD1043G2-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402270",
+  "bejerman": "302402270",
+  "modelo": "DS-PD201MC-WB",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327800630",
+  "bejerman": "327800630",
+  "modelo": "DS-2CE10DF0T-LFS(2.8mm)(O-STD)",
+  "total_en_transito": "200.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "200.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "314300416",
+  "bejerman": "314300416",
+  "modelo": "DS-PDP18-HM-WB(O-STD)",
+  "total_en_transito": "170.0",
+  "reservadas": "50.0",
+  "total_disponible_en_transito": "120.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327001473",
+  "bejerman": "327001473",
+  "modelo": "DS-2DE2C400MWG/W",
+  "total_en_transito": "200.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "200.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311325222",
+  "bejerman": "311325222",
+  "modelo": "DS-2CD1643G2-LIZSU(2.8-12mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311325969",
+  "bejerman": "311325969",
+  "modelo": "DS-2CD2143G2-LIS2U(2.8mm)(O-STD)",
+  "total_en_transito": "184.0",
+  "reservadas": "184.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500650",
+  "bejerman": "310500650",
+  "modelo": "CS-DL06-R100-WBCP-GR(O-STD) - Huella",
+  "total_en_transito": "176.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "176.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311335552",
+  "bejerman": "311335552",
+  "modelo": "DS-2CD1123G3-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "175.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "175.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "301802705",
+  "bejerman": "301802705",
+  "modelo": "DS-3E1309P-EI/M",
+  "total_en_transito": "120.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "120.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311326441",
+  "bejerman": "311326441",
+  "modelo": "DS-2CD1041G0-I(2.8mm)(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500643",
+  "bejerman": "310500643",
+  "modelo": "CS-DL05   (WBCP,M)",
+  "total_en_transito": "170.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "170.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103698",
+  "bejerman": "303103698",
+  "modelo": "CS-HB8c/SP-R100(4MP,W4GA)(Kit SP)(AM-STD) HB8 Lite 4MP4G\u0026Wifi /SolarPanel Kit",
+  "total_en_transito": "160.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "160.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402633",
+  "bejerman": "302402633",
+  "modelo": "DS-PA201PS-Kit-16WB",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327400066",
+  "bejerman": "327400066",
+  "modelo": "DS-QAZ1206G1-BE(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311325408",
+  "bejerman": "311325408",
+  "modelo": "DS-2CD1027G2H-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311307392",
+  "bejerman": "20196",
+  "modelo": "DS-2CD2047G2-LU (2.8mm)",
+  "total_en_transito": "135.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "135.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "318500161",
+  "bejerman": "318500161",
+  "modelo": "CS-HP7-R101-1W2TFC(AM-STD)(Kit)",
+  "total_en_transito": "80.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "80.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327800542",
+  "bejerman": "327800542",
+  "modelo": "DS-2CE16K0T-EXLPF",
+  "total_en_transito": "40.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "40.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402453",
+  "bejerman": "302402453",
+  "modelo": "DS-PA201P-Kit-16WB",
+  "total_en_transito": "70.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "70.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402649",
+  "bejerman": "302402649",
+  "modelo": "DS-PDMCS-EG2-WB(B)/BLACK",
+  "total_en_transito": "120.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "120.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302401828",
+  "bejerman": "820060",
+  "modelo": "DS-PWA48-Kit-WB(O-STD)",
+  "total_en_transito": "50.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "50.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302403101",
+  "bejerman": "302403101",
+  "modelo": "DS-PWA48-Kit-WB(B)(O-STD)",
+  "total_en_transito": "60.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "60.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "305306558",
+  "bejerman": "305306558",
+  "modelo": "DS-KH6320-TE1(B)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311336358",
+  "bejerman": "311336358",
+  "modelo": "DS-2CD2643G3-LIZS2UY(2.8-12mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311335564",
+  "bejerman": "311335564",
+  "modelo": "DS-2CD1643G3-LIZSU(2.8-12mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311322072",
+  "bejerman": "311322072",
+  "modelo": "DS-2CD1143G2-LIUF(2.8mm)(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311324920",
+  "bejerman": "311324920",
+  "modelo": "DS-2CD1043G2-LIUF/SL(2.8mm)(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "305304458",
+  "bejerman": "305304458",
+  "modelo": "DS-KH6110-WE1(O-STD)",
+  "total_en_transito": "0.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "0.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103341",
+  "bejerman": "303103341",
+  "modelo": "CS-H80x-R100-8G82WKFL(AM-STD)(Mul) H80x Dual Lens (8+2MP)",
+  "total_en_transito": "100.0",
+  "reservadas": "25.0",
+  "total_disponible_en_transito": "75.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "307700633",
+  "bejerman": "307700633",
+  "modelo": "CS-CMT-R100-Bracket (Indoor PT+Dome Camera)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "307700490",
+  "bejerman": "307700490",
+  "modelo": "CS-PSP5-R100-3M(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "318500206",
+  "bejerman": "318500206",
+  "modelo": "CS-HP5-R100-1W2TFC",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "310500548",
+  "bejerman": "310500548",
+  "modelo": "CS-DL03-R100-WBCP-GR(O-STD) DL03 Pro",
+  "total_en_transito": "50.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "50.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327001470",
+  "bejerman": "327001470",
+  "modelo": "DS-2DE2C200MWG/W",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327801827",
+  "bejerman": "327801827",
+  "modelo": "DS-2CE78D0T-LPTS(2.8mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311335443",
+  "bejerman": "311335443",
+  "modelo": "DS-2CD1043G3-LIU(2.8mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327801313",
+  "bejerman": "327801313",
+  "modelo": "DS-2CE16D0T-LTS(2.8mm)(O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "307400129",
+  "bejerman": "307400129",
+  "modelo": "DS-1LN5EO-UU/E",
+  "total_en_transito": "50.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "50.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "314300132",
+  "bejerman": "314300132",
+  "modelo": "DS-PDPG12P-EG2-WB (O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302401705",
+  "bejerman": "302401705",
+  "modelo": "DS-PK1-E-WB (O-STD)",
+  "total_en_transito": "100.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "100.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402562",
+  "bejerman": "302402562",
+  "modelo": "DS-PKF1-WB(B)(O-STD)",
+  "total_en_transito": "60.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "60.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "305701032",
+  "bejerman": "305701032",
+  "modelo": "DS-KAB6-W1(O-NEU)",
+  "total_en_transito": "90.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "90.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311326147",
+  "bejerman": "311326147",
+  "modelo": "DS-2CD2T43G2-4LI2U(2.8mm)(O-STD)",
+  "total_en_transito": "20.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "20.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "302402450",
+  "bejerman": "302402450",
+  "modelo": "DS-PR1-WB(B)(O-STD)",
+  "total_en_transito": "40.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "40.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311321910",
+  "bejerman": "311321910",
+  "modelo": "DS-2CD1343G2-LIU(2.8mm)",
+  "total_en_transito": "3.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "3.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "327800636",
+  "bejerman": "327800636",
+  "modelo": "DS-2CE70DF0T-LMFS(2.8mm)(O-STD)",
+  "total_en_transito": "80.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "80.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103809",
+  "bejerman": "303103809",
+  "modelo": "CS-H8c-R210-1R5WFL",
+  "total_en_transito": "50.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "50.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103996",
+  "bejerman": "303103996",
+  "modelo": "CS-H8C   (5MP)",
+  "total_en_transito": "30.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "30.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103515",
+  "bejerman": "303103515",
+  "modelo": "CS-EB3/SP-R200(2K 4GA)(AM-STD)(Kit)",
+  "total_en_transito": "80.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "80.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "303103943",
+  "bejerman": "303103943",
+  "modelo": "CS-HB90/SP-R100(4MP+4MP)(AM-STD)(Kit)",
+  "total_en_transito": "80.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "80.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311326530",
+  "bejerman": "311326530",
+  "modelo": "DS-2CD2043G2-LI2U(2.8mm)(O-STD)",
+  "total_en_transito": "30.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "30.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}, {
+  "sap": "311326119",
+  "bejerman": "311326119",
+  "modelo": "DS-2CD2643G2-LIZS2U(2.8-12mm)(O-STD)",
+  "total_en_transito": "80.0",
+  "reservadas": "0.0",
+  "total_disponible_en_transito": "80.0",
+  "marca": "Hikvision",
+  "fecha_actualizacion": "2026-10-27 10:01:49"
+}]

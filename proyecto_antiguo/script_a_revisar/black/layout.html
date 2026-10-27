@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <!-- SheetJS para exportación a Excel -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <style>
+        :root {
+            /* Dark Theme (Default) */
+            --bg: #0b1220;
+            --sidebar: #0f172a;
+            --card: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.10);
+            --text: rgba(255, 255, 255, 0.92);
+            --text-heading: #ffffff;
+            --muted: rgba(255, 255, 255, 0.68);
+            --sidebar-border: rgba(255, 255, 255, 0.08);
+            --sidebarW: 240px;
+            --sidebarW-collapsed: 68px;
+            --accent: #4863ff;
+            --accent-bg: rgba(72, 99, 255, 0.18);
+            --accent-border: rgba(72, 99, 255, 0.35);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --sidebar: #ffffff;
+            --card: #ffffff;
+            --border: #e2e8f0;
+            --text: #334155;
+            --text-heading: #0f172a;
+            --muted: #64748b;
+            --sidebar-border: #e2e8f0;
+            --border: #e2e8f0;
+            --link-hover: #f1f5f9;
+            --accent: #2563eb;
+            --accent-bg: #eff6ff;
+            --accent-border: #bfdbfe;
+        }
+
+        /* ✅ Scrollbar Personalizado (Sutil) */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        /* ✅ Estilos Base */
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, Arial;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Degradado de fondo con CSS puro */
+        body.has-gradient {
+            background: radial-gradient(1200px 600px at 10% 0%, var(--accent-bg), transparent),
+                radial-gradient(900px 500px at 90% 0%, rgba(0, 255, 160, 0.10), transparent),
+                var(--bg);
+        }
+
+        /* ✅ Sidebar (Menu lateral) */
+        .sidebar {
+            width: var(--sidebarW);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            background: var(--sidebar);
+            border-right: 1px solid var(--sidebar-border);
+            padding: 18px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            overflow-x: hidden;
+            transition: width var(--transition), background 0.3s ease;
+        }
+
+        /* ✅ Contenido Principal */
+        .content {
+            margin-left: var(--sidebarW);
+            height: 100vh;
+            box-sizing: border-box;
+            width: calc(100% - var(--sidebarW));
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: margin-left var(--transition), width var(--transition);
+        }
+
+        .page-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 64px;
+            padding: 0 24px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--sidebar-border);
+            flex: 0 0 auto;
+        }
+
+        .page-header .title-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .page-body {
+            flex: 1;
+            padding: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* ✅ Estructura de Paginas */
+        .page {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-height: 0;
+        }
+
+        /* Div raiz de cada página: ocupa todo el espacio disponible */
+        .page-body>div[class^="page-"] {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ✅ EXCEPCIÓN HOME: page-body scrollea (no las tablas) */
+        .page-body:has(.page-home) {
+            overflow: auto;
+            display: block;
+            /* cancela el flex para que el scroll funcione naturalmente */
+        }
+
+        /* page-home no tiene altura fija, crece con el contenido */
+        .page-body>.page-home {
+            flex: none;
+            height: auto;
+            min-height: 0;
+        }
+
+        /* ✅ Cards y Contenedores */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            box-sizing: border-box;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 12px;
+            flex: 0 0 auto;
+        }
+
+        /* ✅ Tablas */
+        .table-wrap {
+            flex: 1;
+            overflow: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead th {
+            position: sticky;
+            top: 0;
+            background: var(--sidebar);
+            backdrop-filter: blur(8px);
+            padding: 12px;
+            text-align: left;
+            font-size: 12px;
+            color: var(--muted);
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+            white-space: nowrap;
+        }
+
+        th.sortable {
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s, color 0.1s;
+        }
+
+        th.sortable:hover {
+            color: var(--text-heading);
+            background: var(--accent-bg);
+        }
+
+        th.sortable::after {
+            content: " ↕";
+            opacity: 0.3;
+            font-size: 10px;
+            margin-left: 5px;
+            transition: opacity 0.2s;
+        }
+
+        th.sortable.asc::after {
+            content: " ▲";
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        th.sortable.desc::after {
+            content: " ▼";
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        tbody td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        tbody tr:hover td {
+            background: var(--link-hover);
+        }
+
+        /* ✅ Totales/Footer de Tabla */
+        tfoot td {
+            padding: 12px;
+            background: var(--sidebar);
+            color: var(--text-heading);
+            font-weight: 700;
+            font-size: 13px;
+            border-top: 2px solid var(--accent);
+            position: sticky;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        /* ✅ Utilidades UI */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .loading {
+            display: none;
+            gap: 10px;
+            align-items: center;
+            color: var(--muted);
+        }
+
+        .spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .is-offer {
+            color: #ff4d4d !important;
+            font-weight: 700 !important;
+        }
+
+        /* ✅ Botón Volver Arriba */
+        #toTop {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--sidebar);
+            color: var(--text);
+            cursor: pointer;
+            display: none;
+            backdrop-filter: blur(8px);
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+        }
+
+        #toTop:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* ✅ Logica de Colapso Sidebar */
+        html.collapsed-mode body,
+        body.collapsed-mode {
+            --sidebarW: var(--sidebarW-collapsed);
+        }
+
+        .collapsed-mode .sidebar {
+            padding: 18px 12px;
+        }
+
+        .collapsed-mode .sidebar .link-text,
+        .collapsed-mode .sidebar .title .link-text {
+            display: none;
+        }
+
+        .collapsed-mode .sidebar .title {
+            display: none;
+        }
+
+        .collapsed-mode .menu a {
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+            font-size: 20px;
+        }
+
+        .collapsed-mode .sidebar-toggle {
+            transform: rotate(180deg);
+        }
+
+        .collapsed-mode .sidebar-header {
+            justify-content: center;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            gap: 10px;
+        }
+
+        .sidebar-toggle {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.2s ease, transform var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .sidebar-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--link-hover);
+        }
+
+        .title {
+            font-weight: 800;
+            margin: 0;
+            color: var(--text-heading);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.2;
+            word-break: break-word;
+        }
+
+        .menu a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            margin-bottom: 6px;
+            transition: .15s;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+
+        .menu a .icon {
+            font-size: 18px;
+            min-width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu a .icon img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            /* Si el logo es oscuro, en tema dark lo invertimos. 
+               Podemos ajustar esto según cada logo. */
+        }
+
+        [data-theme="dark"] .menu a .icon img.invert-dark {
+            filter: brightness(0) invert(1);
+        }
+
+        .menu a:hover {
+            background: var(--link-hover);
+            color: var(--text-heading);
+        }
+
+        .menu a.active {
+            background: var(--accent-bg);
+            border-color: var(--accent-border);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .theme-toggle-inline {
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle-inline:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .last-updated-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 11px;
+            color: var(--muted);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .last-updated-badge strong {
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        .last-updated-badge:hover {
+            border-color: var(--accent-border);
+            background: var(--link-hover);
+        }
+
+        /* ✅ Columna de Checkbox */
+        th.col-check,
+        td.col-check {
+            width: 40px;
+            min-width: 40px;
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+
+        /* ✅ Buscador y Filtros */
+        .search-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 8px 0 12px 0;
+            width: 100%;
+        }
+
+        .search-input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.7;
+            font-size: 14px;
+            color: var(--text);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 12px 10px 36px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit;
+            font-size: 13px;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-bg);
+        }
+
+        .btn-clear {
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        .btn-clear:hover {
+            background: var(--link-hover);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-clear.active {
+            background: rgba(255, 77, 77, 0.1);
+            border-color: rgba(255, 77, 77, 0.4);
+            color: #ff4d4d;
+        }
+
+        .btn-select-all {
+            color: var(--accent) !important;
+            border-color: var(--accent-border) !important;
+        }
+
+        .btn-unselect-all {
+            color: var(--muted) !important;
+        }
+
+        .btn-unselect-all:hover {
+            color: #ff4d4d !important;
+            border-color: rgba(255, 77, 77, 0.4) !important;
+        }
+
+        .filter-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .btn-filter {
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .filter-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            background: var(--sidebar);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            min-width: 210px;
+            z-index: 2000;
+            display: none;
+            padding: 8px 0;
+        }
+
+        .filter-scroll-area {
+            max-height: 480px;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        .filter-container:hover .filter-dropdown {
+            display: block;
+        }
+
+        .filter-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .filter-item:hover {
+            background: var(--link-hover);
+            color: var(--accent);
+        }
+
+        .filter-badge {
+            background: var(--accent);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 6px;
+            margin-left: 4px;
+            display: none;
+        }
+
+        .filter-active .filter-badge {
+            display: inline-block;
+        }
+
+        .subfilter-portal {
+            position: absolute;
+            top: 0;
+            right: 100%;
+            background: var(--sidebar);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+            display: none;
+            padding: 8px 0;
+            margin-right: -4px;
+            z-index: 2100;
+        }
+
+        .filter-item:hover>.subfilter-portal {
+            display: block;
+        }
+
+        .subfilter-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: background 0.2s;
+        }
+
+        .subfilter-item:hover {
+            background: var(--link-hover);
+            color: var(--accent);
+        }
+
+        @media (max-width: 980px) {
+            :root {
+                --sidebarW: 200px;
+            }
+
+            .content {
+                padding: 16px;
+            }
+        }
+    </style>
+
+    <script>
+        // ✅ Inicializacion Critica (Pre-render)
+        (function () {
+            const theme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+
+            const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+            if (isCollapsed) document.documentElement.classList.add('collapsed-mode');
+
+            // ✅ Helper de Utilidades Globales
+            window.utils = {
+                norm: function (s) {
+                    return (s ?? "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[-\s]/g, "").trim();
+                },
+                fmtNum: function (x) {
+                    if (x === "" || x === null || typeof x === "undefined") return "";
+                    const n = Number(x);
+                    if (!isFinite(n)) return String(x);
+                    return n.toLocaleString("es-AR", { maximumFractionDigits: 4 });
+                },
+                smartConvert: function (v) {
+                    if (typeof v === 'number') return v;
+                    if (v === null || v === undefined || v === '') return -Infinity;
+                    let s = v.toString().trim().replace(/[^\d.,-]/g, '');
+                    if (!s) return v.toString().toLowerCase();
+                    const lastComma = s.lastIndexOf(',');
+                    const lastDot = s.lastIndexOf('.');
+                    if (lastComma > lastDot && lastComma !== -1) s = s.replace(/\./g, '').replace(',', '.');
+                    else if (lastDot > lastComma && lastDot !== -1) s = s.replace(/,/g, '');
+                    const n = parseFloat(s);
+                    return isNaN(n) ? v.toString().toLowerCase() : n;
+                },
+                formatCell: function (key, value) {
+                    if (value === null || value === undefined) return "";
+                    const uppercaseCols = ["modelo", "sap", "cod_bejerman", "marca", "codigo_producto_nuevo"];
+                    if (uppercaseCols.includes(key)) return value.toString().toUpperCase();
+                    return value;
+                },
+                highlight: function (text, query) {
+                    if (!query || !text) return text;
+                    const sText = text.toString();
+                    const div = document.createElement('div');
+                    div.textContent = sText;
+                    const esText = div.innerHTML;
+                    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+                    return esText.replace(regex, '<b>$1</b>');
+                },
+                buildBrandUI: function (rows, onSelect) {
+                    const brands = Array.from(new Set(rows.map(r => (r.marca || "").trim().toUpperCase()).filter(m => m))).sort();
+                    let selected = [];
+
+                    const container = document.createElement('div');
+                    container.className = 'filter-container';
+
+                    const btn = document.createElement('button');
+                    btn.className = 'btn-filter';
+                    btn.innerHTML = `<span>Marca</span><span class="icon">▼</span>`;
+                    container.appendChild(btn);
+
+                    const dropdown = document.createElement('div');
+                    dropdown.className = 'filter-dropdown';
+
+                    const scrollArea = document.createElement('div');
+                    scrollArea.className = 'filter-scroll-area';
+
+                    const update = () => {
+                        const count = selected.length;
+                        btn.querySelector('span').innerHTML = count > 0 ? `Marcas <b>(${count})</b>` : "Marcas";
+                        btn.classList.toggle('filter-active', count > 0);
+                        onSelect(selected);
+                    };
+
+                    const itemAll = document.createElement('div');
+                    itemAll.className = 'filter-item';
+                    itemAll.style.fontWeight = '700';
+                    itemAll.innerHTML = `<label style="display:flex; align-items:center; gap:8px; cursor:pointer; width:100%;">
+                        <input type="checkbox"> [ TODAS ]
+                    </label>`;
+                    const checkAll = itemAll.querySelector('input');
+                    checkAll.onchange = () => {
+                        const checks = scrollArea.querySelectorAll('.brand-check');
+                        selected = checkAll.checked ? [...brands] : [];
+                        checks.forEach(c => c.checked = checkAll.checked);
+                        update();
+                    };
+                    scrollArea.appendChild(itemAll);
+
+                    brands.forEach(brand => {
+                        const item = document.createElement('div');
+                        item.className = 'filter-item';
+                        item.innerHTML = `<label style="display:flex; align-items:center; gap:8px; cursor:pointer; width:100%;">
+                            <input type="checkbox" class="brand-check" value="${brand}"> ${brand}
+                        </label>`;
+                        const chk = item.querySelector('input');
+                        chk.onchange = () => {
+                            if (chk.checked) selected.push(brand);
+                            else selected = selected.filter(b => b !== brand);
+                            checkAll.checked = (selected.length === brands.length);
+                            update();
+                        };
+                        scrollArea.appendChild(item);
+                    });
+
+                    dropdown.appendChild(scrollArea);
+                    container.appendChild(dropdown);
+                    return container;
+                },
+                buildCategoryUI: function (rows, onSelect) {
+                    const map = {};
+                    rows.forEach(r => {
+                        const cat = (r.categoria || "SIN CATEGORIA").trim().toUpperCase();
+                        const sub = (r.subcategoria || "SIN SUBCATEGORIA").trim().toUpperCase();
+                        if (!map[cat]) map[cat] = new Set();
+                        map[cat].add(sub);
+                    });
+
+                    const container = document.createElement('div');
+                    container.className = 'filter-container';
+
+                    const btn = document.createElement('button');
+                    btn.className = 'btn-filter';
+                    btn.innerHTML = `<span>Categorías</span><span class="filter-badge">1</span><span class="icon">▼</span>`;
+                    container.appendChild(btn);
+
+                    const dropdown = document.createElement('div');
+                    dropdown.className = 'filter-dropdown';
+
+                    const scrollArea = document.createElement('div');
+                    scrollArea.className = 'filter-scroll-area';
+
+                    const portal = document.createElement('div');
+                    portal.className = 'subfilter-portal';
+
+                    const itemAll = document.createElement('div');
+                    itemAll.className = 'filter-item';
+                    itemAll.textContent = 'TODAS';
+                    itemAll.onclick = () => onSelect(null, null);
+                    scrollArea.appendChild(itemAll);
+
+                    Object.keys(map).sort().forEach(cat => {
+                        const item = document.createElement('div');
+                        item.className = 'filter-item';
+                        item.innerHTML = `<span>${cat}</span><span class="icon">◀</span>`;
+
+                        item.onmouseenter = () => {
+                            portal.innerHTML = '';
+                            portal.style.display = 'block';
+                            portal.style.top = `${item.offsetTop - scrollArea.scrollTop}px`;
+
+                            const subAll = document.createElement('div');
+                            subAll.className = 'subfilter-item';
+                            subAll.textContent = `TODO ${cat}`;
+                            subAll.onclick = (e) => { e.stopPropagation(); onSelect(cat, null); };
+                            portal.appendChild(subAll);
+
+                            Array.from(map[cat]).sort().forEach(sub => {
+                                const subItem = document.createElement('div');
+                                subItem.className = 'subfilter-item';
+                                subItem.textContent = sub;
+                                subItem.onclick = (e) => { e.stopPropagation(); onSelect(cat, sub); };
+                                portal.appendChild(subItem);
+                            });
+                        };
+                        scrollArea.appendChild(item);
+                    });
+
+                    dropdown.onmouseleave = () => { portal.style.display = 'none'; };
+                    dropdown.appendChild(scrollArea);
+                    dropdown.appendChild(portal);
+                    container.appendChild(dropdown);
+                    return container;
+                },
+                exportToExcel: function (data, filename, columns) {
+                    if (!data || !data.length) { alert("No hay datos para exportar"); return; }
+                    try {
+                        let finalColumns = columns || [];
+
+                        // 🔍 Detección robusta de la tabla activa en el DOM
+                        if (finalColumns.length === 0) {
+                            const activeTable = Array.from(document.querySelectorAll('table'))
+                                .find(t => t.offsetHeight > 0 && t.querySelector('th.sortable'));
+
+                            if (activeTable) {
+                                finalColumns = Array.from(activeTable.querySelectorAll('th.sortable')).map(th => ({
+                                    key: th.dataset.key || "",
+                                    label: th.innerText.replace(/[↕▲▼]/g, '').trim()
+                                })).filter(c => c.key);
+                            }
+                        }
+
+                        const finalData = data.map(item => {
+                            const row = {};
+                            // Si detectamos columnas, usamos ese orden y sus etiquetas; si no, fallback a las keys del objeto
+                            const workCols = (finalColumns.length > 0)
+                                ? finalColumns
+                                : Object.keys(item).filter(k => !['_selected', 'es_oferta'].includes(k));
+
+                            workCols.forEach(col => {
+                                const key = (typeof col === 'string') ? col : col.key;
+                                const label = (typeof col === 'string') ? col : col.label;
+
+                                // EXCLUIR SIEMPRE campos internos
+                                if (key === '_selected' || key === 'es_oferta' || !key) return;
+
+                                // Nombre de columna: preferimos el Label de la tabla, si no la key
+                                row[label || key] = item[key] ?? "";
+                            });
+                            return row;
+                        });
+
+                        const ws = XLSX.utils.json_to_sheet(finalData);
+                        const wb = XLSX.utils.book_new();
+                        XLSX.utils.book_append_sheet(wb, ws, "Datos");
+                        XLSX.writeFile(wb, filename.endsWith('.xlsx') ? filename : filename + '.xlsx');
+                    } catch (e) {
+                        console.error("Error al exportar:", e);
+                        alert("Error al generar el archivo Excel");
+                    }
+                }
+            };
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="title">
+                <span class="icon">📊</span>
+                <span class="link-text">Lista de Precios - Black</span>
+            </h3>
+            <button class="sidebar-toggle" id="sidebar-toggle-btn" title="Contraer/Expandir menú">◀</button>
+        </div>
+
+        <div class="menu">
+            <a class="<?= currentPage=='home' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=home">
+                <span class="icon">🏠</span> <span class="link-text">Home</span>
+            </a>
+            <a class="<?= currentPage=='digifort' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=digifort">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_digifort.png"
+                        alt="Digifort">
+                </span>
+                <span class="link-text">Digifort</span>
+            </a>
+            <a class="<?= currentPage=='ezviz' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=ezviz">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_ezviz.png" alt="Ezviz">
+                </span>
+                <span class="link-text">Ezviz</span>
+            </a>
+            <a class="<?= currentPage=='hikmicro' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=hikmicro">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_hikmicro.png"
+                        alt="Hikmicro">
+                </span>
+                <span class="link-text">Hikmicro</span>
+            </a>
+            <a class="<?= currentPage=='hikvision' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=hikvision">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_hikvision.png"
+                        alt="Hikvision">
+                </span>
+                <span class="link-text">Hikvision</span>
+            </a>
+            <a class="<?= currentPage=='outlet' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=outlet">
+                <span class="icon">🏷️</span>
+                <span class="link-text">Outlet</span>
+            </a>
+            <a class="<?= currentPage=='ranger' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=ranger">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_ranger.png" alt="Ranger">
+                </span>
+                <span class="link-text">Ranger</span>
+            </a>
+            <a class="<?= currentPage=='seagate' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=seagate">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_seagate.png" alt="Seagate">
+                </span>
+                <span class="link-text">Seagate</span>
+            </a>
+            <a class="<?= currentPage=='takex' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=takex">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_takex.png" alt="Takex">
+                </span>
+                <span class="link-text">Takex</span>
+            </a>
+            <a class="<?= currentPage=='ultracell' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=ultracell">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_ultracell.png"
+                        alt="Ultracell">
+                </span>
+                <span class="link-text">Ultracell</span>
+            </a>
+            <a class="<?= currentPage=='vivotek' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=vivotek">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_vivotek.png" alt="Vivotek">
+                </span>
+                <span class="link-text">Vivotek</span>
+            </a>
+            <a class="<?= currentPage=='vortex' ? 'active' : '' ?>" href="<?= baseUrl ?>?page=vortex">
+                <span class="icon">
+                    <img src="https://storage.googleapis.com/logos_marcas_selnet/logos/logo_vortex.png" alt="Vortex">
+                </span>
+                <span class="link-text">Vortex</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="page-header">
+            <div class="title-area" id="page-title-container">
+                <!-- Se inyecta dinámicamente -->
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+                <div class="last-updated-badge" title="Última actualización de stock en BigQuery">
+                    <span class="icon">📅</span>
+                    <span class="text">Ult. Act: <strong>
+                            <?= lastUpdated ?>
+                        </strong></span>
+                </div>
+                <button class="theme-toggle-inline" id="theme-btn" title="Cambiar tema">🌙</button>
+            </div>
+        </div>
+        <div class="page-body" id="main-page-body">
+            <?!= include(pageContent); ?>
+        </div>
+    </div>
+
+    <button id="toTop" title="Volver arriba">⬆️</button>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-btn');
+            const sidebarToggle = document.getElementById('sidebar-toggle-btn');
+            const toTopBtn = document.getElementById('toTop');
+            const body = document.body;
+            const html = document.documentElement;
+
+            // Tema
+            function updateThemeIcon(t) { if (themeBtn) themeBtn.textContent = t === 'dark' ? '☀️' : '🌙'; }
+            updateThemeIcon(html.getAttribute('data-theme'));
+            if (themeBtn) {
+                themeBtn.onclick = () => {
+                    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                    html.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    updateThemeIcon(newTheme);
+                };
+            }
+
+            // Sidebar
+            if (sidebarToggle) {
+                sidebarToggle.onclick = (e) => {
+                    e.preventDefault();
+                    html.classList.toggle('collapsed-mode');
+                    localStorage.setItem('sidebarCollapsed', html.classList.contains('collapsed-mode'));
+                };
+            }
+
+            // Botón ToTop: funciona con el .table-wrap que tenga scroll activo
+            if (toTopBtn) {
+                document.addEventListener('scroll', () => {
+                    const tw = document.querySelector('.table-wrap');
+                    toTopBtn.style.display = (tw && tw.scrollTop > 500) ? 'block' : 'none';
+                }, true);
+                toTopBtn.onclick = () => {
+                    const tw = document.querySelector('.table-wrap');
+                    if (tw) tw.scrollTo({ top: 0, behavior: 'smooth' });
+                };
+            }
+
+            // Inyectar título de página si existe template
+            const titleTpl = document.getElementById('page-title-template');
+            if (titleTpl) {
+                const container = document.getElementById('page-title-container');
+                if (container) {
+                    container.innerHTML = "";
+                    container.appendChild(titleTpl.content.cloneNode(true));
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1070 @@
+selnet-476815.pagina.hikvision
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "hik_code",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "datasheet",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "hikvision",
+  "hik_code": "401000175",
+  "cod_bejerman": null,
+  "modelo": "SUP-1 resource/3years upgrade",
+  "descripcion": "Elaborately simple: Easy installation / Easy operation / Easy maintenance Flexible scenario adjustment: 9 applications / Preset modes for different roles / Self-defined Control Panel Connected and interactive applications: Visualized application data / Intuitive dashboards / Interactive e-map",
+  "datasheet": null,
+  "marca": "Hikvision",
+  "categoria": "Software",
+  "subcategoria": "ALL in one Server (HCP)"
+}, {
+  "pagina": null,
+  "hik_code": "329000104 ",
+  "cod_bejerman": null,
+  "modelo": "NP-FTG200 PANEL INALAMBRICO HIKFIRE",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311325220",
+  "cod_bejerman": "311325220",
+  "modelo": "DS-2CD1623G2-LIZSU 2.8-12MM - 2MP CAMERA",
+  "descripcion": "High quality imaging with 2 MP resolution; Support Human and Vehicle Detection; Smart Hybrid Light: advanced technology with long range; Clear imaging against strong back light due to DWDR technology; Efficient H.265+ compression technology ; Support on-board storage up to 512 GB (SD card slot); Built-in microphone for real-time audio security; 2.8 to 12 mm motorized varifocal lens for easy installation and monitoring ; Water and dust resistant (IP67);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "SFXA5201B ",
+  "cod_bejerman": null,
+  "modelo": "FUENTE ACBEL SFXA5201B",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302402028",
+  "cod_bejerman": "302402028",
+  "modelo": "DS-PK1-LT-WB TECLADO LCD INALAMBRICO",
+  "descripcion": "433MHz two-way wireless communication; LCD screen and LED to indicate system status; System configuration through LCD screen; Multiple operations like stay/away arm, disarm, silent alarm, output control; One-Push fire alarm, panic alarm, and medical alarm; Full touch key design with LED backlight; Fully remote configurable through App;",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302922979",
+  "cod_bejerman": "302922979",
+  "modelo": "DS-K1105EMB CARD READER",
+  "descripcion": "Supports RS-485 protocol, Wiegand (W26/W34) protocol, and OSDP protocol Build-in M1 and EM card reading module (Frequency: 13.56 MHz\u0026125 KHz) Built-in buzzer for identifying the reading status Supports online upgrade Supports multiple authentication methods such as card swiping, bluetooth, etc Supports touch panel for operation Supports occlusion detection, with bluetooth, it can realize door open via waving hands",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20065     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD2T55FWD-I5 CAMARA NETWORK 5MP",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20079     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD2120F-INS CAMARA HIKVISION 1/2.8\" Progressiv",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311331799",
+  "cod_bejerman": "311331799",
+  "modelo": "DS-2CD3147G3-LISU 2.8MM 4MP CAMERA",
+  "descripcion": "HIK AI-ISP for excellent noise reduction effect; 24/7 colorful imaging via ColorVu technology; Smart Hybrid Light: Integrates IR and White lights, 3 supplemental lighting modes; 130 dB WDR, support Auto mode, clear imaging against strong back light; AcuSense: Focus on person and vehicle classification based on deep learning; Built-in arrayed dual-microphone for real-time high quality audio security; Water and dust resistant (IP67) and vandal-resistant (IK10); -Y: Anti-corrosion design, providing reliability and longevity compared to standard (NEMA 4X);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "307400789",
+  "cod_bejerman": "307400789",
+  "modelo": "DS-1H18-A (O-STD) VIDEO BALUN",
+  "descripcion": "Real-time transmission over UTP cat5e/6 Compatible with all HD-TVI/CVI/AHD/CVBS analog camera Low crosstalk and noise suppressions Built-in solid state TVS (Transient Voltage Suppressor) for surge protection Wave Filter Design, Anti-Static Design 60 dB crosstalk and noise immunity Exceptional interference rejection ABS engineering plastic housing",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301803251 ",
+  "cod_bejerman": null,
+  "modelo": "DS-3E1528HP-SI-24P2T2F 24 SWITCH POE",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20045     ",
+  "cod_bejerman": null,
+  "modelo": "iDS-2CD6810F/C CAMARA NETWORK HIKVISION",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302900560 ",
+  "cod_bejerman": null,
+  "modelo": "DS-K7P02 EXIT \u0026 EMERGENCY BUTTON",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "314300688",
+  "cod_bejerman": "314300688",
+  "modelo": "DS-PS102X(O-STD) BLUE SIRENA EXTERIOR",
+  "descripcion": "Sound Decibel: 1 meter Single frequency point 110 dBA(Maximum value) Single frequency point 106 dBA(Average value); IP55 protective level; Sound and LED flash indication separately; Controlled by PGM/BELL port; Three types of alarm sounds are available: fire alarm, panic alarm, and intrusion alarm.; Triggered by Positive / Negative; Tamper Alarm \u0026 Cut Wire Alarm;",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "50005     ",
+  "cod_bejerman": null,
+  "modelo": "DS-1693ZJ BRACKET HIKVISION  for DS-2DY9188-AI2",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "305302833",
+  "cod_bejerman": "305302833",
+  "modelo": "DS-KB2421T-IM DOORBELL",
+  "descripcion": "4-wire plug \u0026 play analog door station 2 MP Pinhole camera with self-adaptive IR supplement One-touch calling design for easier calls Supports two door stations simultaneously in the intercom system Convenient installation and easy operation Anti-oxidant aluminium alloy",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311328236",
+  "cod_bejerman": "311328236",
+  "modelo": "IDS-2CD7A46G2/P-IZHS 6-132MM 4MP CAMERA",
+  "descripcion": "High quality imaging with 4 MP resolution; Excellent low-light performance via DarkFighter 2.0 technology; Clear imaging against strong back light due to 150 dB AWDR technology; Efficient H.265+ compression technology to save bandwidth and storage; 5 streams to meet a wide variety of applications; Water and dust resistant (IP67), vandal proof (IK10) and corrosion resistant (NEMA 4X, optional); High frame rate, up to 2MP@120fps and 4MP@60fps; Built-in heater to ensure clear image under rainy or snowy weather; Built-in G-sensor for vibration detection; Built-in power meter for historical power statistics; License plate recognition and vehicle attribution recognition; 6-132mm 22x optical zoom;",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311320490",
+  "cod_bejerman": "311320490",
+  "modelo": "DS-2CD2T67G2P-LSU/SL (2.8mm) (C)(O-ST) 6MP CAMERA",
+  "descripcion": "High quality imaging with 6 MP resolution ; One image that presents all the scenes covered by the camera; 24/7 colorful imaging; Efficient H.265+ compression technology; Clear imaging against strong back light due to 130 dB WDR technology; Focus on human and vehicle classification based on deep learning; Active strobe light and audio alarm to warn intruders off ; Water and dust resistant (IP67);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311326275",
+  "cod_bejerman": "311326275",
+  "modelo": "DS-2CD2323G2-LI2U (2.8mm) (O-STD) 2MP CAMERA",
+  "descripcion": "High quality imaging with 2 MP resolution; Acusense: Focus on human and vehicle classification based on deep learning; Smart Hybrid Light: Integrates IR and White lights, 4 supplemental lighting modes; -2U: Built-in arrayed dual-microphone for real-time high quality audio security; Clear imaging against strong back light due to 120 dB true WDR technology; Efficient H.265+ compression technology; Water and dust resistant (IP67) ;",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20037     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD2655FWD-IZS CAMARA HIKVISION 1/2.5\" CMOS",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302920535",
+  "cod_bejerman": "302920535",
+  "modelo": "DS-K2704X ACCESS CONTROLLER",
+  "descripcion": "Supports 4 door control. It can extend up to 62 DS-K2M002X access modules, and up to 128 doors can be controlled Downstream RS-485 redundancy wiring design to ensure communication stability. 5-ch downlink RS-485 interface supports two applications: 1. When 4-ch RS-485 communication, the 5th RS-485 can be used as a redundant application; 2. 4-ch RS-485 forms 2 groups of dual-bus loops with physical isolation. It is recommended that you do not have more than 16 access modules attached to each loop bus. Web configuration management. All configurations can be realized via web without software application Supports professional access control applications such as multi-door interlocking and anti-passback Supports backup battery access. Charging and discharging are available It has status indicators such as power supply, communication and operation, which is convenient for equipment health detection",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311334721",
+  "cod_bejerman": "311334721",
+  "modelo": "DS-2CD1047G3-LIUF 2.8MM 4MP CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "327800634 ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CE70DF0T-LPFS 2.8MM - 2MP TURRET CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301803375",
+  "cod_bejerman": "301803375",
+  "modelo": "DS-3E0505P-E/M SWITCH POE 4 PORT UNMANAGED",
+  "descripcion": "4 x Gigabit PoE Ports, 1 x Gigabit Uplink Port Total PoE Power Budget 45 W IEEE802.3af/at Compliant, and 30 W Max. Output Power for Each Port 6 kV Surge Protection PD Power Intelligent Detection with System-Level Overload Protection Silent Running with Fanless Design Desktop/Wall Installation",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "307500749 ",
+  "cod_bejerman": null,
+  "modelo": "L1500-X800-R125 POSTE PARA CAMARA ANPR",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "GB32HG73  ",
+  "cod_bejerman": null,
+  "modelo": "GABINETE PARA DVR DS-7332HGHI-SH",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "309500849",
+  "cod_bejerman": "309500849",
+  "modelo": "AE-MC0201-20 (12M4A_B to 12M4B_B) CABLE 20MTS.",
+  "descripcion": "Analog Camera extension cable ——B signal definition ；;",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "347000267",
+  "cod_bejerman": "347000267",
+  "modelo": "DS-QAE0730G1-V/G ANALOG GARDEN SPEAKER 30W",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302922986",
+  "cod_bejerman": "302922986",
+  "modelo": "DS-K1105EMKB CARD READER",
+  "descripcion": "Supports RS-485 protocol, Wiegand (W26/W34) protocol, and OSDP protocol Build-in M1 and EM card reading module (Frequency: 13.56 MHz\u0026125 KHz) Built-in buzzer for identifying the reading status Supports online upgrade Supports multiple authentication methods such as card swiping, PIN, bluetooth, etc Supports touch panel for operation Supports occlusion detection, with bluetooth, it can realize door open via waving hands",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20183     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD2721G0-IS 2.8-12mm 2MP NETWORK CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302920549",
+  "cod_bejerman": "302920549",
+  "modelo": "DS-K2M002X (O-STD) MODULO CONTROL DE ACCESO",
+  "descripcion": "Supports 2 door control. It can connect with access controller via RS-485 Connects with card reader via RS-485 (OSDP) or Wiegand Installs with guide rail Supports battery charging and discharging Supports indicators for indicating power status, communciation status, running status, and door staus",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301802979",
+  "cod_bejerman": "301802979",
+  "modelo": "DS-3E1105P-EI 4 PORT SMART POE SWITCH",
+  "descripcion": "4 × 10/100 Mbps PoE port,1 × 10/100 Mbps RJ45 port 6 kV surge protection for PoE ports Total PoE Power Budget 60 W Support 802.1Q VLAN Support PoE watchdog to detect and restart the cameras that do not respond Support STP/RSTP loop prevention Support cable detection to locate failure Up to 300 m Long Range PoE Transmission",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311313777",
+  "cod_bejerman": "311313777",
+  "modelo": "DS-2CV2121G2-IDW 2,8MM 2MP OUTDOOR DOME CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "327001435",
+  "cod_bejerman": "327001435",
+  "modelo": "DS-2SE3C204MWG-E/12 (2.8mm) (O-STD) 2MP+2MP CAMERA",
+  "descripcion": "Captures a large area and great details at the same time High quality imaging with 2 MP resolution Excellent low-light performance with powered-by-DarkFighter technology Secures an expansive area with 4× optical zoom and 16× digital zoom Supports WDR, HLC, BLC, 3D DNR, defog, regional exposure, regional focus Supports 12V DC \u0026 PoE+ Support Human and Vehicle Detection",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "307900793 ",
+  "cod_bejerman": null,
+  "modelo": "AE-DI2032-G40 DASHCAM 1080P",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302918167 ",
+  "cod_bejerman": null,
+  "modelo": "DS-K1T673TDWX FACE ACCESS TERMINAL",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "305401057",
+  "cod_bejerman": "30029",
+  "modelo": "DS-2TD2637-15/P",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "hikvision",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302402876 ",
+  "cod_bejerman": null,
+  "modelo": "DS-PD451SMK-WB SMOKE\u0026HEAT DETECTOR",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301803786",
+  "cod_bejerman": "301803786",
+  "modelo": "DS-3E1520P-EI SWITCH POE - 16 PORT GIGABIT",
+  "descripcion": "16 x gigabit PoE RJ45 port, 2 × gigabit RJ45 port, 2 x gigabit fiber optical port Total PoE power budget 230 W Unified cloud management for security systems Network topology at your fingertips Remote troubleshooting Visualized topology management Up to 300 m long-range PoE transmission 6 kV surge protection",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "327001854",
+  "cod_bejerman": "327001854",
+  "modelo": "DS-2SE3C204MWG-4G/12 (2.8mm) (O-STD) 2MP+2MP CAMER",
+  "descripcion": "Captures a large area and great details at the same time High quality imaging with 2 MP resolution Excellent low-light performance with powered-by-DarkFighter technology Secures an expansive area with 4× optical zoom and 16× digital zoom Supports WDR, HLC, BLC, 3D DNR, defog, regional exposure, regional focus Supports 12V DC Support Human and Vehicle Detection",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "820009    ",
+  "cod_bejerman": null,
+  "modelo": "DS-PD1-EB-WS2 WIRELESS PANIC BUTTON HIKVISION",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "307900723 ",
+  "cod_bejerman": null,
+  "modelo": "AE-DI5052-G40 PRO DASHCAM",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "820023    ",
+  "cod_bejerman": null,
+  "modelo": "DS-PTA-WL-433 WIRELESS TAG READER",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302700180",
+  "cod_bejerman": "302700180",
+  "modelo": "DS-1662ZJ PENDANT MOUNT",
+  "descripcion": "Pendent Mount (50cm) Aluminum Alloy Hikvision White",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311325533 ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD3661G2-LIZSU 2.7-13.5MM - 6MP BULLET CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20197     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD3641G0-IZSUHK 2.7-13.5MM - 4MP BULLET CAMERA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "307500510 ",
+  "cod_bejerman": null,
+  "modelo": "DS-1475ZJ-SUS/BJZ MONTAJE VERTICAL P/CAMARA",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "304900224 ",
+  "cod_bejerman": null,
+  "modelo": "DS-PA0103-A IP SPEAKER",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "317600978",
+  "cod_bejerman": "317600978",
+  "modelo": "DS-D60E-B (O-STD) DIGITAL SIGNAGE BOX",
+  "descripcion": "Variable Materials Supports static and dynamic materials, including the application, pictures, audio, video, PDF, streaming media, webpage, live video, third-party data, etc. Flexible Program Schedule Supports free schedule and district display of multiple materials. Supports variable display modes: display by day, display by week, custom display, etc. Centralized Management Remotely control and manage one or more screens, such as timed startup/shutdown, timed brightness/volume, and screenshot previewing. Organization Feature 5-level organization is available for managing materials, programs, terminals, and users. Multilevel User Permission Supports creating custom users, and allocating permission for users according to user level. Multiple Security Safeguards 3-level check of materials, programs, and schedules to prevent mistake release. Screensaver to secure safe for broadcast contents. Encryption of data storage and transmission to avoid data tampering. Arbitrary Direction Remote Control The remote control, adopting wireless communication in 433 MHz, can control the information distribution box in arbitrary direction.",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301803410",
+  "cod_bejerman": "301803410",
+  "modelo": "DS-3E0310HP-E (C) SWITCH POE 8 PORT UNMANAGED",
+  "descripcion": "8 × 10/100 Mbps PoE port,2 × Gigabit RJ45 port IEEE 802.3bt standard Hi-PoE, max. 90 W for one port. Up to 300 m long range PoE transmission. Port isolation to improve network security. 6 KV surge protection to improve reliability in harsh environment. PoE watchdog to auto-detect and restart cameras that do not respond.",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311320482",
+  "cod_bejerman": "311320482",
+  "modelo": "DS-2CD2367G2P-LSU/SL (2.8mm) (C)(O-ST) 6MP CAMERA",
+  "descripcion": "High quality imaging with 6 MP resolution ; One image that presents all the scenes covered by the camera; 24/7 colorful imaging; Efficient H.265+ compression technology; Clear imaging against strong back light due to 130 dB WDR technology; Focus on human and vehicle classification based on deep learning; Active strobe light and audio alarm to warn intruders off ; Water and dust resistant (IP67);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302402568",
+  "cod_bejerman": "302402568",
+  "modelo": "DS-PS403I-WB (O-STD)/Blue SIRENA INTERIOR",
+  "descripcion": "Full Duplex intercom Kinds of prompt sound and LED indications Fully remote configurable through APP Sound volume : 85dB(A)~105dB(A)",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "810019    ",
+  "cod_bejerman": null,
+  "modelo": "DS-K1106M CARD READER",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311326147",
+  "cod_bejerman": "311326147",
+  "modelo": "DS-2CD2T43G2-4LI2U (2.8mm) (O-STD) 4MP BULLET CAME",
+  "descripcion": "High quality imaging with 4 MP resolution; Acusense: Focus on human and vehicle classification based on deep learning; Smart Hybrid Light: Integrates IR and White lights, 4 supplemental lighting modes; -2U: Built-in arrayed dual-microphone for real-time high quality audio security; Clear imaging against strong back light due to 120 dB true WDR technology; Efficient H.265+ compression technology; Water and dust resistant (IP67) and vandal-resistant (IK10);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311320239",
+  "cod_bejerman": "311320239",
+  "modelo": "DS-2CD6825G0/C-IVS (2mm) (B) (O-STD) PEOPLE COUNTI",
+  "descripcion": "High quality imaging with 4 MP resolution Efficient H.265+ compression technology Clear imaging against strong back light due to 120 dB true WDR technology 3D DNR technology delivers clean and sharp images -S: audio and alarm interface available Water and dust resistant (IP67)",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "301803249 ",
+  "cod_bejerman": null,
+  "modelo": "DS-3E1512HP-SI-8P2T2F SWITCH POE 8 PUERTOS",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "300228861",
+  "cod_bejerman": "300228861",
+  "modelo": "DS-E08HGHI-B (STD) (B) 8CH ESSD DVR",
+  "descripcion": "Powered by eSSD technology Deep learning based human and vehicle targets classification of Motion Detection 2.0 Scene-adaptive bitrate control video compression Up to 1080p Lite@15 fps encoding capability Low power consumption Audio via coaxial cable",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "327800921",
+  "cod_bejerman": "327800921",
+  "modelo": "DS-2CE70DF3T-LMFS 2.8MM 2MP CAMERA",
+  "descripcion": "High quality imaging with 2 MP, 1920 × 1080 resolution 24/7 color imaging with F1.0 aperture Smart-Hybrid light, optimize your security with flexible lighting options Clear imaging against strong back light due to 130 dB true WDR technology 3D DNR technology delivers clean and sharp images 2.8 mm, 3.6 mm fixed focal lens Up to 20 m white light distance for bright night imaging Up to 20 m IR distance for bright night imaging High quality audio with audio over coaxial cable, built-in mic One port for four switchable signals (TVI/AHD/CVI/CVBS) Water and dust resistant (IP67)",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "20133     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CD2621G0-IZ 2.8-12mm CAMERA NETWORK HIKVISION",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "305700600",
+  "cod_bejerman": "305700600",
+  "modelo": "DS-KABV6113-RS (O-STD) RAIN SHIELD",
+  "descripcion": "Protective shield for KV6103/6113 series villa door station (Surface mouting) Material: Plastic",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "10053     ",
+  "cod_bejerman": null,
+  "modelo": "DS-2CE16D0T-IF CAMARA HIKVISION 2MP - 2.8mm",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "303624070 ",
+  "cod_bejerman": null,
+  "modelo": "DS-7608NXI-K1/VPRO NVR 8CH HIKVISION",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302922988",
+  "cod_bejerman": "302922988",
+  "modelo": "DS-K1105EMKB-QR CARD READER",
+  "descripcion": "Supports RS-485 protocol, Wiegand (W26/W34) protocol, and OSDP protocol Build-in M1 and EM card reading module (Frequency: 13.56 MHz\u0026125 KHz) Built-in buzzer for identifying the reading status Supports online upgrade Supports multiple authentication methods such as card swiping, PIN, QR code, bluetooth, etc Supports touch panel for operation Supports occlusion detection, with bluetooth, it can realize door open via waving hands",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "305701131",
+  "cod_bejerman": "305701131",
+  "modelo": "DS-KAB673-WBQR (O-NEU) FINGER PRINT MODULE",
+  "descripcion": "Supports call function Supports controlling door by keyfob Applicable with DS-K1T673 series.",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "314300187",
+  "cod_bejerman": "314300187",
+  "modelo": "DS-PDC10DM-EG2-WB WIRELESS DUAL-TECH DETECTOR",
+  "descripcion": "Slim design for window frame installation IP65 weather resistance for outdoor application Active IR anti-masking Directional detection support Multiple enrollment methods and easy installation Frequency hopping against jamming for reliable transmission",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "50005     ",
+  "cod_bejerman": null,
+  "modelo": "DS-1693ZJ BRACKET HIKVISION  for DS-2DY9188-AI2",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "327000607",
+  "cod_bejerman": "327000607",
+  "modelo": "DS-2SE7C432MW-AEB (14F1) (O-STD) (P3) 4MP SPEED DO",
+  "descripcion": "Captures a large area and great details at the same time High quality imaging with 4 MP resolution Excellent low-light performance with powered-by-DarkFighter technology Secures an expansive area with 32× optical zoom and 16× digital zoom Supports WDR, HLC, BLC, 3D DNR, defog, regional exposure, regional focus Expansive night view with up to 200 m IR distance Supports 24 VAC \u0026 Hi-PoE Active strobe light and audio alarm to warn intruders off",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "311331764",
+  "cod_bejerman": "311331764",
+  "modelo": "DS-2CD3047G3-LIUY 2.8MM 4MP CAMERA",
+  "descripcion": "HIK AI-ISP for excellent noise reduction effect; 24/7 colorful imaging via ColorVu technology; Smart Hybrid Light: Integrates IR and White lights, 3 supplemental lighting modes; 130 dB WDR, support Auto mode, clear imaging against strong back light; AcuSense: Focus on person and vehicle classification based on deep learning; Built-in arrayed dual-microphone for real-time high quality audio security; Water and dust resistant (IP67); -Y: Anti-corrosion design, providing reliability and longevity compared to standard (NEMA 4X);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": null,
+  "hik_code": "302908147",
+  "cod_bejerman": "302908147",
+  "modelo": "DS-K7P04 (O-NEU) /T DOOR EXIT BUTTON",
+  "descripcion": "New version of DS-K7P03, there is \"/T\" in the label Stainless steel panel Dimension(L×W×H): 90×35×37.7mm(3.54×1.38×1.48\").",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "ACCESO HIK",
+  "subcategoria": "Accesorios"
+}, {
+  "pagina": null,
+  "hik_code": "302901047",
+  "cod_bejerman": "810009",
+  "modelo": "DS-K7PEB EMERGENCY BREAK GLASS - RED",
+  "descripcion": "Boton de emergencia de rotura de vidrio, color rojo",
+  "datasheet": "https://www.hikvision.com/content/dam/hikvision/products/S000000001/S000000139/S000000081/S000000118/OFR000152/M000001528/Data_Sheet/DS-K7PEB-Red-Emergency-Break-Glass_Datasheet_V1.0_20220124.pdf",
+  "marca": "hikvision",
+  "categoria": "ACCESO HIK",
+  "subcategoria": "Accesorios"
+}, {
+  "pagina": null,
+  "hik_code": "311315672",
+  "cod_bejerman": "20072",
+  "modelo": "DS-2CD1043G0-I 2.8mm",
+  "descripcion": "Cámara IP tipo Bullet 4mp, Lente fija de 2.8mm , Color 0.01 Lux H.265+, EXIR2.0 (30m). BLC, 3D DNR , WDR. .12VDC y PoE, IP67 Analiticas: Detección de movimiento.",
+  "datasheet": null,
+  "marca": "hikvision",
+  "categoria": "CAMARAS",
+  "subcategoria": "CAMARAS IP LINEA INICIAL"
+}, {
+  "pagina": null,
+  "hik_code": "311315198",
+  "cod_bejerman": "311315198",
+  "modelo": "DS-2CD2046G2-I 2.8MM C - 4MP BULLET NETWORK CAMERA",
+  "descripcion": "High quality imaging with 4 MP resolution; Excellent low-light performance with powered-by-DarkFighter technology; Clear imaging against strong backlight due to 120 dB true WDR technology; Efficient H.265+ compression technology; Focus on human and vehicle targets classification based on deep learning; Built-in microphone for real-time auto security(-U); Water and dust resistant (IP67);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "CAMARAS",
+  "subcategoria": "CAMARAS IP LINEA INICIAL"
+}, {
+  "pagina": null,
+  "hik_code": "311315192",
+  "cod_bejerman": "311315192",
+  "modelo": "DS-2CD2646G2-IZS - 2.8-12MM C 4 MP ACUSENSE BULLET",
+  "descripcion": "High quality imaging with 4 MP resolution; Excellent low-light performance with powered-by-DarkFighter technology; Motorized varifocal lens for easy installation; Clear imaging against strong backlight due to 120 dB true WDR technology; Efficient H.265+ compression technology; Focus on human and vehicle targets classification based on deep learning; Audio and alarm interface available; Water and dust resistant (IP66) and vandal-resistant (IK10);",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "CAMARAS",
+  "subcategoria": "CAMARAS IP LINEA INICIAL"
+}, {
+  "pagina": null,
+  "hik_code": "305402548",
+  "cod_bejerman": "305402548",
+  "modelo": "HM-TD2638-35/G0/T1Y (O-STD) THERMAL CAMERA",
+  "descripcion": "Camara HIKMICRO IP opto termica bi-espectro tipo bullet para detección perimetral optimizada, prevención de incendios y detección de fuego. Canal térmico: Resolución 384 x 288, zoom digital x2, x4, x8, paso de pixel: 12 μm, NETD \u003c 20 mK. Canal óptico: resolución 4MP (2688 x 1520), sensor CMOS 1/2.7\". Lente óptico 12,4 mm (F1.6), lente térmico 35 mm. Iluminación mín. color: 0.0089 Lux, F1.6. Luz IR suplementaria hasta 100 metros. Mejoras de imagen: 3D DNR, WDR 120 dB, balance de blancos. Admite imagen fusionada, PIP, EIS. Admite grabación en tarjeta microSD (máx. 512GB), en NAS y ANR. Protección IP67, IK10 y anticorrosión NEMA 4X. Alimentación: 24VAC 0.55A, 12 VDC 1.33A y PoE: IEEE 802.3af, máx. 11.8W. Protección contra descargas: 4kV, contra sobretensiones y transitorios. Alarma: 2E/2S. Audio: 1E/1S. Puerto Ethernet RJ45 10/100 M, RS-485. Analíticas: VCA 3.0: cruce de línea / intrusión de área / región de entrada / región de salida. 3 reglas de detección de temperatura (10 puntos, 10 áreas, 1 línea). Hasta 10 focos de fuego/humo detectables. Rango identificación de personas: 182 m (VCA: 455 m), de vehículos: 559 m (VCA: 1050 m). Detección de temperatura: 46.2 m a 115.5 m. Detección de incendios: 48 m. Procesamiento de imágenes: lineal, histograma, modo AGC térmico autoadaptativo, DDE, 3D DNR.",
+  "datasheet": "https://assets.hikvision.com/prd/public/all/doc/m000113792/HM-TD2638-35_G0_T1Y_Datasheet_en-US_20250621.pdf",
+  "marca": "hikvision",
+  "categoria": "CAMARAS TERMICAS",
+  "subcategoria": "CAMARAS TERMICAS (DETECCION DE INCENDIO, VCA, PERIMETRALES,ETC)"
+}, {
+  "pagina": null,
+  "hik_code": "305402565",
+  "cod_bejerman": "305402565",
+  "modelo": "HM-TD2638-15/G0/T1Y (O-STD) THERMAL CAMERA",
+  "descripcion": "384 × 288 resolution, 12 μm, VOx UFPA, NETD ≤ 20 mK (25°C, F1.0) Video content analysis 3.0 (VCA3.0): high accuracy vehicle/human detection and classification Temperature exception alarm for fire prevention, -20°C to 150°C (-4°F to 302°F), ± 8°C (± 14.4°F) Fire detection and smoking detection Algorithm Support sun-reflection filter algorithm Built-in TPM2.0 encryption module for cybersecurity Image processing technology: linear, histogram, self-adaptive thermal AGC mode, DDE, 3D DNR High quality detector with 10 years guarantee",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "CAMARAS TERMICAS",
+  "subcategoria": "CAMARAS TERMICAS (DETECCION DE INCENDIO, VCA, PERIMETRALES,ETC)"
+}, {
+  "pagina": null,
+  "hik_code": "300512639",
+  "cod_bejerman": "10065",
+  "modelo": "DS-2CE16D0T-EXIPF (2.8mm)",
+  "descripcion": "Cámara bullet  2MP,  Lente fijo 2.8mm,  0.02 Lux @ (F1.2, AGC ON),  4 en 1 TVI / AHD / CVI / CVBS, (IR20m), EXIR 2.0: OSD menu,DWDR, BLC, Global , Digital WDR , IP66 exterior,plastico 12VDC",
+  "datasheet": null,
+  "marca": "hikvision",
+  "categoria": "camaras",
+  "subcategoria": "Cámaras Turbo HD Super Económica"
+}, {
+  "pagina": null,
+  "hik_code": "302903597",
+  "cod_bejerman": "302903597",
+  "modelo": "DS-K1F820-F CARD ISSUER",
+  "descripcion": "Plug-and-play USB with no-driver technology, USB 2.0 Optical fingerprint sensor designed with scratch-resistant material Works with Windows XP, Windows7, Windows 10 and Windows11 operating systems",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "ACCESO HIK",
+  "subcategoria": "Enrolador de huellas"
+}, {
+  "pagina": null,
+  "hik_code": "302900517",
+  "cod_bejerman": "810041",
+  "modelo": "DS-K1103MK CARD READER HIKVISION",
+  "descripcion": "Lector de tarjetas Mifare con teclado numérico touchscreen. Equipado con procesador de alta velocidad de 32 bits. Zumbador audible incorporado. Protocolo RS485 y Wiegand (W26 / W34). Alarma a prueba de manipulaciones. Diseño a prueba de polvo y a prueba de agua. Frecuencia de lectura 13.56MHz. IP64. 12VDC.",
+  "datasheet": "https://drive.google.com/file/d/1NTOvT2HVUD3KmDY-_zmppoWZyj-pEVY2/view?usp\u003dsharing",
+  "marca": "hikvision",
+  "categoria": "ACCESO HIK",
+  "subcategoria": "Lector de tarjetas serie DS-K1100"
+}, {
+  "pagina": null,
+  "hik_code": "302900513",
+  "cod_bejerman": "302900513",
+  "modelo": "DS-K1104MK CARD READER",
+  "descripcion": "M1 card reader PC+zinc-alloy material shell Built-in audible beeper RS-485 and Wiegand interface IK10",
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "ACCESO HIK",
+  "subcategoria": "Lector de tarjetas serie DS-K1100"
+}, {
+  "pagina": null,
+  "hik_code": "303801276",
+  "cod_bejerman": "303801276",
+  "modelo": "ST1000VX005,1TB, HDD,3.5in,SATA 3",
+  "descripcion": null,
+  "datasheet": null,
+  "marca": "HIKVISION",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK"
+}, {
+  "pagina": null,
+  "hik_code": "311317283",
+  "cod_bejerman": "311317283",
+  "modelo": "iDS-2CD7A46G0-IZHSY(2.8-12mm) 4MP BULLET CAMERA",
+  "descripcion": "High quality imaging with 4 MP resolution.\nExcellent low-light performance via DarkFighter technology.\nClear imaging against strong back light due to 140 dB WDR technology.\nEfficient H.265+ compression technology to save bandwidth and storage.\n5 streams to meet a wide variety of applications.\nWater and dust resistant (IP67) and vandal proof (IK10)",
+  "datasheet": null,
+  "marca": "hikvision",
+  "categoria": "camaras",
+  "subcategoria": "camaras"
+}, {
+  "pagina": "",
+  "hik_code": "308901909",
+  "cod_bejerman": "308901909",
+  "modelo": "AE-VC155T(6mm)(O-STD)(3.1)",
+  "descripcion": "Progressive scan CMOS Up to 720P resolution 0.1 lux @ (F1.2, AGC ON) Supports auto electronic shutter Supports auto gain control Supports WDR",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "303623429",
+  "cod_bejerman": "303623429",
+  "modelo": "DS-7608NI-Q1/W(O-STD)",
+  "descripcion": "Stable wireless connection with cameras for low-latency data transmission Easy to install through automatic cameras connection and easy configuration Dual High-gain antenna design for wider Wi-Fi coverage Supporting local output up to 4K for HDMI and up to 1080P for VGA Smart motion detection supporting person and vehicle targets classification Supporting remote preview,playback and manage through Hik-Connect App Supporting 1 HDD interface, Up to 8TB Up to 8 channel cameras can be connected H.265+/H.265/H.264+/H.264 video formats Up to 8-ch @ 1080p decoding capacity",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "327801505",
+  "cod_bejerman": "327801505",
+  "modelo": "DS-2CE16K0T-LTS(2.8mm)(O-STD)",
+  "descripcion": "High quality imaging with 3K, 2960 × 1665 resolution 2.8 mm, 3.6 mm fixed focal lens Up to 20 m white light and 30 m IR distance for bright night imaging Smart-Hybrid Light, optimize your security with flexible lighting options High quality audio with audio over coaxial cable, built-in mic, and built-in speaker Provide real-time communication via built-in two-way audio Water and dust resistant (IP67)",
+  "datasheet": "",
+  "marca": null,
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "302700239",
+  "cod_bejerman": "302700239",
+  "modelo": "DS-1260ZJ",
+  "descripcion": "Junction Box Aluminum Alloy Hikvision White",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311334440",
+  "cod_bejerman": "311334440",
+  "modelo": "DS-2CD1027G3-LIU",
+  "descripcion": "",
+  "datasheet": "",
+  "marca": null,
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311327627",
+  "cod_bejerman": "311327627",
+  "modelo": "DS-2CD1T47G2H-LIUF/SL(2.8mm)(O-STD)",
+  "descripcion": "High quality imaging with 4 MP resolution; 24/7 colorful imaging; Support Person and Vehicle Detection; Smart Hybrid Light: advanced technology with long range cover; Provide real-time security via built-in two-way audio and strobe light alarm; Efficient H.265+ compression technology; Support on-board storage up to 512 GB (SD card slot); Water and dust resistant (IP67);",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311325240",
+  "cod_bejerman": "311325240",
+  "modelo": "DS-2CD1743G2-LIZU(2.8-12mm)(O-STD)",
+  "descripcion": "High quality imaging with 4 MP resolution; Support Human and Vehicle Detection; Smart Hybrid Light: advanced technology with long range; Clear imaging against strong back light due to 120 dB true WDR technology; Support on-board storage up to 512 GB (SD card slot); Efficient H.265+ compression technology ; Built-in microphone for real-time audio security; 2.8 to 12 mm motorized varifocal lens for easy installation and monitoring ; Water and dust resistant (IP67), vandal proof (IK08);",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311327706",
+  "cod_bejerman": "311327706",
+  "modelo": "DS-2CD1047G2H-LIUF/SRB(2.8mm)(O-STD)",
+  "descripcion": "High quality imaging with 4 MP resolution; 24/7 colorful imaging; Support Person and Vehicle Detection; Smart Hybrid Light: advanced technology with long range cover; Provide real-time security via built-in two-way audio and strobe light alarm; Efficient H.265+ compression technology; Support on-board storage up to 512 GB (SD card slot); Water and dust resistant (IP67);",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311334444",
+  "cod_bejerman": "311334444",
+  "modelo": "DS-2CD1347G3-LIU(2.8mm)(Latam AcuSense)",
+  "descripcion": "",
+  "datasheet": "",
+  "marca": null,
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "302923484",
+  "cod_bejerman": "302923484",
+  "modelo": "DS-K1T673DG1X-E1",
+  "descripcion": "7-inch LCD touch screen,2 Mega pixel wide-angle lens Recognition distance: 0.3 to 3 m Face recognition duration ＜ 0.2 s/User Face recognition accuracy rate ≥ 99% Built-in M1 card, Felica card, and DESfire card reading module (Presents card on the screen to authenticate) Face mask detection 10,000 face capacity, 10,000 fingerprint capacity (With fingerprint module), 50,000 card capacity, and 150,000 event capacity Supports ISAPI, ISUP 5.0, TCP/IP (IPv4 and IPv6), 3G/4G Supports single person and multiple people (Up to 5 people) recognition Supports Push SDK. Supports attendance-only function. Supports the following SIP servers: ASTERISK, 3CX, ELASTIX, miniSipServer, Brekeke, OpenSIPs, Kamailio. Supports face duplicate check, preventing multiple people from using the same face. Supports customed Wiegand parameters.",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311319423",
+  "cod_bejerman": "311319423",
+  "modelo": "DS-2CFWQ3(2.8mm)(O-STD)/EU",
+  "descripcion": "2K Higher Definition Helps See More Details Support Wi-Fi 6 Support Human and Vehicle Detection Support One-tap Privacy Mode Support Smart Hybrid Light Provide real-time security via built-in two-way audio Built-in microphone for real-time audio security",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "303623667",
+  "cod_bejerman": "303623667",
+  "modelo": "iDS-9632NXI-P8R(STD)",
+  "descripcion": "Up to 2-ch@32 MP/2-ch@24 MP/4-ch@12 MP/8-ch@8 MP/16-ch@4 MP/32-ch@1080p decoding capacity H.265+/H.265/H.264+/H.264 video formats Intelligent analytics based on Guanlan Large-Scale AI Models Up to 32-ch IP cameras can be connected Up to 32-ch AcuSeek and AcuSearch function Up to 24-ch perimeter protection Up to 16-ch facial recognition for video stream, or up to 32-ch facial recognition for face picture Up to 16-ch video structuralization Up to 8-ch IP speakers can be connected",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "308901910",
+  "cod_bejerman": "308901910",
+  "modelo": "AE-VC154T-IT(6mm)(O-STD)(3.1)",
+  "descripcion": "Adapts progressive scan CMOS Up to 720P resolution 0.1 lux @ (F1.2, AGC ON), 0 lux with IR Adapts shock-proof design and 4-pin din connector",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311319438",
+  "cod_bejerman": "311319438",
+  "modelo": "DS-2CFW02(2.8mm)(O-STD)/EU",
+  "descripcion": "Support Wi-Fi 6; Support Human and Vehicle Detection; Built-in microphone and speaker, support two-way audio; Good night-time performance with up to 30 m IR and 30 m white light; Water and dust resistant (IP66);",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "327800895",
+  "cod_bejerman": "327800895",
+  "modelo": "DS-2CE10KF0T-LPFS(2.8mm)(O-STD)",
+  "descripcion": "High quality imaging with 3K, 2960 × 1665 resolution 24/7 color imaging with F1.0 aperture 2.8 mm and 3.6 mm fixed focal lens Up to 20 m IR distance for bright night imaging Up to 20 m white light distance for bright night imaging High quality audio with audio over coaxial cable, built-in mic One port for four switchable signals (TVI/AHD/CVI/CVBS) Water and dust resistant (IP67) Smart-Hybrid light, optimize your security with flexible lighting options",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311334443",
+  "cod_bejerman": "311334443",
+  "modelo": "DS-2CD1327G3-LIU(2.8mm)(Latam AcuSense)",
+  "descripcion": "",
+  "datasheet": "",
+  "marca": null,
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311330461",
+  "cod_bejerman": "311330461",
+  "modelo": "DS-2CD3666G3T-LIZSUY(2.7-13.5mm)(O-STD)",
+  "descripcion": "HIK AI-ISP for excellent noise reduction effect; 24/7 colorful imaging via Darkfighter 2.0 technology; Scene-adaptive WDR; Focus on Person and Vehicle classification based on deep learning; Motorized varifocal lens for easy installation and monitoring; -Y: Anti-corrosion design, providing reliability and longevity compared to standard (NEMA4X); Smart Hybrid Light: Integrates IR and White lights, 3 supplemental lighting modes; Water and dust resistant (IP67) and vandal resistant (IK10);",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "311334441",
+  "cod_bejerman": "311334441",
+  "modelo": "DS-2CD1047G3-LIU",
+  "descripcion": "",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}, {
+  "pagina": "",
+  "hik_code": "302923487",
+  "cod_bejerman": "302923487",
+  "modelo": "DS-K1T673DWX-PROE1",
+  "descripcion": "7-inch LCD touch screen,2 Mega pixel wide-angle lens Recognition distance: 0.3 to 3 m Face recognition duration ＜ 0.2 s/User Face recognition accuracy rate ≥ 99% Built-in M1 card, Felica card, and DESfire card reading module (Presents card on the screen to authenticate) Face mask detection 10,000 face capacity, 10,000 fingerprint capacity (With fingerprint module), 50,000 card capacity, and 150,000 event capacity Supports ISAPI, ISUP 5.0, TCP/IP (IPv4 and IPv6) Supports single person and multiple people (Up to 5 people) recognition Support protection level IP68, IK07 Supports Push SDK. Supports the following SIP servers: ASTERISK, 3CX, ELASTIX, miniSipServer, Brekeke, OpenSIPs, Kamailio. Supports face duplicate check, preventing multiple people from using the same face. Supports attendance-only function. Supports customed Wiegand parameters.",
+  "datasheet": "",
+  "marca": "",
+  "categoria": null,
+  "subcategoria": null
+}]
+

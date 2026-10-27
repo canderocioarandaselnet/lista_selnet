@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui;
+            background: #0b1220;
+            color: #fff;
+            padding: 24px;
+        }
+
+        .card {
+            max-width: 560px;
+            margin: auto;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .muted {
+            opacity: .75;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, .18);
+            background: rgba(255, 255, 255, .08);
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>🔐 Acceso requerido</h2>
+
+        <? if (reason === "NO_EMAIL") { ?>
+        <p>No se pudo detectar tu cuenta de Google.</p>
+        <p class="muted">Abrí el link con Chrome logueado (no incógnito) y recargá.</p>
+        <? } else if (reason === "NOT_ALLOWED") { ?>
+        <p>Tu cuenta <b>
+                <?= mail ?>
+            </b> no está habilitada.</p>
+        <p class="muted">Pedí acceso para que te agreguen a <code>selnet-476815.pagina.accesos</code>.</p>
+        <? } else { ?>
+        <p class="muted">No autorizado.</p>
+        <? } ?>
+
+        <a class="btn" href="<?= baseUrl ?>?page=<?= next ?>">🔁 Reintentar</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+selnet-476815.pagina.gold_ultracell
+
+[
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "unidades",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "es_oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "modelo": "UL7-12E",
+  "descripcion": "BATERIA DE 12V 7A  uso exclusivo sistemas de alarma",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS",
+  "gremio": "10.9",
+  "iva": "0.21",
+  "unidades": "50 a 99 unidades",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "modelo": "UL7-12E",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS",
+  "gremio": "8.8",
+  "iva": "0.21",
+  "unidades": "250 a 500 unidades",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "modelo": "UL7-12E",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS",
+  "gremio": "9.9",
+  "iva": "0.21",
+  "unidades": "100 a 249 unidades",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "modelo": "UL7-12E",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS",
+  "gremio": "24.0",
+  "iva": "0.21",
+  "unidades": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "modelo": "UL7-12E",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS",
+  "gremio": "11.9",
+  "iva": "0.21",
+  "unidades": "1 a 49 unidades",
+  "oferta": null,
+  "es_oferta": ""
+}]
+

@@ -1,0 +1,132 @@
+selnet-476815.pagina.ultracell
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fabricante",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "unidades",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Baterias",
+  "modelo": "UL7-12E",
+  "fabricante": "ULTRACELL",
+  "descripcion": "BATERIA DE 12V 7A  uso exclusivo sistemas de alarma",
+  "gremio": "10.9",
+  "iva": "0.21",
+  "unidades": "50 a 99 unidades",
+  "marca": "ultracell",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS"
+}, {
+  "pagina": "Baterias",
+  "modelo": "UL7-12E",
+  "fabricante": "ULTRACELL",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "gremio": "8.8",
+  "iva": "0.21",
+  "unidades": "250 a 500 unidades",
+  "marca": "ultracell",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS"
+}, {
+  "pagina": "Baterias",
+  "modelo": "UL7-12E",
+  "fabricante": "ULTRACELL",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "gremio": "11.9",
+  "iva": "0.21",
+  "unidades": "1 a 49 unidades",
+  "marca": "ultracell",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS"
+}, {
+  "pagina": "Baterias",
+  "modelo": "UL7-12E",
+  "fabricante": "ULTRACELL",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "gremio": "24.0",
+  "iva": "0.21",
+  "unidades": null,
+  "marca": "ultracell",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS"
+}, {
+  "pagina": "Baterias",
+  "modelo": "UL7-12E",
+  "fabricante": "ULTRACELL",
+  "descripcion": "BATERIA DE 12V 7A uso exclusivo sistemas de alarma",
+  "gremio": "9.9",
+  "iva": "0.21",
+  "unidades": "100 a 249 unidades",
+  "marca": "ultracell",
+  "categoria": "BATERIAS",
+  "subcategoria": "BATERIAS"
+}]
+

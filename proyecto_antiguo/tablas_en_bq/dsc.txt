@@ -1,0 +1,160 @@
+selnet-476815.pagina.dsc
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fabricante",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Dsc",
+  "modelo": "WS4904PM",
+  "fabricante": "DSC",
+  "descripcion": "PIR ANTIMASCOTA INALAMBRICO HASTA 25 KG EN 433 MHz. BATERIAS DE LITIO",
+  "gremio": "34.86",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "WS4936",
+  "fabricante": "DSC",
+  "descripcion": "DETECTOR DE HUMO INALAMBRICO EN 433 MHz CON ALARMA SONORA LOCAL, BOTON DE PRUEBA AJUSTE DE SENSIBILIDAD, INDICADOR DE BATERIA BAJA, 3 PILAS AAA. HOMOLOGACION UL/ULC/EN",
+  "gremio": "68.27",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "PC4116",
+  "fabricante": "DSC",
+  "descripcion": "MODULO EXPANSOR DE 16 ZONAS PARA PC-4010/4020 LINEA MAXSYS",
+  "gremio": "102.4",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "GS-2060",
+  "fabricante": "DSC",
+  "descripcion": "BACK UP CELULAR GPRS, SMS Y VOZ CON ENTRADAS DE ZONA Y MOTOR GSM INCORPORADO  APTO UP Y DOWNLOADING (NO INCLUYE CHIP DE LINEA) (para los paneles de control PowerSeries PC1864/1832/1616 de DSC)",
+  "gremio": "229.52",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "TLLINKTL250",
+  "fabricante": "DSC",
+  "descripcion": "COMUNICADOR PARA POWER ",
+  "gremio": "217.75",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "MP-300",
+  "fabricante": "DSC",
+  "descripcion": "SIRENA DE EXTERIOR",
+  "gremio": "60.5",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "PG9922",
+  "fabricante": "DSC",
+  "descripcion": "DETECTOR ROTURA DE VIDRIO INALAMBRICO! HASTA 360° HASTA 6m, INDICA BATERIA BAJA.",
+  "gremio": "89.45",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SGSYSTI-IP",
+  "fabricante": "DSC",
+  "descripcion": "Estación receptora Sur-Gard, Multiformato, doble línea telefónica, opcional IP",
+  "gremio": "4886.9",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SG−DRL5−2L",
+  "fabricante": "DSC",
+  "descripcion": "Placa para agregar dos líneas telefónicas (PSTN) a una SurGard System 5",
+  "gremio": "2080.94",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SG−DRL5",
+  "fabricante": "DSC",
+  "descripcion": "Placa para agregar una línea telefónica a una SurGard System 5",
+  "gremio": "1185.46",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SG-DRL3-IP",
+  "fabricante": "DSC",
+  "descripcion": "Placa de red para SG- System III, 512 usuarios supervisados y hasta 1536 usuarios totales.",
+  "gremio": "1194.9",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SG−S5LBRKT",
+  "fabricante": "DSC",
+  "descripcion": "Bracket (sujeción) para sostener hasta 6 placas PSTN (es un accesorio recomendado por la fábrica)",
+  "gremio": "23.54",
+  "iva": "0.21",
+  "marca": "dsc"
+}, {
+  "pagina": "Dsc",
+  "modelo": "SG-SIII-IN",
+  "fabricante": "DSC",
+  "descripcion": "Kit de cables para interconexión de SG-System III",
+  "gremio": "250.8",
+  "iva": "0.21",
+  "marca": "dsc"
+}]
+

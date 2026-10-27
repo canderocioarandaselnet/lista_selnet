@@ -1,0 +1,856 @@
+selnet-476815.pagina.stock_ultima_actualizacion
+
+[
+  {
+    "name": "Codigo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "Modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "Existencias",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "Comprometido",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "Disponible",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "Marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fecha_actualizacion",
+    "mode": "NULLABLE",
+    "type": "DATETIME",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "Codigo": "10000     ",
+  "Modelo": "DS-2CE16C0T-IRP CAMARA HIKVISION HD720p,1/4\" CMOS,",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100000    ",
+  "Modelo": "DS-2CD6520D-IO CAMERA HIKVISION MOBILE1/3” Progres",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100001    ",
+  "Modelo": "DS-2CD6510-I CAMARA HIKVISION MOBILE 1/3” Progress",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100002    ",
+  "Modelo": "DS-MP1301 MONITOR HIKVISION MOBILE 7-inch TFT LCD",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100004    ",
+  "Modelo": "DS-1350HM VOICE INTERCOM UNIT",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100005    ",
+  "Modelo": "AE-VC061P-ITS CAMARA 720TVL BUILT-IN MIC PLASTIC",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100006    ",
+  "Modelo": "DS-2CD6510-IO CAMARA 1/3\" PROGRESSIVE SCAN CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100007    ",
+  "Modelo": "AE-VC211T-IRS MOBILE HD-TVI CAMERA 2MPX",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100008    ",
+  "Modelo": "AE-VC122T-IT  MOBILE HD-TVI CAMERA 1MPX",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100009    ",
+  "Modelo": "DS-2XM6122FWD-I MOBILE NETWORK CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10001     ",
+  "Modelo": "DS-2CE16C0T-IR CAMARA HIKVISION HD720p,1/4\" CMOS,",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "100010    ",
+  "Modelo": "DS-2XM6522WD-I MOBILE NETWORK CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10002     ",
+  "Modelo": "DS-2CE56C0T-IRP CAMARA HIKVISION HD720p,1MP CMOS S",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10003     ",
+  "Modelo": "DS-2CE56C0T-IRM CAMARA HIKVISION HD720p,1/4\" CMOS,",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10004     ",
+  "Modelo": "DS-2CE16C2T-VFIR3 CAMARA HIKVISION HD720p,1/3\" CMO",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10005     ",
+  "Modelo": "DS-2CE56C2T-VFIR3 CAMARA HIKVISION HD720p,1/3\" CMO",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10006     ",
+  "Modelo": "DS-2CE16D0T-IRP CAMARA HIKVISION HD1080p, 2MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10007     ",
+  "Modelo": "DS-2CE56D0T-IRM CAMARA HIKVISION HD1080p, 2MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10008     ",
+  "Modelo": "DS-2CE16D7T-IT3Z CAMARA HIKVISION HD1080p,2MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10009     ",
+  "Modelo": "DS-2AE4223TI-D CAMARA HIKVISION 1/3\" CMOS,1920x108",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10010     ",
+  "Modelo": "DS-2AE4123TI-D CAMARA HIKVISION 1/3\" CMOS, 1280x72",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10011     ",
+  "Modelo": "DS-2CE16C0T-IRPF CAMARA HIKVISION HD720P,1MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10012     ",
+  "Modelo": "DS-2CE56C0T-IRF CAMARA HIKVISION HD720P,1MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10013     ",
+  "Modelo": "DS-2CE16D0T-IRPF CAMARA HIKVISION 1080P,2MP -2.8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10014     ",
+  "Modelo": "DS-2CE56D0T-IRMF CAMARA HIKVISION, 2MP 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10015     ",
+  "Modelo": "DS-2CE16H1T-IT CAMARA HIKVISION 5MP, 20fps@5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10016     ",
+  "Modelo": "DS-2CE56H1T-ITM CAMARA HIKVISION 5MP, 20fps@5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10017     ",
+  "Modelo": "DS-2CE16H1T-IT5 CAMARA HIKVISION 5MP, 20fps@5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10018     ",
+  "Modelo": "DS-2CE16H1T-AIT3Z 5MP,tMP CMOS SENSOR",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10019     ",
+  "Modelo": "DS-2CE56H1T-IT3Z 5MP, 20fps@5MP or 25fps(P)/30fps(",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10020     ",
+  "Modelo": "DS-2CC12D9T CAMARA HIKVISION HD1080P, 2MP CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10022     ",
+  "Modelo": "DS-2CE16DOT-WL5 CAMARA HIKVISION BULLET",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10023     ",
+  "Modelo": "DS-2CS54D7T-PH CAMARA HIKVISION PINHOLE 1080P",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10024     ",
+  "Modelo": "DS-2AE6123TB-A CAMARA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10025     ",
+  "Modelo": "DS-MH2111/64G/GLF HANDLE VIDEO TERMINAL",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10026     ",
+  "Modelo": "DS-2CE16D0T-WL3 CAMARA HIKVISION BULLET",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10027     ",
+  "Modelo": "DS-2CE16C0T-IRF CAMARA HIKVISION 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10028     ",
+  "Modelo": "DS-2CE16C0T-VFIR3F CAMARA HIKVISION 2.8-12mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10029     ",
+  "Modelo": "DS-2CE56C0T-IRPF CAMARA HIKVISION 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10030     ",
+  "Modelo": "DS-2CE56C0T-IRMF CAMARA HIKVISION 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10031     ",
+  "Modelo": "DS-2CE16D8T-IT3Z CAMARA HIKVISION 2,8-12mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10032     ",
+  "Modelo": "DS-2CE56C0T-VFIR3F CAMARA HIKVISION 720P",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10033     ",
+  "Modelo": "DS-2CE16D0T-VFIR3F CAMARA HIKVISION 2.8-12mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10034     ",
+  "Modelo": "DS-2CE16D0T-WL5 CAMARA HIKVISION 1080P",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10035     ",
+  "Modelo": "DS-2CC12D9T-A CAMARA HIKVISION 1080P BOX",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10036     ",
+  "Modelo": "DS-2AE4225TI-D CAMARA DOMO HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10037     ",
+  "Modelo": "DS-2CE16D0T-IT5F CAMARA HIKVISION 2MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10038     ",
+  "Modelo": "DS-2CE56H0T-ITMF CAMARA HIKVISION 5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10039     ",
+  "Modelo": "DS-2CE56D0T-IRPF CAMARA HIKVISION 1080P - 2.8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10040     ",
+  "Modelo": "DS-2CE16H0T-AIT3ZF CAMARA HIKVISION 5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10041     ",
+  "Modelo": "DS-2CE16H0T-ITF CAMARA HIKVISION 5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10042     ",
+  "Modelo": "DS-2CE16H0T-IT3ZF CAMARA HIKVISION 5MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10043     ",
+  "Modelo": "DS-2CE16C0T-IT5F CAMARA HIKVISION 1MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10044     ",
+  "Modelo": "DS-2CE16D0T-IRF CAMARA HIKVISION 2MP - 3.6mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10045     ",
+  "Modelo": "DS-2CE56D0T-VFIR3F CAMARA HIKVISION  2M - 2,8-12mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10046     ",
+  "Modelo": "DS-2CE10DFT-F CAMARA HIKVISION 2MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10047     ",
+  "Modelo": "DS-2CE12DFT-F CAMARA HIKVISION 2MP",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10048     ",
+  "Modelo": "DS-2CE16C0T-IPF CAMARA HIKVISION 2.8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10049     ",
+  "Modelo": "DS-2CE16D0T-IPF CAMARA HIKVISION 2MP - 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10050     ",
+  "Modelo": "DS-2CE56D0T-IF CAMARA HIKVISION 2MP - 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10051     ",
+  "Modelo": "DS-2CE56C0T-IPF CAMARA HIKVISION - 2,8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10052     ",
+  "Modelo": "DS-2CE56D0T-IPF CAMARA HIKVISION 2MP - 2.8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10054     ",
+  "Modelo": "DS-2CE56D0T-IRMMF CAMARA HIKVISION 2MP -2.8mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10055     ",
+  "Modelo": "DS-2CE5AD0T-VPIT3F CAMARA HIKVISION 2MP 2.8-12mm",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10056     ",
+  "Modelo": "DS-MH2311/64G/GLE/AR BODY CAMERA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10057     ",
+  "Modelo": "DS-2CE10DFT-PFC 3,6mm COLORVU CAMERA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10058     ",
+  "Modelo": "DS-2CE16D8T-AIT3ZF  2.7-13.5mm BULLET CAMERA HIKVI",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10059     ",
+  "Modelo": "DS-2CE12DFT-FC 3.6mm BULLET CAMERA COLORVU HIK",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10060     ",
+  "Modelo": "DS-2CE72DFT-FC 3.6mm DOME CAMERA COLORVU HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10061     ",
+  "Modelo": "DS-2CE72DFT-FC28  2.8mm  DOME CAMERA COLORVU HIKVI",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10062     ",
+  "Modelo": "DS-2CE16D0T-ITPF 3,6mm - 2MP CAMERA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10063     ",
+  "Modelo": "DS-2CE10DF0T-PF 3,6mm - BULLET CAMERA COLORVU",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10064     ",
+  "Modelo": "DS-2CE76D0T-ITPFS 2.8mm TURRET CAMERA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10066     ",
+  "Modelo": "DS-2CE16D8T-IT3ZE 2.7-13.5MM CAMARA HIKVISION",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10067     ",
+  "Modelo": "DS-2CE70DF0T-MF 2.8MM 2MP COLORVU CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10068     ",
+  "Modelo": "DS-2CE10DF0T-F 2,8MM 2MP COLORVU CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10069     ",
+  "Modelo": "DS-2CE70DF3T-MFS 2,8MM 2MP COLORVU CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10070     ",
+  "Modelo": "DS-2CE10DF0T-PF 2,8MM BULLET CAMERA COLORVU",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10071     ",
+  "Modelo": "DS-2CE76D0T-EXIMF 2,8MM - 2MP TURRET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10072     ",
+  "Modelo": "DS-2CE12DF0T-F 2,8MM - 2MP COLORVU BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10073     ",
+  "Modelo": "DS-2CE12DF3T-PIRXOS 3,6MM - 2MP COLORVU BULLET CAM",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10075     ",
+  "Modelo": "DS-2CE72DF3T-PIRXOS 2,8MM - COLORVU PIR SIREN AUDI",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10076     ",
+  "Modelo": "DS-2CE10KF0T-PFS 2,8mm - 3K COLORVU BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10077     ",
+  "Modelo": "DS-2CE16D0T-ITPFS 2,8MM - 2MP MINI BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10078     ",
+  "Modelo": "DS-2CE12D0T-PIRXF 2,8MM - 2MP BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10079     ",
+  "Modelo": "DS-2CE16H0T-ITPFS 2,8 MM - 5MP MINI BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10080     ",
+  "Modelo": "DS-2CE76D0T-EXIPF 2,8MM - 2MP TURRET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "10081     ",
+  "Modelo": "DS-2CE10DF3T-PFS 2,8MM - 2MP MINI BULLET CAMERA",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20000     ",
+  "Modelo": "DS-2CD2622FWD-IZNS CAMARA HIKVISION 1/2.8\" Progres",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20001     ",
+  "Modelo": "DS-2CD2420F-IWNS CAMARA HIKVISION 1/2.8\" Progressi",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20002     ",
+  "Modelo": "DS-2CD2120F-I CAMARA HIKVISION 1/2.8\" Progressiv",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20003     ",
+  "Modelo": "DS-2CD2020-I CAMARA HIKVISION 1/3\" Progressive CMO",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20004     ",
+  "Modelo": "DS-2CD2052-I CAMARA HIKVISION 1/3\" Progressive CMO",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20005     ",
+  "Modelo": "DS-2CD2720F-IZ CAMARA HIKVISION 1/3\" Progressive",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20006     ",
+  "Modelo": "DS-2CE16F1T-IT CAMARA HIKVISION 3MP,3MP CMOS, 18fp",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20007     ",
+  "Modelo": "DS-2CE56F1T-ITM CAMARA HIKVISION 3MP,3MP CMOS, 18f",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20008     ",
+  "Modelo": "DS-2CE16F7T-IT3Z CAMARA HIKVISION 3MP,3MP CMOS, 18",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20009     ",
+  "Modelo": "DS-2DE5230W-AENS CAMARA HIKVISION 2MP, 1/2.8\" CMOS",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20010     ",
+  "Modelo": "DS-2DE5220IW-AENS CAMARA HIKVISION 2MP, 1/2.8\" Pro",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}, {
+  "Codigo": "20011     ",
+  "Modelo": "DS-2DF8236I-AELNS CAMARA HIKVISION Darkfighter Ult",
+  "Existencias": "0.0",
+  "Comprometido": "0.0",
+  "Disponible": "0.0",
+  "Marca": "HIKVISION",
+  "fecha_actualizacion": "2026-10-27T00:00:00"
+}]
+

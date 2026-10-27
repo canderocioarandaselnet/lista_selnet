@@ -1,0 +1,369 @@
+selnet-476815.pagina.bentel_fireclass
+
+[
+    {
+        "name": "pagina",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "",
+        "fields": []
+    },
+    {
+        "name": "modelo",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "",
+        "fields": []
+    },
+    {
+        "name": "descripcion",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "",
+        "fields": []
+    },
+    {
+        "name": "gremio",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": "",
+        "fields": []
+    },
+    {
+        "name": "iva",
+        "mode": "NULLABLE",
+        "type": "FLOAT",
+        "description": "",
+        "fields": []
+    },
+    {
+        "name": "marca",
+        "mode": "NULLABLE",
+        "type": "STRING",
+        "description": "",
+        "fields": []
+    }
+]
+
+[
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400-Soft",
+        "descripcion": "Management software p/centrales J424",
+        "gremio": "0.0",
+        "iva": null,
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC400PH",
+        "descripcion": "Detector multi-sensor, óptico y temperatura",
+        "gremio": "52.5",
+        "iva": "0.105",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC490ST",
+        "descripcion": "Programador para detectores serie FC400",
+        "gremio": "373.75",
+        "iva": "0.105",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC420CP2",
+        "descripcion": "Pulsador de incendio, rompa el vidrio, interior",
+        "gremio": "82.5",
+        "iva": "0.105",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J408-2",
+        "descripcion": "Panel de Control p/2 zonas / No soportan repetidor",
+        "gremio": "243.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J408-4",
+        "descripcion": "Panel de Control p/4 zonas / No soportan repetidor",
+        "gremio": "251.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J408-8",
+        "descripcion": "Panel de Control p/8 zonas",
+        "gremio": "280.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J424-8",
+        "descripcion": "Panel de Control p/8 zonas expandible a 24 (J400-Exp8)",
+        "gremio": "386.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400-Exp8",
+        "descripcion": "Modulo de expansión de 8 zonas p/central J424-8",
+        "gremio": "73.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400-Ext",
+        "descripcion": "Modulo de extinción con microprocesador de control",
+        "gremio": "78.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400-LCD",
+        "descripcion": "Modulo de LCD p/centrales J424",
+        "gremio": "67.5",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400-Rep",
+        "descripcion": "Repetidor para paneles J408-8 y J424-8 c/modulo LCD",
+        "gremio": "217.5",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "J400BR",
+        "descripcion": "Interface serial vía RS485",
+        "gremio": "123.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H601P",
+        "descripcion": "Detector óptico de humo",
+        "gremio": "23.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H601PH",
+        "descripcion": "Detector óptico de humo de alta performance",
+        "gremio": "31.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H601HR",
+        "descripcion": "Detector de temperatura termovelocimétrico",
+        "gremio": "17.5",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H601HF",
+        "descripcion": "Detector de temperatura fijo (58°C)",
+        "gremio": "18.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H601CH",
+        "descripcion": "Detector de monóxido de carbono/Térmico fijo",
+        "gremio": "75.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "TH5B / 4B",
+        "descripcion": "Base universal para detectores",
+        "gremio": "6.13",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "MUB-RV",
+        "descripcion": "Base universal con relay, para detectores",
+        "gremio": "21.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "H201",
+        "descripcion": "Sirena 24v. Roja",
+        "gremio": "41.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "MCP-200CS",
+        "descripcion": "Pulsador de incendio",
+        "gremio": "16.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC510",
+        "descripcion": "Panel de control, 1 lazo.",
+        "gremio": "1036.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC520",
+        "descripcion": "Panel de control, 2 lazos, soporta 250 dispositivos (detectores, pulsadores o módulos) x lazo, una zona para dispositivos convencionales. Expandible a 8#FC520 máximo, conectadas a través de RS-485, llegando a un máximo de 4000 dispositivos",
+        "gremio": "1531.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC500PS",
+        "descripcion": "Interface para FC520",
+        "gremio": "240.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC500IP",
+        "descripcion": "Panel de interface TCP/IP",
+        "gremio": "244.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC500REP",
+        "descripcion": "Repetidor de panel FC520",
+        "gremio": "461.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC400P / FC460P",
+        "descripcion": "Detector óptico de humo",
+        "gremio": "43.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC400H",
+        "descripcion": "Detector de temperatura",
+        "gremio": "41.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC400CH",
+        "descripcion": "Detector de temperatura y Monóxido de Carbono",
+        "gremio": "95.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "TH5B / 4B",
+        "descripcion": "Base universal para detectores",
+        "gremio": "4.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC450IB",
+        "descripcion": "Base con aislador",
+        "gremio": "23.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC410LI",
+        "descripcion": "Modulo aislador de línea",
+        "gremio": "48.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC410MIM",
+        "descripcion": "Mini modulo de entrada",
+        "gremio": "61.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC410SIO",
+        "descripcion": "Modulo de entrada y salida",
+        "gremio": "116.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC410MIO",
+        "descripcion": "Modulo direccionable de 3 entradas y 4 salidas",
+        "gremio": "211.25",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC421CP",
+        "descripcion": "Pulsador de incendio, rompa el vidrio, exterior",
+        "gremio": "268.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC420CPB / CPT",
+        "descripcion": "Caja de montaje superficial",
+        "gremio": "7.75",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "FC430SAM",
+        "descripcion": "Módulo direccionador para Base Sirena FC430SB, sin la necesidad de un detector, convirtiendo el conjunto en una sirena direccionable",
+        "gremio": "40.0",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    },
+    {
+        "pagina": "Bentel - System Sensor",
+        "modelo": "PK5-GLASS",
+        "descripcion": "Repuesto vidrio pulsadores manuales de incendio",
+        "gremio": "7.5",
+        "iva": "0.21",
+        "marca": "bentel_fireclass"
+    }
+]

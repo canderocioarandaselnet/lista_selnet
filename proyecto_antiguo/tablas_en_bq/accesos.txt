@@ -1,0 +1,534 @@
+selnet-476815.pagina.accesos
+
+[
+  {
+    "name": "mail",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "fecha_registro",
+    "mode": "",
+    "type": "TIMESTAMP",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "creado_por",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "mail": "leandro@instalnet.com.ar",
+  "categoria": "gold",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "lorenzofaustopolo@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "abrandan60@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "cfontana@instalnet.com.ar",
+  "categoria": "gold",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "olivia@cdmixinsumos.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-10-26 15:19:09.346000 UTC",
+  "creado_por": null
+}, {
+  "mail": "olivialazz50@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-10-26 15:20:13.311000 UTC",
+  "creado_por": null
+}, {
+  "mail": "ricardobach.bessel@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "info@kintron.com.ar",
+  "categoria": "diamond",
+  "fecha_registro": "2026-10-14 15:41:36.497224 UTC",
+  "creado_por": null
+}, {
+  "mail": "eagrasar@kintron.com.ar",
+  "categoria": "diamond",
+  "fecha_registro": "2026-10-14 15:41:36.497224 UTC",
+  "creado_por": null
+}, {
+  "mail": "Misiosoftse@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "focusseguridad@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-10-14 17:04:51.279519 UTC",
+  "creado_por": null
+}, {
+  "mail": "diegocaceras@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-10-14 14:56:24.314000 UTC",
+  "creado_por": null
+}, {
+  "mail": "artelectronica@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "MHmolesini@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-10-15 15:20:23.114662 UTC",
+  "creado_por": null
+}, {
+  "mail": "cotizaciones@sialarseguridad.com.ar",
+  "categoria": "black",
+  "fecha_registro": "2026-07-29 17:14:10.820000 UTC",
+  "creado_por": null
+}, {
+  "mail": "Lucas.castillo@dceingenieria.com",
+  "categoria": "black",
+  "fecha_registro": "2026-09-14 14:33:46.786000 UTC",
+  "creado_por": null
+}, {
+  "mail": "mhmolesini@gmail.com",
+  "categoria": "black",
+  "fecha_registro": "2026-07-28 20:08:06.030000 UTC",
+  "creado_por": null
+}, {
+  "mail": "abc@gmail.com",
+  "categoria": "black",
+  "fecha_registro": "2026-07-24 18:35:51.296000 UTC",
+  "creado_por": "mhmolesini@gmail.com"
+}, {
+  "mail": "r02seguridad@gmail.com",
+  "categoria": "black",
+  "fecha_registro": "2026-09-04 13:17:03.365000 UTC",
+  "creado_por": null
+}, {
+  "mail": "nacerbo@globalzeg.com",
+  "categoria": "black",
+  "fecha_registro": "2026-09-10 17:51:16.001000 UTC",
+  "creado_por": null
+}, {
+  "mail": "Ldepasquale@globalzeg.com",
+  "categoria": "black",
+  "fecha_registro": "2026-09-10 15:11:52.999000 UTC",
+  "creado_por": null
+}, {
+  "mail": "instalacionesinteligentes@gmail.com",
+  "categoria": "black",
+  "fecha_registro": "2026-09-10 17:45:15.020000 UTC",
+  "creado_por": null
+}, {
+  "mail": "marcelagalera2020@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-08 19:50:40.534273 UTC",
+  "creado_por": ""
+}, {
+  "mail": "gonzalodyncam@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-09 13:24:41.693000 UTC",
+  "creado_por": null
+}, {
+  "mail": "gustavoesr95@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-08-06 17:40:15.214000 UTC",
+  "creado_por": null
+}, {
+  "mail": "abacoseguridad@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-09 17:15:59.747000 UTC",
+  "creado_por": null
+}, {
+  "mail": "marcelagalera2020@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-07 14:30:06.596000 UTC",
+  "creado_por": null
+}, {
+  "mail": "ventasdyncam1@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-09 13:23:21.435000 UTC",
+  "creado_por": null
+}, {
+  "mail": "luis.chaves@tiendaitec.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-10 15:03:42.669000 UTC",
+  "creado_por": null
+}, {
+  "mail": "bodealtec@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-07-28 13:42:29.996000 UTC",
+  "creado_por": null
+}, {
+  "mail": "ssole@dealtec.com.ar",
+  "categoria": "diamond",
+  "fecha_registro": "2026-08-20 14:51:30.470000 UTC",
+  "creado_por": null
+}, {
+  "mail": "maggigiacomettidenis@gmail.com",
+  "categoria": "diamond",
+  "fecha_registro": "2026-09-03 20:23:36.416000 UTC",
+  "creado_por": null
+}, {
+  "mail": "agustinsuchur@gmail.com",
+  "categoria": "ezviz",
+  "fecha_registro": "2026-09-10 13:29:32.093000 UTC",
+  "creado_por": null
+}, {
+  "mail": "amel65@gmail.Com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-19 18:50:07.701000 UTC",
+  "creado_por": null
+}, {
+  "mail": "Jagambini@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-12 19:18:11.405000 UTC",
+  "creado_por": null
+}, {
+  "mail": "jcaponte.selnet@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-04 19:05:13.280000 UTC",
+  "creado_por": null
+}, {
+  "mail": "martinezramiro.rm132@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-25 16:35:16.310000 UTC",
+  "creado_por": null
+}, {
+  "mail": "julitotrillini@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-31 12:32:59.191000 UTC",
+  "creado_por": null
+}, {
+  "mail": "jskieba@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-11 15:46:30.856000 UTC",
+  "creado_por": null
+}, {
+  "mail": "instalacionesinteligentes@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-10 15:16:12.716000 UTC",
+  "creado_por": null
+}, {
+  "mail": "mariano@nlevel.com.ar",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-06 15:30:25.645000 UTC",
+  "creado_por": null
+}, {
+  "mail": "hernansabotigh@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-28 13:42:06.600000 UTC",
+  "creado_por": null
+}, {
+  "mail": "lemuel.gz18@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-19 18:51:03.733000 UTC",
+  "creado_por": null
+}, {
+  "mail": "sicat.informatica@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-11 14:28:12.076000 UTC",
+  "creado_por": null
+}, {
+  "mail": "pablogalvan700@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-28 14:12:45.750000 UTC",
+  "creado_por": null
+}, {
+  "mail": "elaguilahackers@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-10-02 15:30:24.376603 UTC",
+  "creado_por": null
+}, {
+  "mail": "ventas@proteccionalfa.com.ar",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-21 19:17:25.400000 UTC",
+  "creado_por": null
+}, {
+  "mail": "tecnologia@grupoasp.com.ar",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-03 12:45:30.746000 UTC",
+  "creado_por": null
+}, {
+  "mail": "hsabotigh@lar.coop",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-28 20:04:31.373000 UTC",
+  "creado_por": null
+}, {
+  "mail": "evenece@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-21 19:31:13.400000 UTC",
+  "creado_por": null
+}, {
+  "mail": "mego.tienda@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-31 12:44:37.478000 UTC",
+  "creado_por": null
+}, {
+  "mail": "lic.lorenzo.n@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-22 20:35:24.228000 UTC",
+  "creado_por": "canderocioaranda.selnet@gmail.com"
+}, {
+  "mail": "ariel.ramirez0622@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-04 20:40:43.226000 UTC",
+  "creado_por": null
+}, {
+  "mail": "carlosmetodos@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-18 17:07:15.311000 UTC",
+  "creado_por": null
+}, {
+  "mail": "yamilferraresi@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-04 20:26:17.095000 UTC",
+  "creado_por": null
+}, {
+  "mail": "lemuel.gz18@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-19 18:51:03.891000 UTC",
+  "creado_por": null
+}, {
+  "mail": "benavente.wolf@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-28 20:42:10.266000 UTC",
+  "creado_por": null
+}, {
+  "mail": "agustinsuchur@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-10 13:28:35.478000 UTC",
+  "creado_por": null
+}, {
+  "mail": "abc@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-07-24 18:33:59.888000 UTC",
+  "creado_por": "mhmolesini@gmail.com"
+}, {
+  "mail": "visiontechsolucioness@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-11 14:34:07.562000 UTC",
+  "creado_por": null
+}, {
+  "mail": "gustavocontino@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-03 13:49:26.749000 UTC",
+  "creado_por": null
+}, {
+  "mail": "pvaldez.equipel@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-09 16:04:15.549000 UTC",
+  "creado_por": null
+}, {
+  "mail": "info.servilaser@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-05 16:44:41.170000 UTC",
+  "creado_por": null
+}, {
+  "mail": "instalacionesinteligentes@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-10 15:15:45.723000 UTC",
+  "creado_por": null
+}, {
+  "mail": "miguelsanchezan@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-19 13:48:33.767000 UTC",
+  "creado_por": null
+}, {
+  "mail": "dalilasolr@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-28 12:57:01.021000 UTC",
+  "creado_por": null
+}, {
+  "mail": "Listas@equipel.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-07 18:52:28.344000 UTC",
+  "creado_por": null
+}, {
+  "mail": "amel65@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-08-19 18:50:24.870000 UTC",
+  "creado_por": null
+}, {
+  "mail": "rociofarinab@gmail.com",
+  "categoria": "gold",
+  "fecha_registro": "2026-09-07 14:04:51.890000 UTC",
+  "creado_por": null
+}, {
+  "mail": "canderocioaranda@gmail.com",
+  "categoria": "interna",
+  "fecha_registro": "2026-07-24 20:40:20.796000 UTC",
+  "creado_por": null
+}, {
+  "mail": "jpsrugiero.it@gmail.com",
+  "categoria": "interna",
+  "fecha_registro": "2026-10-07 13:13:56.625000 UTC",
+  "creado_por": null
+}, {
+  "mail": "yarovidmatamoros@gmail.com",
+  "categoria": "interna",
+  "fecha_registro": "2026-09-04 13:10:20.359000 UTC",
+  "creado_por": null
+}, {
+  "mail": "discoverymaxitelsa@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-08-06 13:41:56.986000 UTC",
+  "creado_por": null
+}, {
+  "mail": "Jorge.hector.marfil@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-09-10 15:45:14.635000 UTC",
+  "creado_por": null
+}, {
+  "mail": "jorge.marfil@elipgo.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-09-10 15:45:58.242000 UTC",
+  "creado_por": null
+}, {
+  "mail": "lucas.quezada@ryqservciossa.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 18:51:38.539000 UTC",
+  "creado_por": null
+}, {
+  "mail": "martin@4wardtech.com.ar",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 14:11:35.574000 UTC",
+  "creado_por": null
+}, {
+  "mail": "matimon83@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-09-15 14:38:34.819000 UTC",
+  "creado_por": null
+}, {
+  "mail": "lucas.quezada33@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 19:23:18.307000 UTC",
+  "creado_por": null
+}, {
+  "mail": "ingenieriasn@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 18:48:35.979000 UTC",
+  "creado_por": null
+}, {
+  "mail": "martinisrael78@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 14:37:03.184000 UTC",
+  "creado_por": null
+}, {
+  "mail": "mhmolesini@gmail.com",
+  "categoria": "platinum",
+  "fecha_registro": "2026-07-28 20:35:51.952000 UTC",
+  "creado_por": null
+}, {
+  "mail": "eisikawa@isikawa.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-11 14:33:12.207562 UTC",
+  "creado_por": ""
+}, {
+  "mail": "cm.oliveros.986@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-07-30 18:52:25.657000 UTC",
+  "creado_por": null
+}, {
+  "mail": "sergio.esterkin@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-23 19:13:57.620000 UTC",
+  "creado_por": null
+}, {
+  "mail": "costos@brujula-sa.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-11 15:46:03.187000 UTC",
+  "creado_por": null
+}, {
+  "mail": "juanmanuel.gorosito@wiredsolutions.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-07-28 18:33:57.670000 UTC",
+  "creado_por": null
+}, {
+  "mail": "sofiavega1998@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-21 19:18:20.687000 UTC",
+  "creado_por": null
+}, {
+  "mail": "juanmiglierini@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-10-07 14:50:02.842000 UTC",
+  "creado_por": null
+}, {
+  "mail": "melanie.brujula@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-11 16:48:57.464000 UTC",
+  "creado_por": null
+}, {
+  "mail": "gsuarezrojas@sps.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-08-06 17:23:17.428000 UTC",
+  "creado_por": null
+}, {
+  "mail": "almsmarin@gmail.com",
+  "categoria": "ruby",
+  "fecha_registro": "2026-09-22 14:11:43.757000 UTC",
+  "creado_por": null
+}, {
+  "mail": "patricio.macloughlin@wiredsolutions.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-07-28 18:34:49.606000 UTC",
+  "creado_por": null
+}, {
+  "mail": "ivan.tricarico@proradio.com.ar",
+  "categoria": "ruby",
+  "fecha_registro": "2026-10-09 17:28:24.808000 UTC",
+  "creado_por": null
+}, {
+  "mail": "boaz.precios.gremio@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "danielosm@clicservicios.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "Cssecuritynet@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "clientesblackselnet@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "jesus.selnet@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}, {
+  "mail": "escaleraagustina@gmail.com",
+  "categoria": "black",
+  "fecha_registro": null,
+  "creado_por": null
+}]

@@ -1,0 +1,252 @@
+selnet-476815.pagina.gold_takex
+
+[
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "es_oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "modelo": "PB-IN-100HFA",
+  "descripcion": "Barrera Infrarroj 4 haces sincronizados, alcance de 100 m, ideal para exteriores. Alta inmunidad a interferencias. 4 canales seleccionables. Protección IP55 contra clima adverso. Detección precisa y confiable.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "231.0",
+  "iva": null,
+  "oferta": "",
+  "es_oferta": ""
+}, {
+  "modelo": "PB-IN-200HFA",
+  "descripcion": "Barrera Infrarroj 4 haces sincronizados, alcance de 200 m, ideal para exteriores. Alta inmunidad a interferencias. 4 canales seleccionables. Protección IP55 contra clima adverso. Detección precisa y confiable.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "236.0",
+  "iva": null,
+  "oferta": "",
+  "es_oferta": ""
+}, {
+  "modelo": "PR-10B",
+  "descripcion": "barrera int.,10mts.,pared-pilar, 1 unid.c/espejo",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "82.0",
+  "iva": "0.11",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "PB-100TK(K)",
+  "descripcion": "Ídem anterior/100 mts.ext, 200 mts. Int.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "121.0",
+  "iva": "0.11",
+  "oferta": "109",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "MW-50L",
+  "descripcion": "Las series MW son barreras de microondas  (24.11GHz). No funcionan por efecto Doopler sino por efecto de absorción de energía,  Con 2 frecuencias disponibles “L” y “H”, se pueden utilizar múltiples unidades en perímetros largos sin problemas. No funcionan por efecto Doopler sino por efecto de absorción de energía. Las microondas son especialmente adepto para hacer frente a condiciones de niebla pesada, neblina, lluvia, nieve y escarcha. ",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "219.0",
+  "iva": "0.11",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "MW-50H",
+  "descripcion": "Las series MW son barreras de microondas  (24.19GHz). No funcionan por efecto Doopler sino por efecto de absorción de energía,  Con 2 frecuencias disponibles “L” y “H”, se pueden utilizar múltiples unidades en perímetros largos sin problemas. No funcionan por efecto Doopler sino por efecto de absorción de energía. Las microondas son especialmente adepto para hacer frente a condiciones de niebla pesada, neblina, lluvia, nieve y escarcha",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "219.0",
+  "iva": "0.11",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "DA-303E",
+  "descripcion": "Control de puerta por reflexión de haz IR, cubre 3m ancho, distancia de detección desde la puerta ajustable hasta 1.5m, cuerpo delgado 28,5mm, excelente inmunidad a luz externa, 4 frecuencias seleccionables. ",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "99.0",
+  "iva": "0.21",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "COM-50XTH",
+  "descripcion": "Sensor combinado de Microondas 24GHz y fotoeléctrico, reduce drásticamente las falsas alarmas. 50 metros exterior, tensión de alimentación 12 – 30V DC. Entra en alarma con la combinación de la interferencia de la radio frecuencia más la barrera infrarroja. Tamper mas dos salidas de borneras.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "499.0",
+  "iva": "0.21",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "PB-30TK(K)",
+  "descripcion": "Barrera exterior doble haz para 30 mts., 60 mts. Int.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "90.0",
+  "iva": "0.21",
+  "oferta": "81",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "PB-60TK(K)",
+  "descripcion": "Ídem anterior, para 60 mts.ext., 120 mts int.",
+  "categoria": "BARRERAS",
+  "subcategoria": "BARRERAS",
+  "gremio": "95.0",
+  "iva": "0.21",
+  "oferta": "83",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "TX-114FR",
+  "descripcion": "Ídem al anterior pero inalámbrico, sin transmisor seleccionar localmenteTamper trasero, depósito extra posterior admite 1 TX y 2 baterías ya indicados, posee 2 cabezas cubrimiento Max 180ºx24m.",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "181.0",
+  "iva": "0.21",
+  "oferta": "163",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "TX-114SR",
+  "descripcion": "Ídem MS-12TE pero inalámbrico sin transmisor, Espacio para un tx y 1 batería CR123A de 3 a 9VDC o 006P de 9VDC, usar transmisores Universales; Honeywell         5814 – DSC: WS 4945 o WLS 925 – VISONIC MCT-302 – Cooper 734REUR-00 – INOVONICS FA210 o FA250 o EN1210, Válido además para los mdls. TX-114TR, TX-114FR y TX  TX-103R.",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "133.0",
+  "iva": "0.21",
+  "oferta": "120",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "OMS-12FE",
+  "descripcion": "IDEM MS-12FE PERO CON 2 CABEZAS FIJAS Y SOLO 2 PATTERNS A INVADIR PARA ALARMARLO.",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "111.0",
+  "iva": "0.21",
+  "oferta": "99",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "FS-5000E",
+  "descripcion": "DETECTOR DE LLAMA UV EXTERIOR de alta sensibilidad. Cobertura: 10m con una llama de 7cm. Sensibilidad H/L. Tiempo de respuesta ajustable. Memoria de alarma. Salida de relé NA/NC.  Tensión de alimentación: 10VDC a 30VDC. ",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "249.0",
+  "iva": "0.21",
+  "oferta": "",
+  "es_oferta": "gremio"
+}, {
+  "modelo": "TX-114TR",
+  "descripcion": "Detector de un cabezal móvil inalámbrico, con ultra-bajo consumo de corriente para una larga vida de la batería, salidas de alarma y tamper de estado sólido (NA/NC), cuenta con un deposito posterior para alojar hasta dos baterías más el transmisor compatible con la central (Ej.: Neo: PG9945, Power WS4945). Además de detección exterior contra intrusos, son ideales para activar; CCTV, luces, sistemas de anunciadores ó de advertencias en aplicaciones domésticas, comerciales e industriales.",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "141.0",
+  "iva": "0.21",
+  "oferta": "127",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "MS-12TE",
+  "descripcion": "Pasivo exterior de 1 cabeza rotativa con 2 zonas de detección, ángulo variable 15 a 90º, alcance 12 mts. SE DEBEN INVADIR SIMULTANEAMENTE DOS ZONAS PARA ESTABLECER LA CONDICION DE ALARMA",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "105.0",
+  "iva": "0.21",
+  "oferta": "92",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "MS-12FE",
+  "descripcion": "Pasivo ídem anterior MS-12TE, pero con 2 cabezas rotatorias, (2 zonas, alcance 12 mts. con ángulo ajustable de 15 a 90º por cada  cabeza). Con 2 cabezas con igual orientación, 90ºx12m – invasión 2  zonas p/alarma en OR o 4 zonas a invadir p/alarma en función AND. Con 1 cabeza a +45º y otra a º 45º (180ºx24m – 2 zonas a invadir p/alarmarlo). Con cabezas orientadas en contraposición (Una a +90º y otra a -90º), tres perimetrales a elección 15º/30º/45º x 24 m. 2 zonas a invadir. ",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "135.0",
+  "iva": "0.21",
+  "oferta": "119",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "MS-100E",
+  "descripcion": "Twin, pasivo uso extr/int,(ang.ancho 64ºx10mt.-  cortina vertical 10 mts. – cortina larga 20mts. spot 64ºx 4mts.),cielrr/pared/columna/plato.",
+  "categoria": "DETECTORES",
+  "subcategoria": "DETECTORES",
+  "gremio": "71.0",
+  "iva": "0.21",
+  "oferta": "62",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "FS-1000E",
+  "descripcion": "Detector UV de llama Autosuficiente, incluye 2 pilas AA, buzzer interno. Salida Vdc alarma para sirena extra remota si se lo alimenta con alimentación externa (se debe desconectar las baterías internas en este caso), contactos NA de alarma para conexión a Panel de Control. Cubrimiento 120º x 10 mts., 4 tiempos de respuesta Seleccionables, evitan falsos disparos. Sensibilidad H/L",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "117.5",
+  "iva": "0.21",
+  "oferta": "",
+  "es_oferta": ""
+}, {
+  "modelo": "FS-2000E",
+  "descripcion": "Detector UV de llama,10 a 30 VDC, salida relay NA/NC, montaje cielorraso, buzzer si/no, memoria si/no, 4 tiempos de respuesta, sensibilidad H/L. Cubrimiento  cono 120ºx10mts. Orientable 30ºvertical-25ºhorizontal",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "150.0",
+  "iva": "0.21",
+  "oferta": "121",
+  "es_oferta": "oferta"
+}, {
+  "modelo": "FS-2000E",
+  "descripcion": "Detector UV de llama,10 a 30 VDC, salida relay NA/NC, montaje cielorraso, buzzer si/no, memoria si/no, 4 tiempos de respuesta, sensibilidad H/L. Cubrimiento  cono 120ºx10mts. Orientable 30ºvertical-25ºhorizontal",
+  "categoria": "LINEA CONVENCIONAL - J400 - EN54",
+  "subcategoria": "DETECTORES CONVENCIONALES",
+  "gremio": "127.0",
+  "iva": "0.21",
+  "oferta": "121",
+  "es_oferta": "oferta"
+}]
+

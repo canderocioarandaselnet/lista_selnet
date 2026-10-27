@@ -1,0 +1,56 @@
+selnet-476815.pagina.gold_hikmicro
+
+[
+  {
+    "name": "hik_code",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "hik_code": "305402565",
+  "cod_bejerman": "305402565",
+  "modelo": "hm-td2638-15/g0/t1y(o-std)",
+  "descripcion": "camara hikmicro ip opto termica bi-espectro tipo bullet para detección perimetral optimizada, prevención de incendios, detección de humo y fuego. canal térmico: resolución 384 x 288, zoom digital x2, x4, x8, paso de pixel:12 μm, netd\u003c20 mk. canal óptico: resolución  4mp (2688 x 1520), sensor cmos 1/2.7\".  lente optico 8 mm (f1.6), lente termico 15.4 mm. iluminación mín. color: 0.0089 lux, f1.6. luz ir suplementaria hasta 75 metros. mejoras de imagen:3d dnr,wdr 120 db, balance de blancos. admite imagen fusionada, pip, eis. admite  grabación en tarjeta micro sd (máx. 512gb), en nas y anr. protección ip67, ik10 y anticorrosión nema 4x. alimentación: 24vac 0.55a, 12 vdc 1.33a y  poe: ieee 802.3af, máx. 11.8w. protección contra descargas: 4kv, contra sobretensiones y transitorios. alarma: 2e/2s. audio: 1e/1s. puerto ethernet rj45 10/100 m, rs-485. analíticas: vca 3.0: cruce de linea / intrusión de área / región de entrada / región de salida. 3 reglas de detección de temperatura (10 puntos, 10 areas , 1 linea). hasta 10 focos de fuego  y humo detectables. rango identificación de personas:80m (vca:195 mts), de vehículos:246m (vca:450 mts). deteccion de temperatura: 46.2m a 115.5m. deteccción de incendios:48m. procesamiento de imágenes: lineal, histograma, modo agc térmico autoadaptativo, dde, 3d dnr.",
+  "categoria": "Camaras Termicas (deteccion de incendio, VCA, perimetrales,etc)",
+  "subcategoria": "Camaras Termicas (deteccion de incendio, VCA, perimetrales,etc)"
+}]
+

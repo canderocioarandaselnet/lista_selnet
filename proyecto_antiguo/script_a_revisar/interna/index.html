@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top" />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(255, 255, 255, 0.92);
+      --muted: rgba(255, 255, 255, 0.65);
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(72, 99, 255, 0.35), transparent),
+        radial-gradient(900px 500px at 90% 0%, rgba(0, 255, 160, 0.20), transparent),
+        var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      padding: 18px;
+    }
+
+    .header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .input {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    input[type="text"] {
+      outline: none;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      width: 260px;
+      font-size: 13px;
+    }
+
+    .btn {
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 13px;
+      transition: transform .08s ease, background .2s ease;
+      user-select: none;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn.primary {
+      border-color: rgba(72, 99, 255, 0.55);
+      background: rgba(72, 99, 255, 0.22);
+    }
+
+    .btn.primary:hover {
+      background: rgba(72, 99, 255, 0.30);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(8px);
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 13px;
+    }
+
+    tbody tr:hover td {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 12px;
+    }
+
+    .loading {
+      display: none;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      border-top-color: rgba(255, 255, 255, 0.85);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .error {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 120, 120, 0.35);
+      background: rgba(255, 120, 120, 0.12);
+      color: rgba(255, 210, 210, 0.95);
+      font-size: 13px;
+    }
+
+    #toTop {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.92);
+      cursor: pointer;
+      display: none;
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+    }
+
+    #toTop:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="title">
+        <h1>📦 MPS: SAP + SKU</h1>
+        <div class="subtitle">Datos desde <b>selnet-476815.Ventas.mps</b> (BigQuery)</div>
+      </div>
+
+      <div class="controls">
+        <div class="input">
+          🔎
+          <input id="search" type="text" placeholder="Buscar por SAP o SKU (opcional)..." />
+        </div>
+        <button class="btn primary" id="btnLoad">Cargar</button>
+        <button class="btn" id="btnMore" disabled>Más</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="meta">
+        <div class="chip">📄 Filas: <span id="count">0</span></div>
+
+        <div class="loading" id="loading">
+          <div class="spinner"></div>
+          <div>Cargando desde BigQuery…</div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 180px;">SAP</th>
+              <th>SKU</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+            <!-- rows -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="error" id="error"></div>
+    </div>
+  </div>
+
+  <button id="toTop" title="Volver arriba">⬆️</button>
+
+  <script>
+    const tbody = document.getElementById("tbody");
+  const countEl = document.getElementById("count");
+  const loadingEl = document.getElementById("loading");
+  const errorEl = document.getElementById("error");
+
+  const toTopBtn = document.getElementById("toTop");
+
+  function setLoading(isLoading) {
+    loadingEl.style.display = isLoading ? "flex" : "none";
+  }
+
+  function setError(msg) {
+    if (!msg) {
+      errorEl.style.display = "none";
+      errorEl.textContent = "";
+      return;
+    }
+    errorEl.style.display = "block";
+    errorEl.textContent = msg;
+  }
+
+  function renderRows(rows) {
+    tbody.innerHTML = "";
+    const frag = document.createDocumentFragment();
+
+    rows.forEach(r => {
+      const tr = document.createElement("tr");
+      const tdSap = document.createElement("td");
+      const tdSku = document.createElement("td");
+
+      tdSap.textContent = r.sap ?? "";
+      tdSku.textContent = r.sku ?? "";
+
+      tr.appendChild(tdSap);
+      tr.appendChild(tdSku);
+      frag.appendChild(tr);
+    });
+
+    tbody.appendChild(frag);
+    countEl.textContent = String(rows.length);
+  }
+
+  function loadAll() {
+    setError("");
+    setLoading(true);
+
+    google.script.run
+      .withSuccessHandler(rows => {
+        renderRows(rows || []);
+        setLoading(false);
+      })
+      .withFailureHandler(err => {
+        setLoading(false);
+        setError("Error consultando BigQuery: " + (err?.message || err));
+      })
+      .getSapSkuFromBQ();
+  }
+
+  // Botón volver arriba
+  window.addEventListener("scroll", () => {
+    toTopBtn.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Autocarga apenas entra a la página ✅
+  loadAll();
+  </script>
+
+</body>
+
+</html>

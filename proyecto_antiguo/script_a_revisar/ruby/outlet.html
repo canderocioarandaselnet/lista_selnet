@@ -1,0 +1,165 @@
+<template id="page-title-template">
+    <h1>Outlet</h1>
+</template>
+
+<div class="page-outlet">
+    <div class="card page-card">
+        <div class="meta">
+            <div class="loading" id="o_loading">
+                <div class="spinner"></div>
+                <div>Cargando desde BigQuery…</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔎</span>
+                <input id="ot_search" type="text" placeholder="Buscar por Modelo / Descripción" class="search-input" />
+            </div>
+            <div id="ot_filter_anchor"></div>
+            <div class="chip">Filas: <span id="ot_hits">0</span></div>
+            <button id="ot_select_all" class="btn-clear btn-select-all" title="Seleccionar todos">✓</button>
+            <button id="ot_unselect_all" class="btn-clear btn-unselect-all" title="Deseleccionar todos">☐</button>
+            <button id="ot_download" class="btn-clear" title="Descargar Excel">📥</button>
+            <button id="ot_clear" class="btn-clear" title="Limpiar todo">✖</button>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-check"></th>
+                        <th class="sortable" data-key="hik_code" style="width:110px;">Hik code</th>
+                        <th class="sortable" data-key="modelo" style="width:200px;">Modelo</th>
+                        <th class="sortable" data-key="fabricante" style="width:120px;">Marca</th>
+                        <th class="sortable" data-key="descripcion" style="min-width:600px;">Descripción</th>
+                        <th class="sortable" data-key="categoria" style="width:150px;">Categoría</th>
+                        <th class="sortable" data-key="subcategoria" style="width:150px;">Subcategoría</th>
+                        <th class="sortable" data-key="gremio" style="width:100px;">Gremio</th>
+                        <th class="sortable" data-key="epp" style="width:100px;">EPP</th>
+                        <th class="sortable" data-key="iva" style="width:80px;">IVA</th>
+                        <th class="sortable" data-key="observacion" style="width:200px;">Observación</th>
+                    </tr>
+                </thead>
+                <tbody id="o_tbody"></tbody>
+                <tfoot id="ot_tfoot">
+                    <tr>
+                        <td colspan="13" style="text-align: center;">Total de productos Outlet: <span
+                                id="ot_total_count">0</span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="error" id="o_error"></div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        let allRows = [];
+        let originalRows = [];
+        let currentSort = { key: null, dir: 0 };
+        let selectedCat = null, selectedSub = null;
+
+        const tbody = document.getElementById("o_tbody");
+        const loadingEl = document.getElementById("o_loading");
+        const errorEl = document.getElementById("o_error");
+        const hitsEl = document.getElementById("ot_hits");
+        const searchEl = document.getElementById("ot_search");
+        const clearBtn = document.getElementById("ot_clear");
+
+        function updateHits() {
+            if (hitsEl) {
+                const sel = originalRows.filter(r => r._selected).length;
+                hitsEl.innerHTML = `Seleccionadas: <b>${sel}</b> / ${allRows.length}`;
+            }
+        }
+
+        function render(rows) {
+            tbody.innerHTML = "";
+            const frag = document.createDocumentFragment();
+            const q = searchEl.value;
+            rows.forEach(r => {
+                const tr = document.createElement("tr");
+                const tdCheck = document.createElement("td");
+                tdCheck.className = "col-check";
+                const chk = document.createElement("input");
+                chk.type = "checkbox";
+                chk.checked = !!r._selected;
+                chk.onchange = () => { r._selected = chk.checked; updateHits(); };
+                tdCheck.appendChild(chk);
+                tr.appendChild(tdCheck);
+
+                const cols = ["hik_code", "modelo", "fabricante", "descripcion", "categoria", "subcategoria", "gremio", "epp", "iva", "observacion"];
+                cols.forEach(key => {
+                    const td = document.createElement("td");
+                    let val = r[key];
+                    if (["gremio", "epp", "iva"].includes(key)) val = window.utils.fmtNum(val);
+                    if (key === "modelo") val = (val || "").toUpperCase();
+                    td.innerHTML = window.utils.highlight(val, q);
+
+                    // Flags de oferta
+                    const flags = r.es_oferta || "";
+                    if (key === "gremio" && flags.includes("gold")) td.classList.add("is-offer");
+                    if (key === "epp" && flags.includes("pvp")) td.classList.add("is-offer");
+
+                    tr.appendChild(td);
+                });
+                frag.appendChild(tr);
+            });
+            tbody.appendChild(frag);
+            updateHits();
+        }
+
+        function applyFilter() {
+            const q = window.utils.norm(searchEl.value);
+            let data = originalRows.filter(r => {
+                const matchQ = !q || ["hik_code", "modelo", "descripcion", "categoria", "subcategoria"].some(k => window.utils.norm(r[k]).includes(q));
+                const matchCat = !selectedCat || (r.categoria || "").trim().toUpperCase() === selectedCat;
+                const matchSub = !selectedSub || (r.subcategoria || "").trim().toUpperCase() === selectedSub;
+                return matchQ && matchCat && matchSub;
+            });
+
+            if (currentSort.dir > 0) {
+                data.sort((a, b) => {
+                    const vA = window.utils.smartConvert(a[currentSort.key]), vB = window.utils.smartConvert(b[currentSort.key]);
+                    return currentSort.dir === 1 ? (vA < vB ? -1 : 1) : (vA > vB ? -1 : 1);
+                });
+            }
+            allRows = data;
+            render(allRows);
+        }
+
+        function handleSort(th) {
+            const key = th.dataset.key;
+            if (currentSort.key === key) currentSort.dir = (currentSort.dir + 1) % 3;
+            else { currentSort.key = key; currentSort.dir = 1; }
+            document.querySelectorAll("thead th.sortable").forEach(el => el.classList.remove("asc", "desc"));
+            if (currentSort.dir === 1) th.classList.add("asc");
+            if (currentSort.dir === 2) th.classList.add("desc");
+            applyFilter();
+        }
+
+        searchEl.oninput = applyFilter;
+        clearBtn.onclick = () => { searchEl.value = ""; selectedCat = selectedSub = null; applyFilter(); };
+        document.getElementById("ot_select_all").onclick = () => { allRows.forEach(r => r._selected = true); render(allRows); };
+        document.getElementById("ot_unselect_all").onclick = () => { allRows.forEach(r => r._selected = false); render(allRows); };
+        document.getElementById("ot_download").onclick = () => window.utils.exportToExcel(originalRows.filter(r => r._selected), "outlet.xlsx");
+
+        document.querySelectorAll("thead th.sortable").forEach(th => th.onclick = () => handleSort(th));
+
+        function load() {
+            loadingEl.style.display = "flex";
+            google.script.run.withSuccessHandler(rows => {
+                originalRows = (rows || []).map(r => ({ ...r, _selected: false }));
+                document.getElementById("ot_total_count").textContent = originalRows.length;
+                const anchor = document.getElementById("ot_filter_anchor");
+                anchor.innerHTML = "";
+                anchor.appendChild(window.utils.buildCategoryUI(originalRows, (cat, sub) => { selectedCat = cat; selectedSub = sub; applyFilter(); }));
+                applyFilter();
+                loadingEl.style.display = "none";
+            }).getOutletFromBQ();
+        }
+        load();
+    })();
+</script>

@@ -1,0 +1,28 @@
+flowchart TD
+    subgraph Origen ["1. Origen de Datos (GCP BigQuery - selnet-476815.pagina)"]
+        direction TB
+        ERP["Scripts Externos\n(Bejerman / Precios / Ofertas)"] -->|Carga de tablas crudas| BQ_RAW[("Tablas Crudas:\n• stock_ultima_actualizacion\n• ofertas\n• mps_precios_vigentes\n• hikvision, ezviz, etc.")]
+        BQ_RAW --> VISTA_CANONICA[("Vista Canónica Única:\nv_catalogo_maestro\n(Calcula todos los precios, stock y flags)")]
+    end
+
+    subgraph Pipeline ["2. Capa de Eventos y Sincronización (Serverless)"]
+        direction TB
+        BQ_RAW -.->|"Evento de actualización\n(Audit Log)"| EVENTARC["Cloud Logging / Eventarc"]
+        EVENTARC -->|"Trigger HTTP"| CLOUD_FUNC["Cloud Function (Python)\n'sync-to-supabase'"]
+        VISTA_CANONICA -->|"SELECT * limpio (2s)"| CLOUD_FUNC
+    end
+
+    subgraph SupabaseLayer ["3. Base Operativa y Auth (Supabase PostgreSQL)"]
+        direction TB
+        CLOUD_FUNC -->|"Upsert masivo en lote"| TBL_PROD[("tabla: productos\n(Catálogo completo indexado)")]
+        AUTH["Supabase Auth\n(Manejo de sesiones)"] --- TBL_USERS[("tabla: profiles\n(email, tier, empresa)")]
+        TBL_PROD --- RLS_LOGIC{"API / RLS Segura:\nFiltra columnas y marcas según el Tier"}
+    end
+
+    subgraph VercelApp ["4. Frontend Único (Next.js en Vercel)"]
+        direction TB
+        RLS_LOGIC -->|"JSON filtrado en < 50ms"| APP["Web App Única:\nprecios.selnet.com.ar"]
+        APP --> U_CLIENTE["Clientes Externos\n(Gold, Ruby, Platinum, Black, Diamond)"]
+        APP --> U_INTERNO["Vendedores / Internos Selnet\n(Ven todos los precios + Bentel/DSC)"]
+    end
+

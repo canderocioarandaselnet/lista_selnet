@@ -1,0 +1,251 @@
+selnet-476815.pagina.seagate
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "hik_code",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "datasheet",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "pvp",
+    "mode": "",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "dpp_platinum",
+    "mode": "",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Discos rigidos",
+  "hik_code": "ST8000VN04",
+  "cod_bejerman": "ST8000VN04",
+  "modelo": "ST8000VN04",
+  "descripcion": "ST8000VN004 HD 8TB SEAGATE IRON WOLF, SATA.",
+  "gremio": "209.5",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "IRON WOLF",
+  "subcategoria": "IRON WOLF",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "ST16000VE",
+  "cod_bejerman": "ST16000VE",
+  "modelo": "ST16000VE002",
+  "descripcion": "ST16000VE002, HD 16TB SEAGATE SKYHAWK, SATA.",
+  "gremio": "379.0",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "ST8000VE",
+  "cod_bejerman": "ST8000VE",
+  "modelo": "ST8000VE001",
+  "descripcion": "ST8000VE, HD 8TB SEAGATE SKYHAWK, SATA.",
+  "gremio": "216.5",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "ST4000VX16",
+  "cod_bejerman": "ST4000VX16",
+  "modelo": "ST4000VX016",
+  "descripcion": "ST4000VX016, 4TB SEAGATE SKYHAWK, SATA.   ",
+  "gremio": "93.5",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "ST10000VE",
+  "cod_bejerman": "ST10000VE",
+  "modelo": "ST10000VE001",
+  "descripcion": "ST10000VE, HD 10TB SEAGATE SKYHAWK, SATA.",
+  "gremio": "285.0",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "ST2000VX17",
+  "cod_bejerman": "ST2000VX17",
+  "modelo": "ST2000VX017",
+  "descripcion": "ST2000VX017, 2TB SEAGATE SKYHAWK, SATA.",
+  "gremio": "65.0",
+  "iva": "0.105",
+  "datasheet": "nan",
+  "marca": "seagate",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "pvp": null,
+  "dpp_platinum": null
+}, {
+  "pagina": "Discos rigidos",
+  "hik_code": "303801276",
+  "cod_bejerman": "303801276",
+  "modelo": "ST1000VX005",
+  "descripcion": "HD Seagate Surveillance SkyHawk 1TB SATA",
+  "gremio": "54.0",
+  "iva": "0.105",
+  "datasheet": "https://drive.google.com/file/d/1fNWDYcGtsoK7lD6JTcwyahc0j3-T1W_n/view?usp\u003dsharing",
+  "marca": "seagate",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "pvp": "54.0",
+  "dpp_platinum": "73.0"
+}, {
+  "pagina": "Hikvision",
+  "hik_code": "303801487",
+  "cod_bejerman": "303801487",
+  "modelo": "ST2000VX015",
+  "descripcion": "HD Seagate Surveillance SkyHawk 2TB SATA",
+  "gremio": null,
+  "iva": null,
+  "datasheet": "https://drive.google.com/file/d/1fNWDYcGtsoK7lD6JTcwyahc0j3-T1W_n/view?usp\u003dsharing",
+  "marca": "seagate",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "pvp": "71.5",
+  "dpp_platinum": "109.9"
+}, {
+  "pagina": "Hikvision",
+  "hik_code": "303800923",
+  "cod_bejerman": "303800923",
+  "modelo": "ST4000VX013",
+  "descripcion": "HD Seagate Surveillance SkyHawk 4TB SATA",
+  "gremio": null,
+  "iva": null,
+  "datasheet": "https://drive.google.com/file/d/1fNWDYcGtsoK7lD6JTcwyahc0j3-T1W_n/view?usp\u003dsharing",
+  "marca": "seagate",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "pvp": "119.0",
+  "dpp_platinum": "136.7"
+}, {
+  "pagina": "Hikvision",
+  "hik_code": "303801042",
+  "cod_bejerman": "303801042",
+  "modelo": "ST8000VE000",
+  "descripcion": "HD Seagate Surveillance SkyHawk 8TB SATA",
+  "gremio": null,
+  "iva": null,
+  "datasheet": "https://drive.google.com/file/d/1fNWDYcGtsoK7lD6JTcwyahc0j3-T1W_n/view?usp\u003dsharing",
+  "marca": "seagate",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "pvp": "223.0",
+  "dpp_platinum": "302.7"
+}, {
+  "pagina": "Hikvision",
+  "hik_code": "303801080",
+  "cod_bejerman": "303801080",
+  "modelo": "ST10000VE0008",
+  "descripcion": "HD Seagate Surveillance SkyHawk 10TB SATA",
+  "gremio": null,
+  "iva": null,
+  "datasheet": "https://drive.google.com/file/d/1fNWDYcGtsoK7lD6JTcwyahc0j3-T1W_n/view?usp\u003dsharing",
+  "marca": "seagate",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "pvp": "316.0",
+  "dpp_platinum": "472.0"
+}]

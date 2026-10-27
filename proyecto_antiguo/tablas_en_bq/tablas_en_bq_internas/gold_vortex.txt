@@ -1,0 +1,432 @@
+selnet-476815.pagina.gold_vortex
+
+[
+  {
+    "name": "cod_bej",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cliente_final",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "cod_bej": "vio718000009",
+  "modelo": null,
+  "descripcion": "int lic,vortex network speaker 1-año",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "115.0",
+  "cliente_final": "149.5",
+  "iva": null
+}, {
+  "cod_bej": "vio718000007",
+  "modelo": "vx-xpro-4y",
+  "descripcion": "licencia vortex xpro de 4 año tanto para cámara como para nd (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "504.0",
+  "cliente_final": "655.2",
+  "iva": null
+}, {
+  "cod_bej": "vio718000050",
+  "modelo": "vx-cs90d-1m",
+  "descripcion": "almacenamiento en la nube vortex 90-d, por 1 mes (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "21.0",
+  "cliente_final": "27.3",
+  "iva": null
+}, {
+  "cod_bej": "vio718000048",
+  "modelo": "vx-cs30d-1m",
+  "descripcion": "almacenamiento en la nube vortex 30-d, por 1 mes (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "5.76",
+  "cliente_final": "7.49",
+  "iva": null
+}, {
+  "cod_bej": "vio718001000",
+  "modelo": "vx-xpro-1m",
+  "descripcion": "licencia vortex xpro de 1 mes tanto para cámara como para nd (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "11.52",
+  "cliente_final": "14.98",
+  "iva": null
+}, {
+  "cod_bej": "vio718000011",
+  "modelo": null,
+  "descripcion": "int lic,vortex network speaker 5-años",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "526.0",
+  "cliente_final": "683.8",
+  "iva": null
+}, {
+  "cod_bej": "vio718000010",
+  "modelo": null,
+  "descripcion": "int lic,vortex network speaker 3-años",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "326.0",
+  "cliente_final": "423.8",
+  "iva": null
+}, {
+  "cod_bej": "vio718000073",
+  "modelo": null,
+  "descripcion": "licencia vortex xpro de 1 año, paquete de ia avanzada vortex (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "78.0",
+  "cliente_final": "101.4",
+  "iva": null
+}, {
+  "cod_bej": "vio718000042",
+  "modelo": "vx-stnd-1m",
+  "descripcion": "licencia vortex xstd de 1 mes, tanto para cámara como para nd (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "5.76",
+  "cliente_final": "7.49",
+  "iva": null
+}, {
+  "cod_bej": "vio718000053",
+  "modelo": "vx-cs365d-1m",
+  "descripcion": "almacenamiento en la nube vortex 365-d, por 1 mes (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "86.4",
+  "cliente_final": "112.32",
+  "iva": null
+}, {
+  "cod_bej": "vio718000047",
+  "modelo": null,
+  "descripcion": "int lic,vortex network speaker 1-mes",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "12.0",
+  "cliente_final": "15.6",
+  "iva": null
+}, {
+  "cod_bej": "vio718000072",
+  "modelo": null,
+  "descripcion": "licencia vortex xpro de 1 mes, paquete de ia avanzada vortex (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "7.68",
+  "cliente_final": "9.98",
+  "iva": null
+}, {
+  "cod_bej": "vio718000051",
+  "modelo": "vx-cs120d-1m",
+  "descripcion": "almacenamiento en la nube vortex 120-d, por 1 mes (por canal)",
+  "categoria": null,
+  "subcategoria": null,
+  "gremio": "29.0",
+  "cliente_final": "37.7",
+  "iva": null
+}, {
+  "cod_bej": "vio718000030",
+  "modelo": "vx-cs180d-3y",
+  "descripcion": "almacenamiento en la nube vortex 180-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "1407.0",
+  "cliente_final": "1829.1",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000007",
+  "modelo": "vxxpro-4y",
+  "descripcion": "licencia vortex xpro de 4 año tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "315.0",
+  "cliente_final": "409.5",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000018",
+  "modelo": "vx-cs60d-3y",
+  "descripcion": "almacenamiento en la nube vortex 60-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "466.0",
+  "cliente_final": "605.8",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000031",
+  "modelo": "vx-cs180d-5y",
+  "descripcion": "almacenamiento en la nube vortex 180-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "2.34",
+  "cliente_final": "3.04",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000034",
+  "modelo": "vx-cs365d-3y",
+  "descripcion": "almacenamiento en la nube vortex 365-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "2.82",
+  "cliente_final": "3.67",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000020",
+  "modelo": "vx-cs60d-10y",
+  "descripcion": "almacenamiento en la nube vortex 60-d, por 10 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "2466.0",
+  "cliente_final": "3205.8",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000013",
+  "modelo": "vx-cs30d-1y",
+  "descripcion": "almacenamiento en la nube vortex 30-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "48.0",
+  "cliente_final": "62.4",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000035",
+  "modelo": "vx-cs365d-5y",
+  "descripcion": "almacenamiento en la nube vortex 365-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "4.69",
+  "cliente_final": "6.1",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000021",
+  "modelo": "vx-cs90d-1y",
+  "descripcion": "almacenamiento en la nube vortex 90-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "234.0",
+  "cliente_final": "304.2",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000044",
+  "modelo": "vx-stnd-5y",
+  "descripcion": "licencia vortex xstd de 5 años tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "240.0",
+  "cliente_final": "312.0",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718001000",
+  "modelo": "vx-xpro-1y",
+  "descripcion": "licencia vortex xpro de 1 año tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "126.0",
+  "cliente_final": "163.8",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000026",
+  "modelo": "vx-cs180d-3y",
+  "descripcion": "almacenamiento en la nube vortex 120-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "936.0",
+  "cliente_final": "1216.8",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718001100",
+  "modelo": "vx-xpro-3y",
+  "descripcion": "licencia vortex xpro de 3 año tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "380.0",
+  "cliente_final": "494.0",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718001200",
+  "modelo": "vx-xpro-5y",
+  "descripcion": "licencia vortex xpro de 5 año tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "630.0",
+  "cliente_final": "819.0",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000016",
+  "modelo": "vx-cs30d-10y",
+  "descripcion": "almacenamiento en la nube vortex 30-d, por 10 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "495.0",
+  "cliente_final": "643.5",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000015",
+  "modelo": "vx-cs30d-5y",
+  "descripcion": "almacenamiento en la nube vortex 30-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "240.0",
+  "cliente_final": "312.0",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000022",
+  "modelo": "vx-cs90d-3y",
+  "descripcion": "almacenamiento en la nube vortex 90-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "703.0",
+  "cliente_final": "913.9",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000023",
+  "modelo": "vx-cs90d-5y",
+  "descripcion": "almacenamiento en la nube vortex 90-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "1.17",
+  "cliente_final": "1.52",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000019",
+  "modelo": "vx-cs60d-5y",
+  "descripcion": "almacenamiento en la nube vortex 60-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "777.0",
+  "cliente_final": "1010.1",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000043",
+  "modelo": "vx-stnd-3y",
+  "descripcion": "licencia vortex xstd de 3 años tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "144.0",
+  "cliente_final": "187.2",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000014",
+  "modelo": "vx-cs30d-3y",
+  "descripcion": "almacenamiento en la nube vortex 30-d, por 3 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "144.0",
+  "cliente_final": "187.2",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000033",
+  "modelo": "vx-cs365d-1y",
+  "descripcion": "almacenamiento en la nube vortex 365-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "938.0",
+  "cliente_final": "1219.4",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000006",
+  "modelo": "vx-xpro-2y",
+  "descripcion": "licencia vortex xpro de 2 año tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "250.0",
+  "cliente_final": "325.0",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000025",
+  "modelo": "vx-cs120d-1y",
+  "descripcion": "almacenamiento en la nube vortex 120-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "312.0",
+  "cliente_final": "405.6",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000017",
+  "modelo": "vx-cs60d-1y",
+  "descripcion": "almacenamiento en la nube vortex 60-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "155.0",
+  "cliente_final": "201.5",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000029",
+  "modelo": "vx-cs180d-1y",
+  "descripcion": "almacenamiento en la nube vortex 180-d, por 1 año (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "468.0",
+  "cliente_final": "608.4",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000027",
+  "modelo": "vx-cs180d-5y",
+  "descripcion": "almacenamiento en la nube vortex 120-d, por 5 años (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "1.56",
+  "cliente_final": "2.03",
+  "iva": "0.21"
+}, {
+  "cod_bej": "vio718000042",
+  "modelo": "vx-stnd-1y",
+  "descripcion": "licencia vortex xstd de 1 año, tanto para cámara como para nd (por canal)",
+  "categoria": "VORTEX (Camaras y Licencias)",
+  "subcategoria": "VORTEX (Camaras y Licencias)",
+  "gremio": "48.0",
+  "cliente_final": "62.4",
+  "iva": "0.21"
+}]
+

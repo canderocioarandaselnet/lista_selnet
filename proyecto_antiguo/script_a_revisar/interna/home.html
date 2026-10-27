@@ -1,0 +1,320 @@
+<div class="page-home" style="display:flex; flex-direction:column; gap:16px;">
+    <template id="page-title-template">
+        <h1>Home</h1>
+    </template>
+
+    <!-- ✅ Sección Productos Nuevos: altura automática, se va al scrollear -->
+    <div class="section-new"
+        style="display:flex; flex-direction:column; flex-shrink:0; padding-bottom:12px; border-bottom: 2px solid var(--border);">
+        <div class="meta">
+            <div class="loading" id="new_loading">
+                <div class="spinner"></div>
+                <div>Cargando productos nuevos…</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔎</span>
+                <input id="new_search" class="search-input" type="text"
+                    placeholder="Buscar por marca o modelo nuevo..." />
+            </div>
+            <div id="new_marca_filter_anchor"></div>
+            <div id="new_filter_anchor"></div>
+            <div class="chip">Filas: <span id="new_hits">0</span></div>
+            <button id="new_select_all" class="btn-clear btn-select-all" title="Seleccionar todos">✓</button>
+            <button id="new_unselect_all" class="btn-clear btn-unselect-all" title="Deseleccionar todos">☐</button>
+            <button id="new_download" class="btn-clear" title="Descargar Excel">📥</button>
+            <button id="new_clear" class="btn-clear" title="Limpiar todo">✖</button>
+        </div>
+
+        <div class="table-wrap" style="max-height:280px; overflow:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-check"></th>
+                        <th class="sortable" data-key="marca" style="width: 110px;">Marca</th>
+                        <th class="sortable" data-key="sap" style="width: 120px;">SAP</th>
+                        <th class="sortable" data-key="cod_bejerman" style="width: 130px;">Cod Bejerman</th>
+                        <th class="sortable" data-key="modelo" style="width: 220px;">Modelo</th>
+                        <th class="sortable" data-key="disponible" style="width: 90px;">Stock</th>
+                        <th class="sortable" data-key="descripcion" style="min-width: 500px;">Descripción</th>
+                        <th class="sortable" data-key="categoria" style="width: 140px;">Categoría</th>
+                        <th class="sortable" data-key="subcategoria" style="width: 140px;">Subcategoría</th>
+                        <th class="sortable" data-key="diamond" style="width: 110px;">Diamond</th>
+                        <th class="sortable" data-key="black" style="width: 110px;">Black</th>
+                        <th class="sortable" data-key="platinum" style="width: 110px;">Platinum</th>
+                        <th class="sortable" data-key="ruby" style="width: 110px;">Ruby</th>
+                        <th class="sortable" data-key="gold_gremio" style="width: 110px;">Gold gremio</th>
+                        <th class="sortable" data-key="pvp" style="width: 110px;">PVP</th>
+                        <th class="sortable" data-key="epp" style="width: 110px;">EPP</th>
+                        <th class="sortable" data-key="iva" style="width: 80px;">IVA</th>
+                        <th class="sortable" data-key="en_transito" style="width: 100px;">Tránsito</th>
+                        <th class="sortable" data-key="oferta" style="width: 120px;">Oferta</th>
+                    </tr>
+                </thead>
+                <tbody id="new_tbody"></tbody>
+            </table>
+        </div>
+        <div id="new_footer" style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 8px;">
+            Total productos nuevos: <span id="new_total_count">0</span>
+        </div>
+        <div class="error" id="new_error"></div>
+    </div>
+
+    <!-- ✅ Sección Catálogo Home: sticky al llegar al tope, scroll interno en la tabla -->
+    <div class="section-home" style="position:sticky; top:0; z-index:100;
+               height:calc(100vh - 64px - 40px);
+               display:flex; flex-direction:column;
+               background:var(--bg);
+               padding-top:8px;">
+        <div class="meta">
+            <div class="loading" id="home_loading">
+                <div class="spinner"></div>
+                <div>Cargando catálogo completo…</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔎</span>
+                <input id="home_search" class="search-input" type="text"
+                    placeholder="Buscar en el catálogo general..." />
+            </div>
+            <div id="home_marca_filter_anchor"></div>
+            <div id="home_filter_anchor"></div>
+            <div class="chip">Filas: <span id="home_hits">0</span></div>
+            <button id="home_select_all" class="btn-clear btn-select-all" title="Seleccionar todos">✓</button>
+            <button id="home_unselect_all" class="btn-clear btn-unselect-all" title="Deseleccionar todos">☐</button>
+            <button id="home_download" class="btn-clear" title="Descargar Excel">📥</button>
+            <button id="home_clear" class="btn-clear" title="Limpiar todo">✖</button>
+        </div>
+
+        <div class="table-wrap" style="flex:1; min-height:0; overflow:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="col-check"></th>
+                        <th class="sortable" data-key="marca" style="width: 110px;">Marca</th>
+                        <th class="sortable" data-key="sap" style="width: 120px;">SAP</th>
+                        <th class="sortable" data-key="cod_bejerman" style="width: 130px;">Cod Bejerman</th>
+                        <th class="sortable" data-key="modelo" style="width: 220px;">Modelo</th>
+                        <th class="sortable" data-key="disponible" style="width: 90px;">Stock</th>
+                        <th class="sortable" data-key="descripcion" style="min-width: 500px;">Descripción</th>
+                        <th class="sortable" data-key="categoria" style="width: 140px;">Categoría</th>
+                        <th class="sortable" data-key="subcategoria" style="width: 140px;">Subcategoría</th>
+                        <th class="sortable" data-key="diamond" style="width: 110px;">Diamond</th>
+                        <th class="sortable" data-key="black" style="width: 110px;">Black</th>
+                        <th class="sortable" data-key="platinum" style="width: 110px;">Platinum</th>
+                        <th class="sortable" data-key="ruby" style="width: 110px;">Ruby</th>
+                        <th class="sortable" data-key="gold_gremio" style="width: 110px;">Gold gremio</th>
+                        <th class="sortable" data-key="pvp" style="width: 110px;">PVP</th>
+                        <th class="sortable" data-key="epp" style="width: 110px;">EPP</th>
+                        <th class="sortable" data-key="iva" style="width: 80px;">IVA</th>
+                        <th class="sortable" data-key="en_transito" style="width: 100px;">Tránsito</th>
+                        <th class="sortable" data-key="oferta" style="width: 120px;">Oferta</th>
+                    </tr>
+                </thead>
+                <tbody id="home_tbody"></tbody>
+            </table>
+        </div>
+        <div id="home_footer" style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 8px;">
+            Total en catálogo: <span id="home_total_count">0</span>
+        </div>
+        <div class="error" id="home_error"></div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        // Estado para Tabla "Nuevos"
+        let newRows = [], originalNewRows = [];
+        let newSelectedMarca = [], newSelectedCat = null, newSelectedSub = null;
+        let newSort = { key: null, dir: 0 };
+
+        // Estado para Tabla "Home"
+        let homeRows = [], originalHomeRows = [];
+        let homeSelectedMarca = [], homeSelectedCat = null, homeSelectedSub = null;
+        let homeSort = { key: null, dir: 0 };
+
+        // Elementos UI
+        const newEls = {
+            tbody: document.getElementById("new_tbody"),
+            search: document.getElementById("new_search"),
+            hits: document.getElementById("new_hits"),
+            loading: document.getElementById("new_loading"),
+            total: document.getElementById("new_total_count"),
+            marcaFilterAnchor: document.getElementById("new_marca_filter_anchor"),
+            filterAnchor: document.getElementById("new_filter_anchor")
+        };
+
+        const homeEls = {
+            tbody: document.getElementById("home_tbody"),
+            search: document.getElementById("home_search"),
+            hits: document.getElementById("home_hits"),
+            loading: document.getElementById("home_loading"),
+            total: document.getElementById("home_total_count"),
+            marcaFilterAnchor: document.getElementById("home_marca_filter_anchor"),
+            filterAnchor: document.getElementById("home_filter_anchor")
+        };
+
+        const priceCols = ["diamond", "black", "platinum", "ruby", "gold_gremio", "pvp", "epp", "iva"];
+
+        function render(rows, targetTbody, query, isNew) {
+            targetTbody.innerHTML = "";
+            const frag = document.createDocumentFragment();
+            rows.forEach(r => {
+                const tr = document.createElement("tr");
+                const tdCheck = document.createElement("td");
+                tdCheck.className = "col-check";
+                const chk = document.createElement("input");
+                chk.type = "checkbox";
+                chk.checked = !!r._selected;
+                chk.onchange = () => { r._selected = chk.checked; updateHits(isNew); };
+                tdCheck.appendChild(chk);
+                tr.appendChild(tdCheck);
+
+                const cols = ["marca", "sap", "cod_bejerman", "modelo", "disponible", "descripcion", "categoria", "subcategoria", ...priceCols, "en_transito", "oferta"];
+                cols.forEach(key => {
+                    const td = document.createElement("td");
+                    let val = r[key];
+                    if (priceCols.includes(key)) val = window.utils.fmtNum(val);
+                    if (key === "modelo") val = (val || "").toUpperCase();
+                    td.innerHTML = window.utils.highlight(val, query);
+
+                    if ((r.es_oferta || "").includes(key)) td.classList.add("is-offer");
+                    tr.appendChild(td);
+                });
+                frag.appendChild(tr);
+            });
+            targetTbody.appendChild(frag);
+            updateHits(isNew);
+        }
+
+        function updateHits(isNew) {
+            const hitsEl = isNew ? newEls.hits : homeEls.hits;
+            const original = isNew ? originalNewRows : originalHomeRows;
+            const filtered = isNew ? newRows : homeRows;
+            if (hitsEl) {
+                const sel = original.filter(r => r._selected).length;
+                hitsEl.innerHTML = `Sel: <b>${sel}</b> / ${filtered.length}`;
+            }
+        }
+
+        function applyFilter(isNew) {
+            const queryEl = isNew ? newEls.search : homeEls.search;
+            const q = window.utils.norm(queryEl.value);
+            const original = isNew ? originalNewRows : originalHomeRows;
+            const marca = isNew ? newSelectedMarca : homeSelectedMarca;
+            const cat = isNew ? newSelectedCat : homeSelectedCat;
+            const sub = isNew ? newSelectedSub : homeSelectedSub;
+            const sort = isNew ? newSort : homeSort;
+
+            let data = original.filter(r => {
+                const matchQ = !q || ["marca", "sap", "cod_bejerman", "modelo", "descripcion"].some(k => window.utils.norm(r[k]).includes(q));
+                // Ahora 'marca' es un array, usamos .includes()
+                const matchMarca = !marca.length || marca.includes((r.marca || "").trim().toUpperCase());
+                const matchCat = !cat || (r.categoria || "").trim().toUpperCase() === cat;
+                const matchSub = !sub || (r.subcategoria || "").trim().toUpperCase() === sub;
+                return matchQ && matchMarca && matchCat && matchSub;
+            });
+
+            if (sort.dir > 0) {
+                data.sort((a, b) => {
+                    const vA = window.utils.smartConvert(a[sort.key]), vB = window.utils.smartConvert(b[sort.key]);
+                    return sort.dir === 1 ? (vA < vB ? -1 : 1) : (vA > vB ? -1 : 1);
+                });
+            }
+
+            if (isNew) {
+                newRows = data;
+                render(newRows, newEls.tbody, queryEl.value, true);
+            } else {
+                homeRows = data;
+                render(homeRows, homeEls.tbody, queryEl.value, false);
+            }
+        }
+
+        function handleSort(th, isNew) {
+            const sort = isNew ? newSort : homeSort;
+            const key = th.dataset.key;
+            const tableSelector = isNew ? ".section-new" : ".section-home";
+
+            if (sort.key === key) sort.dir = (sort.dir + 1) % 3;
+            else { sort.key = key; sort.dir = 1; }
+
+            document.querySelectorAll(`${tableSelector} th.sortable`).forEach(el => el.classList.remove("asc", "desc"));
+            if (sort.dir === 1) th.classList.add("asc");
+            if (sort.dir === 2) th.classList.add("desc");
+
+            applyFilter(isNew);
+        }
+
+        // Eventos Nuevos
+        document.getElementById("new_clear").onclick = () => {
+            newEls.search.value = "";
+            newSelectedMarca = null; // <--- Cambiar esto
+            newSelectedCat = newSelectedSub = null;
+            applyFilter(true);
+        };
+        document.getElementById("new_select_all").onclick = () => { newRows.forEach(r => r._selected = true); render(newRows, newEls.tbody, newEls.search.value, true); };
+        document.getElementById("new_unselect_all").onclick = () => { newRows.forEach(r => r._selected = false); render(newRows, newEls.tbody, newEls.search.value, true); };
+        document.getElementById("new_download").onclick = () => window.utils.exportToExcel(originalNewRows.filter(r => r._selected), "nuevos.xlsx");
+
+        // Eventos Home
+        homeEls.search.oninput = () => applyFilter(false);
+        document.getElementById("home_clear").onclick = () => {
+            homeEls.search.value = "";
+            homeSelectedMarca = null; // <--- Cambiar esto
+            homeSelectedCat = homeSelectedSub = null;
+            applyFilter(false);
+        };
+        document.getElementById("home_select_all").onclick = () => { homeRows.forEach(r => r._selected = true); render(homeRows, homeEls.tbody, homeEls.search.value, false); };
+        document.getElementById("home_unselect_all").onclick = () => { homeRows.forEach(r => r._selected = false); render(homeRows, homeEls.tbody, homeEls.search.value, false); };
+        document.getElementById("home_download").onclick = () => window.utils.exportToExcel(originalHomeRows.filter(r => r._selected), "home.xlsx");
+
+        // Sorts
+        document.querySelectorAll(".section-new th.sortable").forEach(th => th.onclick = () => handleSort(th, true));
+        document.querySelectorAll(".section-home th.sortable").forEach(th => th.onclick = () => handleSort(th, false));
+
+        function load() {
+            // Cargar Nuevos
+            newEls.loading.style.display = "flex";
+            google.script.run.withSuccessHandler(rows => {
+                originalNewRows = (rows || []).map(r => ({ ...r, _selected: false }));
+                newEls.total.textContent = originalNewRows.length;
+
+                // Marca
+                newEls.marcaFilterAnchor.innerHTML = "";
+                newEls.marcaFilterAnchor.appendChild(window.utils.buildBrandUI(originalNewRows, (m) => { newSelectedMarca = m; applyFilter(true); }));
+
+                // Categoría
+                newEls.filterAnchor.innerHTML = "";
+                newEls.filterAnchor.appendChild(window.utils.buildCategoryUI(originalNewRows, (c, s) => { newSelectedCat = c; newSelectedSub = s; applyFilter(true); }));
+
+                applyFilter(true);
+                newEls.loading.style.display = "none";
+            }).getProductosNuevosFromBQ();
+
+            // Cargar Home
+            homeEls.loading.style.display = "flex";
+            google.script.run.withSuccessHandler(rows => {
+                originalHomeRows = (rows || []).map(r => ({ ...r, _selected: false }));
+                homeEls.total.textContent = originalHomeRows.length;
+
+                // Marca
+                homeEls.marcaFilterAnchor.innerHTML = "";
+                homeEls.marcaFilterAnchor.appendChild(window.utils.buildBrandUI(originalHomeRows, (m) => { homeSelectedMarca = m; applyFilter(false); }));
+
+                // Categoría
+                homeEls.filterAnchor.innerHTML = "";
+                homeEls.filterAnchor.appendChild(window.utils.buildCategoryUI(originalHomeRows, (c, s) => { homeSelectedCat = c; homeSelectedSub = s; applyFilter(false); }));
+
+                applyFilter(false);
+                homeEls.loading.style.display = "none";
+            }).getHomeCatalogFromBQ();
+        }
+
+        load();
+    })();
+</script>

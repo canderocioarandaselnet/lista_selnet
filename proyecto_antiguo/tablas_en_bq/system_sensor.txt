@@ -1,0 +1,147 @@
+selnet-476815.pagina.system_sensor
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Bentel - System Sensor",
+  "modelo": "OSI-R-SS",
+  "descripcion": "Barrera de Humo Transmisora/Receptora convencional con reflector de 8\". Rango de protección de 5mts. a 100mts ( NO REQUIERE KIT DE LAGO ALCANCE), Ajuste del haz de 50 ° horizontal y 20 ° vertical,  Alimentación: 10VDC a 32VDC",
+  "gremio": "682.25",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "BEAMSMK",
+  "descripcion": "Kit de montaje en superficie.",
+  "gremio": "36.25",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "BEAMMMK",
+  "descripcion": "Multi-kit de montaje (techo o pared)",
+  "gremio": "61.25",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "BEAMLRK",
+  "descripcion": "Accesorio de barrera de humo para obtener el rango extendido",
+  "gremio": "118.75",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "RTS151KEY",
+  "descripcion": "Estación remota para reseteo y prueba de barrera ",
+  "gremio": "63.75",
+  "iva": "0.105",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "P2RL-SP",
+  "descripcion": "Sirena con lámpara estroboscópica a 2 Hilos, color rojo, montaje de pared, menor consumo de corriente, configuración estroboscópica seleccionable y texto en español. Selección automática de la operación de 12 ó 24 volts. Selección de 15 y 30 candelas. Sirena de 88+ dBA a 16 voltios",
+  "gremio": "64.81",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "P2RK-SP",
+  "descripcion": "Sirena estroboscópica, 24v. Roja con flash. Exterior",
+  "gremio": "88.75",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "ECO1003",
+  "descripcion": "Detector Fotoeléctrico.",
+  "gremio": "22.13",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "ECO1005",
+  "descripcion": "Detector combinado de Humo y termovelocimetrico 58°C.",
+  "gremio": "24.38",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "ECO1002",
+  "descripcion": "Detector Multicriteria.",
+  "gremio": "35.56",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "ECO1000B",
+  "descripcion": "Base estándar para detectores serie ECO1000",
+  "gremio": "5.19",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "ECO1000BRL",
+  "descripcion": "Base estándar con relé 12V (NA/NC) para serie ECO1000, 4 hilos, (para usar con paneles de alarma)",
+  "gremio": "18.75",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "CO1224T",
+  "descripcion": "Detector de monóxido de carbono, Monitoreado por sistema, de 4 cables, 12/24 VDC,  con tecnología RealTest®",
+  "gremio": "100.63",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}, {
+  "pagina": "Bentel - System Sensor",
+  "modelo": "MCP3AR000S",
+  "descripcion": "Avisadores Manual, Simple Acción tipo Call Point con elemento actuante tipo flexible reestablecible. Incluye caja de montaje color rojo",
+  "gremio": "20.65",
+  "iva": "0.21",
+  "marca": "system_sensor"
+}]
+

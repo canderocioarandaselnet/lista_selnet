@@ -1,0 +1,80 @@
+selnet-476815.pagina.hikmicro
+
+[
+  {
+    "name": "pagina",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "hik_code",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "datasheet",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "marca",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "pagina": "Hikvision",
+  "hik_code": "305402565",
+  "cod_bejerman": "305402565",
+  "modelo": "HM-TD2638-15/G0/T1Y(O-STD)",
+  "descripcion": "Camara HIKMICRO IP opto termica bi-espectro tipo bullet para detección perimetral optimizada, prevención de incendios, detección de humo y fuego. Canal térmico: Resolución 384 x 288, zoom digital x2, x4, x8, paso de pixel:12 μm, NETD\u003c20 mK. Canal óptico: resolución  4MP (2688 x 1520), sensor CMOS 1/2.7\".  Lente optico 8 mm (F1.6), lente termico 15.4 mm. Iluminación mín. color: 0.0089 Lux, F1.6. Luz IR suplementaria hasta 75 metros. Mejoras de imagen:3D DNR,WDR 120 dB, Balance de blancos. Admite imagen fusionada, PIP, EIS. Admite  grabación en tarjeta micro SD (máx. 512GB), en NAS y ANR. Protección IP67, IK10 y anticorrosión NEMA 4X. Alimentación: 24VAC 0.55A, 12 VDC 1.33A y  PoE: IEEE 802.3af, máx. 11.8W. Protección contra descargas: 4kV, contra sobretensiones y transitorios. Alarma: 2E/2S. Audio: 1E/1S. Puerto Ethernet RJ45 10/100 M, RS-485. Analíticas: VCA 3.0: Cruce de linea / Intrusión de área / Región de entrada / Región de salida. 3 reglas de detección de temperatura (10 puntos, 10 areas , 1 linea). Hasta 10 focos de fuego  y humo detectables. Rango Identificación de personas:80m (vca:195 mts), de vehículos:246m (vca:450 mts). Deteccion de temperatura: 46.2m a 115.5m. Deteccción de incendios:48m. Procesamiento de imágenes: lineal, histograma, modo AGC térmico autoadaptativo, DDE, 3D DNR.",
+  "datasheet": "https://assets.hikvision.com/prd/public/all/doc/m000113790/HM-TD2638-15_G0_T1Y_Datasheet_en-US_20250621.pdf ",
+  "marca": "hikmicro",
+  "categoria": "Camaras Termicas (deteccion de incendio, VCA, perimetrales,etc)",
+  "subcategoria": "Camaras Termicas (deteccion de incendio, VCA, perimetrales,etc)"
+}]
+

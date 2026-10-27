@@ -1,0 +1,234 @@
+selnet-476815.pagina.gold_seagate
+
+[
+  {
+    "name": "hik_code",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "cod_bejerman",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "modelo",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "descripcion",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "categoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "subcategoria",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "gremio",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "iva",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "pvp",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "dpp_platinum",
+    "mode": "NULLABLE",
+    "type": "FLOAT",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  },
+  {
+    "name": "es_oferta",
+    "mode": "NULLABLE",
+    "type": "STRING",
+    "description": "",
+    "fields": []
+  }
+]
+
+[{
+  "hik_code": "st8000vn04",
+  "cod_bejerman": "ST8000VN04",
+  "modelo": "st8000vn04",
+  "descripcion": "st8000vn004 hd 8tb seagate iron wolf, sata.",
+  "categoria": "IRON WOLF",
+  "subcategoria": "IRON WOLF",
+  "gremio": "209.5",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "st10000ve",
+  "cod_bejerman": "ST10000VE",
+  "modelo": "st10000ve001",
+  "descripcion": "st10000ve, hd 10tb seagate skyhawk, sata.",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "gremio": "285.0",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "st4000vx16",
+  "cod_bejerman": "ST4000VX16",
+  "modelo": "st4000vx016",
+  "descripcion": "st4000vx016, 4tb seagate skyhawk, sata.   ",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "gremio": "93.5",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "st2000vx17",
+  "cod_bejerman": "ST2000VX17",
+  "modelo": "st2000vx017",
+  "descripcion": "st2000vx017, 2tb seagate skyhawk, sata.",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "gremio": "65.0",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "st16000ve",
+  "cod_bejerman": "ST16000VE",
+  "modelo": "st16000ve002",
+  "descripcion": "st16000ve002, hd 16tb seagate skyhawk, sata.",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "gremio": "379.0",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "st8000ve",
+  "cod_bejerman": "ST8000VE",
+  "modelo": "st8000ve001",
+  "descripcion": "st8000ve, hd 8tb seagate skyhawk, sata.",
+  "categoria": "SKYHAWK",
+  "subcategoria": "SKYHAWK",
+  "gremio": "216.5",
+  "iva": "0.105",
+  "pvp": null,
+  "dpp_platinum": null,
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "303801276",
+  "cod_bejerman": "303801276",
+  "modelo": "st1000vx005",
+  "descripcion": "hd seagate surveillance skyhawk 1tb sata",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "gremio": "54.0",
+  "iva": "0.105",
+  "pvp": "54.0",
+  "dpp_platinum": "73.0",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "303801487",
+  "cod_bejerman": "303801487",
+  "modelo": "st2000vx015",
+  "descripcion": "hd seagate surveillance skyhawk 2tb sata",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "gremio": null,
+  "iva": null,
+  "pvp": "71.5",
+  "dpp_platinum": "109.9",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "303800923",
+  "cod_bejerman": "303800923",
+  "modelo": "st4000vx013",
+  "descripcion": "hd seagate surveillance skyhawk 4tb sata",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "gremio": null,
+  "iva": null,
+  "pvp": "119.0",
+  "dpp_platinum": "136.7",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "303801042",
+  "cod_bejerman": "303801042",
+  "modelo": "st8000ve000",
+  "descripcion": "hd seagate surveillance skyhawk 8tb sata",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "gremio": null,
+  "iva": null,
+  "pvp": "223.0",
+  "dpp_platinum": "302.7",
+  "oferta": null,
+  "es_oferta": ""
+}, {
+  "hik_code": "303801080",
+  "cod_bejerman": "303801080",
+  "modelo": "st10000ve0008",
+  "descripcion": "hd seagate surveillance skyhawk 10tb sata",
+  "categoria": "DISCOS",
+  "subcategoria": "SKYHAWK",
+  "gremio": null,
+  "iva": null,
+  "pvp": "316.0",
+  "dpp_platinum": "472.0",
+  "oferta": null,
+  "es_oferta": ""
+}]
+
