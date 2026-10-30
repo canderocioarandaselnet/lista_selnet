@@ -2,7 +2,15 @@
 
 import React from 'react';
 import { Producto, SortConfig, UserTier } from '@/types';
-import { ArrowUpDown, ArrowUp, ArrowDown, Package, Plane, Flame, Sparkles } from 'lucide-react';
+import {
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
+  Package,
+  Plane,
+  Flame,
+  Sparkles,
+} from 'lucide-react';
 
 interface ProductTableProps {
   products: Producto[];
@@ -21,9 +29,13 @@ export const ProductTable: React.FC<ProductTableProps> = ({
 }) => {
   const renderSortIcon = (key: keyof Producto | 'precio_principal') => {
     if (sort.key !== key || sort.direction === 'none') {
-      return <ArrowUpDown size={12} style={{ opacity: 0.4 }} />;
+      return <ArrowUpDown size={11} className="sort-icon-inactive" />;
     }
-    return sort.direction === 'asc' ? <ArrowUp size={13} color="#60a5fa" /> : <ArrowDown size={13} color="#60a5fa" />;
+    return sort.direction === 'asc' ? (
+      <ArrowUp size={12} className="sort-icon-active" />
+    ) : (
+      <ArrowDown size={12} className="sort-icon-active" />
+    );
   };
 
   const formatPrice = (val?: number) => {
@@ -37,54 +49,64 @@ export const ProductTable: React.FC<ProductTableProps> = ({
         <table className="data-table">
           <thead>
             <tr>
-              <th style={{ width: '40px', textAlign: 'center' }}></th>
-              <th className="sortable" onClick={() => onSort('marca')} style={{ width: '110px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  Marca {renderSortIcon('marca')}
-                </span>
+              {/* Checkbox column - Sticky left */}
+              <th className="col-sticky col-check" style={{ width: '44px', textAlign: 'center' }}>
+                <span className="sr-only">Seleccionar</span>
               </th>
-              <th className="sortable" onClick={() => onSort('sap')} style={{ width: '120px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  SAP {renderSortIcon('sap')}
-                </span>
-              </th>
-              {tier === 'interna' && (
-                <th className="sortable" onClick={() => onSort('cod_bejerman')} style={{ width: '130px' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                    Cód Bejerman {renderSortIcon('cod_bejerman')}
-                  </span>
-                </th>
-              )}
-              <th className="sortable" onClick={() => onSort('modelo')} style={{ width: '220px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+
+              {/* Modelo column - Sticky next to checkbox */}
+              <th
+                className="sortable col-sticky col-modelo"
+                onClick={() => onSort('modelo')}
+                style={{ minWidth: '200px' }}
+              >
+                <span className="th-content">
                   Modelo {renderSortIcon('modelo')}
                 </span>
               </th>
-              <th className="sortable" onClick={() => onSort('stock')} style={{ width: '90px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  Stock {renderSortIcon('stock')}
-                </span>
-              </th>
-              <th style={{ minWidth: '380px' }}>Descripción</th>
-              <th className="sortable" onClick={() => onSort('categoria')} style={{ width: '140px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  Categoría {renderSortIcon('categoria')}
-                </span>
-              </th>
-              <th className="sortable" onClick={() => onSort('subcategoria')} style={{ width: '140px' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  Subcategoría {renderSortIcon('subcategoria')}
+
+              {/* Marca */}
+              <th className="sortable" onClick={() => onSort('marca')} style={{ width: '110px' }}>
+                <span className="th-content">
+                  Marca {renderSortIcon('marca')}
                 </span>
               </th>
 
-              {/* Precio Principal según Tier */}
-              <th className="sortable" onClick={() => onSort('precio_principal')} style={{ width: '120px', color: '#60a5fa' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              {/* SAP Code */}
+              <th className="sortable" onClick={() => onSort('sap')} style={{ width: '120px' }}>
+                <span className="th-content">
+                  SAP {renderSortIcon('sap')}
+                </span>
+              </th>
+
+              {/* Cod Bejerman (solo tier interna) */}
+              {tier === 'interna' && (
+                <th className="sortable" onClick={() => onSort('cod_bejerman')} style={{ width: '130px' }}>
+                  <span className="th-content">
+                    Bejerman {renderSortIcon('cod_bejerman')}
+                  </span>
+                </th>
+              )}
+
+              {/* Stock */}
+              <th className="sortable" onClick={() => onSort('stock')} style={{ width: '95px' }}>
+                <span className="th-content">
+                  Stock {renderSortIcon('stock')}
+                </span>
+              </th>
+
+              {/* Tu Precio (Tier Destacado) */}
+              <th
+                className="sortable col-price-featured"
+                onClick={() => onSort('precio_principal')}
+                style={{ width: '135px' }}
+              >
+                <span className="th-content">
                   Tu Precio ({tier.toUpperCase()}) {renderSortIcon('precio_principal')}
                 </span>
               </th>
 
-              {/* Columnas Adicionales de Precios según Tier */}
+              {/* Precios adicionales según Tier */}
               {['diamond', 'black', 'interna'].includes(tier) && (
                 <th style={{ width: '100px' }}>Black</th>
               )}
@@ -98,143 +120,187 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                 <th style={{ width: '100px' }}>Diamond</th>
               )}
 
-              {/* Gold Gremio y PVP */}
+              {/* Precios Base */}
               <th style={{ width: '100px' }}>Gremio</th>
-              <th style={{ width: '100px' }}>PVP</th>
+              <th style={{ width: '100px' }}>PVP Sug.</th>
               {tier !== 'gold' && <th style={{ width: '90px' }}>EPP</th>}
               <th style={{ width: '80px' }}>IVA</th>
-              <th style={{ width: '100px', textAlign: 'center' }}>Tránsito</th>
-              {tier === 'interna' && <th style={{ width: '140px' }}>Oferta</th>}
+
+              {/* Categoría y Subcategoría */}
+              <th className="sortable" onClick={() => onSort('categoria')} style={{ width: '130px' }}>
+                <span className="th-content">
+                  Categoría {renderSortIcon('categoria')}
+                </span>
+              </th>
+              <th className="sortable" onClick={() => onSort('subcategoria')} style={{ width: '130px' }}>
+                <span className="th-content">
+                  Subcategoría {renderSortIcon('subcategoria')}
+                </span>
+              </th>
+
+              {/* Descripción */}
+              <th style={{ minWidth: '320px' }}>Descripción</th>
+
+              {/* Tránsito */}
+              <th style={{ width: '90px', textAlign: 'center' }}>Tránsito</th>
+
+              {/* Detalle Oferta (solo interna) */}
+              {tier === 'interna' && <th style={{ width: '150px' }}>Oferta Detalle</th>}
             </tr>
           </thead>
           <tbody>
             {products.length === 0 ? (
               <tr>
-                <td colSpan={18} style={{ textAlign: 'center', padding: '40px', color: 'var(--text-muted)' }}>
-                  No se encontraron productos con los filtros seleccionados.
+                <td colSpan={18} className="empty-cell">
+                  <div className="empty-table-wrap">
+                    <Package size={36} className="empty-icon" />
+                    <p>No se encontraron productos con los filtros seleccionados.</p>
+                  </div>
                 </td>
               </tr>
             ) : (
               products.map((p) => (
-                <tr key={`${p.marca}-${p.modelo}`} className={p._selected ? 'selected' : ''}>
-                  {/* Checkbox */}
-                  <td style={{ textAlign: 'center' }}>
+                <tr key={`${p.marca}-${p.modelo}-${p.id}`} className={p._selected ? 'row-selected' : ''}>
+                  {/* Checkbox - Sticky left */}
+                  <td className="col-sticky col-check" style={{ textAlign: 'center' }}>
                     <input
                       type="checkbox"
                       checked={!!p._selected}
                       onChange={() => onToggleSelect(p.id)}
-                      style={{ cursor: 'pointer' }}
+                      className="table-checkbox"
+                      aria-label={`Seleccionar ${p.modelo}`}
                     />
+                  </td>
+
+                  {/* Modelo + Badges - Sticky */}
+                  <td className="col-sticky col-modelo">
+                    <div className="modelo-cell-wrap">
+                      <span className="modelo-text">{p.modelo}</span>
+                      <div className="modelo-micro-badges">
+                        {p.es_nuevo && (
+                          <span className="badge-micro badge-micro-new" title="Producto Nuevo">
+                            <Sparkles size={10} /> Nuevo
+                          </span>
+                        )}
+                        {p.es_oferta && (
+                          <span className="badge-micro badge-micro-offer" title="Precio Oferta">
+                            <Flame size={10} /> Oferta
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </td>
 
                   {/* Marca */}
                   <td>
-                    <span style={{ fontWeight: 700, fontSize: '11.5px', color: 'var(--text-muted)' }}>
+                    <span className="brand-tag">
                       {p.marca}
                     </span>
                   </td>
 
                   {/* SAP */}
-                  <td style={{ fontFamily: 'monospace', fontSize: '12px', color: 'var(--text-dim)' }}>
-                    {p.sap || '-'}
+                  <td>
+                    <span className="code-text sap-code">
+                      {p.sap || '—'}
+                    </span>
                   </td>
 
-                  {/* Cod Bejerman (solo interna) */}
+                  {/* Cod Bejerman */}
                   {tier === 'interna' && (
-                    <td style={{ fontFamily: 'monospace', fontSize: '12px', color: '#c084fc' }}>
-                      {p.cod_bejerman || '-'}
+                    <td>
+                      <span className="code-text bejerman-code">
+                        {p.cod_bejerman || '—'}
+                      </span>
                     </td>
                   )}
-
-                  {/* Modelo + Badges */}
-                  <td>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                      <strong style={{ color: 'var(--text-main)' }}>{p.modelo}</strong>
-                      {p.es_nuevo && (
-                        <span className="pill pill-new" title="Producto Nuevo / Lanzamiento">
-                          <Sparkles size={11} /> Nuevo
-                        </span>
-                      )}
-                      {p.es_oferta && (
-                        <span className="pill pill-offer" title="Precio en Oferta">
-                          <Flame size={11} /> Oferta
-                        </span>
-                      )}
-                    </div>
-                  </td>
 
                   {/* Stock */}
                   <td>
                     {p.stock > 0 ? (
-                      <span className="pill pill-stock">
-                        <Package size={11} /> {p.stock}
+                      <span className="stock-pill stock-available">
+                        <span className="stock-dot-pulse"></span>
+                        {p.stock}
                       </span>
                     ) : (
-                      <span className="pill pill-nostock">0</span>
+                      <span className="stock-pill stock-none">0</span>
+                    )}
+                  </td>
+
+                  {/* Tu Precio (Tier Destacado) */}
+                  <td className="col-price-featured">
+                    <span className="featured-price-badge">
+                      {formatPrice(p.precio_principal)}
+                    </span>
+                  </td>
+
+                  {/* Precios adicionales de Tiers */}
+                  {['diamond', 'black', 'interna'].includes(tier) && (
+                    <td className="price-cell price-secondary">{formatPrice(p.precio_black)}</td>
+                  )}
+                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
+                    <td className="price-cell price-secondary">{formatPrice(p.precio_ruby)}</td>
+                  )}
+                  {['platinum', 'interna'].includes(tier) && (
+                    <td className="price-cell price-secondary">{formatPrice(p.precio_platinum)}</td>
+                  )}
+                  {tier === 'interna' && (
+                    <td className="price-cell price-secondary">{formatPrice(p.precio_diamond)}</td>
+                  )}
+
+                  {/* Precios Base */}
+                  <td className="price-cell price-gremio">{formatPrice(p.precio_gold)}</td>
+                  <td className="price-cell price-pvp">{formatPrice(p.pvp)}</td>
+                  {tier !== 'gold' && (
+                    <td className="price-cell price-secondary">{formatPrice(p.epp)}</td>
+                  )}
+                  <td>
+                    <span className="iva-tag">
+                      {p.iva !== undefined ? `${(p.iva * 100).toFixed(1)}%` : '—'}
+                    </span>
+                  </td>
+
+                  {/* Categoría y Subcategoría */}
+                  <td>
+                    {p.categoria ? (
+                      <span className="cat-badge">{p.categoria}</span>
+                    ) : (
+                      <span className="text-dim">—</span>
+                    )}
+                  </td>
+                  <td>
+                    {p.subcategoria ? (
+                      <span className="subcat-badge">{p.subcategoria}</span>
+                    ) : (
+                      <span className="text-dim">—</span>
                     )}
                   </td>
 
                   {/* Descripción */}
-                  <td style={{ color: 'var(--text-muted)', fontSize: '12.5px', lineHeight: '1.4' }}>
-                    {p.descripcion || '-'}
-                  </td>
-
-                  {/* Categoría y Subcategoría */}
-                  <td style={{ fontSize: '12px' }}>{p.categoria || '-'}</td>
-                  <td style={{ fontSize: '12px', color: 'var(--text-dim)' }}>{p.subcategoria || '-'}</td>
-
-                  {/* Precio Principal del Tier */}
-                  <td className="price-cell price-main">
-                    {formatPrice(p.precio_principal)}
-                  </td>
-
-                  {/* Precios adicionales según Tier */}
-                  {['diamond', 'black', 'interna'].includes(tier) && (
-                    <td className="price-cell">{formatPrice(p.precio_black)}</td>
-                  )}
-                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
-                    <td className="price-cell">{formatPrice(p.precio_ruby)}</td>
-                  )}
-                  {['platinum', 'interna'].includes(tier) && (
-                    <td className="price-cell">{formatPrice(p.precio_platinum)}</td>
-                  )}
-                  {tier === 'interna' && (
-                    <td className="price-cell">{formatPrice(p.precio_diamond)}</td>
-                  )}
-
-                  {/* Gremio y PVP */}
-                  <td className="price-cell" style={{ color: 'var(--text-muted)' }}>
-                    {formatPrice(p.precio_gold)}
-                  </td>
-                  <td className="price-cell" style={{ color: 'var(--text-dim)' }}>
-                    {formatPrice(p.pvp)}
-                  </td>
-                  {tier !== 'gold' && (
-                    <td className="price-cell" style={{ color: 'var(--text-dim)' }}>
-                      {formatPrice(p.epp)}
-                    </td>
-                  )}
-
-                  {/* IVA */}
-                  <td style={{ fontSize: '12px', color: 'var(--text-dim)' }}>
-                    {p.iva !== undefined ? `${(p.iva * 100).toFixed(1)}%` : '-'}
+                  <td>
+                    <span className="desc-text" title={p.descripcion || ''}>
+                      {p.descripcion || '—'}
+                    </span>
                   </td>
 
                   {/* Tránsito */}
                   <td style={{ textAlign: 'center' }}>
                     {p.en_transito ? (
-                      <span className="pill pill-transit" title="En tránsito / Importación">
+                      <span className="badge-transit" title="En tránsito de importación">
                         <Plane size={11} /> Sí
                       </span>
                     ) : (
-                      <span style={{ fontSize: '12px', color: 'var(--text-dim)' }}>No</span>
+                      <span className="text-dim">No</span>
                     )}
                   </td>
 
                   {/* Detalle Oferta (solo interna) */}
                   {tier === 'interna' && (
-                    <td style={{ fontSize: '11px', color: '#fb923c' }}>
-                      {p.oferta_txt || '-'}
+                    <td>
+                      {p.oferta_txt ? (
+                        <span className="oferta-txt-tag">{p.oferta_txt}</span>
+                      ) : (
+                        <span className="text-dim">—</span>
+                      )}
                     </td>
                   )}
                 </tr>

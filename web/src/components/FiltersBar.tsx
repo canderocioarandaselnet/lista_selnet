@@ -2,7 +2,20 @@
 
 import React from 'react';
 import { CatalogoFilters, Producto, UserTier } from '@/types';
-import { Search, Download, CheckSquare, Square, X, Filter } from 'lucide-react';
+import {
+  Search,
+  Download,
+  CheckSquare,
+  Square,
+  X,
+  Filter,
+  LayoutGrid,
+  Table as TableIcon,
+  Flame,
+  Sparkles,
+  Package,
+  Layers,
+} from 'lucide-react';
 import * as XLSX from 'xlsx';
 
 interface FiltersBarProps {
@@ -17,6 +30,7 @@ interface FiltersBarProps {
   onSelectAll: () => void;
   onDeselectAll: () => void;
   tier: UserTier;
+  onOpenSidebar?: () => void;
 }
 
 export const FiltersBar: React.FC<FiltersBarProps> = ({
@@ -31,11 +45,11 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
   onSelectAll,
   onDeselectAll,
   tier,
+  onOpenSidebar,
 }) => {
   const handleExportExcel = () => {
-    // Si hay seleccionados exporta los seleccionados, sino exporta todos los filtrados
     const itemsToExport = selectedCount > 0
-      ? allProducts.filter(p => p._selected)
+      ? allProducts.filter((p) => p._selected)
       : filteredProducts;
 
     if (itemsToExport.length === 0) {
@@ -43,7 +57,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
       return;
     }
 
-    const exportRows = itemsToExport.map(p => {
+    const exportRows = itemsToExport.map((p) => {
       const row: Record<string, string | number> = {
         'Marca': p.marca,
         'SAP / Hik Code': p.sap || '',
@@ -57,7 +71,6 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
         'Nivel': p.label_precio_principal || '',
       };
 
-      // Columnas extras según Tier
       if (['diamond', 'black', 'interna'].includes(tier) && p.precio_black !== undefined) {
         row['Precio Black'] = p.precio_black ? `$${p.precio_black.toFixed(2)}` : '';
       }
@@ -95,7 +108,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
     const worksheet = XLSX.utils.json_to_sheet(exportRows);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Lista de Precios');
-    
+
     const filename = `Selnet_${tier.toUpperCase()}_${new Date().toISOString().slice(0, 10)}.xlsx`;
     XLSX.writeFile(workbook, filename);
   };
@@ -103,7 +116,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
   const handleClear = () => {
     onChangeFilters({
       search: '',
-      marca: filters.marca, // mantiene la marca activa del sidebar
+      marca: null,
       categoria: null,
       subcategoria: null,
       soloStock: false,
@@ -112,9 +125,19 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
     });
   };
 
+  const hasActiveFilters =
+    Boolean(filters.search.trim()) ||
+    Boolean(filters.marca) ||
+    Boolean(filters.categoria) ||
+    Boolean(filters.subcategoria) ||
+    filters.soloStock ||
+    filters.soloOfertas ||
+    filters.soloNuevos;
+
   return (
     <div className="filters-bar">
-      <div className="filters-left">
+      {/* Search and Brand row */}
+      <div className="filters-main-row">
         {/* Buscador */}
         <div className="search-box">
           <Search className="search-icon" size={16} />
@@ -124,115 +147,179 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             value={filters.search}
             onChange={(e) => onChangeFilters({ ...filters, search: e.target.value })}
           />
+          {filters.search && (
+            <button
+              className="search-clear-btn"
+              onClick={() => onChangeFilters({ ...filters, search: '' })}
+              title="Borrar búsqueda"
+              aria-label="Borrar búsqueda"
+            >
+              <X size={14} />
+            </button>
+          )}
         </div>
 
-        {/* Filtro Categoría */}
-        <select
-          className="select-input"
-          value={filters.categoria || ''}
-          onChange={(e) => onChangeFilters({
-            ...filters,
-            categoria: e.target.value || null,
-            subcategoria: null // reset subcategoría al cambiar categoría
-          })}
-        >
-          <option value="">Todas las Categorías</option>
-          {categories.map((c) => (
-            <option key={c} value={c}>{c}</option>
-          ))}
-        </select>
-
-        {/* Filtro Subcategoría */}
-        {subcategories.length > 0 && (
-          <select
-            className="select-input"
-            value={filters.subcategoria || ''}
-            onChange={(e) => onChangeFilters({ ...filters, subcategoria: e.target.value || null })}
+        {/* Brand Chip / Button on Mobile */}
+        {filters.marca ? (
+          <div className="active-brand-chip">
+            <span className="brand-chip-label" onClick={onOpenSidebar} title="Cambiar marca">
+              <Layers size={13} />
+              <span>{filters.marca}</span>
+            </span>
+            <button
+              className="brand-chip-close"
+              onClick={() => onChangeFilters({ ...filters, marca: null, categoria: null, subcategoria: null })}
+              title="Quitar filtro de marca"
+              aria-label="Quitar filtro de marca"
+            >
+              <X size={13} />
+            </button>
+          </div>
+        ) : onOpenSidebar ? (
+          <button
+            className="btn btn-outline mobile-filter-brand-btn"
+            onClick={onOpenSidebar}
+            title="Filtrar por marca"
           >
-            <option value="">Todas las Subcategorías</option>
-            {subcategories.map((s) => (
-              <option key={s} value={s}>{s}</option>
-            ))}
-          </select>
-        )}
-
-        {/* Quick Toggles */}
-        <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', cursor: 'pointer', color: 'var(--text-muted)' }}>
-          <input
-            type="checkbox"
-            checked={filters.soloStock}
-            onChange={(e) => onChangeFilters({ ...filters, soloStock: e.target.checked })}
-          />
-          En Stock
-        </label>
-
-        <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', cursor: 'pointer', color: 'var(--text-muted)' }}>
-          <input
-            type="checkbox"
-            checked={filters.soloOfertas}
-            onChange={(e) => onChangeFilters({ ...filters, soloOfertas: e.target.checked })}
-          />
-          Ofertas
-        </label>
-
-        <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', cursor: 'pointer', color: 'var(--text-muted)' }}>
-          <input
-            type="checkbox"
-            checked={filters.soloNuevos}
-            onChange={(e) => onChangeFilters({ ...filters, soloNuevos: e.target.checked })}
-          />
-          Nuevos
-        </label>
+            <Layers size={14} />
+            <span>Marcas</span>
+          </button>
+        ) : null}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      {/* Selects & Toggles row */}
+      <div className="filters-secondary-row">
+        {/* Dropdowns de categoría */}
+        <div className="dropdowns-group">
+          <select
+            className="select-input"
+            value={filters.categoria || ''}
+            onChange={(e) =>
+              onChangeFilters({
+                ...filters,
+                categoria: e.target.value || null,
+                subcategoria: null,
+              })
+            }
+          >
+            <option value="">Todas las Categorías</option>
+            {categories.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
+          </select>
+
+          {subcategories.length > 0 && (
+            <select
+              className="select-input"
+              value={filters.subcategoria || ''}
+              onChange={(e) =>
+                onChangeFilters({ ...filters, subcategoria: e.target.value || null })
+              }
+            >
+              <option value="">Todas las Subcategorías</option>
+              {subcategories.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          )}
+        </div>
+
+        {/* Quick Chip Toggles */}
+        <div className="chip-toggles-group">
+          <button
+            type="button"
+            className={`filter-chip ${filters.soloStock ? 'active' : ''}`}
+            onClick={() => onChangeFilters({ ...filters, soloStock: !filters.soloStock })}
+          >
+            <Package size={13} />
+            <span>En Stock</span>
+          </button>
+
+          <button
+            type="button"
+            className={`filter-chip ${filters.soloOfertas ? 'active' : ''}`}
+            onClick={() => onChangeFilters({ ...filters, soloOfertas: !filters.soloOfertas })}
+          >
+            <Flame size={13} />
+            <span>Ofertas</span>
+          </button>
+
+          <button
+            type="button"
+            className={`filter-chip ${filters.soloNuevos ? 'active' : ''}`}
+            onClick={() => onChangeFilters({ ...filters, soloNuevos: !filters.soloNuevos })}
+          >
+            <Sparkles size={13} />
+            <span>Nuevos</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Actions and counters bottom row */}
+      <div className="filters-actions-row">
         {/* Contadores */}
-        <div style={{ fontSize: '12.5px', color: 'var(--text-muted)' }}>
-          Filas: <strong style={{ color: 'var(--text-main)' }}>{totalHits}</strong>
+        <div className="hits-counter">
+          <span>
+            Filas: <strong>{totalHits.toLocaleString()}</strong>
+          </span>
           {selectedCount > 0 && (
-            <span style={{ marginLeft: '6px', color: '#60a5fa' }}>
-              ({selectedCount} seleccionados)
+            <span className="selected-badge">
+              ({selectedCount} sel.)
             </span>
           )}
         </div>
 
-        {/* Selección múltiple */}
-        <button
-          className="btn"
-          onClick={onSelectAll}
-          title="Seleccionar todos los visibles"
-          style={{ padding: '6px 10px' }}
-        >
-          <CheckSquare size={15} />
-        </button>
-        <button
-          className="btn"
-          onClick={onDeselectAll}
-          title="Deseleccionar todos"
-          style={{ padding: '6px 10px' }}
-        >
-          <Square size={15} />
-        </button>
+        {/* Action buttons */}
+        <div className="actions-group">
+          {/* Selección múltiple */}
+          <button
+            type="button"
+            className="btn btn-icon"
+            onClick={onSelectAll}
+            title="Seleccionar todos los visibles"
+            aria-label="Seleccionar todos"
+          >
+            <CheckSquare size={15} />
+          </button>
+          <button
+            type="button"
+            className="btn btn-icon"
+            onClick={onDeselectAll}
+            title="Deseleccionar todos"
+            aria-label="Deseleccionar todos"
+          >
+            <Square size={15} />
+          </button>
 
-        {/* Limpiar */}
-        <button
-          className="btn"
-          onClick={handleClear}
-          title="Limpiar filtros"
-          style={{ padding: '6px 10px' }}
-        >
-          <X size={15} />
-        </button>
+          {/* Limpiar */}
+          {hasActiveFilters && (
+            <button
+              type="button"
+              className="btn btn-icon"
+              onClick={handleClear}
+              title="Restablecer todos los filtros"
+              aria-label="Limpiar filtros"
+            >
+              <X size={15} />
+            </button>
+          )}
 
-        {/* Exportar a Excel */}
-        <button
-          className="btn btn-success"
-          onClick={handleExportExcel}
-          title="Descargar tabla en formato Excel (.xlsx)"
-        >
-          <Download size={15} />
-          <span>Exportar Excel</span>
-        </button>
+          {/* Exportar a Excel */}
+          <button
+            type="button"
+            className="btn btn-success export-btn"
+            onClick={handleExportExcel}
+            title="Descargar tabla en formato Excel (.xlsx)"
+          >
+            <Download size={14} />
+            <span className="export-text">Exportar Excel</span>
+            <span className="export-text-mobile">Excel</span>
+          </button>
+        </div>
       </div>
     </div>
   );

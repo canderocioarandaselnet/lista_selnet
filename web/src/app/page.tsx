@@ -29,6 +29,8 @@ export default function Home() {
     direction: 'asc',
   });
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   // Cargar catálogo inicial desde el API
   useEffect(() => {
     async function loadCatalogo() {
@@ -171,53 +173,40 @@ export default function Home() {
       <Header
         email={userEmail}
         tier={userTier}
+        onOpenSidebar={() => setIsSidebarOpen(true)}
+        selectedMarca={filters.marca}
       />
 
       {/* Selector de Nivel de Prueba / Demo */}
-      <div style={{
-        background: 'rgba(15, 23, 42, 0.9)',
-        borderBottom: '1px solid var(--border)',
-        padding: '6px 24px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        fontSize: '11.5px',
-        color: 'var(--text-dim)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>Vista previa de nivel:</span>
-          {(['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'] as UserTier[]).map((t) => (
-            <button
-              key={t}
-              onClick={() => setUserTier(t)}
-              style={{
-                background: userTier === t ? 'var(--primary)' : 'rgba(255, 255, 255, 0.06)',
-                color: userTier === t ? 'white' : 'var(--text-muted)',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '2px 8px',
-                cursor: 'pointer',
-                fontWeight: userTier === t ? 700 : 400,
-                textTransform: 'uppercase',
-                fontSize: '10.5px'
-              }}
-            >
-              {t}
-            </button>
-          ))}
+      <div className="demo-tier-bar">
+        <div className="tier-selector-group">
+          <span className="demo-label">Nivel:</span>
+          <div className="tier-chips-scroll">
+            {(['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'] as UserTier[]).map((t) => (
+              <button
+                key={t}
+                onClick={() => setUserTier(t)}
+                className={`demo-tier-btn ${userTier === t ? 'active' : ''}`}
+              >
+                {t}
+              </button>
+            ))}
+          </div>
         </div>
-        <div>
-          <span>Arquitectura: <strong>Supabase + Vercel</strong> | BigQuery Sync Active</span>
+        <div className="demo-arch-info">
+          <span>Supabase + Vercel | BigQuery Live</span>
         </div>
       </div>
 
-      {/* Cuerpo principal con Sidebar y Tabla */}
-      <div className="app-container" style={{ height: 'calc(100vh - 95px)' }}>
+      {/* Cuerpo principal con Sidebar y Tabla/Cards */}
+      <div className="app-container">
         <Sidebar
           selectedMarca={filters.marca}
           onSelectMarca={(m) => setFilters((prev) => ({ ...prev, marca: m, categoria: null, subcategoria: null }))}
           brandCounts={brandCounts}
           tier={userTier}
+          isOpen={isSidebarOpen}
+          onClose={() => setIsSidebarOpen(false)}
         />
 
         <main className="main-content">
@@ -233,11 +222,12 @@ export default function Home() {
             onSelectAll={handleSelectAll}
             onDeselectAll={handleDeselectAll}
             tier={userTier}
+            onOpenSidebar={() => setIsSidebarOpen(true)}
           />
 
           {loading ? (
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, gap: '12px', color: 'var(--text-muted)' }}>
-              <Loader2 className="animate-spin" size={32} color="#3b82f6" />
+            <div className="loading-state">
+              <Loader2 className="animate-spin" size={32} color="var(--primary)" />
               <span>Cargando catálogo en tiempo real...</span>
             </div>
           ) : (

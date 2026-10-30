@@ -1,12 +1,27 @@
 import os
+import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from google.cloud import bigquery
+from google.api_core.exceptions import NotFound
 from supabase import create_client, Client
 from dotenv import load_dotenv
 
+# Asegurar codificación UTF-8 en salida estándar (evita errores charmap en Windows)
+if sys.stdout.encoding != 'utf-8':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+        sys.stderr.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
 # Cargar variables de entorno si corre en local
 load_dotenv()
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sa_path = os.path.join(current_dir, "service_account.json")
+if os.path.exists(sa_path) and not os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = sa_path
 
 GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID", "selnet-476815")
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -34,6 +49,24 @@ def safe_int(val, default=0):
     except (ValueError, TypeError):
         return default
 
+def ensure_bigquery_view_exists(bq_client: bigquery.Client):
+    """Verifica si la vista existe en BigQuery, y si no, intenta crearla automáticamente."""
+    try:
+        bq_client.get_table(BQ_VIEW_NAME)
+        print(f"[INFO] Vista encontrada en BigQuery: {BQ_VIEW_NAME}")
+    except NotFound:
+        print(f"[AVISO] La vista {BQ_VIEW_NAME} no existe aun. Intentando crearla...")
+        sql_path = os.path.join(current_dir, "..", "database", "bigquery", "v_catalogo_maestro.sql")
+        if os.path.exists(sql_path):
+            with open(sql_path, "r", encoding="utf-8") as f:
+                ddl = f.read()
+            print("[INFO] Ejecutando DDL de v_catalogo_maestro en BigQuery...")
+            job = bq_client.query(ddl)
+            job.result()
+            print("[OK] Vista creada exitosamente en BigQuery.")
+        else:
+            raise FileNotFoundError(f"No se encontro el archivo DDL en {sql_path}")
+
 def sync_catalogo_bq_to_supabase():
     """
     Función principal de sincronización:
@@ -46,19 +79,22 @@ def sync_catalogo_bq_to_supabase():
     supabase = get_supabase_client()
     bq_client = bigquery.Client(project=GCP_PROJECT_ID)
 
-    print(f"[{datetime.now().isoformat()}] 🚀 Iniciando sincronización BQ -> Supabase...")
-    print(f"📖 Leyendo vista: {BQ_VIEW_NAME}")
+    print(f"[{datetime.now().isoformat()}] [INICIO] Sincronizacion BigQuery -> Supabase...")
+    
+    # 1. Asegurar que la vista exista
+    ensure_bigquery_view_exists(bq_client)
 
+    print(f"[INFO] Leyendo catalogo desde BigQuery: {BQ_VIEW_NAME}")
     query = f"SELECT * FROM `{BQ_VIEW_NAME}`"
     
     try:
         query_job = bq_client.query(query)
         rows = list(query_job.result())
         total_rows = len(rows)
-        print(f"📊 {total_rows} registros leídos desde BigQuery.")
+        print(f"[INFO] {total_rows} registros leidos desde BigQuery.")
 
         if total_rows == 0:
-            print("⚠️ No se encontraron registros para sincronizar.")
+            print("[ALERTA] No se encontraron registros para sincronizar.")
             return {"status": "EMPTY", "rows": 0}
 
         # Formateo de registros para Supabase
@@ -93,23 +129,38 @@ def sync_catalogo_bq_to_supabase():
                 "es_nuevo": bool(r.get("es_nuevo")),
                 "es_interno": bool(r.get("es_interno")),
 
-                "sincronizado_el": datetime.utcnow().isoformat()
+                "sincronizado_el": datetime.now(timezone.utc).isoformat()
             }
             # Clave obligatoria
             if prod["modelo"]:
                 productos.append(prod)
 
-        # Upsert en Supabase por lotes de 1.000 filas
-        BATCH_SIZE = 1000
+        # Deduplicar en memoria por clave única (marca, modelo) para evitar error PostgreSQL 21000
+        unique_map = {}
+        for p in productos:
+            key = (p["marca"], p["modelo"])
+            if key not in unique_map:
+                unique_map[key] = p
+            else:
+                # Si hay duplicado en BigQuery, preferir el que tenga mayor stock o sap
+                prev = unique_map[key]
+                if (p.get("stock", 0) > prev.get("stock", 0)) or (p.get("sap") and not prev.get("sap")):
+                    unique_map[key] = p
+
+        dedup_productos = list(unique_map.values())
+        print(f"[INFO] {len(dedup_productos)} productos unicos listos para sincronizar (de {len(productos)} filas).")
+
+        # Upsert en Supabase por lotes de 500 filas
+        BATCH_SIZE = 500
         upserted_count = 0
-        for i in range(0, len(productos), BATCH_SIZE):
-            batch = productos[i : i + BATCH_SIZE]
+        for i in range(0, len(dedup_productos), BATCH_SIZE):
+            batch = dedup_productos[i : i + BATCH_SIZE]
             res = supabase.table("productos").upsert(
                 batch,
                 on_conflict="marca,modelo"
             ).execute()
             upserted_count += len(batch)
-            print(f"  💾 Lote {i // BATCH_SIZE + 1} procesado: {upserted_count}/{len(productos)} productos.")
+            print(f"  [LOTE] {i // BATCH_SIZE + 1} procesado: {upserted_count}/{len(dedup_productos)} productos.")
 
         duracion_ms = int((time.time() - start_time) * 1000)
 
@@ -121,13 +172,13 @@ def sync_catalogo_bq_to_supabase():
             "estado": "SUCCESS"
         }).execute()
 
-        print(f"✅ Sincronización completada con éxito en {duracion_ms / 1000:.2f} segundos.")
+        print(f"[EXITO] Sincronizacion completada con exito en {duracion_ms / 1000:.2f} segundos.")
         return {"status": "SUCCESS", "rows": upserted_count, "duration_ms": duracion_ms}
 
     except Exception as e:
         duracion_ms = int((time.time() - start_time) * 1000)
         error_msg = str(e)
-        print(f"❌ ERROR durante la sincronización: {error_msg}")
+        print(f"[ERROR] durante la sincronizacion: {error_msg}")
         
         try:
             supabase.table("sync_logs").insert({

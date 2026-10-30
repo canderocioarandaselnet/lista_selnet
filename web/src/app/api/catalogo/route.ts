@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
+import { createAdminClient } from '@/lib/supabase/admin';
 import { Producto, UserTier } from '@/types';
 
 // Mock data para testing/desarrollo cuando aún no se conectan las credenciales reales
@@ -199,96 +200,123 @@ export async function GET(request: Request) {
       }
     }
 
-    // Llamar a la función RPC de Supabase 'get_catalogo'
-    const { data: dbData, error } = await supabase.rpc('get_catalogo', {
-      p_marca: marca || null,
-      p_categoria: categoria || null,
-      p_subcategoria: subcategoria || null,
-      p_solo_nuevos: soloNuevos,
-      p_search: search || null,
-    });
+    // Consultar tabla productos con cliente del servidor (paginando para superar el límite de 1000 filas de PostgREST)
+    const admin = createAdminClient();
+    const PAGE_SIZE = 1000;
+    let dbData: any[] = [];
+    let page = 0;
+    let hasMore = true;
 
-    if (!error && dbData && dbData.length > 0) {
+    while (hasMore) {
+      let query = admin.from('productos').select('*');
+
+      // Filtro de marcas internas
+      if (userTier !== 'interna') {
+        query = query.eq('es_interno', false);
+      }
+
+      if (marca) {
+        query = query.ilike('marca', marca);
+      }
+      if (categoria) {
+        query = query.ilike('categoria', categoria);
+      }
+      if (subcategoria) {
+        query = query.ilike('subcategoria', subcategoria);
+      }
+      if (soloNuevos) {
+        query = query.eq('es_nuevo', true);
+      }
+      if (search) {
+        const term = `%${search.trim()}%`;
+        query = query.or(`modelo.ilike.${term},descripcion.ilike.${term},sap.ilike.${term}`);
+      }
+
+      query = query.order('marca', { ascending: true }).order('modelo', { ascending: true });
+      query = query.range(page * PAGE_SIZE, (page + 1) * PAGE_SIZE - 1);
+
+      const { data, error } = await query;
+      if (error) {
+        console.error('Error querying Supabase:', error);
+        break;
+      }
+      if (!data || data.length === 0) {
+        hasMore = false;
+      } else {
+        dbData.push(...data);
+        if (data.length < PAGE_SIZE) {
+          hasMore = false;
+        } else {
+          page++;
+        }
+      }
+    }
+
+    if (dbData && dbData.length > 0) {
+      const safeData: Producto[] = dbData.map((p: any) => {
+        let precioPrincipal = p.precio_gold;
+        let labelPrincipal = 'Gold gremio';
+
+        if (userTier === 'diamond') {
+          precioPrincipal = p.precio_diamond;
+          labelPrincipal = 'Diamond';
+        } else if (userTier === 'black') {
+          precioPrincipal = p.precio_black;
+          labelPrincipal = 'Black';
+        } else if (userTier === 'platinum') {
+          precioPrincipal = p.precio_platinum;
+          labelPrincipal = 'Platinum';
+        } else if (userTier === 'ruby') {
+          precioPrincipal = p.precio_ruby;
+          labelPrincipal = 'Ruby';
+        }
+
+        return {
+          id: p.id,
+          sap: p.sap,
+          cod_bejerman: userTier === 'interna' ? p.cod_bejerman : undefined,
+          modelo: p.modelo,
+          descripcion: p.descripcion,
+          marca: p.marca,
+          categoria: p.categoria,
+          subcategoria: p.subcategoria,
+          precio_principal: precioPrincipal,
+          label_precio_principal: labelPrincipal,
+          precio_diamond: userTier === 'diamond' || userTier === 'interna' ? p.precio_diamond : undefined,
+          precio_black: ['diamond', 'black', 'interna'].includes(userTier) ? p.precio_black : undefined,
+          precio_platinum: ['platinum', 'interna'].includes(userTier) ? p.precio_platinum : undefined,
+          precio_ruby: ['diamond', 'black', 'ruby', 'interna'].includes(userTier) ? p.precio_ruby : undefined,
+          precio_gold: p.precio_gold,
+          pvp: p.pvp,
+          epp: userTier !== 'gold' ? p.epp : undefined,
+          iva: p.iva,
+          stock: p.stock,
+          en_transito: p.en_transito,
+          es_oferta: p.es_oferta,
+          oferta_txt: userTier === 'interna' ? p.oferta_txt : undefined,
+          es_nuevo: p.es_nuevo,
+          es_interno: p.es_interno,
+        };
+      });
+
       return NextResponse.json({
         ok: true,
         tier: userTier,
         email: userEmail,
-        count: dbData.length,
-        data: dbData,
+        count: safeData.length,
+        data: safeData,
+        is_mock: false,
       });
     }
 
-    // Fallback a MOCK si la base aún no tiene datos o no se configuraron credenciales
-    let filtered = [...MOCK_CATALOGO];
-
-    // Filtro de marcas internas
-    if (userTier !== 'interna') {
-      filtered = filtered.filter(p => !p.es_interno);
-    }
-
-    if (marca) {
-      filtered = filtered.filter(p => p.marca.toLowerCase() === marca.toLowerCase());
-    }
-    if (categoria) {
-      filtered = filtered.filter(p => p.categoria?.toLowerCase() === categoria.toLowerCase());
-    }
-    if (subcategoria) {
-      filtered = filtered.filter(p => p.subcategoria?.toLowerCase() === subcategoria.toLowerCase());
-    }
-    if (soloNuevos) {
-      filtered = filtered.filter(p => p.es_nuevo);
-    }
-    if (search) {
-      const q = search.toLowerCase();
-      filtered = filtered.filter(p =>
-        p.modelo.toLowerCase().includes(q) ||
-        p.descripcion?.toLowerCase().includes(q) ||
-        p.marca.toLowerCase().includes(q) ||
-        p.sap?.toLowerCase().includes(q)
-      );
-    }
-
-    // Mapeo seguro de precios según el tier
-    const safeData = filtered.map(p => {
-      let precioPrincipal = p.precio_gold;
-      let labelPrincipal = 'Gold gremio';
-
-      if (userTier === 'diamond') {
-        precioPrincipal = p.precio_diamond;
-        labelPrincipal = 'Diamond';
-      } else if (userTier === 'black') {
-        precioPrincipal = p.precio_black;
-        labelPrincipal = 'Black';
-      } else if (userTier === 'platinum') {
-        precioPrincipal = p.precio_platinum;
-        labelPrincipal = 'Platinum';
-      } else if (userTier === 'ruby') {
-        precioPrincipal = p.precio_ruby;
-        labelPrincipal = 'Ruby';
-      }
-
-      return {
-        ...p,
-        precio_principal: precioPrincipal,
-        label_precio_principal: labelPrincipal,
-        // Limpiar campos no autorizados
-        precio_diamond: userTier === 'diamond' || userTier === 'interna' ? p.precio_diamond : undefined,
-        precio_black: ['diamond', 'black', 'interna'].includes(userTier) ? p.precio_black : undefined,
-        precio_platinum: ['platinum', 'interna'].includes(userTier) ? p.precio_platinum : undefined,
-        precio_ruby: ['diamond', 'black', 'ruby', 'interna'].includes(userTier) ? p.precio_ruby : undefined,
-        epp: userTier !== 'gold' ? p.epp : undefined,
-        cod_bejerman: userTier === 'interna' ? p.cod_bejerman : undefined,
-        oferta_txt: userTier === 'interna' ? p.oferta_txt : undefined,
-      };
-    });
-
+    // Fallback si la base aún no responde
     return NextResponse.json({
       ok: true,
       tier: userTier,
       email: userEmail,
-      count: safeData.length,
-      data: safeData,
-      is_mock: true,
+      count: 0,
+      data: [],
+      is_mock: false,
     });
   } catch (err: unknown) {
     const error = err as Error;

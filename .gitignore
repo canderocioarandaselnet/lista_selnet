@@ -9,6 +9,9 @@ web/.env*.local
 backend_sync/__pycache__/
 backend_sync/*.pyc
 backend_sync/.env
+backend_sync/service_account.json
+*.service_account.json
+credentials.json
 venv/
 .venv/
 
