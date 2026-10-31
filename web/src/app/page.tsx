@@ -274,10 +274,6 @@ export default function Home() {
     <div className="main-wrapper">
       {/* Header Corporativo */}
       <Header
-        email={userEmail}
-        tier={userTier}
-        isAdmin={isAdmin}
-        onOpenAdmin={() => setIsAdminModalOpen(true)}
         onLogout={handleLogout}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         selectedMarca={filters.marca}
@@ -300,9 +296,6 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="demo-arch-info">
-          <span>BigQuery Live • Supabase Auth</span>
-        </div>
       </div>
 
       {/* Cuerpo principal con Sidebar y Tabla de Productos */}
@@ -314,6 +307,10 @@ export default function Home() {
           tier={userTier}
           isOpen={isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
+          userEmail={userEmail}
+          isAdmin={isAdmin}
+          onOpenAdmin={() => setIsAdminModalOpen(true)}
+          onLogout={handleLogout}
         />
 
         <main className="main-content">

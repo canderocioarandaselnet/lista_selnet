@@ -5,8 +5,8 @@ import { UserTier } from '@/types';
 import { Moon, Sun, ShieldCheck, RefreshCw, User, Menu } from 'lucide-react';
 
 interface HeaderProps {
-  email: string;
-  tier: UserTier;
+  email?: string;
+  tier?: UserTier;
   isAdmin?: boolean;
   onOpenAdmin?: () => void;
   onLogout?: () => void;
@@ -39,10 +39,6 @@ export const SelnetLogoIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
 );
 
 export const Header: React.FC<HeaderProps> = ({
-  email,
-  tier,
-  isAdmin,
-  onOpenAdmin,
   onLogout,
   onOpenSidebar,
   selectedMarca,
@@ -60,18 +56,6 @@ export const Header: React.FC<HeaderProps> = ({
     setTheme(nextTheme);
     localStorage.setItem('selnet_theme', nextTheme);
     document.documentElement.setAttribute('data-theme', nextTheme);
-  };
-
-  const getTierClass = (t: UserTier) => {
-    switch (t) {
-      case 'diamond': return 'tier-diamond';
-      case 'black': return 'tier-black';
-      case 'platinum': return 'tier-platinum';
-      case 'ruby': return 'tier-ruby';
-      case 'gold': return 'tier-gold';
-      case 'interna': return 'tier-interna';
-      default: return 'tier-gold';
-    }
   };
 
   return (
@@ -104,34 +88,6 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="header-right">
-        {/* Botón de Administración de Accesos (Solo para Admins) */}
-        {isAdmin && onOpenAdmin && (
-          <button
-            type="button"
-            onClick={onOpenAdmin}
-            className="btn-admin-access-nav"
-            title="Panel de gestión centralizada de accesos"
-          >
-            ⚙️ <span className="admin-btn-text">Gestión de Accesos</span>
-          </button>
-        )}
-
-        {/* Status de Sincronización */}
-        <div className="sync-status" title="Sincronización en tiempo real con BigQuery activa">
-          <span className="sync-dot"></span>
-          <span className="sync-text">BigQuery Live</span>
-        </div>
-
-        {/* User Pill con Tier Badge */}
-        <div className="user-pill">
-          <User size={13} className="user-icon" />
-          <span className="user-email">{email}</span>
-          <span className={`tier-badge ${getTierClass(tier)}`}>
-            <ShieldCheck size={11} />
-            <span className="tier-name">{tier.toUpperCase()}</span>
-          </span>
-        </div>
-
         {/* Theme Toggle */}
         <button
           className="btn theme-toggle-btn"
