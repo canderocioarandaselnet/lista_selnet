@@ -11,6 +11,8 @@ export interface Profile {
   nivel_activo: UserTier;
   primer_login?: string;
   ultimo_login?: string;
+  ultima_actividad?: string;
+  en_linea?: boolean;
   nivel_asignado_el?: string;
   asignado_por?: string;
   empresa?: string;
@@ -28,6 +30,8 @@ export interface UsuarioAdminItem {
   nivel_activo?: UserTier;
   primer_login?: string;
   ultimo_login?: string;
+  ultima_actividad?: string;
+  en_linea?: boolean;
   creado_el: string;
   asignado_por?: string;
   notas?: string;

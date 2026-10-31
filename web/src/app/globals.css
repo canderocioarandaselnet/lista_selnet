@@ -1862,7 +1862,7 @@ thead th.col-price-featured {
 
 .admin-metrics-bar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   padding: 14px 24px;
   background: var(--bg-main);
@@ -1884,6 +1884,21 @@ thead th.col-price-featured {
 .metric-card:hover,
 .metric-card.selected {
   border-color: var(--selnet-red);
+}
+
+.metric-card.online {
+  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.metric-card.online .metric-value {
+  color: #10b981;
+}
+
+.metric-card.online:hover,
+.metric-card.online.selected {
+  border-color: #10b981;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
 }
 
 .metric-label {
@@ -1917,6 +1932,11 @@ thead th.col-price-featured {
   display: inline-block;
   font-weight: 700;
   margin-top: 2px;
+}
+
+.online-pill {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #10b981 !important;
 }
 
 .admin-controls-bar {
@@ -2108,6 +2128,70 @@ thead th.col-price-featured {
   font-size: 11px;
   color: var(--text-muted);
   white-space: nowrap;
+}
+
+.col-presence {
+  min-width: 140px;
+}
+
+.online-presence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15);
+}
+
+.dot-pulse-green {
+  width: 7px;
+  height: 7px;
+  background-color: #10b981;
+  border-radius: 50%;
+  animation: pulseGreen 1.6s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.activity-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.activity-time-ago {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.activity-time-exact {
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.presence-never {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
 }
 
 .col-actions {

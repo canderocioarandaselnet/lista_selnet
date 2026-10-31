@@ -118,6 +118,23 @@ export default function Home() {
     checkAuth();
   }, [checkAuth]);
 
+  // Heartbeat de presencia en tiempo real (mientras la pestaña esté visible)
+  useEffect(() => {
+    if (authStatus !== 'ready') return;
+
+    const pingActivity = async () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'visible') {
+        try {
+          await fetch('/api/auth/heartbeat', { method: 'POST' });
+        } catch {}
+      }
+    };
+
+    pingActivity();
+    const interval = setInterval(pingActivity, 90 * 1000); // Cada 90 segundos
+    return () => clearInterval(interval);
+  }, [authStatus]);
+
   // Cambiar entre los niveles autorizados
   const handleSwitchTier = async (newTier: UserTier) => {
     setUserTier(newTier);

@@ -62,7 +62,17 @@ export async function GET() {
     const items: UsuarioAdminItem[] = [];
 
     // Perfiles registrados
+    const nowMs = Date.now();
     for (const p of profiles || []) {
+      const lastAct = p.ultima_actividad || p.actualizado_el || p.ultimo_login;
+      let isOnline = false;
+
+      // Un usuario está "En Línea" si ya inició sesión y tuvo actividad en los últimos 4 minutos
+      if (p.primer_login && lastAct) {
+        const diffMinutes = (nowMs - new Date(lastAct).getTime()) / (1000 * 60);
+        isOnline = diffMinutes <= 4;
+      }
+
       items.push({
         id: p.id,
         email: p.email,
@@ -72,6 +82,8 @@ export async function GET() {
         nivel_activo: p.nivel_activo || 'gold',
         primer_login: p.primer_login,
         ultimo_login: p.ultimo_login,
+        ultima_actividad: lastAct,
+        en_linea: isOnline,
         creado_el: p.creado_el,
         asignado_por: p.asignado_por,
         is_precargado: false,
@@ -90,6 +102,7 @@ export async function GET() {
           creado_el: pc.creado_el,
           notas: pc.notas,
           is_precargado: true,
+          en_linea: false,
         });
       }
     }
@@ -99,6 +112,7 @@ export async function GET() {
       activos: items.filter((i) => i.estado === 'activo').length,
       pendientes: items.filter((i) => i.estado === 'pendiente').length,
       inactivos: items.filter((i) => i.estado === 'inactivo').length,
+      en_linea: items.filter((i) => i.en_linea).length,
     };
 
     return NextResponse.json({ ok: true, usuarios: items, stats });

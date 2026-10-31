@@ -22,7 +22,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
   const [usuarios, setUsuarios] = useState<UsuarioAdminItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  const [filterTab, setFilterTab] = useState<'todos' | 'pendientes' | 'activos' | 'inactivos'>('todos');
+  const [filterTab, setFilterTab] = useState<'todos' | 'en_linea' | 'pendientes' | 'activos' | 'inactivos'>('todos');
   const [actionLoading, setActionLoading] = useState<string | null>(null);
 
   // Modal para crear nuevo acceso
@@ -34,9 +34,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
   const [createLoading, setCreateLoading] = useState(false);
 
   // Cargar usuarios
-  const fetchUsuarios = async () => {
+  const fetchUsuarios = async (isSilent = false) => {
     try {
-      setLoading(true);
+      if (!isSilent) setLoading(true);
       const res = await fetch('/api/admin/usuarios');
       const json = await res.json();
       if (json.ok) {
@@ -45,15 +45,59 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
     } catch (err) {
       console.error('Error al cargar usuarios:', err);
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (isOpen) {
-      fetchUsuarios();
-    }
+    if (!isOpen) return;
+    fetchUsuarios();
+
+    // Auto-refrescar cada 20 segundos para ver en tiempo real quién entra o sale
+    const timer = setInterval(() => {
+      fetchUsuarios(true);
+    }, 20000);
+    return () => clearInterval(timer);
   }, [isOpen]);
+
+  // Formateador de presencia y actividad en tiempo real
+  const formatActivity = (u: UsuarioAdminItem) => {
+    if (u.en_linea) {
+      return (
+        <span className="online-presence-badge" title="Navegando el catálogo ahora mismo">
+          <span className="dot-pulse-green"></span>
+          <span>En línea</span>
+        </span>
+      );
+    }
+
+    if (!u.primer_login || !u.ultima_actividad) {
+      return <span className="presence-never">— Sin ingresos</span>;
+    }
+
+    const date = new Date(u.ultima_actividad);
+    const diffMs = Date.now() - date.getTime();
+    const diffMins = Math.floor(diffMs / (1000 * 60));
+    const diffHours = Math.floor(diffMins / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    let timeAgo = '';
+    if (diffMins < 1) timeAgo = 'Recién';
+    else if (diffMins < 60) timeAgo = `Hace ${diffMins}m`;
+    else if (diffHours < 24) timeAgo = `Hace ${diffHours}h`;
+    else if (diffDays === 1) timeAgo = 'Ayer';
+    else if (diffDays < 7) timeAgo = `Hace ${diffDays}d`;
+    else timeAgo = date.toLocaleDateString('es-AR', { day: '2-digit', month: '2-digit' });
+
+    const timeStr = date.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' });
+
+    return (
+      <div className="activity-cell" title={`Última actividad: ${date.toLocaleString('es-AR')}`}>
+        <span className="activity-time-ago">{timeAgo}</span>
+        <span className="activity-time-exact">{timeStr}</span>
+      </div>
+    );
+  };
 
   // Modificar niveles de un usuario (tildar/destildar en tiempo real)
   const handleToggleTier = async (usuario: UsuarioAdminItem, tier: UserTier) => {
@@ -160,13 +204,15 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
       activos: usuarios.filter((u) => u.estado === 'activo').length,
       pendientes: usuarios.filter((u) => u.estado === 'pendiente').length,
       inactivos: usuarios.filter((u) => u.estado === 'inactivo').length,
+      en_linea: usuarios.filter((u) => u.en_linea).length,
     };
   }, [usuarios]);
 
-  // Filtrado
+  // Filtrado y Ordenamiento
   const filteredUsers = useMemo(() => {
-    return usuarios.filter((u) => {
+    const list = usuarios.filter((u) => {
       // Filtro pestaña
+      if (filterTab === 'en_linea' && !u.en_linea) return false;
       if (filterTab === 'pendientes' && u.estado !== 'pendiente') return false;
       if (filterTab === 'activos' && u.estado !== 'activo') return false;
       if (filterTab === 'inactivos' && u.estado !== 'inactivo') return false;
@@ -177,6 +223,13 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
         return u.email.toLowerCase().includes(s) || (u.notas || '').toLowerCase().includes(s);
       }
       return true;
+    });
+
+    // Ordenar usuarios "En línea" al principio
+    return list.sort((a, b) => {
+      if (a.en_linea && !b.en_linea) return -1;
+      if (!a.en_linea && b.en_linea) return 1;
+      return 0;
     });
   }, [usuarios, filterTab, search]);
 
@@ -191,7 +244,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             <div className="admin-icon-shield">⚙️</div>
             <div>
               <h2>Gestión Centralizada de Accesos</h2>
-              <p>Administra clientes, asigna niveles comerciales multinivel y aprueba nuevos registros.</p>
+              <p>Monitorea clientes en vivo, asigna niveles comerciales multinivel y aprueba nuevos registros.</p>
             </div>
           </div>
           <button type="button" onClick={onClose} className="btn-close-modal">
@@ -201,6 +254,18 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
 
         {/* Métricas rápidas */}
         <div className="admin-metrics-bar">
+          <div
+            className={`metric-card online ${filterTab === 'en_linea' ? 'selected' : ''}`}
+            onClick={() => setFilterTab('en_linea')}
+            title="Ver clientes navegando la lista de precios en este momento"
+          >
+            <span className="metric-label">🟢 En Línea Ahora</span>
+            <span className="metric-value">
+              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.en_linea}
+            </span>
+            {!loading && stats.en_linea > 0 && <span className="metric-pill-badge online-pill">En vivo</span>}
+          </div>
+
           <div
             className={`metric-card ${filterTab === 'todos' ? 'selected' : ''}`}
             onClick={() => setFilterTab('todos')}
@@ -215,7 +280,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             className={`metric-card warning ${filterTab === 'pendientes' ? 'selected' : ''}`}
             onClick={() => setFilterTab('pendientes')}
           >
-            <span className="metric-label">Pendientes de Aprobación</span>
+            <span className="metric-label">Pendientes</span>
             <span className="metric-value">
               {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.pendientes}
             </span>
@@ -346,7 +411,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                   <th>Estado</th>
                   <th>Niveles Autorizados (Haz clic para alternar)</th>
                   <th>Primer Login</th>
-                  <th>Último Ingreso</th>
+                  <th>Actividad / Presencia</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
@@ -409,16 +474,8 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                             })
                           : '—'}
                       </td>
-                      <td className="col-date">
-                        {u.ultimo_login
-                          ? new Date(u.ultimo_login).toLocaleDateString('es-AR', {
-                              day: '2-digit',
-                              month: '2-digit',
-                              year: '2-digit',
-                              hour: '2-digit',
-                              minute: '2-digit',
-                            })
-                          : '—'}
+                      <td className="col-date col-presence">
+                        {formatActivity(u)}
                       </td>
 
                       {/* Acciones */}
