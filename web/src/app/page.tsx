@@ -1,18 +1,26 @@
 'use client';
 
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { Producto, UserTier, CatalogoFilters, SortConfig } from '@/types';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
 import { FiltersBar } from '@/components/FiltersBar';
 import { ProductTable } from '@/components/ProductTable';
+import AuthScreen from '@/components/AuthScreen';
+import OnboardingScreen from '@/components/OnboardingScreen';
+import AdminAccessModal from '@/components/AdminAccessModal';
+import { createClient } from '@/lib/supabase/client';
 import { Loader2 } from 'lucide-react';
 
 export default function Home() {
+  const [authStatus, setAuthStatus] = useState<'checking' | 'unauthenticated' | 'pending_approval' | 'ready'>('checking');
   const [products, setProducts] = useState<Producto[]>([]);
   const [loading, setLoading] = useState(true);
   const [userTier, setUserTier] = useState<UserTier>('gold');
-  const [userEmail, setUserEmail] = useState<string>('usuario@selnet.com.ar');
+  const [authorizedTiers, setAuthorizedTiers] = useState<UserTier[]>(['gold']);
+  const [userEmail, setUserEmail] = useState<string>('');
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  const [isAdminModalOpen, setIsAdminModalOpen] = useState(false);
 
   const [filters, setFilters] = useState<CatalogoFilters>({
     search: '',
@@ -30,27 +38,110 @@ export default function Home() {
   });
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const supabase = createClient();
 
-  // Cargar catálogo inicial desde el API
-  useEffect(() => {
-    async function loadCatalogo() {
-      try {
-        setLoading(true);
-        const res = await fetch('/api/catalogo');
-        const json = await res.json();
-        if (json.ok) {
-          setProducts((json.data || []).map((p: Producto) => ({ ...p, _selected: false })));
-          if (json.tier) setUserTier(json.tier);
-          if (json.email) setUserEmail(json.email);
-        }
-      } catch (err) {
-        console.error('Error al cargar catálogo:', err);
-      } finally {
-        setLoading(false);
+  // Función para cargar catálogo para un nivel específico
+  const loadCatalogo = useCallback(async (tierToLoad?: UserTier) => {
+    try {
+      setLoading(true);
+      const url = tierToLoad ? `/api/catalogo?tier=${tierToLoad}` : '/api/catalogo';
+      const res = await fetch(url);
+      const json = await res.json();
+
+      if (json.require_auth) {
+        setAuthStatus('unauthenticated');
+        return;
       }
+
+      if (json.estado === 'pendiente') {
+        setAuthStatus('pending_approval');
+        return;
+      }
+
+      if (json.ok) {
+        setProducts((json.data || []).map((p: Producto) => ({ ...p, _selected: false })));
+        if (json.tier) setUserTier(json.tier);
+        if (json.niveles) setAuthorizedTiers(json.niveles);
+        if (json.isAdmin !== undefined) setIsAdmin(json.isAdmin);
+        if (json.email) setUserEmail(json.email);
+        setAuthStatus('ready');
+      }
+    } catch (err) {
+      console.error('Error al cargar catálogo:', err);
+    } finally {
+      setLoading(false);
     }
-    loadCatalogo();
   }, []);
+
+  // Verificar sesión y perfil de usuario
+  const checkAuth = useCallback(async () => {
+    try {
+      setAuthStatus('checking');
+      const res = await fetch('/api/auth/me');
+      const json = await res.json();
+
+      if (!json.authenticated) {
+        setAuthStatus('unauthenticated');
+        return;
+      }
+
+      const u = json.user;
+      setUserEmail(u.email);
+
+      if (u.estado === 'pendiente') {
+        setAuthStatus('pending_approval');
+        return;
+      }
+
+      const isUserAdmin = u.rol === 'admin' || u.email === 'canderocioaranda.selnet@gmail.com';
+      setIsAdmin(isUserAdmin);
+
+      const tiers: UserTier[] = isUserAdmin
+        ? ['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna']
+        : (u.niveles && u.niveles.length > 0 ? u.niveles : ['gold']);
+
+      setAuthorizedTiers(tiers);
+      const activeTier: UserTier = u.nivel_activo || tiers[0] || 'gold';
+      setUserTier(activeTier);
+      setAuthStatus('ready');
+
+      // Cargar productos
+      loadCatalogo(activeTier);
+    } catch (err) {
+      console.error('Error en checkAuth:', err);
+      setAuthStatus('unauthenticated');
+    }
+  }, [loadCatalogo]);
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  // Cambiar entre los niveles autorizados
+  const handleSwitchTier = async (newTier: UserTier) => {
+    setUserTier(newTier);
+    loadCatalogo(newTier);
+
+    // Persistir nivel activo en Supabase
+    try {
+      await fetch('/api/auth/switch-tier', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tier: newTier }),
+      });
+    } catch (e) {
+      console.warn('Error al guardar switch-tier:', e);
+    }
+  };
+
+  // Cerrar Sesión
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setUserEmail('');
+    setIsAdmin(false);
+    setProducts([]);
+    setAuthStatus('unauthenticated');
+  };
 
   // Marcas y conteos
   const brandCounts = useMemo(() => {
@@ -87,20 +178,13 @@ export default function Home() {
   // Filtrado reactivo en memoria
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
-      // Filtro marca
       if (filters.marca && p.marca !== filters.marca) return false;
-      // Filtro categoría
       if (filters.categoria && p.categoria !== filters.categoria) return false;
-      // Filtro subcategoría
       if (filters.subcategoria && p.subcategoria !== filters.subcategoria) return false;
-      // Solo en stock
       if (filters.soloStock && p.stock <= 0) return false;
-      // Solo ofertas
       if (filters.soloOfertas && !p.es_oferta) return false;
-      // Solo nuevos
       if (filters.soloNuevos && !p.es_nuevo) return false;
 
-      // Búsqueda de texto
       if (filters.search.trim()) {
         const q = filters.search.toLowerCase().trim();
         const inModelo = p.modelo.toLowerCase().includes(q);
@@ -135,7 +219,6 @@ export default function Home() {
     });
   }, [filteredProducts, sort]);
 
-  // Manejo de ordenamiento
   const handleSort = (key: keyof Producto | 'precio_principal') => {
     setSort((prev) => {
       if (prev.key === key) {
@@ -147,7 +230,6 @@ export default function Home() {
     });
   };
 
-  // Manejo de selecciones
   const handleToggleSelect = (id: number) => {
     setProducts((prev) =>
       prev.map((p) => (p.id === id ? { ...p, _selected: !p._selected } : p))
@@ -167,38 +249,63 @@ export default function Home() {
 
   const selectedCount = products.filter((p) => p._selected).length;
 
+  // 1. Pantalla de carga inicial
+  if (authStatus === 'checking') {
+    return (
+      <div className="loading-state" style={{ minHeight: '100vh', justifyContent: 'center' }}>
+        <Loader2 className="animate-spin" size={40} color="var(--selnet-red)" />
+        <span style={{ fontSize: '15px', fontWeight: 600 }}>Iniciando portal Selnet...</span>
+      </div>
+    );
+  }
+
+  // 2. Pantalla de Autenticación (si no está logueado)
+  if (authStatus === 'unauthenticated') {
+    return <AuthScreen onSuccess={checkAuth} />;
+  }
+
+  // 3. Pantalla de Onboarding (si está registrado pero pendiente de asignación de nivel)
+  if (authStatus === 'pending_approval') {
+    return <OnboardingScreen userEmail={userEmail} onRefresh={checkAuth} />;
+  }
+
+  // 4. Portal Principal (Usuario activo con niveles autorizados)
   return (
     <div className="main-wrapper">
-      {/* Header */}
+      {/* Header Corporativo */}
       <Header
         email={userEmail}
         tier={userTier}
+        isAdmin={isAdmin}
+        onOpenAdmin={() => setIsAdminModalOpen(true)}
+        onLogout={handleLogout}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         selectedMarca={filters.marca}
       />
 
-      {/* Selector de Nivel de Prueba / Demo */}
+      {/* Selector Dinámico de Niveles Autorizados */}
       <div className="demo-tier-bar">
         <div className="tier-selector-group">
-          <span className="demo-label">Nivel:</span>
+          <span className="demo-label">Nivel de Precios:</span>
           <div className="tier-chips-scroll">
-            {(['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'] as UserTier[]).map((t) => (
+            {authorizedTiers.map((t) => (
               <button
                 key={t}
-                onClick={() => setUserTier(t)}
+                onClick={() => handleSwitchTier(t)}
                 className={`demo-tier-btn ${userTier === t ? 'active' : ''}`}
+                title={`Ver precios correspondientes a nivel ${t.toUpperCase()}`}
               >
-                {t}
+                {t.toUpperCase()}
               </button>
             ))}
           </div>
         </div>
         <div className="demo-arch-info">
-          <span>Supabase + Vercel | BigQuery Live</span>
+          <span>BigQuery Live • Supabase Auth</span>
         </div>
       </div>
 
-      {/* Cuerpo principal con Sidebar y Tabla/Cards */}
+      {/* Cuerpo principal con Sidebar y Tabla de Productos */}
       <div className="app-container">
         <Sidebar
           selectedMarca={filters.marca}
@@ -227,8 +334,8 @@ export default function Home() {
 
           {loading ? (
             <div className="loading-state">
-              <Loader2 className="animate-spin" size={32} color="var(--primary)" />
-              <span>Cargando catálogo en tiempo real...</span>
+              <Loader2 className="animate-spin" size={32} color="var(--selnet-red)" />
+              <span>Cargando catálogo oficial...</span>
             </div>
           ) : (
             <ProductTable
@@ -241,6 +348,15 @@ export default function Home() {
           )}
         </main>
       </div>
+
+      {/* Modal de Gestión Centralizada de Accesos (Solo para Admins) */}
+      {isAdmin && (
+        <AdminAccessModal
+          isOpen={isAdminModalOpen}
+          onClose={() => setIsAdminModalOpen(false)}
+          currentUserEmail={userEmail}
+        />
+      )}
     </div>
   );
 }

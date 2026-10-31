@@ -1,14 +1,37 @@
 export type UserTier = 'diamond' | 'black' | 'platinum' | 'ruby' | 'gold' | 'interna';
+export type UserRole = 'admin' | 'cliente';
+export type UserStatus = 'activo' | 'pendiente' | 'inactivo';
 
 export interface Profile {
   id: string;
   email: string;
-  tier: UserTier;
+  rol: UserRole;
+  estado: UserStatus;
+  niveles: UserTier[];
+  nivel_activo: UserTier;
+  primer_login?: string;
+  ultimo_login?: string;
+  nivel_asignado_el?: string;
+  asignado_por?: string;
   empresa?: string;
   nombre_contacto?: string;
   telefono?: string;
-  activo: boolean;
   creado_el: string;
+}
+
+export interface UsuarioAdminItem {
+  id: string;
+  email: string;
+  rol: UserRole;
+  estado: UserStatus;
+  niveles: UserTier[];
+  nivel_activo?: UserTier;
+  primer_login?: string;
+  ultimo_login?: string;
+  creado_el: string;
+  asignado_por?: string;
+  notas?: string;
+  is_precargado?: boolean;
 }
 
 export interface Producto {

@@ -179,29 +179,65 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createServerSupabaseClient();
-    
+    const admin = createAdminClient();
+
     // Obtener sesión
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-    let userTier: UserTier = 'gold';
-    let userEmail = 'invitado@selnet.com.ar';
+    // Si no está autenticado, requerir login
+    if (!user) {
+      return NextResponse.json(
+        { ok: false, require_auth: true, error: 'Inicia sesión para ver la lista de precios', data: [] },
+        { status: 401 }
+      );
+    }
 
-    if (user) {
-      userEmail = user.email || userEmail;
-      // Obtener perfil
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('tier, activo')
-        .eq('id', user.id)
-        .single();
+    const userEmail = (user.email || '').trim().toLowerCase();
+    const ADMIN_EMAILS = ['canderocioaranda.selnet@gmail.com', 'mhmolesini@gmail.com'];
+    const isAdmin = ADMIN_EMAILS.includes(userEmail);
 
-      if (profile && profile.activo) {
-        userTier = profile.tier as UserTier;
-      }
+    // Obtener perfil en Supabase
+    const { data: profile } = await admin
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .maybeSingle();
+
+    const estado = isAdmin ? 'activo' : (profile?.estado || 'activo');
+
+    // Si el usuario está en revisión (onboarding)
+    if (estado === 'pendiente') {
+      return NextResponse.json(
+        { ok: false, estado: 'pendiente', error: 'Tu cuenta se encuentra en revisión de nivel', data: [] },
+        { status: 403 }
+      );
+    }
+
+    if (estado === 'inactivo') {
+      return NextResponse.json(
+        { ok: false, estado: 'inactivo', error: 'Tu cuenta se encuentra pausada', data: [] },
+        { status: 403 }
+      );
+    }
+
+    // Resolver Tier del usuario
+    const userNiveles: UserTier[] = isAdmin
+      ? ['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna']
+      : (profile?.niveles && profile.niveles.length > 0
+          ? profile.niveles
+          : [profile?.tier || 'gold']);
+
+    const queryTier = searchParams.get('tier')?.toLowerCase().trim() as UserTier | null;
+    let userTier: UserTier = profile?.nivel_activo || userNiveles[0] || 'gold';
+
+    // Si el usuario o admin pide ver otro tier y lo tiene autorizado
+    if (queryTier && (isAdmin || userNiveles.includes(queryTier) || userNiveles.includes('interna'))) {
+      userTier = queryTier;
     }
 
     // Consultar tabla productos con cliente del servidor (paginando para superar el límite de 1000 filas de PostgREST)
-    const admin = createAdminClient();
     const PAGE_SIZE = 1000;
     let dbData: any[] = [];
     let page = 0;
@@ -210,8 +246,8 @@ export async function GET(request: Request) {
     while (hasMore) {
       let query = admin.from('productos').select('*');
 
-      // Filtro de marcas internas
-      if (userTier !== 'interna') {
+      // Filtro de marcas internas (exclusivas)
+      if (userTier !== 'interna' && !userNiveles.includes('interna')) {
         query = query.eq('es_interno', false);
       }
 
@@ -302,6 +338,8 @@ export async function GET(request: Request) {
       return NextResponse.json({
         ok: true,
         tier: userTier,
+        niveles: userNiveles,
+        isAdmin,
         email: userEmail,
         count: safeData.length,
         data: safeData,
@@ -309,10 +347,12 @@ export async function GET(request: Request) {
       });
     }
 
-    // Fallback si la base aún no responde
+    // Fallback si no hay productos
     return NextResponse.json({
       ok: true,
       tier: userTier,
+      niveles: userNiveles,
+      isAdmin,
       email: userEmail,
       count: 0,
       data: [],

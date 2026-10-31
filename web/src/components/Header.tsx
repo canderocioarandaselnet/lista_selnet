@@ -7,6 +7,8 @@ import { Moon, Sun, ShieldCheck, RefreshCw, User, Menu } from 'lucide-react';
 interface HeaderProps {
   email: string;
   tier: UserTier;
+  isAdmin?: boolean;
+  onOpenAdmin?: () => void;
   onLogout?: () => void;
   onOpenSidebar?: () => void;
   selectedMarca?: string | null;
@@ -39,6 +41,8 @@ export const SelnetLogoIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
 export const Header: React.FC<HeaderProps> = ({
   email,
   tier,
+  isAdmin,
+  onOpenAdmin,
   onLogout,
   onOpenSidebar,
   selectedMarca,
@@ -100,6 +104,18 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="header-right">
+        {/* Botón de Administración de Accesos (Solo para Admins) */}
+        {isAdmin && onOpenAdmin && (
+          <button
+            type="button"
+            onClick={onOpenAdmin}
+            className="btn-admin-access-nav"
+            title="Panel de gestión centralizada de accesos"
+          >
+            ⚙️ <span className="admin-btn-text">Gestión de Accesos</span>
+          </button>
+        )}
+
         {/* Status de Sincronización */}
         <div className="sync-status" title="Sincronización en tiempo real con BigQuery activa">
           <span className="sync-dot"></span>
@@ -127,7 +143,7 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
 
         {onLogout && (
-          <button className="btn logout-btn" onClick={onLogout}>
+          <button className="btn logout-btn" onClick={onLogout} title="Cerrar sesión">
             Salir
           </button>
         )}
