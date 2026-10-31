@@ -206,7 +206,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             onClick={() => setFilterTab('todos')}
           >
             <span className="metric-label">Total Usuarios</span>
-            <span className="metric-value">{stats.total}</span>
+            <span className="metric-value">
+              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.total}
+            </span>
           </div>
 
           <div
@@ -214,8 +216,10 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             onClick={() => setFilterTab('pendientes')}
           >
             <span className="metric-label">Pendientes de Aprobación</span>
-            <span className="metric-value">{stats.pendientes}</span>
-            {stats.pendientes > 0 && <span className="metric-pill-badge">Requiere acción</span>}
+            <span className="metric-value">
+              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.pendientes}
+            </span>
+            {!loading && stats.pendientes > 0 && <span className="metric-pill-badge">Requiere acción</span>}
           </div>
 
           <div
@@ -223,7 +227,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             onClick={() => setFilterTab('activos')}
           >
             <span className="metric-label">Activos</span>
-            <span className="metric-value">{stats.activos}</span>
+            <span className="metric-value">
+              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.activos}
+            </span>
           </div>
 
           <div
@@ -231,7 +237,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             onClick={() => setFilterTab('inactivos')}
           >
             <span className="metric-label">Inactivos</span>
-            <span className="metric-value">{stats.inactivos}</span>
+            <span className="metric-value">
+              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.inactivos}
+            </span>
           </div>
         </div>
 
@@ -259,7 +267,75 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
         {/* Lista / Tabla de Usuarios */}
         <div className="admin-table-container">
           {loading ? (
-            <div className="admin-loading">Cargando directorio de usuarios...</div>
+            <div className="admin-skeleton-table">
+              <table className="admin-table">
+                <thead>
+                  <tr>
+                    <th>Usuario / Correo</th>
+                    <th>Estado</th>
+                    <th>Niveles Autorizados</th>
+                    <th>Primer Login</th>
+                    <th>Último Ingreso</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Array.from({ length: 6 }).map((_, i) => (
+                    <tr key={i} className="admin-skeleton-row">
+                      <td className="col-user-info">
+                        <div className="user-email-wrap" style={{ gap: '8px' }}>
+                          <div
+                            className="skeleton-shimmer"
+                            style={{ width: `${140 + (i % 3) * 35}px`, height: '14px', borderRadius: '4px' }}
+                          />
+                          {i === 0 && (
+                            <div
+                              className="skeleton-shimmer"
+                              style={{ width: '45px', height: '14px', borderRadius: '4px' }}
+                            />
+                          )}
+                        </div>
+                      </td>
+                      <td className="col-status">
+                        <div
+                          className="skeleton-shimmer"
+                          style={{ width: '80px', height: '20px', borderRadius: '12px' }}
+                        />
+                      </td>
+                      <td className="col-tiers">
+                        <div className="tiers-chips-group">
+                          {Array.from({ length: 4 }).map((_, chipIdx) => (
+                            <div
+                              key={chipIdx}
+                              className="skeleton-shimmer"
+                              style={{ width: '52px', height: '20px', borderRadius: '4px' }}
+                            />
+                          ))}
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          className="skeleton-shimmer"
+                          style={{ width: '75px', height: '12px', borderRadius: '3px' }}
+                        />
+                      </td>
+                      <td>
+                        <div
+                          className="skeleton-shimmer"
+                          style={{ width: '75px', height: '12px', borderRadius: '3px' }}
+                        />
+                      </td>
+                      <td className="col-actions">
+                        <div
+                          className="skeleton-shimmer"
+                          style={{ width: '65px', height: '24px', borderRadius: '4px' }}
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           ) : filteredUsers.length === 0 ? (
             <div className="admin-empty">No se encontraron usuarios con los filtros aplicados.</div>
           ) : (

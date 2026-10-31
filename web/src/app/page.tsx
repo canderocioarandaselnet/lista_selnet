@@ -9,8 +9,9 @@ import { ProductTable } from '@/components/ProductTable';
 import AuthScreen from '@/components/AuthScreen';
 import OnboardingScreen from '@/components/OnboardingScreen';
 import AdminAccessModal from '@/components/AdminAccessModal';
+import { AppSkeleton } from '@/components/AppSkeleton';
+import { ProductTableSkeleton } from '@/components/ProductTableSkeleton';
 import { createClient } from '@/lib/supabase/client';
-import { Loader2 } from 'lucide-react';
 
 export default function Home() {
   const [authStatus, setAuthStatus] = useState<'checking' | 'unauthenticated' | 'pending_approval' | 'ready'>('checking');
@@ -249,14 +250,9 @@ export default function Home() {
 
   const selectedCount = products.filter((p) => p._selected).length;
 
-  // 1. Pantalla de carga inicial
+  // 1. Pantalla de carga inicial (Skeleton completo)
   if (authStatus === 'checking') {
-    return (
-      <div className="loading-state" style={{ minHeight: '100vh', justifyContent: 'center' }}>
-        <Loader2 className="animate-spin" size={40} color="var(--selnet-red)" />
-        <span style={{ fontSize: '15px', fontWeight: 600 }}>Iniciando portal Selnet...</span>
-      </div>
-    );
+    return <AppSkeleton />;
   }
 
   // 2. Pantalla de Autenticación (si no está logueado)
@@ -330,10 +326,7 @@ export default function Home() {
           />
 
           {loading ? (
-            <div className="loading-state">
-              <Loader2 className="animate-spin" size={32} color="var(--selnet-red)" />
-              <span>Cargando catálogo oficial...</span>
-            </div>
+            <ProductTableSkeleton tier={userTier} rowCount={14} />
           ) : (
             <ProductTable
               products={sortedProducts}
