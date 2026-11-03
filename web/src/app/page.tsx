@@ -9,7 +9,7 @@ import { ProductTable } from '@/components/ProductTable';
 import AuthScreen from '@/components/AuthScreen';
 import OnboardingScreen from '@/components/OnboardingScreen';
 import AdminAccessModal from '@/components/AdminAccessModal';
-import { AppSkeleton } from '@/components/AppSkeleton';
+import { InitialLoader } from '@/components/InitialLoader';
 import { ProductTableSkeleton } from '@/components/ProductTableSkeleton';
 import { createClient } from '@/lib/supabase/client';
 
@@ -267,9 +267,9 @@ export default function Home() {
 
   const selectedCount = products.filter((p) => p._selected).length;
 
-  // 1. Pantalla de carga inicial (Skeleton completo)
+  // 1. Pantalla de carga inicial confidencial (Evita filtrar estructura de la lista)
   if (authStatus === 'checking') {
-    return <AppSkeleton />;
+    return <InitialLoader />;
   }
 
   // 2. Pantalla de Autenticación (si no está logueado)
@@ -285,9 +285,10 @@ export default function Home() {
   // 4. Portal Principal (Usuario activo con niveles autorizados)
   return (
     <div className="main-wrapper">
-      {/* Header Corporativo */}
+      {/* Header Corporativo con Notificaciones y Modo Visual */}
       <Header
-        onLogout={handleLogout}
+        isAdmin={isAdmin}
+        onOpenAdmin={() => setIsAdminModalOpen(true)}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         selectedMarca={filters.marca}
       />

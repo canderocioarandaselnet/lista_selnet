@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { UserTier } from '@/types';
-import { Moon, Sun, ShieldCheck, RefreshCw, User, Menu } from 'lucide-react';
+import { Moon, Sun, Menu } from 'lucide-react';
+import { AdminNotifications } from './AdminNotifications';
 
 interface HeaderProps {
   email?: string;
@@ -39,7 +40,8 @@ export const SelnetLogoIcon: React.FC<{ size?: number }> = ({ size = 30 }) => (
 );
 
 export const Header: React.FC<HeaderProps> = ({
-  onLogout,
+  isAdmin,
+  onOpenAdmin,
   onOpenSidebar,
   selectedMarca,
 }) => {
@@ -88,6 +90,11 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       <div className="header-right">
+        {/* Notificaciones y Solicitudes de Acceso (Solo Administrador) */}
+        {isAdmin && (
+          <AdminNotifications onOpenAdminModal={onOpenAdmin} />
+        )}
+
         {/* Theme Toggle */}
         <button
           className="btn theme-toggle-btn"
@@ -97,12 +104,6 @@ export const Header: React.FC<HeaderProps> = ({
         >
           {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
         </button>
-
-        {onLogout && (
-          <button className="btn logout-btn" onClick={onLogout} title="Cerrar sesión">
-            Salir
-          </button>
-        )}
       </div>
     </header>
   );
