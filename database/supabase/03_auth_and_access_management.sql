@@ -100,7 +100,7 @@ BEGIN
     END IF;
 
     -- Caso 1: Administradores Propietarios
-    IF v_email IN ('canderocioaranda.selnet@gmail.com', 'mhmolesini@gmail.com') THEN
+    IF v_email IN ('canderocioaranda.selnet@gmail.com') THEN
         v_rol := 'admin';
         v_estado := 'activo';
         v_niveles := ARRAY['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'];

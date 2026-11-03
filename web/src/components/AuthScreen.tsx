@@ -111,13 +111,13 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
       }
 
       const cleanCuit = cuit.replace(/\D/g, '');
-      if (cleanCuit.length !== 11) {
-        setErrorMsg('El CUIT de la empresa debe tener 11 dígitos');
+      if (cleanCuit.length > 0 && cleanCuit.length !== 11) {
+        setErrorMsg('Si ingresas un CUIT / CUIL, debe contener los 11 dígitos numéricos');
         return;
       }
 
       if (!empresa.trim()) {
-        setErrorMsg('Por favor ingresa la razón social de la empresa');
+        setErrorMsg('Por favor ingresa el nombre de la empresa o razón social');
         return;
       }
     }
@@ -137,7 +137,7 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
               nombre: nombre.trim(),
               apellido: apellido.trim(),
               nombre_contacto: fullName,
-              cuit: cleanCuit,
+              cuit: cleanCuit || null,
               empresa: empresa.trim(),
             },
           },
@@ -286,15 +286,15 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
               {/* CUIT con consulta automática al BCRA */}
               <div className="auth-field">
                 <div className="auth-field-header">
-                  <label>CUIT / CUIL de la Empresa</label>
+                  <label>
+                    CUIT / CUIL de la Empresa{' '}
+                    <span style={{ opacity: 0.55, fontSize: '0.78rem', fontWeight: 'normal' }}>
+                      (opcional)
+                    </span>
+                  </label>
                   {cuitLoading && (
                     <span className="cuit-badge-status loading">
                       <RefreshCw size={11} className="spin-anim" /> Consultando BCRA...
-                    </span>
-                  )}
-                  {cuitVerified && (
-                    <span className="cuit-badge-status verified">
-                      <CheckCircle2 size={11} /> Verificado por BCRA
                     </span>
                   )}
                 </div>
@@ -303,8 +303,7 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
                     type="text"
                     value={cuit}
                     onChange={handleCuitChange}
-                    placeholder="30-XXXXXXXX-X (11 dígitos)"
-                    required
+                    placeholder="30-XXXXXXXX-X (autocompleta con BCRA)"
                     maxLength={13}
                     disabled={loading}
                     className={cuitVerified ? 'input-success' : cuitError ? 'input-warn' : ''}
