@@ -60,8 +60,8 @@ BEGIN
     v_email := LOWER(TRIM(NEW.email));
     v_metodo := COALESCE(NEW.raw_app_meta_data->>'provider', 'email');
 
-    -- Caso 1: Administrador Propietario
-    IF v_email = 'canderocioaranda.selnet@gmail.com' THEN
+    -- Caso 1: Administradores Propietarios
+    IF v_email IN ('canderocioaranda.selnet@gmail.com', 'mhmolesini@gmail.com') THEN
         v_rol := 'admin';
         v_estado := 'activo';
         v_niveles := ARRAY['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'];
@@ -85,8 +85,8 @@ BEGIN
             -- Caso 3: Usuario nuevo desconocido -> Queda en estado PENDIENTE de onboarding
             v_rol := 'cliente';
             v_estado := 'pendiente';
-            v_niveles := ARRAY[]::TEXT[];
-            v_nivel_activo := NULL;
+            v_niveles := ARRAY['gold']::TEXT[];
+            v_nivel_activo := 'gold';
         END IF;
     END IF;
 

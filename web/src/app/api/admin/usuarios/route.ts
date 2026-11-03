@@ -5,7 +5,6 @@ import { UsuarioAdminItem, UserTier } from '@/types';
 
 const ADMIN_EMAILS = [
   'canderocioaranda.selnet@gmail.com',
-  'mhmolesini@gmail.com',
 ];
 
 async function verifyAdmin() {

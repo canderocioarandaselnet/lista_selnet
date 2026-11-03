@@ -6,7 +6,6 @@ import { UserTier } from '@/types';
 const ALL_TIERS: UserTier[] = ['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'];
 const ADMIN_EMAILS = [
   'canderocioaranda.selnet@gmail.com',
-  'mhmolesini@gmail.com',
 ];
 
 export async function POST(request: Request) {

@@ -5,7 +5,6 @@ import { Profile, UserTier } from '@/types';
 
 const ADMIN_EMAILS = [
   'canderocioaranda.selnet@gmail.com',
-  'mhmolesini@gmail.com',
 ];
 
 const ALL_TIERS: UserTier[] = ['gold', 'ruby', 'platinum', 'black', 'diamond', 'interna'];

@@ -195,7 +195,7 @@ export async function GET(request: Request) {
     }
 
     const userEmail = (user.email || '').trim().toLowerCase();
-    const ADMIN_EMAILS = ['canderocioaranda.selnet@gmail.com', 'mhmolesini@gmail.com'];
+    const ADMIN_EMAILS = ['canderocioaranda.selnet@gmail.com'];
     const isAdmin = ADMIN_EMAILS.includes(userEmail);
 
     // Obtener perfil en Supabase

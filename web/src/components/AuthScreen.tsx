@@ -76,6 +76,10 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
         msg = 'Ya existe una cuenta con este correo. Prueba iniciar sesión.';
       } else if (msg.includes('Password should be at least 6 characters')) {
         msg = 'La contraseña debe tener al menos 6 caracteres.';
+      } else if (msg.includes('Email not confirmed')) {
+        msg = 'Debes confirmar tu correo electrónico antes de ingresar. Revisa tu casilla o spam.';
+      } else if (msg.includes('Database error saving new user')) {
+        msg = 'Error al registrar el perfil. Contacta al soporte técnico.';
       }
       setErrorMsg(msg);
     } finally {
