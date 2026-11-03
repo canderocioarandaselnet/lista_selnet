@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import { CheckCircle2, AlertCircle, RefreshCw, Building2 } from 'lucide-react';
 
 interface AuthScreenProps {
   onSuccess: () => void;
@@ -11,6 +12,14 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
   const [isRegister, setIsRegister] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [cuit, setCuit] = useState('');
+  const [empresa, setEmpresa] = useState('');
+  const [cuitLoading, setCuitLoading] = useState(false);
+  const [cuitVerified, setCuitVerified] = useState(false);
+  const [cuitError, setCuitError] = useState<string | null>(null);
+
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
@@ -35,29 +44,110 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
     }
   };
 
+  const lookupBcra = async (cleanDigits: string) => {
+    try {
+      setCuitLoading(true);
+      setCuitError(null);
+
+      const res = await fetch(`/api/cuit-lookup?cuit=${cleanDigits}`);
+      const data = await res.json();
+
+      if (data.ok && data.denominacion) {
+        setEmpresa(data.denominacion);
+        setCuitVerified(true);
+        setCuitError(null);
+      } else {
+        setCuitVerified(false);
+        setCuitError(
+          data.error || 'No se encontró en Central de Deudores BCRA. Puedes ingresar el nombre de la empresa manualmente.'
+        );
+      }
+    } catch (err) {
+      console.warn('Error consultando BCRA:', err);
+      setCuitVerified(false);
+      setCuitError('No se pudo verificar con el BCRA. Por favor escribe la razón social manualmente.');
+    } finally {
+      setCuitLoading(false);
+    }
+  };
+
+  const handleCuitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const rawVal = e.target.value;
+    const clean = rawVal.replace(/\D/g, '');
+    if (clean.length > 11) return;
+
+    // Formateo visual XX-XXXXXXXX-X
+    let formatted = clean;
+    if (clean.length > 2 && clean.length <= 10) {
+      formatted = `${clean.slice(0, 2)}-${clean.slice(2)}`;
+    } else if (clean.length > 10) {
+      formatted = `${clean.slice(0, 2)}-${clean.slice(2, 10)}-${clean.slice(10)}`;
+    }
+
+    setCuit(formatted);
+    setCuitError(null);
+
+    if (clean.length === 11) {
+      lookupBcra(clean);
+    } else {
+      setCuitVerified(false);
+    }
+  };
+
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMsg(null);
+    setSuccessMsg(null);
+
     if (!email || !password) {
-      setErrorMsg('Por favor completa todos los campos');
+      setErrorMsg('Por favor completa el correo y la contraseña');
       return;
+    }
+
+    if (isRegister) {
+      if (!nombre.trim() || !apellido.trim()) {
+        setErrorMsg('Por favor ingresa tu nombre y apellido');
+        return;
+      }
+
+      const cleanCuit = cuit.replace(/\D/g, '');
+      if (cleanCuit.length !== 11) {
+        setErrorMsg('El CUIT de la empresa debe tener 11 dígitos');
+        return;
+      }
+
+      if (!empresa.trim()) {
+        setErrorMsg('Por favor ingresa la razón social de la empresa');
+        return;
+      }
     }
 
     try {
       setLoading(true);
-      setErrorMsg(null);
-      setSuccessMsg(null);
 
       if (isRegister) {
+        const cleanCuit = cuit.replace(/\D/g, '');
+        const fullName = `${nombre.trim()} ${apellido.trim()}`.trim();
+
         const { data, error } = await supabase.auth.signUp({
           email: email.trim().toLowerCase(),
           password,
+          options: {
+            data: {
+              nombre: nombre.trim(),
+              apellido: apellido.trim(),
+              nombre_contacto: fullName,
+              cuit: cleanCuit,
+              empresa: empresa.trim(),
+            },
+          },
         });
         if (error) throw error;
 
         if (data.session) {
           onSuccess();
         } else {
-          setSuccessMsg('¡Cuenta creada con éxito! Si te solicitamos confirmar el email, revisa tu casilla.');
+          setSuccessMsg('¡Cuenta registrada con éxito! Si se requiere confirmación por email, revisa tu casilla.');
         }
       } else {
         const { error } = await supabase.auth.signInWithPassword({
@@ -89,7 +179,7 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
 
   return (
     <div className="auth-container">
-      <div className="auth-card">
+      <div className={`auth-card ${isRegister ? 'auth-card-wide' : ''}`}>
         {/* Logo Oficial Selnet */}
         <div className="auth-header">
           <div className="auth-logo-badge">
@@ -154,7 +244,7 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
               setErrorMsg(null);
             }}
           >
-            Crear Cuenta
+            Crear Cuenta Empresa
           </button>
         </div>
 
@@ -164,6 +254,94 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
 
         {/* Formulario */}
         <form onSubmit={handleEmailAuth} className="auth-form">
+          {/* Campos adicionales de Registro de Empresa */}
+          {isRegister && (
+            <>
+              {/* Fila Nombre y Apellido */}
+              <div className="auth-row-2col">
+                <div className="auth-field">
+                  <label>Nombre</label>
+                  <input
+                    type="text"
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                    placeholder="Ej. Juan"
+                    required
+                    disabled={loading}
+                  />
+                </div>
+                <div className="auth-field">
+                  <label>Apellido</label>
+                  <input
+                    type="text"
+                    value={apellido}
+                    onChange={(e) => setApellido(e.target.value)}
+                    placeholder="Ej. Pérez"
+                    required
+                    disabled={loading}
+                  />
+                </div>
+              </div>
+
+              {/* CUIT con consulta automática al BCRA */}
+              <div className="auth-field">
+                <div className="auth-field-header">
+                  <label>CUIT / CUIL de la Empresa</label>
+                  {cuitLoading && (
+                    <span className="cuit-badge-status loading">
+                      <RefreshCw size={11} className="spin-anim" /> Consultando BCRA...
+                    </span>
+                  )}
+                  {cuitVerified && (
+                    <span className="cuit-badge-status verified">
+                      <CheckCircle2 size={11} /> Verificado por BCRA
+                    </span>
+                  )}
+                </div>
+                <div className="auth-input-wrapper">
+                  <input
+                    type="text"
+                    value={cuit}
+                    onChange={handleCuitChange}
+                    placeholder="30-XXXXXXXX-X (11 dígitos)"
+                    required
+                    maxLength={13}
+                    disabled={loading}
+                    className={cuitVerified ? 'input-success' : cuitError ? 'input-warn' : ''}
+                  />
+                </div>
+                {cuitError && (
+                  <p className="cuit-helper-msg warn">
+                    <AlertCircle size={12} />
+                    <span>{cuitError}</span>
+                  </p>
+                )}
+              </div>
+
+              {/* Razón Social autocompletada por BCRA */}
+              <div className="auth-field">
+                <div className="auth-field-header">
+                  <label>Nombre de la Empresa / Razón Social</label>
+                  {cuitVerified && (
+                    <span className="cuit-badge-status auto-tag">
+                      <Building2 size={11} /> Autocompletado oficial
+                    </span>
+                  )}
+                </div>
+                <input
+                  type="text"
+                  value={empresa}
+                  onChange={(e) => setEmpresa(e.target.value)}
+                  placeholder="Se autocompleta con el CUIT o ingresa aquí"
+                  required
+                  disabled={loading}
+                  className={cuitVerified ? 'input-highlight' : ''}
+                />
+              </div>
+            </>
+          )}
+
+          {/* Correo Electrónico */}
           <div className="auth-field">
             <label>Correo Electrónico</label>
             <input
@@ -176,20 +354,25 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
             />
           </div>
 
+          {/* Contraseña */}
           <div className="auth-field">
             <label>Contraseña</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
+              placeholder="Mínimo 6 caracteres"
               required
               disabled={loading}
             />
           </div>
 
           <button type="submit" disabled={loading} className="btn-auth-submit">
-            {loading ? 'Procesando...' : isRegister ? 'Registrarme en Selnet' : 'Ingresar al Catálogo'}
+            {loading
+              ? 'Procesando...'
+              : isRegister
+              ? 'Registrar Empresa en Selnet'
+              : 'Ingresar al Catálogo'}
           </button>
         </form>
 

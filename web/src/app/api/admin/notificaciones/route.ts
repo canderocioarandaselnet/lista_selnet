@@ -41,7 +41,7 @@ export async function GET() {
     // 1. Usuarios pendientes de aprobación
     const { data: pendientes, error: pendErr } = await admin
       .from('profiles')
-      .select('id, email, creado_el, rol, estado, empresa')
+      .select('id, email, creado_el, rol, estado, empresa, cuit, nombre, apellido, nombre_contacto')
       .eq('estado', 'pendiente')
       .order('creado_el', { ascending: false });
 

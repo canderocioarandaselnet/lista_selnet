@@ -427,6 +427,15 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                           {u.rol === 'admin' && <span className="badge-admin">ADMIN</span>}
                           {u.is_precargado && <span className="badge-precargado">Importado BQ</span>}
                         </div>
+                        {u.empresa && (
+                          <div className="user-company-info">
+                            <span className="user-company-title">🏢 {u.empresa}</span>
+                            {u.cuit && <span className="user-cuit-tag">CUIT: {u.cuit}</span>}
+                          </div>
+                        )}
+                        {u.nombre_contacto && (
+                          <span className="user-contact-title">👤 {u.nombre_contacto}</span>
+                        )}
                         {u.notas && <span className="user-notas-text">{u.notas}</span>}
                       </td>
 

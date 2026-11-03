@@ -16,9 +16,12 @@ export interface Profile {
   nivel_asignado_el?: string;
   asignado_por?: string;
   empresa?: string;
+  cuit?: string;
+  nombre?: string;
+  apellido?: string;
   nombre_contacto?: string;
   telefono?: string;
-  creado_el: string;
+  creado_el?: string;
 }
 
 export interface UsuarioAdminItem {
@@ -32,8 +35,13 @@ export interface UsuarioAdminItem {
   ultimo_login?: string;
   ultima_actividad?: string;
   en_linea?: boolean;
-  creado_el: string;
+  creado_el?: string;
   asignado_por?: string;
+  empresa?: string;
+  cuit?: string;
+  nombre?: string;
+  apellido?: string;
+  nombre_contacto?: string;
   notas?: string;
   is_precargado?: boolean;
 }

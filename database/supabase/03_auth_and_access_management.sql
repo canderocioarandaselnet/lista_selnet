@@ -7,16 +7,24 @@ ALTER TABLE public.profiles
     ADD COLUMN IF NOT EXISTS rol TEXT NOT NULL DEFAULT 'cliente' CHECK (rol IN ('admin', 'cliente')),
     ADD COLUMN IF NOT EXISTS estado TEXT NOT NULL DEFAULT 'pendiente' CHECK (estado IN ('activo', 'pendiente', 'inactivo')),
     ADD COLUMN IF NOT EXISTS niveles TEXT[] NOT NULL DEFAULT ARRAY['gold']::TEXT[],
-    ADD COLUMN IF NOT EXISTS nivel_activo TEXT NOT NULL DEFAULT 'gold',
+    ADD COLUMN IF NOT EXISTS nivel_activo TEXT DEFAULT 'gold',
+    ADD COLUMN IF NOT EXISTS cuit TEXT,
+    ADD COLUMN IF NOT EXISTS nombre TEXT,
+    ADD COLUMN IF NOT EXISTS apellido TEXT,
+    ADD COLUMN IF NOT EXISTS empresa TEXT,
+    ADD COLUMN IF NOT EXISTS nombre_contacto TEXT,
     ADD COLUMN IF NOT EXISTS primer_login TIMESTAMPTZ,
     ADD COLUMN IF NOT EXISTS ultimo_login TIMESTAMPTZ,
     ADD COLUMN IF NOT EXISTS nivel_asignado_el TIMESTAMPTZ,
     ADD COLUMN IF NOT EXISTS asignado_por TEXT;
 
+ALTER TABLE public.profiles ALTER COLUMN nivel_activo DROP NOT NULL;
+
 -- Índices en profiles
 CREATE INDEX IF NOT EXISTS idx_profiles_estado ON public.profiles(estado);
 CREATE INDEX IF NOT EXISTS idx_profiles_rol ON public.profiles(rol);
 CREATE INDEX IF NOT EXISTS idx_profiles_email ON public.profiles(email);
+CREATE INDEX IF NOT EXISTS idx_profiles_cuit ON public.profiles(cuit);
 
 -- 2. Tabla de accesos precargados (Semilla desde BigQuery y precargas manuales desde la app)
 CREATE TABLE IF NOT EXISTS public.accesos_precargados (
@@ -56,9 +64,40 @@ DECLARE
     v_niveles TEXT[] := ARRAY[]::TEXT[];
     v_nivel_activo TEXT := NULL;
     v_metodo TEXT;
+    v_cuit TEXT := NULL;
+    v_nombre TEXT := NULL;
+    v_apellido TEXT := NULL;
+    v_empresa TEXT := NULL;
+    v_nombre_contacto TEXT := NULL;
 BEGIN
     v_email := LOWER(TRIM(NEW.email));
     v_metodo := COALESCE(NEW.raw_app_meta_data->>'provider', 'email');
+
+    -- Extraer metadatos enviados desde el formulario o provider OAuth
+    IF NEW.raw_user_meta_data IS NOT NULL THEN
+        v_cuit := NULLIF(TRIM(NEW.raw_user_meta_data->>'cuit'), '');
+        v_nombre := NULLIF(TRIM(NEW.raw_user_meta_data->>'nombre'), '');
+        v_apellido := NULLIF(TRIM(NEW.raw_user_meta_data->>'apellido'), '');
+        v_empresa := NULLIF(TRIM(NEW.raw_user_meta_data->>'empresa'), '');
+        v_nombre_contacto := NULLIF(TRIM(NEW.raw_user_meta_data->>'nombre_contacto'), '');
+
+        -- Si no vino nombre explícito pero viene de Google OAuth
+        IF v_nombre IS NULL AND NEW.raw_user_meta_data->>'given_name' IS NOT NULL THEN
+            v_nombre := NEW.raw_user_meta_data->>'given_name';
+        END IF;
+        IF v_apellido IS NULL AND NEW.raw_user_meta_data->>'family_name' IS NOT NULL THEN
+            v_apellido := NEW.raw_user_meta_data->>'family_name';
+        END IF;
+
+        -- Armar nombre_contacto si quedó vacío
+        IF v_nombre_contacto IS NULL THEN
+            IF v_nombre IS NOT NULL OR v_apellido IS NOT NULL THEN
+                v_nombre_contacto := TRIM(CONCAT(COALESCE(v_nombre, ''), ' ', COALESCE(v_apellido, '')));
+            ELSIF NEW.raw_user_meta_data->>'full_name' IS NOT NULL THEN
+                v_nombre_contacto := NEW.raw_user_meta_data->>'full_name';
+            END IF;
+        END IF;
+    END IF;
 
     -- Caso 1: Administradores Propietarios
     IF v_email IN ('canderocioaranda.selnet@gmail.com', 'mhmolesini@gmail.com') THEN
@@ -98,6 +137,11 @@ BEGIN
         estado, 
         niveles, 
         nivel_activo, 
+        cuit,
+        nombre,
+        apellido,
+        empresa,
+        nombre_contacto,
         primer_login, 
         ultimo_login, 
         creado_el, 
@@ -110,6 +154,11 @@ BEGIN
         v_estado,
         v_niveles,
         v_nivel_activo,
+        v_cuit,
+        v_nombre,
+        v_apellido,
+        v_empresa,
+        v_nombre_contacto,
         NOW(),
         NOW(),
         NOW(),
@@ -118,6 +167,11 @@ BEGIN
     ON CONFLICT (id) DO UPDATE
     SET 
         email = EXCLUDED.email,
+        cuit = COALESCE(EXCLUDED.cuit, profiles.cuit),
+        nombre = COALESCE(EXCLUDED.nombre, profiles.nombre),
+        apellido = COALESCE(EXCLUDED.apellido, profiles.apellido),
+        empresa = COALESCE(EXCLUDED.empresa, profiles.empresa),
+        nombre_contacto = COALESCE(EXCLUDED.nombre_contacto, profiles.nombre_contacto),
         ultimo_login = NOW(),
         actualizado_el = NOW();
 
@@ -130,7 +184,9 @@ BEGIN
         jsonb_build_object(
             'metodo', v_metodo, 
             'estado_inicial', v_estado, 
-            'niveles_asignados', v_niveles
+            'niveles_asignados', v_niveles,
+            'cuit', v_cuit,
+            'empresa', v_empresa
         )
     );
 

@@ -10,6 +10,8 @@ interface PendienteUser {
   rol: string;
   estado: string;
   empresa?: string;
+  cuit?: string;
+  nombre_contacto?: string;
 }
 
 interface LoginLog {
@@ -174,8 +176,17 @@ export const AdminNotifications: React.FC<AdminNotificationsProps> = ({ onOpenAd
                           </span>
                           <span className="notif-time">{timeAgo(user.creado_el)}</span>
                         </div>
+                        {user.empresa ? (
+                          <div className="notif-company-row">
+                            <span className="notif-company-name">🏢 {user.empresa}</span>
+                            {user.cuit && <span className="notif-cuit-tag">{user.cuit}</span>}
+                          </div>
+                        ) : null}
+                        {user.nombre_contacto ? (
+                          <div className="notif-contact-row">👤 {user.nombre_contacto}</div>
+                        ) : null}
                         <p className="notif-item-desc">
-                          {user.empresa ? `${user.empresa} • ` : ''}Esperando asignación de nivel
+                          Esperando asignación de nivel de precios
                         </p>
                         <button
                           type="button"

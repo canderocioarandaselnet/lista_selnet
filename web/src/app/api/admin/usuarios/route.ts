@@ -83,7 +83,12 @@ export async function GET() {
         ultimo_login: p.ultimo_login,
         ultima_actividad: lastAct,
         en_linea: isOnline,
-        creado_el: p.creado_el,
+        empresa: p.empresa,
+        cuit: p.cuit,
+        nombre: p.nombre,
+        apellido: p.apellido,
+        nombre_contacto: p.nombre_contacto || `${p.nombre || ''} ${p.apellido || ''}`.trim() || undefined,
+        creado_el: p.creado_el || p.primer_login || new Date().toISOString(),
         asignado_por: p.asignado_por,
         is_precargado: false,
       });

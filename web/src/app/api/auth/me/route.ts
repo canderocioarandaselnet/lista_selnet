@@ -54,6 +54,9 @@ export async function GET() {
         nivel_asignado_el: profileData.nivel_asignado_el,
         asignado_por: profileData.asignado_por,
         empresa: profileData.empresa,
+        cuit: profileData.cuit,
+        nombre: profileData.nombre,
+        apellido: profileData.apellido,
         nombre_contacto: profileData.nombre_contacto,
         telefono: profileData.telefono,
         creado_el: profileData.creado_el,
@@ -83,10 +86,16 @@ export async function GET() {
       nivelActivo = niveles[0];
     }
 
+    const meta = user.user_metadata || {};
     const now = new Date().toISOString();
     const newProfile = {
       id: user.id,
       email,
+      cuit: meta.cuit || null,
+      nombre: meta.nombre || null,
+      apellido: meta.apellido || null,
+      nombre_contacto: meta.nombre_contacto || `${meta.nombre || ''} ${meta.apellido || ''}`.trim() || null,
+      empresa: meta.empresa || null,
       rol,
       estado,
       niveles,
