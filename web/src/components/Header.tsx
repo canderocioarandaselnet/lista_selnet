@@ -81,10 +81,13 @@ export const Header: React.FC<HeaderProps> = ({
         )}
 
         <div className="brand-logo-area">
-          <SelnetLogoIcon size={30} />
+          <img
+            src={theme === 'dark' ? '/logo-selnet-white.png' : '/logo-selnet-red.png'}
+            alt="Selnet Soluciones Integrales"
+            className="brand-official-logo"
+          />
           <div className="brand-titles">
-            <span className="brand-wordmark">SELNET</span>
-            <span className="brand-subtitle">LISTA DE PRECIOS OFICIAL</span>
+            <span className="brand-official-pill">LISTA DE PRECIOS OFICIAL</span>
           </div>
         </div>
       </div>

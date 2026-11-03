@@ -1,17 +1,18 @@
 'use client';
 
 import React from 'react';
-import { SelnetLogoIcon } from './Header';
-
 export const InitialLoader: React.FC = () => {
   return (
     <div className="initial-splash-wrapper">
       <div className="initial-splash-card">
         <div className="initial-splash-logo-pulse">
-          <SelnetLogoIcon size={58} />
+          <img
+            src="/logo-selnet-white.png"
+            alt="Selnet Soluciones Integrales"
+            className="initial-splash-official-logo"
+          />
         </div>
         <div className="initial-splash-titles">
-          <h1 className="initial-splash-wordmark">SELNET</h1>
           <p className="initial-splash-subtitle">Portal Mayorista y Lista de Precios Oficial</p>
         </div>
         <div className="initial-splash-loader">

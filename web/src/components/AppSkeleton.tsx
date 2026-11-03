@@ -25,10 +25,13 @@ export const AppSkeleton: React.FC = () => {
       <header className="app-header">
         <div className="header-left">
           <div className="brand-logo-area">
-            <SelnetLogoIcon size={30} />
+            <img
+              src="/logo-selnet-white.png"
+              alt="Selnet Soluciones Integrales"
+              className="brand-official-logo"
+            />
             <div className="brand-titles">
-              <span className="brand-wordmark">SELNET</span>
-              <span className="brand-subtitle">LISTA DE PRECIOS OFICIAL</span>
+              <span className="brand-official-pill">LISTA DE PRECIOS OFICIAL</span>
             </div>
           </div>
         </div>

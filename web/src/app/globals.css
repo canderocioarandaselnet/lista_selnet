@@ -210,14 +210,18 @@ body {
 .brand-logo-area {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
   user-select: none;
   cursor: default;
 }
 
-.selnet-icon-svg {
-  filter: drop-shadow(0 2px 8px var(--primary-glow));
-  flex-shrink: 0;
+.brand-official-logo {
+  height: 32px;
+  width: auto;
+  max-width: 145px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s ease;
 }
 
 .brand-titles {
@@ -225,21 +229,17 @@ body {
   flex-direction: column;
 }
 
-.brand-wordmark {
-  font-size: 19px;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
-  color: var(--text-main);
-}
-
-.brand-subtitle {
+.brand-official-pill {
   font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--primary);
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.28);
+  border-radius: 4px;
+  padding: 3px 8px;
+  white-space: nowrap;
 }
 
 .header-right {
@@ -1438,17 +1438,41 @@ thead th.col-price-featured {
 }
 
 .auth-logo-badge {
-  filter: drop-shadow(0 4px 12px rgba(168, 28, 36, 0.35));
-  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
 }
 
-.auth-title {
-  font-size: 26px;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.02em;
-  color: var(--text-main);
-  line-height: 1;
+.auth-official-logo {
+  height: 48px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+
+.onboarding-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.onboarding-official-logo {
+  height: 46px;
+  width: auto;
+  max-width: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.45));
+}
+
+.initial-splash-official-logo {
+  height: 56px;
+  width: auto;
+  max-width: 270px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.45));
 }
 
 .auth-subtitle {

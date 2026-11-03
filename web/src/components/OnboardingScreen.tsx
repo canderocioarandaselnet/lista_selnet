@@ -26,16 +26,14 @@ export default function OnboardingScreen({ userEmail, onRefresh }: OnboardingScr
   return (
     <div className="onboarding-container">
       <div className="onboarding-card">
-        {/* Header con Isotipo Selnet */}
+        {/* Header con Logo Oficial Selnet */}
         <div className="onboarding-header">
-          <div className="onboarding-icon-wrapper">
-            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="50" fill="var(--selnet-red)" />
-              <path
-                d="M 50,15 A 35,35 0 0,1 85,50 A 17.5,17.5 0 0,1 67.5,67.5 A 17.5,17.5 0 0,1 50,50 A 17.5,17.5 0 0,0 32.5,32.5 A 17.5,17.5 0 0,0 15,50 A 35,35 0 0,1 50,15 Z"
-                fill="#ffffff"
-              />
-            </svg>
+          <div className="onboarding-logo-wrapper">
+            <img
+              src="/logo-selnet-white.png"
+              alt="Selnet Soluciones Integrales"
+              className="onboarding-official-logo"
+            />
           </div>
           <span className="badge-pending">Cuenta en Revisión</span>
           <h1 className="onboarding-title">Solicitud de Acceso Pendiente</h1>

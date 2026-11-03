@@ -90,18 +90,15 @@ export default function AuthScreen({ onSuccess }: AuthScreenProps) {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        {/* Logo Corporativo Selnet */}
+        {/* Logo Oficial Selnet */}
         <div className="auth-header">
           <div className="auth-logo-badge">
-            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="50" cy="50" r="50" fill="var(--selnet-red)" />
-              <path
-                d="M 50,15 A 35,35 0 0,1 85,50 A 17.5,17.5 0 0,1 67.5,67.5 A 17.5,17.5 0 0,1 50,50 A 17.5,17.5 0 0,0 32.5,32.5 A 17.5,17.5 0 0,0 15,50 A 35,35 0 0,1 50,15 Z"
-                fill="#ffffff"
-              />
-            </svg>
+            <img
+              src="/logo-selnet-white.png"
+              alt="Selnet Soluciones Integrales"
+              className="auth-official-logo"
+            />
           </div>
-          <h1 className="auth-title">SELNET</h1>
           <p className="auth-subtitle">Portal Mayorista y Lista de Precios Oficial</p>
         </div>
 
