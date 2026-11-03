@@ -1,6 +1,4 @@
-import { NextResponse } from 'next/server';
-
-export const dynamic = 'force-dynamic';
+import { NextRequest, NextResponse } from 'next/server';
 
 function validateCuit(cuit: string): boolean {
   const clean = cuit.replace(/\D/g, '');
@@ -15,10 +13,9 @@ function validateCuit(cuit: string): boolean {
   return verif === parseInt(clean[10], 10);
 }
 
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const rawCuit = searchParams.get('cuit') || '';
+    const rawCuit = request.nextUrl.searchParams.get('cuit') || '';
     const cleanCuit = rawCuit.replace(/\D/g, '');
 
     if (!cleanCuit || cleanCuit.length !== 11) {
