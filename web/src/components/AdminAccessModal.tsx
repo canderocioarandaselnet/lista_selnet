@@ -1,13 +1,20 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Building2, User } from 'lucide-react';
+import { Building2, User, ShieldAlert } from 'lucide-react';
 import { UsuarioAdminItem, UserTier, UserRole, UserStatus } from '@/types';
 
 interface AdminAccessModalProps {
   isOpen: boolean;
   onClose: () => void;
   currentUserEmail: string;
+}
+
+interface PendingTierConfirmation {
+  usuario: UsuarioAdminItem;
+  tier: { id: UserTier; label: string; color: string };
+  isRemoving: boolean;
+  resultingNiveles: UserTier[];
 }
 
 const ALL_TIERS: { id: UserTier; label: string; color: string }[] = [
@@ -33,6 +40,10 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
   const [newRol, setNewRol] = useState<UserRole>('cliente');
   const [newNotas, setNewNotas] = useState('');
   const [createLoading, setCreateLoading] = useState(false);
+
+  // Modal para confirmar asignación/remoción de nivel
+  const [pendingTierConfirm, setPendingTierConfirm] = useState<PendingTierConfirmation | null>(null);
+  const [confirmLoading, setConfirmLoading] = useState(false);
 
   // Cargar usuarios
   const fetchUsuarios = async (isSilent = false) => {
@@ -100,27 +111,41 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
     );
   };
 
-  // Modificar niveles de un usuario (tildar/destildar en tiempo real)
-  const handleToggleTier = async (usuario: UsuarioAdminItem, tier: UserTier) => {
-    const isCurrentlyActive = usuario.niveles.includes(tier);
+  // Solicitar confirmación para modificar niveles de un usuario
+  const onRequestToggleTier = (usuario: UsuarioAdminItem, tierInfo: { id: UserTier; label: string; color: string }) => {
+    const isCurrentlyActive = usuario.niveles.includes(tierInfo.id);
     let updatedNiveles: UserTier[];
 
     if (isCurrentlyActive) {
       // Si ya tiene ese nivel, removerlo (pero no dejarlo vacío)
-      updatedNiveles = usuario.niveles.filter((t) => t !== tier);
+      updatedNiveles = usuario.niveles.filter((t) => t !== tierInfo.id);
       if (updatedNiveles.length === 0) {
         updatedNiveles = ['gold'];
       }
     } else {
-      updatedNiveles = [...usuario.niveles, tier];
+      updatedNiveles = [...usuario.niveles, tierInfo.id];
     }
+
+    setPendingTierConfirm({
+      usuario,
+      tier: tierInfo,
+      isRemoving: isCurrentlyActive,
+      resultingNiveles: updatedNiveles,
+    });
+  };
+
+  // Confirmar y aplicar cambio de nivel vía PATCH
+  const handleConfirmTierChange = async () => {
+    if (!pendingTierConfirm) return;
+    const { usuario, resultingNiveles } = pendingTierConfirm;
 
     // Actualización optimista local
     setUsuarios((prev) =>
-      prev.map((u) => (u.email === usuario.email ? { ...u, niveles: updatedNiveles } : u))
+      prev.map((u) => (u.email === usuario.email ? { ...u, niveles: resultingNiveles } : u))
     );
 
     try {
+      setConfirmLoading(true);
       setActionLoading(usuario.email);
       await fetch('/api/admin/usuarios', {
         method: 'PATCH',
@@ -128,13 +153,15 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
         body: JSON.stringify({
           id: usuario.id,
           email: usuario.email,
-          niveles: updatedNiveles,
+          niveles: resultingNiveles,
         }),
       });
+      setPendingTierConfirm(null);
     } catch (err) {
       console.error('Error al actualizar niveles:', err);
       fetchUsuarios();
     } finally {
+      setConfirmLoading(false);
       setActionLoading(null);
     }
   };
@@ -499,9 +526,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                                 key={tier.id}
                                 type="button"
                                 disabled={actionLoading === u.email || (isSelf && tier.id === 'interna')}
-                                onClick={() => handleToggleTier(u, tier.id)}
+                                onClick={() => onRequestToggleTier(u, tier)}
                                 className={`btn-tier-chip ${tier.color} ${isAuthorized ? 'active' : 'inactive'}`}
-                                title={isAuthorized ? `Habilitado (Clic para quitar)` : `Inactivo (Clic para otorgar)`}
+                                title={isAuthorized ? `Habilitado (Clic para configurar/quitar)` : `Inactivo (Clic para autorizar nivel)`}
                               >
                                 {tier.label}
                               </button>
@@ -640,6 +667,178 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        )}
+
+        {/* Modal de confirmación para asignar o remover nivel de precios */}
+        {pendingTierConfirm && (
+          <div
+            className="confirm-tier-overlay"
+            onClick={() => !confirmLoading && setPendingTierConfirm(null)}
+          >
+            <div className="confirm-tier-card" onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="confirm-tier-header">
+                <div
+                  className={`confirm-tier-icon-wrap ${
+                    pendingTierConfirm.isRemoving ? 'remove' : 'add'
+                  }`}
+                >
+                  <ShieldAlert size={22} />
+                </div>
+                <div className="confirm-tier-title-wrap">
+                  <h3>
+                    {pendingTierConfirm.isRemoving
+                      ? '¿Confirmas quitar este nivel de precios?'
+                      : '¿Confirmas asignar este nivel de precios?'}
+                  </h3>
+                  <p>Verifica los datos del cliente antes de aplicar los permisos comerciales.</p>
+                </div>
+                <button
+                  type="button"
+                  className="btn-close-confirm"
+                  onClick={() => setPendingTierConfirm(null)}
+                  disabled={confirmLoading}
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* Ficha de Datos del Cliente */}
+              <div className="confirm-tier-user-box">
+                <div className="confirm-user-header-row">
+                  <span className="confirm-user-email">{pendingTierConfirm.usuario.email}</span>
+                  <span className={`status-pill ${pendingTierConfirm.usuario.estado}`}>
+                    {pendingTierConfirm.usuario.estado === 'activo'
+                      ? '● Activo'
+                      : pendingTierConfirm.usuario.estado === 'pendiente'
+                      ? '⏳ En Revisión'
+                      : '✕ Inactivo'}
+                  </span>
+                </div>
+
+                {pendingTierConfirm.usuario.empresa && (
+                  <div className="confirm-user-meta-row">
+                    <span className="confirm-meta-label">Empresa:</span>
+                    <span className="confirm-meta-value company">
+                      🏢 {pendingTierConfirm.usuario.empresa}
+                    </span>
+                    {pendingTierConfirm.usuario.cuit && (
+                      <span className="user-cuit-pill">
+                        CUIT:{' '}
+                        {pendingTierConfirm.usuario.cuit.length === 11
+                          ? `${pendingTierConfirm.usuario.cuit.slice(0, 2)}-${pendingTierConfirm.usuario.cuit.slice(2, 10)}-${pendingTierConfirm.usuario.cuit.slice(10)}`
+                          : pendingTierConfirm.usuario.cuit}
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {(pendingTierConfirm.usuario.nombre ||
+                  pendingTierConfirm.usuario.apellido ||
+                  pendingTierConfirm.usuario.nombre_contacto) && (
+                  <div className="confirm-user-meta-row">
+                    <span className="confirm-meta-label">Contacto:</span>
+                    <span className="confirm-meta-value">
+                      👤{' '}
+                      {pendingTierConfirm.usuario.nombre && pendingTierConfirm.usuario.apellido
+                        ? `${pendingTierConfirm.usuario.nombre} ${pendingTierConfirm.usuario.apellido}`
+                        : pendingTierConfirm.usuario.nombre_contacto ||
+                          pendingTierConfirm.usuario.nombre ||
+                          pendingTierConfirm.usuario.apellido}
+                    </span>
+                  </div>
+                )}
+              </div>
+
+              {/* Detalle de la Acción Destacada */}
+              <div
+                className={`confirm-tier-action-highlight ${
+                  pendingTierConfirm.isRemoving ? 'remove' : 'add'
+                }`}
+              >
+                <div className="action-highlight-top">
+                  <span className="action-highlight-title">
+                    {pendingTierConfirm.isRemoving ? 'Nivel a quitar:' : 'Nivel a habilitar:'}
+                  </span>
+                  <span className={`tier-badge-highlight ${pendingTierConfirm.tier.color}`}>
+                    {pendingTierConfirm.tier.label}
+                  </span>
+                </div>
+                <p className="action-highlight-desc">
+                  {pendingTierConfirm.isRemoving
+                    ? 'El cliente ya no podrá alternar a este nivel ni ver los precios asignados correspondientes.'
+                    : 'El cliente podrá alternar de inmediato a este nivel en su catálogo para ver stock y precios oficiales.'}
+                </p>
+              </div>
+
+              {/* Comparativa de Niveles: Antes y Después */}
+              <div className="confirm-tier-comparison">
+                <div className="comparison-col">
+                  <span className="comparison-label">Niveles actuales:</span>
+                  <div className="tiers-chips-mini">
+                    {pendingTierConfirm.usuario.niveles.map((lvl) => {
+                      const tInfo = ALL_TIERS.find((t) => t.id === lvl);
+                      return (
+                        <span key={lvl} className={`mini-tier-badge ${tInfo?.color || 'tier-gold'}`}>
+                          {lvl.toUpperCase()}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="comparison-arrow">➔</div>
+
+                <div className="comparison-col">
+                  <span className="comparison-label">Niveles resultantes:</span>
+                  <div className="tiers-chips-mini">
+                    {pendingTierConfirm.resultingNiveles.map((lvl) => {
+                      const tInfo = ALL_TIERS.find((t) => t.id === lvl);
+                      const isTarget = lvl === pendingTierConfirm.tier.id;
+                      return (
+                        <span
+                          key={lvl}
+                          className={`mini-tier-badge ${tInfo?.color || 'tier-gold'} ${
+                            isTarget && !pendingTierConfirm.isRemoving ? 'just-added' : ''
+                          }`}
+                        >
+                          {lvl.toUpperCase()}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Botones de Acción */}
+              <div className="confirm-tier-footer">
+                <button
+                  type="button"
+                  onClick={() => setPendingTierConfirm(null)}
+                  disabled={confirmLoading}
+                  className="btn-cancel-confirm"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="button"
+                  onClick={handleConfirmTierChange}
+                  disabled={confirmLoading}
+                  className={`btn-confirm-action ${
+                    pendingTierConfirm.isRemoving ? 'btn-danger' : 'btn-primary'
+                  }`}
+                >
+                  {confirmLoading ? (
+                    'Guardando...'
+                  ) : pendingTierConfirm.isRemoving ? (
+                    `Confirmar y Quitar ${pendingTierConfirm.tier.label}`
+                  ) : (
+                    `Confirmar y Asignar ${pendingTierConfirm.tier.label}`
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         )}
