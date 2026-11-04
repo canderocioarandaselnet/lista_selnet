@@ -11,6 +11,7 @@ import {
   Flame,
   Sparkles,
 } from 'lucide-react';
+import { getCategoryColorClass } from '@/lib/categoryColors';
 
 interface ProductTableProps {
   products: Producto[];
@@ -182,20 +183,20 @@ export const ProductTable: React.FC<ProductTableProps> = ({
               )}
               <th style={{ width: '80px' }}>IVA</th>
 
-              {/* Categoría y Subcategoría */}
-              <th className="sortable" onClick={() => onSort('categoria')} style={{ width: '130px' }}>
+              {/* Categoría y Subcategoría (Ancho controlado y ordenable) */}
+              <th className="sortable th-col-category" onClick={() => onSort('categoria')} style={{ width: '165px', maxWidth: '175px' }}>
                 <span className="th-content">
                   Categoría {renderSortIcon('categoria')}
                 </span>
               </th>
-              <th className="sortable" onClick={() => onSort('subcategoria')} style={{ width: '130px' }}>
+              <th className="sortable th-col-subcategory" onClick={() => onSort('subcategoria')} style={{ width: '175px', maxWidth: '185px' }}>
                 <span className="th-content">
                   Subcategoría {renderSortIcon('subcategoria')}
                 </span>
               </th>
 
-              {/* Descripción */}
-              <th style={{ minWidth: '320px' }}>Descripción</th>
+              {/* Descripción (Ancho controlado con clamp) */}
+              <th className="th-col-description" style={{ width: '260px', maxWidth: '280px' }}>Descripción</th>
 
               {/* Tránsito */}
               <th style={{ width: '90px', textAlign: 'center' }}>Tránsito</th>
@@ -326,24 +327,34 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                     </span>
                   </td>
 
-                  {/* Categoría y Subcategoría */}
-                  <td>
+                  {/* Categoría y Subcategoría (Etiquetas Coloreadas y Anchos Acotados) */}
+                  <td className="col-category">
                     {p.categoria ? (
-                      <span className="cat-badge">{p.categoria}</span>
+                      <span
+                        className={`cat-pill ${getCategoryColorClass(p.categoria)}`}
+                        title={p.categoria}
+                      >
+                        {p.categoria}
+                      </span>
                     ) : (
                       <span className="text-dim">—</span>
                     )}
                   </td>
-                  <td>
+                  <td className="col-subcategory">
                     {p.subcategoria ? (
-                      <span className="subcat-badge">{p.subcategoria}</span>
+                      <span
+                        className={`subcat-pill ${getCategoryColorClass(p.subcategoria)}`}
+                        title={p.subcategoria}
+                      >
+                        {p.subcategoria}
+                      </span>
                     ) : (
                       <span className="text-dim">—</span>
                     )}
                   </td>
 
-                  {/* Descripción */}
-                  <td>
+                  {/* Descripción (Con clamp y tooltip) */}
+                  <td className="col-description">
                     <span className="desc-text" title={p.descripcion || ''}>
                       {p.descripcion || '—'}
                     </span>

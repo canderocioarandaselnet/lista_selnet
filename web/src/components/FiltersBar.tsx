@@ -17,6 +17,7 @@ import {
   Layers,
 } from 'lucide-react';
 import * as XLSX from 'xlsx';
+import { CategoryDropdown } from '@/components/CategoryDropdown';
 
 interface FiltersBarProps {
   filters: CatalogoFilters;
@@ -187,42 +188,31 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
       {/* Selects & Toggles row */}
       <div className="filters-secondary-row">
-        {/* Dropdowns de categoría */}
+        {/* Dropdowns modernos de categoría y subcategoría */}
         <div className="dropdowns-group">
-          <select
-            className="select-input"
-            value={filters.categoria || ''}
-            onChange={(e) =>
+          <CategoryDropdown
+            value={filters.categoria}
+            options={categories}
+            placeholder="Todas las Categorías"
+            onChange={(cat) =>
               onChangeFilters({
                 ...filters,
-                categoria: e.target.value || null,
+                categoria: cat,
                 subcategoria: null,
               })
             }
-          >
-            <option value="">Todas las Categorías</option>
-            {categories.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
+          />
 
           {subcategories.length > 0 && (
-            <select
-              className="select-input"
-              value={filters.subcategoria || ''}
-              onChange={(e) =>
-                onChangeFilters({ ...filters, subcategoria: e.target.value || null })
+            <CategoryDropdown
+              value={filters.subcategoria}
+              options={subcategories}
+              placeholder="Todas las Subcategorías"
+              isSubcategory={true}
+              onChange={(subcat) =>
+                onChangeFilters({ ...filters, subcategoria: subcat })
               }
-            >
-              <option value="">Todas las Subcategorías</option>
-              {subcategories.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
+            />
           )}
         </div>
 

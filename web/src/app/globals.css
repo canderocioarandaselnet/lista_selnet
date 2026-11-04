@@ -786,27 +786,287 @@ body {
 .dropdowns-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
   flex: 1;
 }
 
-.select-input {
-  height: 35px;
-  padding: 0 10px;
-  background: var(--bg-input);
+/* =========================================================
+   CUSTOM CATEGORY DROPDOWN (Glassmorphism & Integrated Search)
+   ========================================================= */
+
+.custom-dropdown-container {
+  position: relative;
+  display: inline-block;
+  min-width: 220px;
+}
+
+.custom-dropdown-trigger {
+  width: 100%;
+  height: 38px;
+  padding: 0 10px 0 12px;
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   color: var(--text-main);
-  font-size: 12.5px;
-  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   cursor: pointer;
   transition: var(--transition);
-  max-width: 220px;
+  outline: none;
+  font-size: 13px;
+  text-align: left;
 }
 
-.select-input:focus {
+.custom-dropdown-trigger:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.custom-dropdown-trigger.is-open {
   border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+  background: var(--bg-card-hover);
+}
+
+.custom-dropdown-trigger.has-value {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex: 1;
+}
+
+.trigger-icon {
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.trigger-placeholder {
+  color: var(--text-muted);
+  font-size: 13px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.options-count-badge {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.trigger-cat-pill {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trigger-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.trigger-clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.trigger-clear-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.trigger-chevron {
+  color: var(--text-dim);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trigger-chevron.rotated {
+  transform: rotate(180deg);
+  color: var(--text-main);
+}
+
+/* Panel Flotante */
+.custom-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 290px;
+  max-width: 360px;
+  width: max-content;
+  background: #111114;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  z-index: 120;
+  overflow: hidden;
+  animation: fadeInDown 0.15s ease-out;
+}
+
+[data-theme="light"] .custom-dropdown-panel {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buscador en la cabecera del desplegable */
+.dropdown-search-wrap {
+  position: relative;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-search-icon {
+  position: absolute;
+  left: 18px;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.dropdown-search-input {
+  width: 100%;
+  height: 32px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 28px 0 30px;
+  color: var(--text-main);
+  font-size: 12.5px;
+  outline: none;
+  transition: var(--transition);
+}
+
+.dropdown-search-input:focus {
+  border-color: var(--primary);
+}
+
+.dropdown-search-clear {
+  position: absolute;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.dropdown-search-clear:hover {
+  color: var(--text-main);
+}
+
+/* Lista de opciones con scroll */
+.dropdown-options-scroll {
+  max-height: 290px;
+  overflow-y: auto;
+  padding: 5px;
+  scrollbar-width: thin;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.dropdown-options-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.dropdown-option-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 12.5px;
+  color: var(--text-main);
+}
+
+.dropdown-option-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-option-item.selected {
+  background: rgba(220, 38, 38, 0.12);
+  color: #ffffff;
+}
+
+.option-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  flex: 1;
+}
+
+.option-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.all-dot {
+  background: var(--text-dim);
+}
+
+.option-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.option-cat-pill {
+  max-width: 100%;
+}
+
+.option-check {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.dropdown-empty-state {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
 }
 
 .chip-toggles-group {
@@ -1269,26 +1529,149 @@ th.th-price-active {
   font-size: 12.5px;
 }
 
-/* Category & Description */
-.cat-badge, .subcat-badge {
-  display: inline-block;
-  font-size: 11px;
-  padding: 2px 7px;
-  border-radius: var(--radius-sm);
-  background: var(--border-subtle);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
+/* =========================================================
+   CATEGORY & SUBCATEGORY COLOR SYSTEM & CONTROLLED WIDTHS
+   ========================================================= */
+
+/* Anchos y control de desborde en columnas de la tabla */
+.th-col-category,
+.col-category {
+  width: 165px;
+  max-width: 175px;
+}
+
+.th-col-subcategory,
+.col-subcategory {
+  width: 175px;
+  max-width: 185px;
+}
+
+.th-col-description,
+.col-description {
+  width: 260px;
+  max-width: 280px;
+}
+
+.col-category,
+.col-subcategory,
+.col-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+/* Pills de Categoría y Subcategoría */
+.cat-pill,
+.subcat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: var(--transition);
+}
+
+.subcat-pill {
+  font-size: 10.5px;
+  font-weight: 600;
+  opacity: 0.92;
+  border-style: dashed !important;
+}
+
+/* 1. CCTV / Cámaras / Video (Cyan / Sky) */
+.cat-color-cyan {
+  background: rgba(14, 165, 233, 0.14);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+/* 2. Grabación / Almacenamiento / NVR (Púrpura / Violeta) */
+.cat-color-purple {
+  background: rgba(168, 85, 247, 0.14);
+  color: #c084fc;
+  border: 1px solid rgba(192, 132, 252, 0.35);
+}
+
+/* 3. Control de Acceso / Biometría (Esmeralda / Verde) */
+.cat-color-emerald {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.35);
+}
+
+/* 4. Alarmas / Intrusión (Ámbar / Naranja) */
+.cat-color-amber {
+  background: rgba(245, 158, 11, 0.14);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+/* 5. Incendio / Detección (Rojo Carmesí) */
+.cat-color-red {
+  background: rgba(239, 68, 68, 0.14);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+/* 6. Software / Licencias / Digifort (Índigo Royal) */
+.cat-color-indigo {
+  background: rgba(99, 102, 241, 0.14);
+  color: #818cf8;
+  border: 1px solid rgba(129, 140, 248, 0.35);
+}
+
+/* 7. Redes / Switches / Networking (Teal / Turquesa) */
+.cat-color-teal {
+  background: rgba(20, 184, 166, 0.14);
+  color: #2dd4bf;
+  border: 1px solid rgba(45, 212, 191, 0.35);
+}
+
+/* 8. Intercom / Audio / Megafonía (Rosa / Fucsia) */
+.cat-color-pink {
+  background: rgba(236, 72, 153, 0.14);
+  color: #f472b6;
+  border: 1px solid rgba(244, 114, 182, 0.35);
+}
+
+/* 9. Energía / Alimentación / Conectividad (Amarillo Oro) */
+.cat-color-yellow {
+  background: rgba(234, 179, 8, 0.14);
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.35);
+}
+
+/* 10. Novedades / Especiales / Accesorios (Lima / Verde Claro) */
+.cat-color-lime {
+  background: rgba(132, 204, 22, 0.14);
+  color: #a3e635;
+  border: 1px solid rgba(163, 230, 53, 0.35);
+}
+
+.cat-color-default {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .desc-text {
   color: var(--text-muted);
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  max-width: 280px;
+  word-break: break-word;
 }
 
 .iva-tag {
