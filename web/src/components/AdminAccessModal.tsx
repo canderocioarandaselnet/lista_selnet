@@ -225,8 +225,10 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
     }
   };
 
-  // Métricas
-  const stats = useMemo(() => {
+  const isSearching = search.trim().length > 0;
+
+  // Métricas totales generales
+  const totalStats = useMemo(() => {
     return {
       total: usuarios.length,
       activos: usuarios.filter((u) => u.estado === 'activo').length,
@@ -236,41 +238,56 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
     };
   }, [usuarios]);
 
-  // Filtrado y Ordenamiento
+  // Usuarios que coinciden con el término de búsqueda (independientemente de la pestaña)
+  const searchMatchedUsers = useMemo(() => {
+    if (!isSearching) return usuarios;
+    const s = search.toLowerCase().trim();
+    const cleanS = s.replace(/\D/g, '');
+
+    return usuarios.filter((u) => {
+      const emailMatch = u.email.toLowerCase().includes(s);
+      const empresaMatch = (u.empresa || '').toLowerCase().includes(s);
+      const nombreMatch = (u.nombre || '').toLowerCase().includes(s);
+      const apellidoMatch = (u.apellido || '').toLowerCase().includes(s);
+      const contactoMatch = (u.nombre_contacto || '').toLowerCase().includes(s);
+      const fullName = `${u.nombre || ''} ${u.apellido || ''}`.toLowerCase();
+      const fullNameMatch = fullName.includes(s);
+      const cuitClean = (u.cuit || '').replace(/\D/g, '');
+      const cuitMatch = cleanS.length >= 3 && cuitClean.includes(cleanS);
+      const notasMatch = (u.notas || '').toLowerCase().includes(s);
+
+      return (
+        emailMatch ||
+        empresaMatch ||
+        nombreMatch ||
+        apellidoMatch ||
+        contactoMatch ||
+        fullNameMatch ||
+        cuitMatch ||
+        notasMatch
+      );
+    });
+  }, [usuarios, search, isSearching]);
+
+  // Métricas filtradas por el buscador
+  const filteredStats = useMemo(() => {
+    return {
+      total: searchMatchedUsers.length,
+      activos: searchMatchedUsers.filter((u) => u.estado === 'activo').length,
+      pendientes: searchMatchedUsers.filter((u) => u.estado === 'pendiente').length,
+      inactivos: searchMatchedUsers.filter((u) => u.estado === 'inactivo').length,
+      en_linea: searchMatchedUsers.filter((u) => u.en_linea).length,
+    };
+  }, [searchMatchedUsers]);
+
+  // Filtrado final considerando la pestaña seleccionada y ordenando
   const filteredUsers = useMemo(() => {
-    const list = usuarios.filter((u) => {
+    const list = searchMatchedUsers.filter((u) => {
       // Filtro pestaña
       if (filterTab === 'en_linea' && !u.en_linea) return false;
       if (filterTab === 'pendientes' && u.estado !== 'pendiente') return false;
       if (filterTab === 'activos' && u.estado !== 'activo') return false;
       if (filterTab === 'inactivos' && u.estado !== 'inactivo') return false;
-
-      // Filtro búsqueda multinivel (email, empresa, nombre, apellido, contacto, CUIT o notas)
-      if (search) {
-        const s = search.toLowerCase().trim();
-        const cleanS = s.replace(/\D/g, '');
-        const emailMatch = u.email.toLowerCase().includes(s);
-        const empresaMatch = (u.empresa || '').toLowerCase().includes(s);
-        const nombreMatch = (u.nombre || '').toLowerCase().includes(s);
-        const apellidoMatch = (u.apellido || '').toLowerCase().includes(s);
-        const contactoMatch = (u.nombre_contacto || '').toLowerCase().includes(s);
-        const fullName = `${u.nombre || ''} ${u.apellido || ''}`.toLowerCase();
-        const fullNameMatch = fullName.includes(s);
-        const cuitClean = (u.cuit || '').replace(/\D/g, '');
-        const cuitMatch = cleanS.length >= 3 && cuitClean.includes(cleanS);
-        const notasMatch = (u.notas || '').toLowerCase().includes(s);
-
-        return (
-          emailMatch ||
-          empresaMatch ||
-          nombreMatch ||
-          apellidoMatch ||
-          contactoMatch ||
-          fullNameMatch ||
-          cuitMatch ||
-          notasMatch
-        );
-      }
       return true;
     });
 
@@ -280,7 +297,21 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
       if (!a.en_linea && b.en_linea) return 1;
       return 0;
     });
-  }, [usuarios, filterTab, search]);
+  }, [searchMatchedUsers, filterTab]);
+
+  // Renderizador de valores en las tarjetas métricas (soporta valor filtrado / total)
+  const renderMetric = (filteredVal: number, totalVal: number) => {
+    if (loading) return <span className="skeleton-shimmer skeleton-metric-val" />;
+    if (isSearching) {
+      return (
+        <span className="metric-value-split" title={`${filteredVal} filtrados de ${totalVal} en total`}>
+          <span className="metric-val-main">{filteredVal}</span>
+          <span className="metric-val-total"> / {totalVal}</span>
+        </span>
+      );
+    }
+    return totalVal;
+  };
 
   if (!isOpen) return null;
 
@@ -310,9 +341,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
           >
             <span className="metric-label">🟢 En Línea Ahora</span>
             <span className="metric-value">
-              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.en_linea}
+              {renderMetric(filteredStats.en_linea, totalStats.en_linea)}
             </span>
-            {!loading && stats.en_linea > 0 && <span className="metric-pill-badge online-pill">En vivo</span>}
+            {!loading && totalStats.en_linea > 0 && <span className="metric-pill-badge online-pill">En vivo</span>}
           </div>
 
           <div
@@ -321,7 +352,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
           >
             <span className="metric-label">Total Usuarios</span>
             <span className="metric-value">
-              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.total}
+              {renderMetric(filteredStats.total, totalStats.total)}
             </span>
           </div>
 
@@ -331,9 +362,9 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
           >
             <span className="metric-label">Pendientes</span>
             <span className="metric-value">
-              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.pendientes}
+              {renderMetric(filteredStats.pendientes, totalStats.pendientes)}
             </span>
-            {!loading && stats.pendientes > 0 && <span className="metric-pill-badge">Requiere acción</span>}
+            {!loading && totalStats.pendientes > 0 && <span className="metric-pill-badge">Requiere acción</span>}
           </div>
 
           <div
@@ -342,7 +373,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
           >
             <span className="metric-label">Activos</span>
             <span className="metric-value">
-              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.activos}
+              {renderMetric(filteredStats.activos, totalStats.activos)}
             </span>
           </div>
 
@@ -352,7 +383,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
           >
             <span className="metric-label">Inactivos</span>
             <span className="metric-value">
-              {loading ? <span className="skeleton-shimmer skeleton-metric-val" /> : stats.inactivos}
+              {renderMetric(filteredStats.inactivos, totalStats.inactivos)}
             </span>
           </div>
         </div>
@@ -367,7 +398,25 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
+            {isSearching && (
+              <button
+                type="button"
+                className="btn-clear-search"
+                onClick={() => setSearch('')}
+                title="Limpiar búsqueda"
+              >
+                ✕
+              </button>
+            )}
           </div>
+
+          {isSearching && (
+            <div className="search-feedback-indicator">
+              <span>Filtrados:</span>
+              <strong>{filteredUsers.length}</strong>
+              <span>de {usuarios.length}</span>
+            </div>
+          )}
 
           <button
             type="button"
