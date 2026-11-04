@@ -68,7 +68,7 @@ export default function OnboardingScreen({ userEmail, onRefresh }: OnboardingScr
             disabled={checking}
             className="btn-refresh-status"
           >
-            {checking ? 'Comprobando estado...' : '🔄 Comprobar si ya fue aprobado'}
+            {checking ? 'Comprobando estado...' : 'Comprobar si ya fue aprobado'}
           </button>
 
           <button

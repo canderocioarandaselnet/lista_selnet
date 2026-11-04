@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo } from 'react';
+import { Building2, User } from 'lucide-react';
 import { UsuarioAdminItem, UserTier, UserRole, UserStatus } from '@/types';
 
 interface AdminAccessModalProps {
@@ -217,10 +218,31 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
       if (filterTab === 'activos' && u.estado !== 'activo') return false;
       if (filterTab === 'inactivos' && u.estado !== 'inactivo') return false;
 
-      // Filtro búsqueda
+      // Filtro búsqueda multinivel (email, empresa, nombre, apellido, contacto, CUIT o notas)
       if (search) {
-        const s = search.toLowerCase();
-        return u.email.toLowerCase().includes(s) || (u.notas || '').toLowerCase().includes(s);
+        const s = search.toLowerCase().trim();
+        const cleanS = s.replace(/\D/g, '');
+        const emailMatch = u.email.toLowerCase().includes(s);
+        const empresaMatch = (u.empresa || '').toLowerCase().includes(s);
+        const nombreMatch = (u.nombre || '').toLowerCase().includes(s);
+        const apellidoMatch = (u.apellido || '').toLowerCase().includes(s);
+        const contactoMatch = (u.nombre_contacto || '').toLowerCase().includes(s);
+        const fullName = `${u.nombre || ''} ${u.apellido || ''}`.toLowerCase();
+        const fullNameMatch = fullName.includes(s);
+        const cuitClean = (u.cuit || '').replace(/\D/g, '');
+        const cuitMatch = cleanS.length >= 3 && cuitClean.includes(cleanS);
+        const notasMatch = (u.notas || '').toLowerCase().includes(s);
+
+        return (
+          emailMatch ||
+          empresaMatch ||
+          nombreMatch ||
+          apellidoMatch ||
+          contactoMatch ||
+          fullNameMatch ||
+          cuitMatch ||
+          notasMatch
+        );
       }
       return true;
     });
@@ -314,7 +336,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             <span className="search-icon">🔍</span>
             <input
               type="text"
-              placeholder="Buscar por correo electrónico o empresa..."
+              placeholder="Buscar por correo, empresa, contacto o CUIT..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -336,7 +358,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
               <table className="admin-table">
                 <thead>
                   <tr>
-                    <th>Usuario / Correo</th>
+                    <th>Usuario / Empresa / Contacto</th>
                     <th>Estado</th>
                     <th>Niveles Autorizados</th>
                     <th>Primer Login</th>
@@ -407,7 +429,7 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
             <table className="admin-table">
               <thead>
                 <tr>
-                  <th>Usuario / Correo</th>
+                  <th>Usuario / Empresa / Contacto</th>
                   <th>Estado</th>
                   <th>Niveles Autorizados (Haz clic para alternar)</th>
                   <th>Primer Login</th>
@@ -420,22 +442,39 @@ export default function AdminAccessModal({ isOpen, onClose, currentUserEmail }: 
                   const isSelf = u.email === currentUserEmail.toLowerCase();
                   return (
                     <tr key={u.id} className={`admin-row-${u.estado}`}>
-                      {/* Correo y badges */}
+                      {/* Correo, Empresa, CUIT y Contacto */}
                       <td className="col-user-info">
                         <div className="user-email-wrap">
                           <span className="user-email-text">{u.email}</span>
                           {u.rol === 'admin' && <span className="badge-admin">ADMIN</span>}
                           {u.is_precargado && <span className="badge-precargado">Importado BQ</span>}
                         </div>
+
                         {u.empresa && (
-                          <div className="user-company-info">
-                            <span className="user-company-title">🏢 {u.empresa}</span>
-                            {u.cuit && <span className="user-cuit-tag">CUIT: {u.cuit}</span>}
+                          <div className="user-company-badge-row">
+                            <span className="user-company-badge">
+                              <Building2 size={12} className="user-meta-icon" />
+                              <span>{u.empresa}</span>
+                            </span>
+                            {u.cuit && (
+                              <span className="user-cuit-pill">
+                                CUIT: {u.cuit.length === 11 ? `${u.cuit.slice(0, 2)}-${u.cuit.slice(2, 10)}-${u.cuit.slice(10)}` : u.cuit}
+                              </span>
+                            )}
                           </div>
                         )}
-                        {u.nombre_contacto && (
-                          <span className="user-contact-title">👤 {u.nombre_contacto}</span>
+
+                        {(u.nombre || u.apellido || u.nombre_contacto) && (
+                          <div className="user-contact-badge-row">
+                            <span className="user-contact-text">
+                              <User size={11} className="user-meta-icon" />
+                              {u.nombre && u.apellido
+                                ? `${u.nombre} ${u.apellido}`
+                                : u.nombre_contacto || u.nombre || u.apellido}
+                            </span>
+                          </div>
                         )}
+
                         {u.notas && <span className="user-notas-text">{u.notas}</span>}
                       </td>
 
