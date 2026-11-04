@@ -990,20 +990,53 @@ body {
   color: var(--text-main);
 }
 
-/* Lista de opciones con scroll */
+/* Lista de opciones con scroll ultra elegante y tenue */
 .dropdown-options-scroll {
   max-height: 290px;
   overflow-y: auto;
-  padding: 5px;
+  padding: 6px;
   scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
 }
 
 .dropdown-options-scroll::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
+
+.dropdown-options-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .dropdown-options-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  transition: background 0.2s ease;
+}
+
+.dropdown-options-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="light"] .dropdown-options-scroll {
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+[data-theme="light"] .dropdown-options-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .dropdown-options-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .dropdown-option-item {
