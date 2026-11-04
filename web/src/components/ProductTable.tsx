@@ -95,35 +95,91 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                 </span>
               </th>
 
-              {/* Tu Precio (Tier Destacado) */}
-              <th
-                className="sortable col-price-featured"
-                onClick={() => onSort('precio_principal')}
-                style={{ width: '135px' }}
-              >
-                <span className="th-content">
-                  Tu Precio ({tier.toUpperCase()}) {renderSortIcon('precio_principal')}
-                </span>
-              </th>
-
-              {/* Precios adicionales según Tier */}
-              {['diamond', 'black', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Black</th>
+              {/* Precios según Tier (Diamond, Black, Platinum, Ruby, Gremio, PVP Sug, EPP) */}
+              {(tier === 'diamond' || tier === 'interna') && (
+                <th
+                  className={`sortable th-price-col ${tier === 'diamond' ? 'th-price-active' : ''}`}
+                  onClick={() => onSort('precio_diamond')}
+                  style={{ width: '105px' }}
+                >
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-diamond">DIAMOND</span>
+                    {renderSortIcon('precio_diamond')}
+                  </span>
+                </th>
               )}
-              {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Ruby</th>
+              {['diamond', 'black', 'interna'].includes(tier) && (
+                <th
+                  className={`sortable th-price-col ${tier === 'black' ? 'th-price-active' : ''}`}
+                  onClick={() => onSort('precio_black')}
+                  style={{ width: '105px' }}
+                >
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-black">BLACK</span>
+                    {renderSortIcon('precio_black')}
+                  </span>
+                </th>
               )}
               {['platinum', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Platinum</th>
+                <th
+                  className={`sortable th-price-col ${tier === 'platinum' ? 'th-price-active' : ''}`}
+                  onClick={() => onSort('precio_platinum')}
+                  style={{ width: '105px' }}
+                >
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-platinum">PLATINUM</span>
+                    {renderSortIcon('precio_platinum')}
+                  </span>
+                </th>
               )}
-              {tier === 'interna' && (
-                <th style={{ width: '100px' }}>Diamond</th>
+              {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
+                <th
+                  className={`sortable th-price-col ${tier === 'ruby' ? 'th-price-active' : ''}`}
+                  onClick={() => onSort('precio_ruby')}
+                  style={{ width: '105px' }}
+                >
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-ruby">RUBY</span>
+                    {renderSortIcon('precio_ruby')}
+                  </span>
+                </th>
               )}
 
-              {/* Precios Base */}
-              <th style={{ width: '100px' }}>Gremio</th>
-              <th style={{ width: '100px' }}>PVP Sug.</th>
-              {tier !== 'gold' && <th style={{ width: '90px' }}>EPP</th>}
+              {/* Precios Base (Gremio, PVP Sug., EPP) */}
+              <th
+                className={`sortable th-price-col ${tier === 'gold' ? 'th-price-active' : ''}`}
+                onClick={() => onSort('precio_gold')}
+                style={{ width: '105px' }}
+              >
+                <span className="th-content">
+                  <span className={`th-tier-pill ${tier === 'gold' ? 'th-tier-gold' : 'th-tier-gremio'}`}>
+                    GREMIO
+                  </span>
+                  {renderSortIcon('precio_gold')}
+                </span>
+              </th>
+              <th
+                className="sortable th-price-col"
+                onClick={() => onSort('pvp')}
+                style={{ width: '100px' }}
+              >
+                <span className="th-content">
+                  <span className="th-tier-pill th-tier-neutral">PVP SUG.</span>
+                  {renderSortIcon('pvp')}
+                </span>
+              </th>
+              {tier !== 'gold' && (
+                <th
+                  className="sortable th-price-col"
+                  onClick={() => onSort('epp')}
+                  style={{ width: '90px' }}
+                >
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-neutral">EPP</span>
+                    {renderSortIcon('epp')}
+                  </span>
+                </th>
+              )}
               <th style={{ width: '80px' }}>IVA</th>
 
               {/* Categoría y Subcategoría */}
@@ -151,7 +207,7 @@ export const ProductTable: React.FC<ProductTableProps> = ({
           <tbody>
             {products.length === 0 ? (
               <tr>
-                <td colSpan={18} className="empty-cell">
+                <td colSpan={20} className="empty-cell">
                   <div className="empty-table-wrap">
                     <Package size={36} className="empty-icon" />
                     <p>No se encontraron productos con los filtros seleccionados.</p>
@@ -226,32 +282,43 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                     )}
                   </td>
 
-                  {/* Tu Precio (Tier Destacado) */}
-                  <td className="col-price-featured">
-                    <span className="featured-price-badge">
-                      {formatPrice(p.precio_principal)}
-                    </span>
-                  </td>
-
-                  {/* Precios adicionales de Tiers */}
-                  {['diamond', 'black', 'interna'].includes(tier) && (
-                    <td className="price-cell price-secondary">{formatPrice(p.precio_black)}</td>
+                  {/* Precios según Tier (Diamond, Black, Platinum, Ruby, Gremio, PVP Sug., EPP) */}
+                  {(tier === 'diamond' || tier === 'interna') && (
+                    <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : tier === 'diamond' ? 'price-cell-active' : 'price-secondary'}`}>
+                      {formatPrice(p.precio_diamond)}
+                    </td>
                   )}
-                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
-                    <td className="price-cell price-secondary">{formatPrice(p.precio_ruby)}</td>
+                  {['diamond', 'black', 'interna'].includes(tier) && (
+                    <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : tier === 'black' ? 'price-cell-active' : 'price-secondary'}`}>
+                      {formatPrice(p.precio_black)}
+                    </td>
                   )}
                   {['platinum', 'interna'].includes(tier) && (
-                    <td className="price-cell price-secondary">{formatPrice(p.precio_platinum)}</td>
+                    <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : tier === 'platinum' ? 'price-cell-active' : 'price-secondary'}`}>
+                      {formatPrice(p.precio_platinum)}
+                    </td>
                   )}
-                  {tier === 'interna' && (
-                    <td className="price-cell price-secondary">{formatPrice(p.precio_diamond)}</td>
+                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
+                    <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : tier === 'ruby' ? 'price-cell-active' : 'price-secondary'}`}>
+                      {formatPrice(p.precio_ruby)}
+                    </td>
                   )}
 
-                  {/* Precios Base */}
-                  <td className="price-cell price-gremio">{formatPrice(p.precio_gold)}</td>
-                  <td className="price-cell price-pvp">{formatPrice(p.pvp)}</td>
+                  {/* Gremio */}
+                  <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : tier === 'gold' ? 'price-cell-active' : 'price-secondary'}`}>
+                    {formatPrice(p.precio_gold)}
+                  </td>
+
+                  {/* PVP Sug. */}
+                  <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : 'price-pvp'}`}>
+                    {formatPrice(p.pvp)}
+                  </td>
+
+                  {/* EPP */}
                   {tier !== 'gold' && (
-                    <td className="price-cell price-secondary">{formatPrice(p.epp)}</td>
+                    <td className={`price-cell ${tier === 'interna' ? 'price-interna-white' : 'price-secondary'}`}>
+                      {formatPrice(p.epp)}
+                    </td>
                   )}
                   <td>
                     <span className="iva-tag">

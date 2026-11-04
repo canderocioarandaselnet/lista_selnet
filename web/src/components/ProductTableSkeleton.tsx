@@ -40,24 +40,57 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
               <th style={{ width: '95px' }}>
                 <span className="th-content">Stock</span>
               </th>
-              <th className="col-price-featured" style={{ width: '135px' }}>
-                <span className="th-content">Tu Precio ({tier.toUpperCase()})</span>
-              </th>
-              {['diamond', 'black', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Black</th>
+
+              {/* Precios según Tier (Diamond, Black, Platinum, Ruby, Gremio, PVP Sug, EPP) */}
+              {(tier === 'diamond' || tier === 'interna') && (
+                <th style={{ width: '105px' }}>
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-diamond">DIAMOND</span>
+                  </span>
+                </th>
               )}
-              {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Ruby</th>
+              {['diamond', 'black', 'interna'].includes(tier) && (
+                <th style={{ width: '105px' }}>
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-black">BLACK</span>
+                  </span>
+                </th>
               )}
               {['platinum', 'interna'].includes(tier) && (
-                <th style={{ width: '100px' }}>Platinum</th>
+                <th style={{ width: '105px' }}>
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-platinum">PLATINUM</span>
+                  </span>
+                </th>
               )}
-              {tier === 'interna' && (
-                <th style={{ width: '100px' }}>Diamond</th>
+              {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
+                <th style={{ width: '105px' }}>
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-ruby">RUBY</span>
+                  </span>
+                </th>
               )}
-              <th style={{ width: '100px' }}>Gremio</th>
-              <th style={{ width: '100px' }}>PVP Sug.</th>
-              {tier !== 'gold' && <th style={{ width: '90px' }}>EPP</th>}
+
+              {/* Precios Base */}
+              <th style={{ width: '105px' }}>
+                <span className="th-content">
+                  <span className={`th-tier-pill ${tier === 'gold' ? 'th-tier-gold' : 'th-tier-gremio'}`}>
+                    GREMIO
+                  </span>
+                </span>
+              </th>
+              <th style={{ width: '100px' }}>
+                <span className="th-content">
+                  <span className="th-tier-pill th-tier-neutral">PVP SUG.</span>
+                </span>
+              </th>
+              {tier !== 'gold' && (
+                <th style={{ width: '90px' }}>
+                  <span className="th-content">
+                    <span className="th-tier-pill th-tier-neutral">EPP</span>
+                  </span>
+                </th>
+              )}
               <th style={{ width: '80px' }}>IVA</th>
             </tr>
           </thead>
@@ -111,18 +144,13 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
                     </div>
                   </td>
 
-                  {/* Tu Precio (Destacado) */}
-                  <td className="col-price-featured">
-                    <div className="skeleton-shimmer skeleton-price-featured" />
-                  </td>
-
-                  {/* Precios adicionales según Tier */}
-                  {['diamond', 'black', 'interna'].includes(tier) && (
+                  {/* Precios según Tier */}
+                  {(tier === 'diamond' || tier === 'interna') && (
                     <td>
                       <div className="skeleton-shimmer skeleton-price" />
                     </td>
                   )}
-                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
+                  {['diamond', 'black', 'interna'].includes(tier) && (
                     <td>
                       <div className="skeleton-shimmer skeleton-price" />
                     </td>
@@ -132,16 +160,28 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
                       <div className="skeleton-shimmer skeleton-price" />
                     </td>
                   )}
-                  {tier === 'interna' && (
+                  {['diamond', 'black', 'ruby', 'interna'].includes(tier) && (
                     <td>
                       <div className="skeleton-shimmer skeleton-price" />
                     </td>
                   )}
 
-                  {/* Precios Base */}
+                  {/* Gremio */}
                   <td>
                     <div className="skeleton-shimmer skeleton-price" />
                   </td>
+
+                  {/* PVP Sug */}
+                  <td>
+                    <div className="skeleton-shimmer skeleton-price" />
+                  </td>
+
+                  {/* EPP */}
+                  {tier !== 'gold' && (
+                    <td>
+                      <div className="skeleton-shimmer skeleton-price" />
+                    </td>
+                  )}
                   <td>
                     <div className="skeleton-shimmer skeleton-price" />
                   </td>

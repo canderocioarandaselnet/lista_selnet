@@ -67,27 +67,25 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
         'Subcategoría': p.subcategoria || '',
         'Stock': p.stock,
         'En Tránsito': p.en_transito ? 'Sí' : 'No',
-        'Precio Principal': p.precio_principal ? `$${p.precio_principal.toFixed(2)}` : '',
-        'Nivel': p.label_precio_principal || '',
       };
 
+      if ((tier === 'diamond' || tier === 'interna') && p.precio_diamond !== undefined) {
+        row['Precio Diamond'] = p.precio_diamond ? `$${p.precio_diamond.toFixed(2)}` : '';
+      }
       if (['diamond', 'black', 'interna'].includes(tier) && p.precio_black !== undefined) {
         row['Precio Black'] = p.precio_black ? `$${p.precio_black.toFixed(2)}` : '';
-      }
-      if (['diamond', 'black', 'ruby', 'interna'].includes(tier) && p.precio_ruby !== undefined) {
-        row['Precio Ruby'] = p.precio_ruby ? `$${p.precio_ruby.toFixed(2)}` : '';
-      }
-      if (['diamond', 'interna'].includes(tier) && p.precio_diamond !== undefined) {
-        row['Precio Diamond'] = p.precio_diamond ? `$${p.precio_diamond.toFixed(2)}` : '';
       }
       if (['platinum', 'interna'].includes(tier) && p.precio_platinum !== undefined) {
         row['Precio Platinum'] = p.precio_platinum ? `$${p.precio_platinum.toFixed(2)}` : '';
       }
+      if (['diamond', 'black', 'ruby', 'interna'].includes(tier) && p.precio_ruby !== undefined) {
+        row['Precio Ruby'] = p.precio_ruby ? `$${p.precio_ruby.toFixed(2)}` : '';
+      }
       if (p.precio_gold !== undefined) {
-        row['Precio Gold Gremio'] = p.precio_gold ? `$${p.precio_gold.toFixed(2)}` : '';
+        row['Precio Gremio'] = p.precio_gold ? `$${p.precio_gold.toFixed(2)}` : '';
       }
       if (p.pvp !== undefined) {
-        row['PVP'] = p.pvp ? `$${p.pvp.toFixed(2)}` : '';
+        row['PVP Sug.'] = p.pvp ? `$${p.pvp.toFixed(2)}` : '';
       }
       if (tier !== 'gold' && p.epp !== undefined) {
         row['EPP'] = p.epp ? `$${p.epp.toFixed(2)}` : '';
