@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({
             alt="Selnet Soluciones Integrales"
             className="brand-official-logo"
           />
-          <div className="brand-titles">
+          <div className="brand-titles desktop-only">
             <span className="brand-official-pill">LISTA DE PRECIOS OFICIAL</span>
           </div>
         </div>

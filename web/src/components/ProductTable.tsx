@@ -50,16 +50,15 @@ export const ProductTable: React.FC<ProductTableProps> = ({
         <table className="data-table">
           <thead>
             <tr>
-              {/* Checkbox column - Sticky left */}
-              <th className="col-sticky col-check" style={{ width: '44px', textAlign: 'center' }}>
+              {/* Checkbox column - Sticky left (Solo Desktop) */}
+              <th className="col-sticky col-check desktop-only-col" style={{ width: '44px', textAlign: 'center' }}>
                 <span className="sr-only">Seleccionar</span>
               </th>
 
-              {/* Modelo column - Sticky next to checkbox */}
+              {/* Modelo column - Sticky */}
               <th
-                className="sortable col-sticky col-modelo"
+                className="sortable col-sticky col-modelo th-col-modelo"
                 onClick={() => onSort('modelo')}
-                style={{ minWidth: '200px' }}
               >
                 <span className="th-content">
                   Modelo {renderSortIcon('modelo')}
@@ -218,8 +217,8 @@ export const ProductTable: React.FC<ProductTableProps> = ({
             ) : (
               products.map((p) => (
                 <tr key={`${p.marca}-${p.modelo}-${p.id}`} className={p._selected ? 'row-selected' : ''}>
-                  {/* Checkbox - Sticky left */}
-                  <td className="col-sticky col-check" style={{ textAlign: 'center' }}>
+                  {/* Checkbox - Sticky left (Solo Desktop) */}
+                  <td className="col-sticky col-check desktop-only-col" style={{ textAlign: 'center' }}>
                     <input
                       type="checkbox"
                       checked={!!p._selected}

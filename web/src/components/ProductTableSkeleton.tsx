@@ -20,10 +20,10 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
         <table className="data-table">
           <thead>
             <tr>
-              <th className="col-sticky col-check" style={{ width: '44px', textAlign: 'center' }}>
+              <th className="col-sticky col-check desktop-only-col" style={{ width: '44px', textAlign: 'center' }}>
                 <div className="skeleton-shimmer skeleton-check" />
               </th>
-              <th className="col-sticky col-modelo" style={{ minWidth: '200px' }}>
+              <th className="col-sticky col-modelo th-col-modelo">
                 <span className="th-content">Modelo</span>
               </th>
               <th style={{ width: '110px' }}>
@@ -101,8 +101,8 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
 
               return (
                 <tr key={idx} className="skeleton-product-row">
-                  {/* Checkbox */}
-                  <td className="col-sticky col-check" style={{ textAlign: 'center' }}>
+                  {/* Checkbox (Solo Desktop) */}
+                  <td className="col-sticky col-check desktop-only-col" style={{ textAlign: 'center' }}>
                     <div className="skeleton-shimmer skeleton-check-box" />
                   </td>
 

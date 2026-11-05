@@ -255,7 +255,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             Filas: <strong>{totalHits.toLocaleString()}</strong>
           </span>
           {selectedCount > 0 && (
-            <span className="selected-badge">
+            <span className="selected-badge desktop-only">
               ({selectedCount} sel.)
             </span>
           )}
@@ -263,10 +263,10 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
         {/* Action buttons */}
         <div className="actions-group">
-          {/* Selección múltiple */}
+          {/* Selección múltiple (Solo Desktop) */}
           <button
             type="button"
-            className="btn btn-icon"
+            className="btn btn-icon desktop-only"
             onClick={onSelectAll}
             title="Seleccionar todos los visibles"
             aria-label="Seleccionar todos"
@@ -275,7 +275,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           </button>
           <button
             type="button"
-            className="btn btn-icon"
+            className="btn btn-icon desktop-only"
             onClick={onDeselectAll}
             title="Deseleccionar todos"
             aria-label="Deseleccionar todos"
@@ -296,16 +296,15 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             </button>
           )}
 
-          {/* Exportar a Excel */}
+          {/* Exportar a Excel (Solo Desktop) */}
           <button
             type="button"
-            className="btn btn-success export-btn"
+            className="btn btn-success export-btn desktop-only"
             onClick={handleExportExcel}
             title="Descargar tabla en formato Excel (.xlsx)"
           >
             <Download size={14} />
             <span className="export-text">Exportar Excel</span>
-            <span className="export-text-mobile">Excel</span>
           </button>
         </div>
       </div>
