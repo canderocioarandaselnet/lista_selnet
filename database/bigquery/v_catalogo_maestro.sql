@@ -96,7 +96,8 @@ WITH
   stock AS (
     SELECT
       NULLIF(NULLIF(NULLIF(REGEXP_REPLACE(LOWER(CAST(Codigo AS STRING)), r'[^0-9a-z]', ''), ''), 'nan'), 'null') AS key_bej,
-      SUM(SAFE_CAST(Disponible AS INT64)) AS disponible
+      SUM(SAFE_CAST(Disponible AS INT64)) AS disponible,
+      MAX(fecha_actualizacion) AS fecha_stock
     FROM `selnet-476815.pagina.stock_ultima_actualizacion`
     WHERE Codigo IS NOT NULL AND LOWER(CAST(Codigo AS STRING)) NOT IN ('nan', 'null', '')
     GROUP BY 1
@@ -273,6 +274,7 @@ SELECT
 
   -- Disponibilidad y Tránsito
   COALESCE(S.disponible, 0) AS stock,
+  COALESCE(CAST(DATE(S.fecha_stock) AS STRING), (SELECT CAST(DATE(MAX(fecha_actualizacion)) AS STRING) FROM `selnet-476815.pagina.stock_ultima_actualizacion`)) AS fecha_stock,
   IF(COALESCE(T.total_en_transito, 0) > 0, TRUE, FALSE) AS en_transito,
 
   -- Banderas de estado

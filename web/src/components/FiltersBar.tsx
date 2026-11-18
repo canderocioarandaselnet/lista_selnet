@@ -32,6 +32,7 @@ interface FiltersBarProps {
   onDeselectAll: () => void;
   tier: UserTier;
   onOpenSidebar?: () => void;
+  fechaStock?: string;
 }
 
 export const FiltersBar: React.FC<FiltersBarProps> = ({
@@ -47,6 +48,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
   onDeselectAll,
   tier,
   onOpenSidebar,
+  fechaStock,
 }) => {
   const handleExportExcel = () => {
     const itemsToExport = selectedCount > 0
@@ -257,6 +259,14 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           {selectedCount > 0 && (
             <span className="selected-badge desktop-only">
               ({selectedCount} sel.)
+            </span>
+          )}
+          {fechaStock && (
+            <span
+              className="stock-info-tag"
+              title="Dato no en tiempo real. Refleja el último corte manual de stock importado."
+            >
+              Stock al {fechaStock}
             </span>
           )}
         </div>

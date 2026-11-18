@@ -1263,6 +1263,27 @@ body {
   font-weight: 700;
 }
 
+.stock-info-tag {
+  margin-left: 10px;
+  font-size: 11px;
+  color: var(--text-dim);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: help;
+  user-select: none;
+  letter-spacing: -0.1px;
+}
+
+.stock-info-tag:hover {
+  color: var(--text-main);
+  border-color: var(--text-dim);
+}
+
 .actions-group {
   display: flex;
   align-items: center;
@@ -1401,20 +1422,53 @@ thead th.col-sticky {
 .col-check {
   left: 0;
   width: 44px;
+  min-width: 44px;
+  max-width: 44px;
 }
 
 .col-modelo {
   left: 44px;
-  min-width: 190px;
-  box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme="light"] .col-modelo {
-  box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.08);
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
 }
 
 .th-col-modelo {
-  min-width: 190px;
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+}
+
+/* Columna SAP fija solo en Desktop (a la derecha de Modelo) */
+.col-sap {
+  position: sticky;
+  left: 264px;
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+  z-index: 10;
+  background: var(--bg-card);
+  box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .col-sap {
+  background: #ffffff;
+  box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.08);
+}
+
+thead th.col-sap {
+  z-index: 30;
+  background: var(--bg-sidebar);
+}
+
+[data-theme="light"] thead th.col-sap {
+  background: #f8fafc;
+}
+
+.th-col-sap {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
 }
 
 /* Table Rows */
@@ -1433,7 +1487,17 @@ table.data-table tbody tr:hover td {
   background: var(--bg-card-hover);
 }
 
+table.data-table tbody tr:hover td.col-sticky,
+table.data-table tbody tr:hover td.col-sap {
+  background: var(--bg-card-hover);
+}
+
 table.data-table tbody tr.row-selected td {
+  background: var(--primary-subtle);
+}
+
+table.data-table tbody tr.row-selected td.col-sticky,
+table.data-table tbody tr.row-selected td.col-sap {
   background: var(--primary-subtle);
 }
 
@@ -2142,17 +2206,49 @@ th.th-price-active {
     min-width: 125px !important;
     max-width: 140px !important;
     padding: 7px 8px !important;
-    box-shadow: 3px 0 10px -2px rgba(0, 0, 0, 0.35);
+    box-shadow: 3px 0 10px -2px rgba(0, 0, 0, 0.35) !important;
   }
 
   [data-theme="light"] .col-modelo {
-    box-shadow: 3px 0 10px -2px rgba(0, 0, 0, 0.12);
+    box-shadow: 3px 0 10px -2px rgba(0, 0, 0, 0.12) !important;
   }
 
   .th-col-modelo {
     width: 130px !important;
     min-width: 125px !important;
     max-width: 140px !important;
+  }
+
+  /* En móvil: solo Modelo queda fijo (left: 0). SAP no es fija y se desplaza como las demás columnas */
+  .col-sap {
+    position: static !important;
+    left: auto !important;
+    width: 100px !important;
+    min-width: 90px !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    z-index: auto !important;
+    background: transparent !important;
+  }
+
+  [data-theme="light"] .col-sap {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  thead th.col-sap {
+    z-index: auto !important;
+    background: var(--bg-sidebar) !important;
+  }
+
+  [data-theme="light"] thead th.col-sap {
+    background: #f8fafc !important;
+  }
+
+  .th-col-sap {
+    width: 100px !important;
+    min-width: 90px !important;
+    max-width: none !important;
   }
 
   .modelo-text {

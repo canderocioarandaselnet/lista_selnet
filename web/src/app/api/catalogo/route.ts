@@ -343,6 +343,7 @@ export async function GET(request: Request) {
         email: userEmail,
         count: safeData.length,
         data: safeData,
+        fecha_stock: '17/11/2026',
         is_mock: false,
       });
     }

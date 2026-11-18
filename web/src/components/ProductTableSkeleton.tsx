@@ -26,11 +26,11 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
               <th className="col-sticky col-modelo th-col-modelo">
                 <span className="th-content">Modelo</span>
               </th>
+              <th className="col-sap th-col-sap">
+                <span className="th-content">SAP</span>
+              </th>
               <th style={{ width: '110px' }}>
                 <span className="th-content">Marca</span>
-              </th>
-              <th style={{ width: '120px' }}>
-                <span className="th-content">SAP</span>
               </th>
               {tier === 'interna' && (
                 <th style={{ width: '130px' }}>
@@ -119,14 +119,14 @@ export const ProductTableSkeleton: React.FC<ProductTableSkeletonProps> = ({
                     </div>
                   </td>
 
+                  {/* SAP */}
+                  <td className="col-sap">
+                    <div className="skeleton-shimmer skeleton-code" style={{ width: '75px' }} />
+                  </td>
+
                   {/* Marca */}
                   <td>
                     <div className="skeleton-shimmer skeleton-brand-pill" />
-                  </td>
-
-                  {/* SAP */}
-                  <td>
-                    <div className="skeleton-shimmer skeleton-code" style={{ width: '75px' }} />
                   </td>
 
                   {/* Bejerman */}

@@ -13,7 +13,7 @@ user_dict = {}
 for r in rows:
     email = (r["mail"] or "").strip().lower()
     cat = (r["categoria"] or "").strip().lower()
-    if not email:
+    if not email or email == "mhmolesini@gmail.com":
         continue
     if email not in user_dict:
         user_dict[email] = {
@@ -33,8 +33,7 @@ for r in rows:
 
 # Tratamiento especial para administradores y equipo Selnet
 ADMIN_EMAILS = [
-    "canderocioaranda.selnet@gmail.com",
-    "mhmolesini@gmail.com"
+    "canderocioaranda.selnet@gmail.com"
 ]
 
 ALL_TIERS = ["gold", "ruby", "platinum", "black", "diamond", "interna"]

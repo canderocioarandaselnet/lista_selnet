@@ -38,6 +38,7 @@ export default function Home() {
     direction: 'asc',
   });
 
+  const [fechaStock, setFechaStock] = useState<string>('17/11/2026');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const supabase = createClient();
 
@@ -65,6 +66,7 @@ export default function Home() {
         if (json.niveles) setAuthorizedTiers(json.niveles);
         if (json.isAdmin !== undefined) setIsAdmin(json.isAdmin);
         if (json.email) setUserEmail(json.email);
+        if (json.fecha_stock) setFechaStock(json.fecha_stock);
         setAuthStatus('ready');
       }
     } catch (err) {
@@ -341,6 +343,7 @@ export default function Home() {
             onDeselectAll={handleDeselectAll}
             tier={userTier}
             onOpenSidebar={() => setIsSidebarOpen(true)}
+            fechaStock={fechaStock}
           />
 
           {loading ? (
@@ -352,6 +355,7 @@ export default function Home() {
               sort={sort}
               onSort={handleSort}
               onToggleSelect={handleToggleSelect}
+              fechaStock={fechaStock}
             />
           )}
         </main>

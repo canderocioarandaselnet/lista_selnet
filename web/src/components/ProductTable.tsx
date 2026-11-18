@@ -19,6 +19,7 @@ interface ProductTableProps {
   sort: SortConfig;
   onSort: (key: keyof Producto | 'precio_principal') => void;
   onToggleSelect: (id: number) => void;
+  fechaStock?: string;
 }
 
 export const ProductTable: React.FC<ProductTableProps> = ({
@@ -27,6 +28,7 @@ export const ProductTable: React.FC<ProductTableProps> = ({
   sort,
   onSort,
   onToggleSelect,
+  fechaStock = '17/11/2026',
 }) => {
   const renderSortIcon = (key: keyof Producto | 'precio_principal') => {
     if (sort.key !== key || sort.direction === 'none') {
@@ -65,17 +67,20 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                 </span>
               </th>
 
+              {/* SAP Code - Fijo en PC, libre en móvil */}
+              <th
+                className="sortable col-sap th-col-sap"
+                onClick={() => onSort('sap')}
+              >
+                <span className="th-content">
+                  SAP {renderSortIcon('sap')}
+                </span>
+              </th>
+
               {/* Marca */}
               <th className="sortable" onClick={() => onSort('marca')} style={{ width: '110px' }}>
                 <span className="th-content">
                   Marca {renderSortIcon('marca')}
-                </span>
-              </th>
-
-              {/* SAP Code */}
-              <th className="sortable" onClick={() => onSort('sap')} style={{ width: '120px' }}>
-                <span className="th-content">
-                  SAP {renderSortIcon('sap')}
                 </span>
               </th>
 
@@ -89,7 +94,12 @@ export const ProductTable: React.FC<ProductTableProps> = ({
               )}
 
               {/* Stock */}
-              <th className="sortable" onClick={() => onSort('stock')} style={{ width: '95px' }}>
+              <th
+                className="sortable"
+                onClick={() => onSort('stock')}
+                style={{ width: '95px' }}
+                title={`Stock al ${fechaStock} (Corte manual no en tiempo real)`}
+              >
                 <span className="th-content">
                   Stock {renderSortIcon('stock')}
                 </span>
@@ -247,17 +257,17 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                     </div>
                   </td>
 
+                  {/* SAP - Fijo en PC, libre en móvil */}
+                  <td className="col-sap">
+                    <span className="code-text sap-code">
+                      {p.sap || '—'}
+                    </span>
+                  </td>
+
                   {/* Marca */}
                   <td>
                     <span className="brand-tag">
                       {p.marca}
-                    </span>
-                  </td>
-
-                  {/* SAP */}
-                  <td>
-                    <span className="code-text sap-code">
-                      {p.sap || '—'}
                     </span>
                   </td>
 
@@ -273,12 +283,20 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                   {/* Stock */}
                   <td>
                     {p.stock > 0 ? (
-                      <span className="stock-pill stock-available">
+                      <span
+                        className="stock-pill stock-available"
+                        title={`Stock disponible: ${p.stock} u. (Corte al ${fechaStock})`}
+                      >
                         <span className="stock-dot-pulse"></span>
                         {p.stock}
                       </span>
                     ) : (
-                      <span className="stock-pill stock-none">0</span>
+                      <span
+                        className="stock-pill stock-none"
+                        title={`Sin stock disponible (Corte al ${fechaStock})`}
+                      >
+                        0
+                      </span>
                     )}
                   </td>
 
