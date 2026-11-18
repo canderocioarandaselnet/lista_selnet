@@ -246,6 +246,17 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             <Sparkles size={13} />
             <span>Nuevos</span>
           </button>
+
+          {/* Pastilla informativa discreta junto a los filtros */}
+          {fechaStock && (
+            <div
+              className="stock-updated-pill"
+              title="Dato no en tiempo real. Refleja el último corte manual de stock importado de Bejerman."
+            >
+              <Package size={12} className="stock-updated-icon" />
+              <span>Stock al: <strong>{fechaStock}</strong></span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -259,14 +270,6 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           {selectedCount > 0 && (
             <span className="selected-badge desktop-only">
               ({selectedCount} sel.)
-            </span>
-          )}
-          {fechaStock && (
-            <span
-              className="stock-info-tag"
-              title="Dato no en tiempo real. Refleja el último corte manual de stock importado."
-            >
-              Stock al {fechaStock}
             </span>
           )}
         </div>
