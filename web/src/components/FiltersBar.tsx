@@ -24,6 +24,8 @@ interface FiltersBarProps {
   onChangeFilters: (newFilters: CatalogoFilters) => void;
   categories: string[];
   subcategories: string[];
+  brands?: string[];
+  isTodasLasMarcas?: boolean;
   totalHits: number;
   selectedCount: number;
   allProducts: Producto[];
@@ -40,6 +42,8 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
   onChangeFilters,
   categories,
   subcategories,
+  brands = [],
+  isTodasLasMarcas = true,
   totalHits,
   selectedCount,
   allProducts,
@@ -117,7 +121,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
   const handleClear = () => {
     onChangeFilters({
       search: '',
-      marca: null,
+      marca: isTodasLasMarcas ? null : filters.marca,
       categoria: null,
       subcategoria: null,
       soloStock: false,
@@ -128,7 +132,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
   const hasActiveFilters =
     Boolean(filters.search.trim()) ||
-    Boolean(filters.marca) ||
+    (isTodasLasMarcas ? Boolean(filters.marca) : false) ||
     Boolean(filters.categoria) ||
     Boolean(filters.subcategoria) ||
     filters.soloStock ||
@@ -160,8 +164,8 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           )}
         </div>
 
-        {/* Brand Chip / Button on Mobile */}
-        {filters.marca ? (
+        {/* Brand Chip (solo cuando se navega a una marca específica desde el Sidebar) / Button on Mobile */}
+        {filters.marca && !isTodasLasMarcas ? (
           <div className="active-brand-chip">
             <span className="brand-chip-label" onClick={onOpenSidebar} title="Cambiar marca">
               <Layers size={13} />
@@ -190,12 +194,32 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
       {/* Selects & Toggles row */}
       <div className="filters-secondary-row">
-        {/* Dropdowns modernos de categoría y subcategoría */}
+        {/* Dropdowns modernos de marca, categoría y subcategoría */}
         <div className="dropdowns-group">
+          {/* Desplegable de Marcas (exclusivamente en la sección 'Todas las Marcas') */}
+          {isTodasLasMarcas && brands && brands.length > 0 && (
+            <CategoryDropdown
+              value={filters.marca}
+              options={brands}
+              placeholder="Todas las Marcas"
+              type="brand"
+              onChange={(m) =>
+                onChangeFilters({
+                  ...filters,
+                  marca: m,
+                  categoria: null,
+                  subcategoria: null,
+                })
+              }
+            />
+          )}
+
+          {/* Desplegable de Categorías */}
           <CategoryDropdown
             value={filters.categoria}
             options={categories}
             placeholder="Todas las Categorías"
+            type="category"
             onChange={(cat) =>
               onChangeFilters({
                 ...filters,
@@ -205,17 +229,20 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             }
           />
 
-          {subcategories.length > 0 && (
-            <CategoryDropdown
-              value={filters.subcategoria}
-              options={subcategories}
-              placeholder="Todas las Subcategorías"
-              isSubcategory={true}
-              onChange={(subcat) =>
-                onChangeFilters({ ...filters, subcategoria: subcat })
-              }
-            />
-          )}
+          {/* Desplegable de Subcategorías */}
+          <CategoryDropdown
+            value={filters.subcategoria}
+            options={subcategories}
+            placeholder={
+              subcategories.length === 0 && filters.categoria
+                ? 'Sin Subcategorías'
+                : 'Todas las Subcategorías'
+            }
+            type="subcategory"
+            onChange={(subcat) =>
+              onChangeFilters({ ...filters, subcategoria: subcat })
+            }
+          />
         </div>
 
         {/* Quick Chip Toggles */}

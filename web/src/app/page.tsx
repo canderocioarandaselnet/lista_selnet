@@ -39,6 +39,7 @@ export default function Home() {
   });
 
   const [fechaStock, setFechaStock] = useState<string>('17/11/2026');
+  const [activeSidebarBrand, setActiveSidebarBrand] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const supabase = createClient();
 
@@ -172,6 +173,11 @@ export default function Home() {
     return counts;
   }, [products]);
 
+  // Lista de marcas disponibles ordenadas alfabéticamente
+  const brands = useMemo(() => {
+    return Object.keys(brandCounts).sort((a, b) => a.localeCompare(b));
+  }, [brandCounts]);
+
   // Categorías disponibles según la marca seleccionada
   const categories = useMemo(() => {
     const set = new Set<string>();
@@ -183,13 +189,14 @@ export default function Home() {
     return Array.from(set).sort();
   }, [products, filters.marca]);
 
-  // Subcategorías disponibles según la categoría seleccionada
+  // Subcategorías disponibles según la marca y categoría seleccionada
   const subcategories = useMemo(() => {
-    if (!filters.categoria) return [];
     const set = new Set<string>();
     products.forEach((p) => {
-      if ((!filters.marca || p.marca === filters.marca) && p.categoria === filters.categoria) {
-        if (p.subcategoria) set.add(p.subcategoria);
+      if (!filters.marca || p.marca === filters.marca) {
+        if (!filters.categoria || p.categoria === filters.categoria) {
+          if (p.subcategoria) set.add(p.subcategoria);
+        }
       }
     });
     return Array.from(set).sort();
@@ -317,8 +324,16 @@ export default function Home() {
       {/* Cuerpo principal con Sidebar y Tabla de Productos */}
       <div className="app-container">
         <Sidebar
-          selectedMarca={filters.marca}
-          onSelectMarca={(m) => setFilters((prev) => ({ ...prev, marca: m, categoria: null, subcategoria: null }))}
+          selectedMarca={activeSidebarBrand}
+          onSelectMarca={(m) => {
+            setActiveSidebarBrand(m);
+            setFilters((prev) => ({
+              ...prev,
+              marca: m,
+              categoria: null,
+              subcategoria: null,
+            }));
+          }}
           brandCounts={brandCounts}
           tier={userTier}
           isOpen={isSidebarOpen}
@@ -332,9 +347,17 @@ export default function Home() {
         <main className="main-content">
           <FiltersBar
             filters={filters}
-            onChangeFilters={setFilters}
+            onChangeFilters={(newFilters) => {
+              // Si el usuario borra la marca mientras está en una sección específica de marca, volver a Todas las Marcas
+              if (activeSidebarBrand !== null && newFilters.marca === null) {
+                setActiveSidebarBrand(null);
+              }
+              setFilters(newFilters);
+            }}
             categories={categories}
             subcategories={subcategories}
+            brands={brands}
+            isTodasLasMarcas={activeSidebarBrand === null}
             totalHits={filteredProducts.length}
             selectedCount={selectedCount}
             allProducts={products}

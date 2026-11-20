@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown, Search, X, Check, Tag } from 'lucide-react';
+import { ChevronDown, Search, X, Check, Tag, Layers } from 'lucide-react';
 import { getCategoryColorClass } from '@/lib/categoryColors';
 
 interface CategoryDropdownProps {
@@ -9,6 +9,7 @@ interface CategoryDropdownProps {
   options: string[];
   placeholder: string;
   onChange: (val: string | null) => void;
+  type?: 'category' | 'subcategory' | 'brand';
   isSubcategory?: boolean;
 }
 
@@ -17,12 +18,16 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
   options,
   placeholder,
   onChange,
+  type = 'category',
   isSubcategory = false,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const isBrandType = type === 'brand';
+  const isSubcatType = type === 'subcategory' || isSubcategory;
 
   // Cerrar al hacer clic afuera
   useEffect(() => {
@@ -76,25 +81,58 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
     onChange(null);
   };
 
+  const getSearchPlaceholder = () => {
+    if (isBrandType) return `Buscar entre ${options.length} marcas...`;
+    if (isSubcatType) return `Buscar entre ${options.length} subcategorías...`;
+    return `Buscar entre ${options.length} categorías...`;
+  };
+
+  const getAllLabel = () => {
+    if (isBrandType) return 'Todas las Marcas';
+    if (isSubcatType) return 'Todas las Subcategorías';
+    return 'Todas las Categorías';
+  };
+
+  const isDisabled = options.length === 0 && !value;
+
   return (
-    <div className="custom-dropdown-container" ref={containerRef}>
+    <div className={`custom-dropdown-container ${isDisabled ? 'is-disabled' : ''}`} ref={containerRef}>
       {/* Botón Trigger */}
       <button
         type="button"
+        disabled={isDisabled}
         className={`custom-dropdown-trigger ${value ? 'has-value' : ''} ${isOpen ? 'is-open' : ''}`}
         onClick={() => setIsOpen((prev) => !prev)}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
         <div className="trigger-left">
-          <Tag size={13} className="trigger-icon" />
+          {isBrandType ? (
+            <Layers size={13} className="trigger-icon" />
+          ) : (
+            <Tag size={13} className="trigger-icon" />
+          )}
+
           {value ? (
-            <span
-              className={`cat-pill trigger-cat-pill ${getCategoryColorClass(value)}`}
-              title={value}
-            >
-              {value}
-            </span>
+            isBrandType ? (
+              <span className="brand-tag trigger-brand-tag" title={value}>
+                {value}
+              </span>
+            ) : isSubcatType ? (
+              <span
+                className={`subcat-pill trigger-cat-pill ${getCategoryColorClass(value)}`}
+                title={value}
+              >
+                {value}
+              </span>
+            ) : (
+              <span
+                className={`cat-pill trigger-cat-pill ${getCategoryColorClass(value)}`}
+                title={value}
+              >
+                {value}
+              </span>
+            )
           ) : (
             <span className="trigger-placeholder">
               {placeholder}
@@ -127,7 +165,7 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
       </button>
 
       {/* Menú Flotante */}
-      {isOpen && (
+      {isOpen && !isDisabled && (
         <div className="custom-dropdown-panel" role="listbox">
           {/* Cabecera con Buscador */}
           <div className="dropdown-search-wrap">
@@ -135,7 +173,7 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
             <input
               ref={searchInputRef}
               type="text"
-              placeholder={`Buscar entre ${options.length} ${isSubcategory ? 'subcategorías' : 'categorías'}...`}
+              placeholder={getSearchPlaceholder()}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="dropdown-search-input"
@@ -164,7 +202,7 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
               <div className="option-name-wrap">
                 <span className="option-dot all-dot" />
                 <span className="option-text">
-                  {isSubcategory ? 'Todas las Subcategorías' : 'Todas las Categorías'}
+                  {getAllLabel()}
                 </span>
               </div>
               {value === null && <Check size={14} className="option-check" />}
@@ -189,9 +227,19 @@ export const CategoryDropdown: React.FC<CategoryDropdownProps> = ({
                     aria-selected={isSelected}
                   >
                     <div className="option-name-wrap">
-                      <span className={`cat-pill option-cat-pill ${colorClass}`}>
-                        {opt}
-                      </span>
+                      {isBrandType ? (
+                        <span className="brand-tag option-brand-tag">
+                          {opt}
+                        </span>
+                      ) : isSubcatType ? (
+                        <span className={`subcat-pill option-cat-pill ${colorClass}`}>
+                          {opt}
+                        </span>
+                      ) : (
+                        <span className={`cat-pill option-cat-pill ${colorClass}`}>
+                          {opt}
+                        </span>
+                      )}
                     </div>
                     {isSelected && <Check size={14} className="option-check" />}
                   </div>
